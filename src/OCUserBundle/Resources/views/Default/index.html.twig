@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+{% block mainContainer %}
+    <div class="row">
+        <h2>Pannel d'administration du site internet :</h2>
+    </div>
+    <div class="row">
+        <h2>Appercu des utilisateurs du site</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Matricule</th>
+                <th>Dated'embauche</th>
+                <th>Fonction</th>
+                <th>Email</th>
+            </tr>
+            {% for user in listUsers %}
+            <tr>
+                <td>{{ user.usrNOM }}</td>
+                <td>{{ user.usrPRENOM }}</td>
+                <td>{{ user.usrMATRICULE }}</td>
+                <td>{{ user.usrDATEEMBAUCHE|date('d-m-Y') }}</td>
+                <td>{{ user.usrFONCTION }}</td>
+                <td>{{ user.email }}</td>
+            </tr>
+            {%  endfor %}
+        </table>
+    </div>
+{% endblock %}

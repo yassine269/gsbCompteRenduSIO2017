@@ -1,0 +1,68 @@
+{% extends "::base.html.twig" %}
+
+{% block mainContainer %}
+    {{ form_start(form, {'method': 'post', 'action': path('oc_user_register'), 'attr': {'novalidate': 'novalidate'}}) }}
+    <div class="row">
+        <div class="col-md-12">
+            {{ form_errors(form) }}
+        </div>
+        <div class="col-md-6">
+            <h2>Etat civil :</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    {{ form_row(form.usrNOM) }}
+                </div>
+                <div class="col-md-4">
+                    {{ form_row(form.usrPRENOM) }}
+                </div>
+                <div class="col-md-4">
+                    {{ form_row(form.email) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{ form_row(form.usrADRESSE) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{ form_row(form.usrCP) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{ form_row(form.usrVILLE) }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2>Information profesionnel :</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    {{ form_row(form.usrFONCTION) }}
+                </div>
+                <div class="col-md-4">
+                    {{ form_row(form.usrSUPP) }}
+                </div>
+                <div class="col-md-4">
+                    {{ form_row(form.usrDATEEMBAUCHE) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    {{ form_row(form.usrDEPARTEMENT) }}
+                </div>
+                <div class="col-md-4">
+                    {{ form_row(form.usrREGION) }}
+                </div>
+                <div class="col-md-4">
+                    {{ form_row(form.usrSECTEUR) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <input type="submit" />
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

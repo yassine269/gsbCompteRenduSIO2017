@@ -1,0 +1,93 @@
+/* *********************STYLE BASE GENERAL************************* */
+#topSection{
+    height:100px;
+    width: 100%;
+    background-color: #4b7eb2;
+    position: fixed;
+    top:0;
+    z-index: 9999;
+}
+#asideMenu{
+    height: 85%;
+    width: 15%;
+    background-color: #C2C2C2;
+    margin-left: 0px;
+    position: fixed;
+    bottom: 0px;
+    font-size: 100%;
+    padding:10px;
+    z-index: 9999;
+}
+#asideMenu h2{
+    font-size:120%;
+    font-width:600;
+}
+#asideMenu li a{
+    font-size:100%;
+}
+#asideMenu ul{
+    padding:0;
+}
+#asideMenu li{
+    margin-left:20px;
+    list-style: none;
+}
+#asideMenu li:before{
+    content: '-  ';
+}
+#infoUser{
+    font-size:100%;
+}
+#infoUser h1{
+    font-size: 30px;
+    font-weight: 700;
+    color:#222;
+}
+#infoUser h1 small{
+    font-size:15px;
+    font-weight: 400;
+    color:#c2c2c2;
+}
+#logoutLink{
+    color:#222;
+}
+#mainContainer{
+    margin-left: 15%;
+    margin-top: 150px;
+}
+table{
+    width: 100%;
+}
+.tableContent span{
+    width: 50%;
+}
+.titleList{
+    font-weight:900;
+}
+#IDList{
+    width:40%;
+}
+#newUserContainer{
+    width:90%;
+}
+#newUserInfoG{
+    border: 1px solid #C2C2C2;
+    border-radius: 10px;
+    background-color: #C0C0C0;
+    margin-top: 20px;
+    padding:5px;
+}
+#newUserInfoC{
+    border: 1px solid #C2C2C2;
+    border-radius: 10px;
+    background-color: #C0C0C0;
+    padding:5px;
+}
+table{
+    border: 1px solid #c2c2c2;
+}
+td{
+    border: 1px solid #c2c2c2;
+    padding: 3px;
+}
+/* ********************* FIN STYLE BASE GENERAL************************* */

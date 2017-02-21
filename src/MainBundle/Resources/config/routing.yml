@@ -1,0 +1,9 @@
+main_homepage_visiteur:
+    path:     /visiteur
+    defaults: { _controller: MainBundle:Visiteur:index }
+main_homepage_delegue:
+    path:     /delegue
+    defaults: { _controller: MainBundle:Delegue:index }
+main_homepage_responsable:
+    path:     /responsable
+    defaults: { _controller: MainBundle:Responsable:index }

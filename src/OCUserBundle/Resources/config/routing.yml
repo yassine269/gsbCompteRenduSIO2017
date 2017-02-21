@@ -1,0 +1,6 @@
+oc_user_index:
+    path:     /index
+    defaults: { _controller: OCUserBundle:Default:index }
+oc_user_register:
+    path:     /register
+    defaults: { _controller: OCUserBundle:Registration:register}
