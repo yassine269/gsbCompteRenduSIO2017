@@ -2,106 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a8952db-1866-42ef-a179-f4702447687a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/.gitkeep" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/logs/.gitkeep" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/sessions/.gitkeep" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/apple-touch-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_19_02_17_20_29_s.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_21_02_17_10_58_s.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gsbCompteRendu.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/AppCache.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/autoload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/config_dev.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/config_prod.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/config_test.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/parameters.yml.dist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/routing_dev.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/services.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/console" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/symfony_requirements" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/phpunit.xml.dist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Admin/ComposantAdmin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Admin/DosageAdmin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Admin/FamilleAdmin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Admin/PresentationAdmin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Admin/TypePraticienAdmin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Controller/DelegueController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Controller/ResponsableController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Controller/VisiteurController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/Composant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/Dosage.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/Famille.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/MedConstitution.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/Medicament.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/Praticien.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/Prescrire.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/Presentation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/SpecPosseder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/Specialite.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/TypeIndividu.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/TypePraticien.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/MainBundle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Repository/MedicamentRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/config/routing.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/config/services.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/Default/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/Delegue/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/Responsable/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/Visiteur/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Tests/Controller/DelegueControllerTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Tests/Controller/ResponsableControllerTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Tests/Controller/VisiteurControllerTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Admin/CategoryAdmin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Controller/DefaultController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Controller/RegistrationController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Controller/SecurityController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Entity/BlogPost.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Entity/Category.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Entity/Departement.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Entity/Fonction.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Entity/Region.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Entity/Secteur.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Entity/User.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Form/RegistrationType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/OCUserBundle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Repository/BlogPostRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Repository/CategoryRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Repository/UserRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Resources/config/routing.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Resources/config/services.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Resources/config/validation.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Resources/views/Default/index.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/OCUserBundle/Tests/Controller/RegistrationControllerTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/MainBundle/Controller/DefaultControllerTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/OCUserBundle/Controller/DefaultControllerTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app_dev.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/robots.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -132,7 +34,7 @@
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="272">
-                  <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+                  <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -420,69 +322,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gsbCompteRendu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gsbCompteRendu" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MainBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gsbCompteRendu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gsbCompteRendu" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MainBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gsbCompteRendu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gsbCompteRendu" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MainBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -579,12 +419,12 @@
       <workItem from="1487594254983" duration="9869000" />
       <workItem from="1487668701038" duration="4578000" />
       <workItem from="1487707856508" duration="567000" />
-      <workItem from="1487710227163" duration="75000" />
+      <workItem from="1487710227163" duration="331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15416000" />
+    <option name="totallyTimeSpent" value="15672000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -815,6 +655,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="16" column="80" lean-forward="false" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,7 +859,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding />
         </state>
       </provider>
