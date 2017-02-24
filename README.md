@@ -5,12 +5,12 @@ Projet de gestion de compte rendu pour l'entreprise GSB
 
 Structure du projet :
 - app
-  -ressources     ==> Resource général et surcharge de bundle
-  -config         ==> fichiers de configurations
+  - ressources     ==> Resource général et surcharge de bundle
+  - config         ==> fichiers de configurations
 - bin              ==> console et check config server
 - src              ==> Dossier contenant les différents bundles
-  -MainBundle     ==> Bundle dédié aux traitements des actions utilisateurs
-  -OCUserBundle   ==> Bundle dédié aux traitements des action d'administration
+  - MainBundle     ==> Bundle dédié aux traitements des actions utilisateurs
+  - OCUserBundle   ==> Bundle dédié aux traitements des action d'administration
 - tests            ==> Dossier contenant les différents tests unitaire et fonctionnel
 - var              ==> Dossier contenant les fichiers temporaires
 - vendor           ==> Dossier contenant toute les source externe (bundles et ressource symfony)
