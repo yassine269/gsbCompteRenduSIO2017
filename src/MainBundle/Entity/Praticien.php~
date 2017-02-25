@@ -63,9 +63,6 @@ class Praticien
      */
     private $praTYPE;
 
-
-
-
     /**
      * Get id
      *

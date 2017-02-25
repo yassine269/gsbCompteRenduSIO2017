@@ -56,13 +56,13 @@ class Medicament
     private $medPRIXECHANT;
     /**
      * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Medicament")
-     * @ORM\JoinColumn(name="medPreturbe", referencedColumnName="id")
+     * @ORM\joinTable(name="medPreturbe")
      */
     private $medPerturbe;
 
     /**
      * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Medicament")
-     * @ORM\JoinColumn(name="medPreturbateur", referencedColumnName="id")
+     * @ORM\joinTable(name="medPreturbateur")
      */
     private $medPerturbateur;
     /**
@@ -299,5 +299,73 @@ class Medicament
     public function getMedPRESENTATION()
     {
         return $this->medPRESENTATION;
+    }
+
+    /**
+     * Add medPerturbe
+     *
+     * @param \MainBundle\Entity\Medicament $medPerturbe
+     *
+     * @return Medicament
+     */
+    public function addMedPerturbe(\MainBundle\Entity\Medicament $medPerturbe)
+    {
+        $this->medPerturbe[] = $medPerturbe;
+
+        return $this;
+    }
+
+    /**
+     * Remove medPerturbe
+     *
+     * @param \MainBundle\Entity\Medicament $medPerturbe
+     */
+    public function removeMedPerturbe(\MainBundle\Entity\Medicament $medPerturbe)
+    {
+        $this->medPerturbe->removeElement($medPerturbe);
+    }
+
+    /**
+     * Get medPerturbe
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMedPerturbe()
+    {
+        return $this->medPerturbe;
+    }
+
+    /**
+     * Add medPerturbateur
+     *
+     * @param \MainBundle\Entity\Medicament $medPerturbateur
+     *
+     * @return Medicament
+     */
+    public function addMedPerturbateur(\MainBundle\Entity\Medicament $medPerturbateur)
+    {
+        $this->medPerturbateur[] = $medPerturbateur;
+
+        return $this;
+    }
+
+    /**
+     * Remove medPerturbateur
+     *
+     * @param \MainBundle\Entity\Medicament $medPerturbateur
+     */
+    public function removeMedPerturbateur(\MainBundle\Entity\Medicament $medPerturbateur)
+    {
+        $this->medPerturbateur->removeElement($medPerturbateur);
+    }
+
+    /**
+     * Get medPerturbateur
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMedPerturbateur()
+    {
+        return $this->medPerturbateur;
     }
 }

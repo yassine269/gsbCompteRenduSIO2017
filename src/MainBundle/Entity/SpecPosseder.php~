@@ -35,6 +35,17 @@ class SpecPosseder
      */
     private $specPosCoefprescription;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Specialite")
+     */
+    private $specSPECIALITE;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Praticien")
+     */
+    private $specPRATICIEN;
+
+
 
 
     /**
@@ -93,5 +104,53 @@ class SpecPosseder
     public function getSpecPosCoefprescription()
     {
         return $this->specPosCoefprescription;
+    }
+
+    /**
+     * Set specSPECIALITE
+     *
+     * @param \MainBundle\Entity\Specialite $specSPECIALITE
+     *
+     * @return SpecPosseder
+     */
+    public function setSpecSPECIALITE(\MainBundle\Entity\Specialite $specSPECIALITE = null)
+    {
+        $this->specSPECIALITE = $specSPECIALITE;
+
+        return $this;
+    }
+
+    /**
+     * Get specSPECIALITE
+     *
+     * @return \MainBundle\Entity\Specialite
+     */
+    public function getSpecSPECIALITE()
+    {
+        return $this->specSPECIALITE;
+    }
+
+    /**
+     * Set specPRATICIEN
+     *
+     * @param \MainBundle\Entity\Praticien $specPRATICIEN
+     *
+     * @return SpecPosseder
+     */
+    public function setSpecPRATICIEN(\MainBundle\Entity\Praticien $specPRATICIEN = null)
+    {
+        $this->specPRATICIEN = $specPRATICIEN;
+
+        return $this;
+    }
+
+    /**
+     * Get specPRATICIEN
+     *
+     * @return \MainBundle\Entity\Praticien
+     */
+    public function getSpecPRATICIEN()
+    {
+        return $this->specPRATICIEN;
     }
 }
