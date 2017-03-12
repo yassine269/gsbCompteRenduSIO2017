@@ -17,54 +17,44 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 
-class MedicamentAdmin extends AbstractAdmin
+class PraticienAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-
-        $formMapper->add('medDEPOTLEGAL', 'text');
-        $formMapper->add('medNOMCOMMERCIAL', 'text');
-        $formMapper->add('medCOMPOSITIONS', 'sonata_type_collection',
-            array(
-                'by_reference' => false,
-                'required' => false,
-            ), array(
-                'edit' => 'inline',
-                'inline' => 'table',
+        $formMapper->add('praPRENOM', 'text',array(
+            'label'=>'Prénom du praticien :'
         ));
-        $formMapper->add('medEFFETS', 'text');
-        $formMapper->add('medCONTREINDIC', 'text');
-        $formMapper->add('medPRIXECHANT', 'text');
-        $formMapper->add('medPerturbe', 'entity', array(
-            'class' => 'MainBundle\Entity\Medicament',
-            'multiple' => true,
+        $formMapper->add('praNOM', 'text',array(
+            'label'=>'Nom du praticien :'
+        ));
+        $formMapper->add('praADRESSE', 'text',array(
+            'label'=>'Adresse du praticien :'
+        ));
+        $formMapper->add('praCP', 'text',array(
+            'label'=>'Code postal du praticien :'
+        ));
+        $formMapper->add('praVILLE', 'text',array(
+            'label'=>'Ville du praticien :'
+        ));
+        $formMapper->add('praCOEFNOTORIETE', 'integer',array(
+            'label'=>'Coefiscient de notoriété du praticien :'
+        ));
+        $formMapper->add('praTYPE', 'sonata_type_model', array(
+            'class' => 'MainBundle\Entity\TypePraticien',
+            'property'=>'typeLIBELLE',
             'required' => false,
-
+            'label' => 'Type du praticien :'
         ));
-        $formMapper->add('medPerturbateur', 'entity', array(
-            'class' => 'MainBundle\Entity\Medicament',
-            'multiple' => true,
-            'required' => false,
-        ));
-        $formMapper->add('medPRESENTATION', 'entity', array(
-            'class' => 'MainBundle\Entity\Presentation',
-            'multiple' => true,
-            'required' => false,
-        ));
-        $formMapper->add('medFAMILLE', 'sonata_type_model', array(
-            'class' => 'MainBundle\Entity\Famille',
-            'property' => 'famLIBELLE',
-        ));
-
-
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('medDEPOTLEGAL');
+        $datagridMapper->add('praNOM');
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('medDEPOTLEGAL');
+        $listMapper->addIdentifier('praCODE');
+        $listMapper->add('praNOM');
+
     }
 
 

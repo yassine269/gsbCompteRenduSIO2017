@@ -33,57 +33,16 @@ class Motif
      *
      * @return integer
      */
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set famCODE
-     *
-     * @param string $famCODE
-     *
-     * @return Famille
-     */
-    public function setFamCODE($famCODE)
-    {
-        $this->famCODE = $famCODE;
-
-        return $this;
-    }
-
-    /**
-     * Get famCODE
-     *
-     * @return string
-     */
-    public function getFamCODE()
-    {
-        return $this->famCODE;
-    }
-
-    /**
-     * Set famLIBELLE
-     *
-     * @param string $famLIBELLE
-     *
-     * @return Famille
-     */
-    public function setFamLIBELLE($famLIBELLE)
-    {
-        $this->famLIBELLE = $famLIBELLE;
-
-        return $this;
-    }
-
-    /**
-     * Get famLIBELLE
-     *
-     * @return string
-     */
-    public function getFamLIBELLE()
-    {
-        return $this->famLIBELLE;
     }
 
     /**

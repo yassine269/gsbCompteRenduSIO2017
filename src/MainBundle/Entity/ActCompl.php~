@@ -18,11 +18,6 @@ class ActCompl
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @ORM\Column(type="string",length=40)
-     */
-    private $acNUM;
     /**
      * @ORM\Column(type="string",length=40)
      */
@@ -31,7 +26,6 @@ class ActCompl
      * @ORM\Column(type="date")
      */
     private $acDATE;
-
     /**
      * @ORM\Column(type="string", length=40)
      */
@@ -41,6 +35,11 @@ class ActCompl
      * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Praticien")
      */
     private $acPRATICIEN;
+
+    /**
+     * @ORM\OneToMany(targetEntity="MainBundle\Entity\ActRea", mappedBy="actreaACTCOMPL", cascade={"persist"})
+     */
+    private $acACTREAS;
 
     /**
      * Get id
@@ -105,6 +104,8 @@ class ActCompl
     public function __construct()
     {
         $this->acPRATICIEN = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->acACTREAS = new \Doctrine\Common\Collections\ArrayCollection();
+
     }
 
     /**
@@ -158,11 +159,11 @@ class ActCompl
     /**
      * Set acDATE
      *
-     * @param \Date $acDATE
+     * @param $acDATE
      *
      * @return ActCompl
      */
-    public function setAcDATE(\Date $acDATE)
+    public function setAcDATE($acDATE)
     {
         $this->acDATE = $acDATE;
 
@@ -171,8 +172,7 @@ class ActCompl
 
     /**
      * Get acDATE
-     *
-     * @return \Date
+
      */
     public function getAcDATE()
     {
@@ -235,5 +235,39 @@ class ActCompl
     public function getAcPRATICIEN()
     {
         return $this->acPRATICIEN;
+    }
+
+    /**
+     * Add acACTREA
+     *
+     * @param \MainBundle\Entity\ActRea $acACTREA
+     *
+     * @return ActCompl
+     */
+    public function addAcACTREA(\MainBundle\Entity\ActRea $acACTREA)
+    {
+        $this->acACTREAS[] = $acACTREA;
+
+        return $this;
+    }
+
+    /**
+     * Remove acACTREA
+     *
+     * @param \MainBundle\Entity\ActRea $acACTREA
+     */
+    public function removeAcACTREA(\MainBundle\Entity\ActRea $acACTREA)
+    {
+        $this->acACTREAS->removeElement($acACTREA);
+    }
+
+    /**
+     * Get acACTREAS
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAcACTREAS()
+    {
+        return $this->acACTREAS;
     }
 }

@@ -14,23 +14,23 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
 
-class TypePraticienAdmin extends AbstractAdmin
+class TypeIndividuAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('typeCODE', 'text');
-        $formMapper->add('typeLIBELLE', 'text');
-        $formMapper->add('typeLIEU', 'text');
+        $formMapper->add('typeIndLIBELLE', 'text',array(
+            'label'=>'Libéllé du type d\'individu :'
+        ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('typeLIBELLE');
+        $datagridMapper->add('typeIndLIBELLE');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('typeLIBELLE');
+        $listMapper->addIdentifier('typeIndLIBELLE');
     }
 
 

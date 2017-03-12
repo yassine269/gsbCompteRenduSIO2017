@@ -18,8 +18,12 @@ class ComposantAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('compCODE', 'text');
-        $formMapper->add('compLIBELLE', 'text');
+        $formMapper->add('compCODE', 'text',array(
+            'label'=>'Code de la composant :'
+        ));
+        $formMapper->add('compLIBELLE', 'text',array(
+            'label'=>'Libellé du composant :'
+        ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

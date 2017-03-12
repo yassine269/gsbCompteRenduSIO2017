@@ -20,6 +20,10 @@ class RapportVisite
     private $id;
 
     /**
+     * @ORM\OneToMany(targetEntity="MainBundle\Entity\RapportEchant", mappedBy="rapEchantRAPPORT", cascade={ "persist", "remove"}, orphanRemoval=true)
+     */
+    private $rapECHANTILLONS;
+    /**
      * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\User")
      */
     private $rapVISITEUR;
@@ -37,13 +41,6 @@ class RapportVisite
      * @ORM\Column(type="date")
      */
     private $rapDATE;
-
-    /**
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-
-     */
-    private $rapNUM;
     /**
      * @ORM\Column(type="date", nullable=true)
      */
@@ -60,6 +57,7 @@ class RapportVisite
     private $rapCOEFIMPACT;
 
 
+
     /**
      * Get id
      *
@@ -71,198 +69,13 @@ class RapportVisite
     }
 
     /**
-     * Set compCODE
-     *
-     * @param string $compCODE
-     *
-     * @return Composant
-     */
-    public function setCompCODE($compCODE)
-    {
-        $this->compCODE = $compCODE;
-
-        return $this;
-    }
-
-    /**
-     * Get compCODE
-     *
-     * @return string
-     */
-    public function getCompCODE()
-    {
-        return $this->compCODE;
-    }
-
-    /**
-     * Set compLIBELLE
-     *
-     * @param string $compLIBELLE
-     *
-     * @return Composant
-     */
-    public function setCompLIBELLE($compLIBELLE)
-    {
-        $this->compLIBELLE = $compLIBELLE;
-
-        return $this;
-    }
-
-    /**
-     * Get compLIBELLE
-     *
-     * @return string
-     */
-    public function getCompLIBELLE()
-    {
-        return $this->compLIBELLE;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->acPRATICIEN = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Set acNUM
-     *
-     * @param string $acNUM
-     *
-     * @return ActCompl
-     */
-    public function setAcNUM($acNUM)
-    {
-        $this->acNUM = $acNUM;
-
-        return $this;
-    }
-
-    /**
-     * Get acNUM
-     *
-     * @return string
-     */
-    public function getAcNUM()
-    {
-        return $this->acNUM;
-    }
-
-    /**
-     * Set acLIEU
-     *
-     * @param string $acLIEU
-     *
-     * @return ActCompl
-     */
-    public function setAcLIEU($acLIEU)
-    {
-        $this->acLIEU = $acLIEU;
-
-        return $this;
-    }
-
-    /**
-     * Get acLIEU
-     *
-     * @return string
-     */
-    public function getAcLIEU()
-    {
-        return $this->acLIEU;
-    }
-
-    /**
-     * Set acDATE
-     *
-     * @param \Date $acDATE
-     *
-     * @return ActCompl
-     */
-    public function setAcDATE(\Date $acDATE)
-    {
-        $this->acDATE = $acDATE;
-
-        return $this;
-    }
-
-    /**
-     * Get acDATE
-     *
-     * @return \Date
-     */
-    public function getAcDATE()
-    {
-        return $this->acDATE;
-    }
-
-    /**
-     * Set acTHEME
-     *
-     * @param string $acTHEME
-     *
-     * @return ActCompl
-     */
-    public function setAcTHEME($acTHEME)
-    {
-        $this->acTHEME = $acTHEME;
-
-        return $this;
-    }
-
-    /**
-     * Get acTHEME
-     *
-     * @return string
-     */
-    public function getAcTHEME()
-    {
-        return $this->acTHEME;
-    }
-
-    /**
-     * Add acPRATICIEN
-     *
-     * @param \MainBundle\Entity\Praticien $acPRATICIEN
-     *
-     * @return ActCompl
-     */
-    public function addAcPRATICIEN(\MainBundle\Entity\Praticien $acPRATICIEN)
-    {
-        $this->acPRATICIEN[] = $acPRATICIEN;
-
-        return $this;
-    }
-
-    /**
-     * Remove acPRATICIEN
-     *
-     * @param \MainBundle\Entity\Praticien $acPRATICIEN
-     */
-    public function removeAcPRATICIEN(\MainBundle\Entity\Praticien $acPRATICIEN)
-    {
-        $this->acPRATICIEN->removeElement($acPRATICIEN);
-    }
-
-    /**
-     * Get acPRATICIEN
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getAcPRATICIEN()
-    {
-        return $this->acPRATICIEN;
-    }
-
-    /**
      * Set rapDATE
      *
-     * @param \Date $rapDATE
+     * @param \DateTime $rapDATE
      *
      * @return RapportVisite
      */
-    public function setRapDATE(\Date $rapDATE)
+    public function setRapDATE($rapDATE)
     {
         $this->rapDATE = $rapDATE;
 
@@ -272,7 +85,7 @@ class RapportVisite
     /**
      * Get rapDATE
      *
-     * @return \Date
+     * @return \DateTime
      */
     public function getRapDATE()
     {
@@ -280,37 +93,13 @@ class RapportVisite
     }
 
     /**
-     * Set rapNUM
-     *
-     * @param integer $rapNUM
-     *
-     * @return RapportVisite
-     */
-    public function setRapNUM($rapNUM)
-    {
-        $this->rapNUM = $rapNUM;
-
-        return $this;
-    }
-
-    /**
-     * Get rapNUM
-     *
-     * @return integer
-     */
-    public function getRapNUM()
-    {
-        return $this->rapNUM;
-    }
-
-    /**
      * Set rapSAISIEDATE
      *
-     * @param \Date $rapSAISIEDATE
+     * @param \DateTime $rapSAISIEDATE
      *
      * @return RapportVisite
      */
-    public function setRapSAISIEDATE(\Date $rapSAISIEDATE)
+    public function setRapSAISIEDATE($rapSAISIEDATE)
     {
         $this->rapSAISIEDATE = $rapSAISIEDATE;
 
@@ -320,7 +109,7 @@ class RapportVisite
     /**
      * Get rapSAISIEDATE
      *
-     * @return \Date
+     * @return \DateTime
      */
     public function getRapSAISIEDATE()
     {
@@ -445,5 +234,46 @@ class RapportVisite
     public function getRapMOTIF()
     {
         return $this->rapMOTIF;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->rapECHANTILLONS = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add rapECHANTILLON
+     *
+     * @param \MainBundle\Entity\RapportEchant $rapECHANTILLON
+     *
+     * @return RapportVisite
+     */
+    public function addRapECHANTILLON(\MainBundle\Entity\RapportEchant $rapECHANTILLON)
+    {
+        $this->rapECHANTILLONS[] = $rapECHANTILLON;
+
+        return $this;
+    }
+
+    /**
+     * Remove rapECHANTILLON
+     *
+     * @param \MainBundle\Entity\RapportEchant $rapECHANTILLON
+     */
+    public function removeRapECHANTILLON(\MainBundle\Entity\RapportEchant $rapECHANTILLON)
+    {
+        $this->rapECHANTILLONS->removeElement($rapECHANTILLON);
+    }
+
+    /**
+     * Get rapECHANTILLONS
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRapECHANTILLONS()
+    {
+        return $this->rapECHANTILLONS;
     }
 }

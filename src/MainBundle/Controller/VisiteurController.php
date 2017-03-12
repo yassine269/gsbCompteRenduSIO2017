@@ -10,7 +10,7 @@ class VisiteurController extends Controller
 
         $currentUser=$this->getUser();
         return $this->render('MainBundle:Visiteur:index.html.twig',array(
-          'currentUser' => $currentUser
+            'currentUser' => $currentUser
         ));
     }
 }

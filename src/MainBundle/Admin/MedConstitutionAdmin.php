@@ -14,22 +14,29 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
 
-class ComposantAdmin extends AbstractAdmin
+class MedConstitutionAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('compCODE', 'text');
-        $formMapper->add('compLIBELLE', 'text');
+        $formMapper->add('constCOMPOSANT', 'sonata_type_model', array(
+            'class' => 'MainBundle\Entity\Composant',
+            'property' => 'compLIBELLE',
+            'label' => 'Composant constituant :'
+        ));
+        $formMapper->add('constQUANTITE', 'integer',array(
+            'label'=>'Quantité :'
+        ));
+
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('compLIBELLE');
+        $datagridMapper->add('constMEDICAMENT');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('compLIBELLE');
+        $listMapper->addIdentifier('constMEDICAMENT');
     }
 
 

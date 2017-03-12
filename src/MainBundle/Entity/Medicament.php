@@ -30,15 +30,19 @@ class Medicament
      */
     private $medDEPOTLEGAL;
 
+    public function __toString() {
+        return $this->medDEPOTLEGAL;
+    }
+
     /**
      * @ORM\Column(type="string", length=40)
      */
     private $medNOMCOMMERCIAL;
 
     /**
-     * @ORM\Column(type="string", length=40)
+     * @ORM\OneToMany(targetEntity="MainBundle\Entity\MedConstitution", mappedBy="constMEDICAMENT", cascade={ "persist", "remove"}, orphanRemoval=true)
      */
-    private $medCOMPOSITION;
+    private $medCOMPOSITIONS;
 
     /**
      * @ORM\Column(type="string", length=40)
@@ -55,28 +59,42 @@ class Medicament
      */
     private $medPRIXECHANT;
     /**
-     * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Medicament")
+     * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Medicament",cascade={"persist"})
      * @ORM\joinTable(name="medPreturbe")
      */
     private $medPerturbe;
 
     /**
-     * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Medicament")
+     * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Medicament",cascade={"persist"})
      * @ORM\joinTable(name="medPreturbateur")
      */
     private $medPerturbateur;
     /**
-     * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Presentation")
+     * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Presentation",cascade={"persist"})
      */
     private $medPRESENTATION;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Famille")
+     */
+    private $medFAMILLE;
+
+    /**
+     * @ORM\OneToMany(targetEntity="MainBundle\Entity\Prescrire", mappedBy="presMED", cascade={ "persist", "remove"}, orphanRemoval=true)
+     */
+    private $medPRESCRIPTIONS;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->medINTERRACTION = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->medCOMPOSITIONS = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->medPerturbe = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->medPerturbateur = new \Doctrine\Common\Collections\ArrayCollection();
         $this->medPRESENTATION = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->medPRESCRIPTIONS = new \Doctrine\Common\Collections\ArrayCollection();
+
     }
 
     /**
@@ -135,30 +153,6 @@ class Medicament
     public function getMedNOMCOMMERCIAL()
     {
         return $this->medNOMCOMMERCIAL;
-    }
-
-    /**
-     * Set medCOMPOSITION
-     *
-     * @param string $medCOMPOSITION
-     *
-     * @return Medicament
-     */
-    public function setMedCOMPOSITION($medCOMPOSITION)
-    {
-        $this->medCOMPOSITION = $medCOMPOSITION;
-
-        return $this;
-    }
-
-    /**
-     * Get medCOMPOSITION
-     *
-     * @return string
-     */
-    public function getMedCOMPOSITION()
-    {
-        return $this->medCOMPOSITION;
     }
 
     /**
@@ -234,71 +228,37 @@ class Medicament
     }
 
     /**
-     * Add medINTERRACTION
+     * Add medCOMPOSITION
      *
-     * @param \MainBundle\Entity\Medicament $medINTERRACTION
+     * @param \MainBundle\Entity\MedConstitution $medCOMPOSITION
      *
      * @return Medicament
      */
-    public function addMedINTERRACTION(\MainBundle\Entity\Medicament $medINTERRACTION)
+    public function addMedCOMPOSITION(\MainBundle\Entity\MedConstitution $medCOMPOSITION)
     {
-        $this->medINTERRACTION[] = $medINTERRACTION;
+        $this->medCOMPOSITIONS[] = $medCOMPOSITION;
 
         return $this;
     }
 
     /**
-     * Remove medINTERRACTION
+     * Remove medCOMPOSITION
      *
-     * @param \MainBundle\Entity\Medicament $medINTERRACTION
+     * @param \MainBundle\Entity\MedConstitution $medCOMPOSITION
      */
-    public function removeMedINTERRACTION(\MainBundle\Entity\Medicament $medINTERRACTION)
+    public function removeMedCOMPOSITION(\MainBundle\Entity\MedConstitution $medCOMPOSITION)
     {
-        $this->medINTERRACTION->removeElement($medINTERRACTION);
+        $this->medCOMPOSITIONS->removeElement($medCOMPOSITION);
     }
 
     /**
-     * Get medINTERRACTION
+     * Get medCOMPOSITIONS
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getMedINTERRACTION()
+    public function getMedCOMPOSITIONS()
     {
-        return $this->medINTERRACTION;
-    }
-
-    /**
-     * Add medPRESENTATION
-     *
-     * @param \MainBundle\Entity\Presentation $medPRESENTATION
-     *
-     * @return Medicament
-     */
-    public function addMedPRESENTATION(\MainBundle\Entity\Presentation $medPRESENTATION)
-    {
-        $this->medPRESENTATION[] = $medPRESENTATION;
-
-        return $this;
-    }
-
-    /**
-     * Remove medPRESENTATION
-     *
-     * @param \MainBundle\Entity\Presentation $medPRESENTATION
-     */
-    public function removeMedPRESENTATION(\MainBundle\Entity\Presentation $medPRESENTATION)
-    {
-        $this->medPRESENTATION->removeElement($medPRESENTATION);
-    }
-
-    /**
-     * Get medPRESENTATION
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getMedPRESENTATION()
-    {
-        return $this->medPRESENTATION;
+        return $this->medCOMPOSITIONS;
     }
 
     /**
@@ -367,5 +327,97 @@ class Medicament
     public function getMedPerturbateur()
     {
         return $this->medPerturbateur;
+    }
+
+    /**
+     * Add medPRESENTATION
+     *
+     * @param \MainBundle\Entity\Presentation $medPRESENTATION
+     *
+     * @return Medicament
+     */
+    public function addMedPRESENTATION(\MainBundle\Entity\Presentation $medPRESENTATION)
+    {
+        $this->medPRESENTATION[] = $medPRESENTATION;
+
+        return $this;
+    }
+
+    /**
+     * Remove medPRESENTATION
+     *
+     * @param \MainBundle\Entity\Presentation $medPRESENTATION
+     */
+    public function removeMedPRESENTATION(\MainBundle\Entity\Presentation $medPRESENTATION)
+    {
+        $this->medPRESENTATION->removeElement($medPRESENTATION);
+    }
+
+    /**
+     * Get medPRESENTATION
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMedPRESENTATION()
+    {
+        return $this->medPRESENTATION;
+    }
+
+    /**
+     * Set medFAMILLE
+     *
+     * @param \MainBundle\Entity\Famille $medFAMILLE
+     *
+     * @return Medicament
+     */
+    public function setMedFAMILLE(\MainBundle\Entity\Famille $medFAMILLE = null)
+    {
+        $this->medFAMILLE = $medFAMILLE;
+
+        return $this;
+    }
+
+    /**
+     * Get medFAMILLE
+     *
+     * @return \MainBundle\Entity\Famille
+     */
+    public function getMedFAMILLE()
+    {
+        return $this->medFAMILLE;
+    }
+
+    /**
+     * Add medPRESCRIPTION
+     *
+     * @param \MainBundle\Entity\Prescrire $medPRESCRIPTION
+     *
+     * @return Medicament
+     */
+    public function addMedPRESCRIPTION(\MainBundle\Entity\Prescrire $medPRESCRIPTION)
+    {
+        $this->medPRESCRIPTIONS[] = $medPRESCRIPTION;
+
+        return $this;
+    }
+
+    /**
+     * Remove medPRESCRIPTION
+     *
+     * @param \MainBundle\Entity\Prescrire $medPRESCRIPTION
+     */
+    public function removeMedPRESCRIPTION(\MainBundle\Entity\Prescrire $medPRESCRIPTION)
+    {
+        $this->medPRESCRIPTIONS->removeElement($medPRESCRIPTION);
+    }
+
+    /**
+     * Get medPRESCRIPTIONS
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMedPRESCRIPTIONS()
+    {
+        return $this->medPRESCRIPTIONS;
     }
 }

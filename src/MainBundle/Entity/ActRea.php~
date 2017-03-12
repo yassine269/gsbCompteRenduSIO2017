@@ -25,12 +25,12 @@ class ActRea
     private $actreaVISITEUR;
 
     /**
-     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\ActCompl")
+     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\ActCompl", inversedBy="acACTREAS")
      */
     private $actreaACTCOMPL;
 
     /**
-     * @ORM\Column(type="string",length=40)
+     * @ORM\Column(type="decimal", scale=3)
      */
     private $actreaBUDGET;
 
@@ -124,29 +124,6 @@ class ActRea
         return $this->acLIEU;
     }
 
-    /**
-     * Set acDATE
-     *
-     * @param \Date $acDATE
-     *
-     * @return ActRea
-     */
-    public function setAcDATE(\Date $acDATE)
-    {
-        $this->acDATE = $acDATE;
-
-        return $this;
-    }
-
-    /**
-     * Get acDATE
-     *
-     * @return \Date
-     */
-    public function getAcDATE()
-    {
-        return $this->acDATE;
-    }
 
     /**
      * Set acTHEME

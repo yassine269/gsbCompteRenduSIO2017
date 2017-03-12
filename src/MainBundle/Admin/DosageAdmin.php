@@ -18,9 +18,12 @@ class DosageAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('dosCODE', 'text');
-        $formMapper->add('dosQUANTITE', 'text');
-        $formMapper->add('dosUNITE', 'text');
+        $formMapper->add('dosQUANTITE', 'text',array(
+            'label'=>'Quantité :'
+        ));
+        $formMapper->add('dosUNITE', 'text',array(
+            'label'=>'Unité de mesure :'
+        ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

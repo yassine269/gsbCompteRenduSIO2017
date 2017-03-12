@@ -25,7 +25,7 @@ class Prescrire
      */
     private $id;
     /**
-     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Medicament")
+     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Medicament", inversedBy="medPRESCRIPTIONS", cascade={"persist"})
      */
     private $presMED;
     /**
@@ -36,6 +36,10 @@ class Prescrire
      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\TypeIndividu")
      */
     private $presTYPEINDIV;
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $presPOSOLOGIE;
 
 
 
@@ -119,5 +123,29 @@ class Prescrire
     public function getPresTYPEINDIV()
     {
         return $this->presTYPEINDIV;
+    }
+
+    /**
+     * Set presPOSOLOGIE
+     *
+     * @param string $presPOSOLOGIE
+     *
+     * @return Prescrire
+     */
+    public function setPresPOSOLOGIE($presPOSOLOGIE)
+    {
+        $this->presPOSOLOGIE = $presPOSOLOGIE;
+
+        return $this;
+    }
+
+    /**
+     * Get presPOSOLOGIE
+     *
+     * @return string
+     */
+    public function getPresPOSOLOGIE()
+    {
+        return $this->presPOSOLOGIE;
     }
 }

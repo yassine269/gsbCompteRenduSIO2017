@@ -7,3 +7,12 @@ main_homepage_delegue:
 main_homepage_responsable:
     path:     /responsable
     defaults: { _controller: MainBundle:Responsable:index }
+main_statistique_visiteur:
+    path:     /visiteur/statistiques
+    defaults: { _controller: MainBundle:Visiteur:index }
+main_statistique_delegue:
+    path:     /delegue/statistiques
+    defaults: { _controller: MainBundle:Delegue:index }
+main_statistique_responsable:
+    path:     /responsable/statistiques
+    defaults: { _controller: MainBundle:Responsable:index }

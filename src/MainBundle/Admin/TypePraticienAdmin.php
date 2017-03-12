@@ -18,9 +18,15 @@ class TypePraticienAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('typeCODE', 'text');
-        $formMapper->add('typeLIBELLE', 'text');
-        $formMapper->add('typeLIEU', 'text');
+        $formMapper->add('typeCODE', 'text',array(
+            'label'=>'Code du type de praticien :'
+        ));
+        $formMapper->add('typeLIBELLE', 'text',array(
+            'label'=>'Libéllé du type de praticien :'
+        ));
+        $formMapper->add('typeLIEU', 'text',array(
+            'label'=>'Lieu d\'exercice du praticien :'
+        ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

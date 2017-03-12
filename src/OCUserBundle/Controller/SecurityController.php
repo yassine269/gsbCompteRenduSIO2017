@@ -30,6 +30,7 @@ class SecurityController extends Controller
         /** @var $session \Symfony\Component\HttpFoundation\Session\Session */
         $session = $request->getSession();
         $authChecker = $this ->get('security.authorization_checker');
+
         if($authChecker->isGranted('ROLE_VISITEUR')){
             return $this->redirectToRoute('main_homepage_visiteur');
         }

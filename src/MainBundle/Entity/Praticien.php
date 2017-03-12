@@ -27,17 +27,16 @@ class Praticien
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $praNUM;
-
-    /**
-     * @ORM\Column(type="string", length=40)
-     */
-    private $praCODE;
+    private $praCODE = 'marchePas';
 
     /**
      * @ORM\Column(type="string", length=40)
      */
     private $praNOM;
+    /**
+     * @ORM\Column(type="string", length=40)
+     */
+    private $praPRENOM;
 
     /**
      * @ORM\Column(type="string", length=40)
@@ -62,6 +61,11 @@ class Praticien
      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\TypePraticien")
      */
     private $praTYPE;
+
+    public function __toString()
+    {
+        return $this->praCODE;
+    }
 
     /**
      * Get id
@@ -263,5 +267,29 @@ class Praticien
     public function getPraTYPE()
     {
         return $this->praTYPE;
+    }
+
+    /**
+     * Set praPRENOM
+     *
+     * @param string $praPRENOM
+     *
+     * @return Praticien
+     */
+    public function setPraPRENOM($praPRENOM)
+    {
+        $this->praPRENOM = $praPRENOM;
+
+        return $this;
+    }
+
+    /**
+     * Get praPRENOM
+     *
+     * @return string
+     */
+    public function getPraPRENOM()
+    {
+        return $this->praPRENOM;
     }
 }

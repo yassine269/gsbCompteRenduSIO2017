@@ -18,8 +18,12 @@ class FamilleAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('famCODE', 'text');
-        $formMapper->add('famLIBELLE', 'text');
+        $formMapper->add('famCODE', 'text',array(
+            'label'=>'Code de la famille de médicament :'
+        ));
+        $formMapper->add('famLIBELLE', 'text',array(
+            'label'=>'Libellé de la famille de médicament'
+        ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

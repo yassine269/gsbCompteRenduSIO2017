@@ -8,8 +8,17 @@
 
 namespace MainBundle\EventListener;
 
+use Sonata\AdminBundle\Event\ConfigureMenuEvent;
 
 class MenuBuilderListener
 {
+    public function addMenuItems(ConfigureMenuEvent $event)
+    {
+        $menu = $event->getMenu();
 
+        $child = $menu->addChild('reports', [
+            'label' => 'Daily and monthly reports',
+            'route' => 'main_homepage_visiteur',
+        ]);
+    }
 }

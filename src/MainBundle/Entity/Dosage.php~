@@ -18,7 +18,7 @@ class Dosage
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=40)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $dosCODE;
 
@@ -31,6 +31,8 @@ class Dosage
      * @ORM\Column(type="string",length=40)
      */
     private $dosUNITE;
+
+
 
     /**
      * Get id
@@ -112,5 +114,46 @@ class Dosage
     public function getDosUNITE()
     {
         return $this->dosUNITE;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->dosPRESCRIPTIONS = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add dosPRESCRIPTION
+     *
+     * @param \MainBundle\Entity\Prescrire $dosPRESCRIPTION
+     *
+     * @return Dosage
+     */
+    public function addDosPRESCRIPTION(\MainBundle\Entity\Prescrire $dosPRESCRIPTION)
+    {
+        $this->dosPRESCRIPTIONS[] = $dosPRESCRIPTION;
+
+        return $this;
+    }
+
+    /**
+     * Remove dosPRESCRIPTION
+     *
+     * @param \MainBundle\Entity\Prescrire $dosPRESCRIPTION
+     */
+    public function removeDosPRESCRIPTION(\MainBundle\Entity\Prescrire $dosPRESCRIPTION)
+    {
+        $this->dosPRESCRIPTIONS->removeElement($dosPRESCRIPTION);
+    }
+
+    /**
+     * Get dosPRESCRIPTIONS
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDosPRESCRIPTIONS()
+    {
+        return $this->dosPRESCRIPTIONS;
     }
 }

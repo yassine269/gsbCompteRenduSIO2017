@@ -21,15 +21,15 @@ class TypeIndividu
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    /**
-     * @ORM\Column(type="string", length=40)
-     */
-    private $typeIndCODE;
 
     /**
      * @ORM\Column(type="string", length=40)
      */
     private $typeIndLIBELLE;
+
+
+
+
 
     /**
      * Get id
@@ -39,30 +39,6 @@ class TypeIndividu
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set typeIndCODE
-     *
-     * @param string $typeIndCODE
-     *
-     * @return TypeIndividu
-     */
-    public function setTypeIndCODE($typeIndCODE)
-    {
-        $this->typeIndCODE = $typeIndCODE;
-
-        return $this;
-    }
-
-    /**
-     * Get typeIndCODE
-     *
-     * @return string
-     */
-    public function getTypeIndCODE()
-    {
-        return $this->typeIndCODE;
     }
 
     /**
@@ -87,5 +63,46 @@ class TypeIndividu
     public function getTypeIndLIBELLE()
     {
         return $this->typeIndLIBELLE;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->typeIndPRESCRIPTIONS = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add typeIndPRESCRIPTION
+     *
+     * @param \MainBundle\Entity\Prescrire $typeIndPRESCRIPTION
+     *
+     * @return TypeIndividu
+     */
+    public function addTypeIndPRESCRIPTION(\MainBundle\Entity\Prescrire $typeIndPRESCRIPTION)
+    {
+        $this->typeIndPRESCRIPTIONS[] = $typeIndPRESCRIPTION;
+
+        return $this;
+    }
+
+    /**
+     * Remove typeIndPRESCRIPTION
+     *
+     * @param \MainBundle\Entity\Prescrire $typeIndPRESCRIPTION
+     */
+    public function removeTypeIndPRESCRIPTION(\MainBundle\Entity\Prescrire $typeIndPRESCRIPTION)
+    {
+        $this->typeIndPRESCRIPTIONS->removeElement($typeIndPRESCRIPTION);
+    }
+
+    /**
+     * Get typeIndPRESCRIPTIONS
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTypeIndPRESCRIPTIONS()
+    {
+        return $this->typeIndPRESCRIPTIONS;
     }
 }

@@ -18,8 +18,12 @@ class PresentationAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('preCODE', 'text');
-        $formMapper->add('preLIBELLE', 'text');
+        $formMapper->add('preCODE', 'text',array(
+            'label'=>'Code de la présentation :'
+        ));
+        $formMapper->add('preLIBELLE', 'text',array(
+            'label'=>'Libellé de la présentation :'
+        ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

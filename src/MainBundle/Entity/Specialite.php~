@@ -35,6 +35,7 @@ class Specialite
     private $speLIBELLE;
 
 
+
     /**
      * Get id
      *

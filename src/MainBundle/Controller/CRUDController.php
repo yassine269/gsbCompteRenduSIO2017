@@ -6,7 +6,7 @@
  * Time: 10:24
  */
 
-namespace OCUserBundle\Controller;
+namespace MainBundle\Controller;
 
 use Sonata\AdminBundle\Controller\CRUDController as Controller;
 use Sonata\AdminBundle\Exception\ModelManagerException;

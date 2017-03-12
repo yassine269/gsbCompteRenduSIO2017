@@ -14,26 +14,29 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
 
-class MedConstitutionAdmin extends AbstractAdmin
+class ActReaAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('constCOMPOSANT', 'sonata_type_model', array(
-            'class' => 'MainBundle\Entity\Composant',
-            'property' => 'compLIBELLE',
+        $formMapper->add('actreaVISITEUR', 'sonata_type_model', array(
+            'class' => 'OCUserBundle\Entity\User',
+            'property' => 'usrMATRICULE',
+            'label'=>'Visiteur( (co)organisateur :'
         ));
-        $formMapper->add('constQUANTITE', 'integer');
+        $formMapper->add('actreaBUDGET', 'number',array(
+            'label'=>'Budget alloué a cette organisateur :'
+        ));
 
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('constMEDICAMENT');
+        $datagridMapper->add('actreaVISITEUR');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('constMEDICAMENT');
+        $listMapper->addIdentifier('actreaVISITEUR');
     }
 
 

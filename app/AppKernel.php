@@ -20,7 +20,8 @@ class AppKernel extends Kernel
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             // And finally, the storage and SonataAdminBundle
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-            new Sonata\AdminBundle\SonataAdminBundle('FOSUserBundle'),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new OCUserBundle\OCUserBundle(),
             new MainBundle\MainBundle(),
@@ -34,6 +35,10 @@ class AppKernel extends Kernel
         }
 
         return $bundles;
+    }
+    public function init()
+    {
+        bcscale(3); // or any other value greater than 0
     }
 
     public function getRootDir()

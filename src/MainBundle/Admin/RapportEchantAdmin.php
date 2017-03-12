@@ -14,26 +14,29 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
 
-class MedConstitutionAdmin extends AbstractAdmin
+class RapportEchantAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('constCOMPOSANT', 'sonata_type_model', array(
-            'class' => 'MainBundle\Entity\Composant',
-            'property' => 'compLIBELLE',
+        $formMapper->add('rapEchantMEDICAMENT', 'sonata_type_model', array(
+            'class' => 'MainBundle\Entity\Medicament',
+            'property' => 'medNOMCOMMERCIAL',
+            'label' => 'Médicament :'
         ));
-        $formMapper->add('constQUANTITE', 'integer');
+        $formMapper->add('rapEchantQUANTITE', 'integer',array(
+            'label'=>'Quantité d\'échantillons offerts :'
+        ));
 
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('constMEDICAMENT');
+        $datagridMapper->add('rapEchantMEDICAMENT');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('constMEDICAMENT');
+        $listMapper->addIdentifier('rapEchantMEDICAMENT');
     }
 
 

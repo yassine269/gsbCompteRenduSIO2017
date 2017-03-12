@@ -34,7 +34,6 @@ class Presentation
     private $preLIBELLE;
 
 
-
     /**
      * Get id
      *
@@ -57,6 +56,10 @@ class Presentation
         $this->preCODE = $preCODE;
 
         return $this;
+    }
+    public function __toString()
+    {
+        return $this->preLIBELLE;
     }
 
     /**

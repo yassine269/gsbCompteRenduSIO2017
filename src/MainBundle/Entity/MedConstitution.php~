@@ -23,11 +23,11 @@ class MedConstitution
      */
     private $id;
      /**
-      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Medicament")
+      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Medicament", inversedBy="medCOMPOSITIONS", cascade={"persist"})
       */
-    private $constMEDICAMENT;
+    private $constMEDICAMENT ;
     /**
-      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Composant")
+      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Composant",inversedBy="medCOMPOSITIONS",cascade={"persist"})
      */
     private $constCOMPOSANT;
 
@@ -35,6 +35,10 @@ class MedConstitution
      * @ORM\Column(type="integer")
      */
     private $constQUANTITE;
+
+    private $constCompLIBELLE;
+
+
 
     /**
      * Get id

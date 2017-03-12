@@ -92,3 +92,82 @@ sonata_block:
     blocks:
         sonata.admin.block.admin_list:
             contexts: [admin]
+sonata_admin:
+    templates:
+        layout:    MainBundle::standard_layout.html.twig
+    dashboard:
+        groups:
+            admin:
+                label:  Menu Admin
+                label_catalogue:  ~
+                items:
+                    - admin.famille
+                    - admin.dosage
+                    - admin.typepraticien
+                    - admin.composant
+                    - admin.presentation
+                    - admin.motif
+                    - admin.specialite
+                    - admin.typeindividu
+                    - admin.medconstitution
+                    - admin.medicament
+                    - admin.praticien
+                    - admin.prescrire
+                    - admin.actcompl
+                    - admin.actrea
+                    - admin.user
+                    - admin.fonction
+                    - admin.departement
+                    - admin.secteur
+                    - admin.region
+                    - admin.rapportvisite
+                    - admin.rapportechant
+                    - route:    fos_user_security_logout
+                      label:    Déconnexion
+                roles: [ ROLE_SUPER_ADMIN ]
+            visiteur:
+                label:                Menu Visiteur
+                label_catalogue:      ~
+                items:
+                    - route:    main_homepage_visiteur
+                      label:    Acceuil
+                    - admin.rapportvisite
+                    - admin.actcompl
+                    - route:    main_statistique_visiteur
+                      label:    Statistiques
+                    - route:    fos_user_security_logout
+                      label:    Déconnexion
+                roles: [ ROLE_VISITEUR ]
+
+
+            delegue:
+                label:                Menu Delegue
+                label_catalogue:      ~
+                items:
+                    - route:    main_homepage_delegue
+                      label:    Acceuil
+                    - route:    main_statistique_delegue
+                      label:    Statistiques
+                    - route:    fos_user_security_logout
+                      label:    Déconnexion
+                roles: [ ROLE_DELEGUE ]
+
+            responsable:
+                label:                Menu Responsable
+                label_catalogue:      ~
+                items:
+                    - route:        main_homepage_responsable
+                      label:        Acceuil
+                    - route:    main_statistique_responsable
+                      label:    Statistiques
+                    - route:    fos_user_security_logout
+                      label:    Déconnexion
+                roles: [ ROLE_RESPONSABLE ]
+
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+
+

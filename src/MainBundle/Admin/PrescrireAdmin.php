@@ -14,26 +14,35 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
 
-class MedConstitutionAdmin extends AbstractAdmin
+class PrescrireAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('constCOMPOSANT', 'sonata_type_model', array(
-            'class' => 'MainBundle\Entity\Composant',
-            'property' => 'compLIBELLE',
+
+        $formMapper->add('presDOSAGE', 'sonata_type_model', array(
+            'class' => 'MainBundle\Entity\Dosage',
+            'property' => 'dosCODE',
+            'label' => 'Dosage :'
         ));
-        $formMapper->add('constQUANTITE', 'integer');
+        $formMapper->add('presTYPEINDIV', 'sonata_type_model', array(
+            'class' => 'MainBundle\Entity\TypeIndividu',
+            'property' => 'typeIndLIBELLE',
+            'label' => 'Type d\'individu concerné :'
+        ));
+        $formMapper->add('presPOSOLOGIE', 'text',array(
+            'label'=>'Posologie associé :'
+        ));
 
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('constMEDICAMENT');
+        $datagridMapper->add('presMED');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('constMEDICAMENT');
+        $listMapper->addIdentifier('presMED');
     }
 
 

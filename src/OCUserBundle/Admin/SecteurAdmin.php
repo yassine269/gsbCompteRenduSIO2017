@@ -16,25 +16,20 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 
-class DepartementAdmin extends AbstractAdmin
+class SecteurAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('regCODE', 'text');
-        $formMapper->add('regLIBELLE', 'text');
-        $formMapper->add('regSECTEUR', 'sonata_type_model', array(
-            'class' => 'OCUserBundle\Entity\Secteur',
-            'property'=>'secLIBELLE',
-            'required' => false,
-        ));
+        $formMapper->add('secCODE', 'text');
+        $formMapper->add('secLIBELLE', 'text');
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('regLIBELLE');
+        $datagridMapper->add('secLIBELLE');
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('regLIBELLE');
+        $listMapper->addIdentifier('secLIBELLE');
 
     }
 

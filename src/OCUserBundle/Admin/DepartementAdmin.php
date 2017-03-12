@@ -16,20 +16,25 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 
-class FonctionAdmin extends AbstractAdmin
+class DepartementAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('LIBELLE', 'text');
-
+        $formMapper->add('depCODE', 'text');
+        $formMapper->add('depLIBELLE', 'text');
+        $formMapper->add('depREGION', 'sonata_type_model', array(
+            'class' => 'OCUserBundle\Entity\Region',
+            'property'=>'regLIBELLE',
+            'required' => false,
+        ));
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('LIBELLE');
+        $datagridMapper->add('depLIBELLE');
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('LIBELLE');
+        $listMapper->addIdentifier('depLIBELLE');
 
     }
 
