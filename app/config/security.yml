@@ -30,25 +30,26 @@ security:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/action/main/famille/, role: ROLE_ADMIN }
-        - { path: ^/action/main/dosage/, role: ROLE_ADMIN }
-        - { path: ^/action/main/typepraticien/, role: ROLE_ADMIN }
-        - { path: ^/action/main/composant/, role: ROLE_ADMIN }
-        - { path: ^/action/main/presentation/, role: ROLE_ADMIN }
-        - { path: ^/action/main/motif/, role: ROLE_ADMIN }
-        - { path: ^/action/main/specialite/, role: ROLE_ADMIN }
-        - { path: ^/action/main/medconstitution/, role: ROLE_ADMIN }
-        - { path: ^/action/main/medicament/, role: ROLE_ADMIN }
-        - { path: ^/action/main/praticien/, role: ROLE_ADMIN }
-        - { path: ^/action/main/prescrire/, role: ROLE_ADMIN }
-        - { path: ^/action/main/actcompl/, role: ROLE_VISITEUR }
-        - { path: ^/action/main/actrea/, role: ROLE_VISITEUR }
-        - { path: ^/action/ocuser/user/, role: ROLE_ADMIN }
-        - { path: ^/action/ocuser/fonction/, role: ROLE_ADMIN }
-        - { path: ^/action/ocuser/departement/, role: ROLE_ADMIN }
-        - { path: ^/action/ocuser/region/, role: ROLE_ADMIN }
-        - { path: ^/action/ocuser/secteur/, role: ROLE_ADMIN }
-        - { path: ^/action/main/rapportvisite/, role: [ROLE_VISITEUR, ROLE_DELEGUE] }
-        - { path: ^/action/main/rapportechant/, role: [ROLE_VISITEUR, ROLE_DELEGUE] }
-        - { path: ^/action/, role: [ROLE_RESPONSABLE, ROLE_DELEGUE, ROLE_VISITEUR, ROLE_ADMIN] }
+#        - { path: ^/admin/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/action/main/famille/, role: ROLE_ADMIN }
+#        - { path: ^/action/main/dosage/, role: ROLE_ADMIN }
+#        - { path: ^/action/main/typepraticien/, role: ROLE_ADMIN }
+#        - { path: ^/action/main/composant/, role: ROLE_ADMIN }
+#        - { path: ^/action/main/presentation/, role: ROLE_ADMIN }
+#        - { path: ^/action/main/motif/, role: ROLE_ADMIN }
+#        - { path: ^/action/main/specialite/, role: ROLE_ADMIN }
+#        - { path: ^/action/main/medconstitution/, role: ROLE_ADMIN }
+#        - { path: ^/action/main/medicament/, role: ROLE_ADMIN }
+#        - { path: ^/action/main/praticien/, role: ROLE_ADMIN }
+#        - { path: ^/action/main/prescrire/, role: ROLE_ADMIN }
+#        - { path: ^/action/main/actcompl/, role: ROLE_VISITEUR }
+#        - { path: ^/action/main/actrea/, role: ROLE_VISITEUR }
+#        - { path: ^/action/ocuser/user/, role: ROLE_ADMIN }
+#        - { path: ^/action/ocuser/fonction/, role: ROLE_ADMIN }
+#        - { path: ^/action/ocuser/departement/, role: ROLE_ADMIN }
+#        - { path: ^/action/ocuser/region/, role: ROLE_ADMIN }
+#        - { path: ^/action/ocuser/secteur/, role: ROLE_ADMIN }
+#        - { path: ^/action/main/rapportvisite/, role: [ROLE_VISITEUR, ROLE_DELEGUE] }
+#        - { path: ^/action/main/rapportechant/, role: [ROLE_VISITEUR, ROLE_DELEGUE] }
+#        - { path: ^/action/, role: [ROLE_RESPONSABLE, ROLE_DELEGUE, ROLE_VISITEUR, ROLE_ADMIN] }
+#
