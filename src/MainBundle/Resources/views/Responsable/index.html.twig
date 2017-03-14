@@ -1,8 +1,5 @@
-{% extends '::base.html.twig' %}
-{% block title %}GSB | Responsable{% endblock %}
-{% block body %}
-
-    {{ parent () }}
-{% endblock %}
+{% extends 'MainBundle::standard_layout.html.twig' %}
 {% block mainContainer %}
+    {{ render(controller(
+    'OCUserBundle:CRUD:list')) }}
 {% endblock %}
