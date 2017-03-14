@@ -174,7 +174,7 @@ class CRUDController extends Controller
                                 $object->addRole('ROLE_VISITEUR');
                             }
                             if ($role == 'Admin') {
-                                $object->addRole('ROLE_ADMIN');
+                                $object->addRole('ROLE_SUPER_ADMIN');
                             }
                             break;
                     }
