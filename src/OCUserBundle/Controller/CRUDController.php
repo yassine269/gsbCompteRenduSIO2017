@@ -173,6 +173,9 @@ class CRUDController extends Controller
                             if ($role == 'Visiteur') {
                                 $object->addRole('ROLE_VISITEUR');
                             }
+                            if ($role == 'Admin') {
+                                $object->addRole('ROLE_ADMIN');
+                            }
                             break;
                     }
                     $object = $this->admin->create($object);

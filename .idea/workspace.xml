@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a74d5e65-f92c-4269-b543-183bacf4ef5f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/parameters.yml.dist" afterPath="$PROJECT_DIR$/app/config/parameters.yml.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OCUserBundle/Controller/CRUDController.php" afterPath="$PROJECT_DIR$/src/OCUserBundle/Controller/CRUDController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OCUserBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/OCUserBundle/Resources/views/Default/index.html.twig" />
     </list>
     <list id="fae633ec-20a0-4531-8bc0-28ecfa3967a5" name="Rejected commit: Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,31 +25,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="standard_layout.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="31" column="43" lean-forward="false" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app_dev.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/app_dev.php">
+      <file leaf-file-name="CRUDController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Controller/CRUDController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="170" column="65" lean-forward="true" selection-start-line="170" selection-start-column="65" selection-end-line="170" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VisiteurController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/VisiteurController.php">
+      <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Controller/SecurityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="11" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="13" selection-end-column="11" />
+            <state relative-caret-position="247">
+              <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -62,38 +75,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/.htaccess">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/Delegue/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/Responsable/index.html.twig">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Resources/views/Default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
@@ -102,22 +85,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DelegueController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/DelegueController.php">
+      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="48" lean-forward="false" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResponsableController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/ResponsableController.php">
+      <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="57" lean-forward="false" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="autoload.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/autoload.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#7#58#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,22 +142,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s assets:install web/" />
-      <command text="s assetic:dump" />
-      <command text="s assets:install web/" />
-      <command text="s assetic:dump" />
-      <command text="s cache:clear" />
-      <command text="s cache:clear --env=prod " />
-      <command text="s assets:install web/" />
-      <command text="git status" />
-      <command text="git add -A" />
-      <command text="git commit -m &quot;Assetic enlever car non compatible avec la version de sonata Admin &quot;" />
-      <command text="git push origin master" />
-      <command text="git status" />
-      <command text="git add -A" />
-      <command text="git add status" />
-      <command text="git status" />
-      <command text="git commit -m &quot;mise en place dashboard (white page pour l'instant&quot;" />
       <command text="git status" />
       <command text="git push origin master" />
       <command text="git rmg --cached web/.htaccess" />
@@ -161,6 +150,22 @@
       <command text="git push origin master" />
       <command text="git status" />
       <command text="git commit -m &quot;maj index .htaccess enlever&quot;" />
+      <command text="git push origin master" />
+      <command text="git add -A" />
+      <command text="git status" />
+      <command text="git push origin master" />
+      <command text="s cache:clear" />
+      <command text="git status" />
+      <command text="git push origin master" />
+      <command text="git status" />
+      <command text="git push origin master" />
+      <command text="git commit -m &quot;fix du bug al'inscription d'un admin le role est correctement attribuer&quot;" />
+      <command text="git commit -m &quot;fix du bug inscription d'un admin le role est correctement attribuer&quot;" />
+      <command text="git commit -m fix du bug inscription d'un admin le role est correctement attribuer" />
+      <command text="git commit -m &quot;fix du bug inscription d'un admin le role est correctement attribuer&quot;" />
+      <command text="git commit -m &quot;fix bug role admin inscription&quot;" />
+      <command text="git push origin master" />
+      <command text="git commit -m &quot;fix bug role admin inscription update&quot;" />
       <command text="git push origin master" />
     </commandsHistory>
   </component>
@@ -173,9 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/ActComplAdmin/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/CRUD/base_edit.html.twig" />
-        <option value="$PROJECT_DIR$/vendor/sonata-project/admin-bundle/Resources/views/CRUD/base_edit.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/EventListener/MenuBuilderListener.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Entity/Presentation.php" />
         <option value="$PROJECT_DIR$/src/OCUserBundle/Admin/FonctionAdmin.php" />
@@ -187,7 +189,6 @@
         <option value="$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Entity/Medicament.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Entity/RappportEchant.php" />
-        <option value="$PROJECT_DIR$/src/OCUserBundle/Controller/CRUDController.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Entity/RapportEchant.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/MainBundle/Admin/ActReaAdmin.php" />
@@ -208,7 +209,6 @@
         <option value="$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/MainBundle/Controller/VisiteurController.php" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Visiteur/index.html.twig" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/MainBundle/Entity/RapportVisite.php" />
@@ -217,13 +217,18 @@
         <option value="$PROJECT_DIR$/web/app.php" />
         <option value="$PROJECT_DIR$/vendor/sonata-project/admin-bundle/Resources/views/standard_layout.html.twig" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Controller/DelegueController.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Delegue/index.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Responsable/index.html.twig" />
         <option value="$PROJECT_DIR$/web/.htaccess" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml.dist" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/src/OCUserBundle/Controller/CRUDController.php" />
+        <option value="$PROJECT_DIR$/src/OCUserBundle/Controller/SecurityController.php" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Visiteur/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/OCUserBundle/Resources/views/Default/index.html.twig" />
       </list>
     </option>
   </component>
@@ -239,6 +244,9 @@
     <option name="y" value="-8" />
     <option name="width" value="1604" />
     <option name="height" value="876" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -294,6 +302,76 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OCUserBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OCUserBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Default" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OCUserBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -392,14 +470,6 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Responsable" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -411,89 +481,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MainBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Delegue" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gsbCompteRendu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gsbCompteRendu" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MainBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gsbCompteRendu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gsbCompteRendu" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MainBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gsbCompteRendu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gsbCompteRendu" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MainBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -510,6 +498,10 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -518,7 +510,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
-    <property name="SearchEverywhereHistoryKey" value="standa&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/standard_layout.html.twig&#10;SonataAdminBundle.&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/translations/SonataAdminBundle.ar.xliff&#10;rapp&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportVisite.php&#10;rappo&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/RapportVisiteAdmin.php&#10;standard_layou&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/standard_layout.html.twig&#10;secu&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;serv&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/services.yml&#10;medC&#9;null&#9;null&#10;config.&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/config.yml&#10;servi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/services.yml&#10;CRUD&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Controller/CRUDController.php&#10;Med&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/Medicament.php&#10;motif&#9;null&#9;null&#10;registr&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Controller/RegistrationController.php&#10;regi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Form/RegistrationType.php&#10;regist&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Controller/RegistrationController.php&#10;usera&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;reg&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Controller/RegistrationController.php&#10;user&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;Registr&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Controller/RegistrationController.php&#10;config&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/config.yml&#10;sec&#9;null&#9;null&#10;region&#9;null&#9;null&#10;fonc&#9;null&#9;null&#10;medicam&#9;null&#9;null&#10;Presen&#9;null&#9;null&#10;Depar&#9;null&#9;null&#10;edit&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/CRUD/base_edit.html.twig&#10;index.&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Resources/views/Visiteur/index.html.twig&#10;standard&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/standard_layout.html.twig&#10;base_templates&#9;null&#9;null&#10;base_edi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/CRUD/base_edit.html.twig" />
+    <property name="SearchEverywhereHistoryKey" value="secur&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Controller/SecurityController.php&#10;sec&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;CRU&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Controller/CRUDController.php&#10;standa&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/standard_layout.html.twig&#10;SonataAdminBundle.&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/translations/SonataAdminBundle.ar.xliff&#10;rapp&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportVisite.php&#10;rappo&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/RapportVisiteAdmin.php&#10;standard_layou&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/standard_layout.html.twig&#10;secu&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;serv&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/services.yml&#10;medC&#9;null&#9;null&#10;config.&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/config.yml&#10;servi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/services.yml&#10;CRUD&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Controller/CRUDController.php&#10;Med&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/Medicament.php&#10;motif&#9;null&#9;null&#10;registr&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Controller/RegistrationController.php&#10;regi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Form/RegistrationType.php&#10;regist&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Controller/RegistrationController.php&#10;usera&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;reg&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Controller/RegistrationController.php&#10;user&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;Registr&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Controller/RegistrationController.php&#10;config&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/config.yml&#10;region&#9;null&#9;null&#10;fonc&#9;null&#9;null&#10;medicam&#9;null&#9;null&#10;Presen&#9;null&#9;null&#10;Depar&#9;null&#9;null&#10;edit&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/CRUD/base_edit.html.twig&#10;index.&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Resources/views/Visiteur/index.html.twig&#10;standard&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/standard_layout.html.twig&#10;base_templates&#9;null&#9;null&#10;base_edi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/CRUD/base_edit.html.twig" />
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
@@ -720,23 +712,23 @@
       <workItem from="1489397554278" duration="2236000" />
       <workItem from="1489409779022" duration="7095000" />
       <workItem from="1489429842995" duration="8206000" />
-      <workItem from="1489496614595" duration="3084000" />
+      <workItem from="1489496614595" duration="4461000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53144000" />
+    <option name="totallyTimeSpent" value="54521000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1604" height="876" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1813602" sideWeight="0.4921875" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32506528" sideWeight="0.5025189" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42950392" sideWeight="0.26952142" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5217966" sideWeight="0.73433584" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32506528" sideWeight="0.4974811" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42950392" sideWeight="0.7304786" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32506528" sideWeight="0.4974811" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -766,41 +758,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/sensio/framework-extra-bundle/Configuration/Security.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Controller/RegistrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="69" column="17" lean-forward="false" selection-start-line="57" selection-start-column="16" selection-end-line="69" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Entity/Famille.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Entity/Motif.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -934,31 +891,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Controller/SecurityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Controller/CRUDController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="63" column="18" lean-forward="false" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="57" lean-forward="false" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Admin/RapportVisiteAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,26 +960,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2822">
-          <caret line="166" column="9" lean-forward="false" selection-start-line="166" selection-start-column="9" selection-end-line="166" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1098,7 +1019,7 @@
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/Responsable/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1111,6 +1032,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding>
+            <marker date="1489503200460" expanded="true" signature="881:945" ph="&lt;IfModule mod_negotiation.c&gt;" />
+            <marker date="1489503200460" expanded="true" signature="947:2936" ph="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1489503200460" expanded="true" signature="2938:3318" ph="&lt;IfModule !mod_rewrite.c&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml.dist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="31" column="43" lean-forward="false" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="57" lean-forward="false" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Controller/CRUDController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="170" column="65" lean-forward="true" selection-start-line="170" selection-start-column="65" selection-end-line="170" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Controller/SecurityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/Visiteur/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1119,18 +1134,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/.htaccess">
+    <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
