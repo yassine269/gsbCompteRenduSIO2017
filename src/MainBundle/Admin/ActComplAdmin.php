@@ -53,7 +53,13 @@ class ActComplAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('acDATE');
+        $listMapper->addIdentifier('acDATE','date',array('label'=>'Date de l\'activité complémentaire :'));
+    }
+    public function preValidate($object){
+        $actreas=$object->getAcACTREAS();
+        foreach ($actreas as $actrea){
+            $actrea->setActreaACTCOMPL($object);
+        }
     }
 
 

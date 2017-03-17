@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MainBundle\Repository\RapportVisiteRepository")
  * @ORM\Table(name="RapportVisite")
  */
 class RapportVisite
@@ -41,13 +41,6 @@ class RapportVisite
      * @ORM\Column(type="date")
      */
     private $rapDATE;
-
-    /**
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-
-     */
-    private $rapNUM;
     /**
      * @ORM\Column(type="date", nullable=true)
      */
@@ -97,30 +90,6 @@ class RapportVisite
     public function getRapDATE()
     {
         return $this->rapDATE;
-    }
-
-    /**
-     * Set rapNUM
-     *
-     * @param integer $rapNUM
-     *
-     * @return RapportVisite
-     */
-    public function setRapNUM($rapNUM)
-    {
-        $this->rapNUM = $rapNUM;
-
-        return $this;
-    }
-
-    /**
-     * Get rapNUM
-     *
-     * @return integer
-     */
-    public function getRapNUM()
-    {
-        return $this->rapNUM;
     }
 
     /**
@@ -265,5 +234,46 @@ class RapportVisite
     public function getRapMOTIF()
     {
         return $this->rapMOTIF;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->rapECHANTILLONS = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add rapECHANTILLON
+     *
+     * @param \MainBundle\Entity\RapportEchant $rapECHANTILLON
+     *
+     * @return RapportVisite
+     */
+    public function addRapECHANTILLON(\MainBundle\Entity\RapportEchant $rapECHANTILLON)
+    {
+        $this->rapECHANTILLONS[] = $rapECHANTILLON;
+
+        return $this;
+    }
+
+    /**
+     * Remove rapECHANTILLON
+     *
+     * @param \MainBundle\Entity\RapportEchant $rapECHANTILLON
+     */
+    public function removeRapECHANTILLON(\MainBundle\Entity\RapportEchant $rapECHANTILLON)
+    {
+        $this->rapECHANTILLONS->removeElement($rapECHANTILLON);
+    }
+
+    /**
+     * Get rapECHANTILLONS
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRapECHANTILLONS()
+    {
+        return $this->rapECHANTILLONS;
     }
 }

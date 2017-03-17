@@ -8,6 +8,7 @@
 
 namespace MainBundle\Admin;
 
+use Doctrine\DBAL\Types\DateType;
 use MainBundle\Form\MedConstitutionType;
 use MainBundle\MainBundle;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
@@ -60,11 +61,22 @@ class RapportVisiteAdmin extends AbstractAdmin
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('rapVISITEUR');
+        $datagridMapper->add('rapVISITEUR',null,array(
+            'label'=>'Rédacteur'
+        ));
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('rapDATE');
+        $listMapper
+            ->addIdentifier('rapVISITEUR','many_to_one',array(
+                'label'=>'Rédacteur :'
+            ))
+            ->add('rapDATE','date', array(
+            'pattern' => 'dd MMM y G',
+            'locale' => 'fr',
+            'timezone' => 'Europe/Paris',
+            'label' => 'Date de la visite :'
+        ));
     }
 
 

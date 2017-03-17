@@ -35,6 +35,11 @@ class DosageAdmin extends AbstractAdmin
     {
         $listMapper->addIdentifier('dosCODE');
     }
+    public function preValidate($object){
+        $dosQ=$object->getDosQUANTITE();
+        $dosU=$object->getDosUNITE();
+        $object->setDosCODE($dosQ.' '.$dosU);
+    }
 
 
 }

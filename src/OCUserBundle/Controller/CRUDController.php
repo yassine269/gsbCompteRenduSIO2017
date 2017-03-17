@@ -77,25 +77,10 @@ class CRUDController extends Controller
         $this->admin->setSubject($object);
 
 
+        // RECUPERATION DE LA ROUTE ET TRAITEMENT SELON CELLE-CI
 
         $nameForm=$request->get('_route');
-        switch ($nameForm){
-            case"admin_ocuser_user_create":
-                /** @var $userManager UserManagerInterface */
-                $userManager = $this->get('fos_user.user_manager');
-                /** @var $dispatcher EventDispatcherInterface */
-                $dispatcher = $this->get('event_dispatcher');
 
-                $user = $userManager->createUser();
-                $user->setEnabled(true);
-                $object=$user;
-                $event = new GetResponseUserEvent($user, $request);
-                $dispatcher->dispatch(FOSUserEvents::REGISTRATION_INITIALIZE, $event);
-                if (null !== $event->getResponse()) {
-                    return $event->getResponse();
-                }
-                break;
-        }
         /** @var $form \Symfony\Component\Form\Form */
         $form = $this->admin->getForm();
         $form->setData($object);
@@ -103,81 +88,16 @@ class CRUDController extends Controller
 
         if ($form->isSubmitted()) {
             $nameForm=$request->get('_route');
-            switch ($nameForm){
-                case "admin_ocuser_user_create":
-                    $userName=$user->getUsrNom().'.'.$user->getUsrNOM();
-                    $pwd=$userName;
-                    $matricule=mb_strimwidth($user->getUsrNom(),0,3);
-                    $object->setUsername($userName);
-                    $object->setPlainPassword($pwd);
-                    $object->setUsrMATRICULE($matricule);
-                    break;
-                case "admin_main_medicament_create":
-                    $comp=$object->getMedCOMPOSITIONS();
-                    $prescriptions=$object->getMedPRESCRIPTIONS();
-                    foreach ($comp as $composant){
-                        $composant->setConstMEDICAMENT($object);
-                    }
-                    foreach ($prescriptions as $prescription) {
-                        $prescription->setPresMED($object);
-                    }
-                    break;
-                case "admin_main_rapportechant_create":
-                    $echants=$object->getRapECHANTILLONS();
-                    foreach ($echants as $echant) {
-                        $echant->setRapEchantMEDICAMENT($object);
-                    }
-                    break;
-                case "admin_main_praticien_create":
-                    $praNom=$object->getPraNOM();
-                    $praCP=substr($object->getPraCP(),0,2);
-                    $praCode='PRA'.$praCP.$praNom;
-                    $object->setPraCODE($praCode);
-                    break;
-                case "admin_main_dosage_create":
-                    $dosQ=$object->getDosQUANTITE();
-                    $dosU=$object->getDosUNITE();
-                    $object->setDosCODE($dosQ.' '.$dosU);
-                    break;
-                case "admin_main_actcompl_create":
-                    $actreas=$object->getAcACTREAS();
-                    foreach ($actreas as $actrea){
-                        $actrea->setActreaACTCOMPL($object);
-                    }
-                    break;
-
-            }
             //TODO: remove this check for 4.0
             if (method_exists($this->admin, 'preValidate')) {
                 $this->admin->preValidate($object);
             }
             $isFormValid = $form->isValid();
-
             // persist if the form was valid and if in preview mode the preview was approved
             if ($isFormValid && (!$this->isInPreviewMode() || $this->isPreviewApproved())) {
                 $this->admin->checkAccess('create', $object);
-
                 try {
-                    switch ($nameForm) {
-                        case "admin_ocuser_user_create":
-                            $event = new FormEvent($form, $request);
-                            $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
-                            $userManager->updateUser($object);
-                            $role = $object->getUsrFONCTION()->getLIBELLE();
-                            if ($role == 'Responsable') {
-                                $object->addRole('ROLE_RESPONSABLE');
-                            }
-                            if ($role == 'Delegue') {
-                                $object->addRole('ROLE_DELEGUE');
-                            }
-                            if ($role == 'Visiteur') {
-                                $object->addRole('ROLE_VISITEUR');
-                            }
-                            if ($role == 'Admin') {
-                                $object->addRole('ROLE_SUPER_ADMIN');
-                            }
-                            break;
-                    }
+
                     $object = $this->admin->create($object);
 
                     if ($this->isXmlHttpRequest()) {

@@ -57,6 +57,27 @@ class UserAdmin extends AbstractAdmin
             'required' => false,
         ));
     }
+    public function preValidate($user){
+        $userName=$user->getUsrNom().'.'.$user->getUsrNOM();
+        $pwd=$userName;
+        $matricule=mb_strimwidth($user->getUsrNom(),0,3);
+        $user->setUsername($userName);
+        $user->setPlainPassword($pwd);
+        $user->setUsrMATRICULE($matricule);
+        $role = $user->getUsrFONCTION()->getLIBELLE();
+        if ($role == 'Responsable') {
+            $user->addRole('ROLE_RESPONSABLE');
+        }
+        if ($role == 'Delegue') {
+            $user->addRole('ROLE_DELEGUE');
+        }
+        if ($role == 'Visiteur') {
+            $user->addRole('ROLE_VISITEUR');
+        }
+        if ($role == 'Admin') {
+            $user->addRole('ROLE_SUPER_ADMIN');
+        }
+    }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper->add('usrNOM');

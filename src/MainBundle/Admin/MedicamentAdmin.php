@@ -90,6 +90,17 @@ class MedicamentAdmin extends AbstractAdmin
     {
         $listMapper->addIdentifier('medDEPOTLEGAL');
     }
+    public function preValidate($object){
+        $comp=$object->getMedCOMPOSITIONS();
+        $prescriptions=$object->getMedPRESCRIPTIONS();
+        foreach ($comp as $composant){
+            $composant->setConstMEDICAMENT($object);
+        }
+        foreach ($prescriptions as $prescription) {
+            $prescription->setPresMED($object);
+        }
+
+    }
 
 
 

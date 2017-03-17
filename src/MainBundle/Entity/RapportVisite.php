@@ -2,11 +2,12 @@
 
 namespace MainBundle\Entity;
 
+use Doctrine\DBAL\Types\DateType;
 use Doctrine\ORM\Mapping as ORM;
 
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MainBundle\Repository\RapportVisiteRepository")
  * @ORM\Table(name="RapportVisite")
  */
 class RapportVisite
@@ -71,7 +72,7 @@ class RapportVisite
     /**
      * Set rapDATE
      *
-     * @param \DateTime $rapDATE
+     * @param DateType $rapDATE
      *
      * @return RapportVisite
      */
@@ -85,7 +86,7 @@ class RapportVisite
     /**
      * Get rapDATE
      *
-     * @return \DateTime
+     * @return DateType
      */
     public function getRapDATE()
     {

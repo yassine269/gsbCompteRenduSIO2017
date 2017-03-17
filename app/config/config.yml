@@ -64,6 +64,11 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
+        # DECLARATION DE FONCTION POUR REQUEST DQL
+        dql:
+            string_functions:
+                MONTH: DoctrineExtensions\Query\Mysql\Month
+                YEAR: DoctrineExtensions\Query\Mysql\Year
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -86,16 +91,42 @@ fos_user:
         form:
             type: OCUserBundle\Form\RegistrationType
             validation_groups:  [RegistrationOC, Default]
-
+# CONFIG SONATA INTL
+sonata_intl:
+    timezone:
+        locales:
+            fr:    Europe/Paris
+# CONFIG SONATA BLOCK
 sonata_block:
     default_contexts: [cms]
     blocks:
         sonata.admin.block.admin_list:
             contexts: [admin]
+        #DECLATATION DU BLOC STATISTIQUE
+        sonata.block.service.stats: ~
+# CONFIG SONATA ADMIN
 sonata_admin:
+    # SET UP SECURITY AND ROLES ACCESS
+    security:
+        handler: sonata.admin.security.handler.role
+    # CHANGE BASE TEMPLATE
     templates:
         layout:    MainBundle::standard_layout.html.twig
+        dashboard: MainBundle::dashboard.html.twig
+    # PARAM DASHBOARD
     dashboard:
+        # PERSONALISATION DU DASHBOARD EN FONCTION DU ROLE
+        blocks:
+            -
+                position: right
+                type: sonata.block.service.stats
+                settings:
+                    title: Statistiques
+                roles: [ROLE_RESPONSABLE, ROLE_DELEGUE, ROLE_VISITEUR]
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+        #  ATTRIBUTION DES PANEL D'ADMIN ACCESSIBLE PAR ROLE
         groups:
             admin:
                 label:  Menu Admin

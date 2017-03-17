@@ -21,9 +21,10 @@ class AppKernel extends Kernel
             // And finally, the storage and SonataAdminBundle
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
-            //new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new Sonata\IntlBundle\SonataIntlBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new OCUserBundle\OCUserBundle(),
+            new Ob\HighchartsBundle\ObHighchartsBundle(),
             new MainBundle\MainBundle(),
         ];
 

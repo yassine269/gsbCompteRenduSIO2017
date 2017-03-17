@@ -38,6 +38,12 @@ class RapportEchantAdmin extends AbstractAdmin
     {
         $listMapper->addIdentifier('rapEchantMEDICAMENT');
     }
+    public function preValidate($object){
+        $echants=$object->getRapECHANTILLONS();
+        foreach ($echants as $echant) {
+            $echant->setRapEchantMEDICAMENT($object);
+        }
+    }
 
 
 }

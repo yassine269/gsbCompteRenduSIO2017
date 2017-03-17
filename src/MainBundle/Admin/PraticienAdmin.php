@@ -56,7 +56,13 @@ class PraticienAdmin extends AbstractAdmin
         $listMapper->add('praNOM');
 
     }
-
+    public function preValidate($object)
+    {
+        $praNom=$object->getPraNOM();
+        $praCP=substr($object->getPraCP(),0,2);
+        $praCode='PRA'.$praCP.$praNom;
+        $object->setPraCODE($praCode);
+}
 
 
 
