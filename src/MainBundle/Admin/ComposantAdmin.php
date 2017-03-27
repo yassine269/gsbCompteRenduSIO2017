@@ -12,6 +12,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 
 class ComposantAdmin extends AbstractAdmin
@@ -25,16 +26,30 @@ class ComposantAdmin extends AbstractAdmin
             'label'=>'Libellé du composant :'
         ));
     }
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper->add('compCODE', 'text',array(
+            'label'=>'Code de la composant :'
+        ));
+        $showMapper->add('compLIBELLE', 'text',array(
+            'label'=>'Libellé du composant :'
+        ));
+    }
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        $listMapper->add('compCODE', 'text',array(
+            'label'=>'Code de la composant :'
+        ));
+        $listMapper->add('compLIBELLE', 'text',array(
+            'label'=>'Libellé du composant :'
+        ));
+    }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper->add('compLIBELLE');
     }
 
-    protected function configureListFields(ListMapper $listMapper)
-    {
-        $listMapper->addIdentifier('compLIBELLE');
-    }
 
 
 }

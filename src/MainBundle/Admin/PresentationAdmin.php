@@ -12,6 +12,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 
 class PresentationAdmin extends AbstractAdmin
@@ -25,6 +26,15 @@ class PresentationAdmin extends AbstractAdmin
             'label'=>'Libellé de la présentation :'
         ));
     }
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper->add('preCODE', 'text',array(
+            'label'=>'Code de la présentation :'
+        ));
+        $showMapper->add('preLIBELLE', 'text',array(
+            'label'=>'Libellé de la présentation :'
+        ));
+    }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
@@ -33,7 +43,15 @@ class PresentationAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('preLIBELLE');
+        $listMapper->add('rapEchantMEDICAMENT', 'sonata_type_model', array(
+            'class' => 'MainBundle\Entity\Medicament',
+            'property' => 'medNOMCOMMERCIAL',
+            'label' => 'Médicament :'
+        ));
+        $listMapper->add('rapEchantQUANTITE', 'integer',array(
+            'label'=>'Quantité d\'échantillons offerts :'
+        ));
+
     }
 
 

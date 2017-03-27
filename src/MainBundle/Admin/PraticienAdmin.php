@@ -14,6 +14,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 
@@ -46,15 +47,62 @@ class PraticienAdmin extends AbstractAdmin
             'label' => 'Type du praticien :'
         ));
     }
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper->add('praPRENOM', 'text',array(
+            'label'=>'Prénom du praticien :'
+        ));
+        $showMapper->add('praNOM', 'text',array(
+            'label'=>'Nom du praticien :'
+        ));
+        $showMapper->add('praADRESSE', 'text',array(
+            'label'=>'Adresse du praticien :'
+        ));
+        $showMapper->add('praCP', 'text',array(
+            'label'=>'Code postal du praticien :'
+        ));
+        $showMapper->add('praVILLE', 'text',array(
+            'label'=>'Ville du praticien :'
+        ));
+        $showMapper->add('praCOEFNOTORIETE', 'integer',array(
+            'label'=>'Coefiscient de notoriété du praticien :'
+        ));
+        $showMapper->add('praTYPE', 'sonata_type_model', array(
+            'class' => 'MainBundle\Entity\TypePraticien',
+            'property'=>'typeLIBELLE',
+            'required' => false,
+            'label' => 'Type du praticien :'
+        ));
+    }
+
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper->add('praNOM');
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('praCODE');
-        $listMapper->add('praNOM');
-
+        $listMapper->add('praPRENOM', 'text',array(
+            'label'=>'Prénom du praticien :'
+        ));
+        $listMapper->add('praNOM', 'text',array(
+            'label'=>'Nom du praticien :'
+        ));
+        $listMapper->add('praADRESSE', 'text',array(
+            'label'=>'Adresse du praticien :'
+        ));
+        $listMapper->add('praCP', 'text',array(
+            'label'=>'Code postal du praticien :'
+        ));
+        $listMapper->add('praVILLE', 'text',array(
+            'label'=>'Ville du praticien :'
+        ));
+        $listMapper->add('praCOEFNOTORIETE', 'integer',array(
+            'label'=>'Coefiscient de notoriété du praticien :'
+        ));
+        $listMapper->add('praTYPE','many_to_one', array(
+            'label' => 'Type du praticien :',
+            'associated_property'=>'typeLIBELLE'
+        ));
     }
     public function preValidate($object)
     {

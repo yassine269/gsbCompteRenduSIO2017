@@ -53,7 +53,7 @@ class RapportVisiteRepository extends EntityRepository
         return $query->getResult();
 
     }
-
+    // Requête pour statistiques annuel sur dashboard Responsable
     public function findBySecteurYearToNow($date,$secteur,$debut = 0){
         $dateExplode=explode("-",$date);
         $annee=$dateExplode[0];

@@ -12,6 +12,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 
 class TypePraticienAdmin extends AbstractAdmin
@@ -29,6 +30,19 @@ class TypePraticienAdmin extends AbstractAdmin
         ));
     }
 
+    protected function showLisFields(ShowMapper $showMapper)
+    {
+        $showMapper->add('typeCODE', 'text',array(
+            'label'=>'Code du type de praticien :'
+        ));
+        $showMapper->add('typeLIBELLE', 'text',array(
+            'label'=>'Libéllé du type de praticien :'
+        ));
+        $showMapper->add('typeLIEU', 'text',array(
+            'label'=>'Lieu d\'exercice du praticien :'
+        ));
+    }
+
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper->add('typeLIBELLE');
@@ -36,7 +50,15 @@ class TypePraticienAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('typeLIBELLE');
+        $listMapper->addIdentifier('typeLIBELLE',null,array(
+            'label'=>'Libéllé du type :'))
+                    ->add('typeLIEU',null,array(
+                        'label'=>'Lieu d\'exercice :'
+                    ))
+                    ->add('',null,array(
+                        'label'=>'Code du type de praticien :'
+                    ))
+        ;
     }
 
 

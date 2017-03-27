@@ -12,6 +12,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 
 class DosageAdmin extends AbstractAdmin
@@ -25,16 +26,30 @@ class DosageAdmin extends AbstractAdmin
             'label'=>'Unité de mesure :'
         ));
     }
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper->add('dosQUANTITE', 'text',array(
+            'label'=>'Quantité :'
+        ));
+        $showMapper->add('dosUNITE', 'text',array(
+            'label'=>'Unité de mesure :'
+        ));
+    }
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        $listMapper->add('dosQUANTITE', 'text',array(
+            'label'=>'Quantité :'
+        ));
+        $listMapper->add('dosUNITE', 'text',array(
+            'label'=>'Unité de mesure :'
+        ));
+    }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper->add('dosCODE');
     }
 
-    protected function configureListFields(ListMapper $listMapper)
-    {
-        $listMapper->addIdentifier('dosCODE');
-    }
     public function preValidate($object){
         $dosQ=$object->getDosQUANTITE();
         $dosU=$object->getDosUNITE();

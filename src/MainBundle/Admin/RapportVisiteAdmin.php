@@ -15,6 +15,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 
@@ -69,7 +70,8 @@ class RapportVisiteAdmin extends AbstractAdmin
     {
         $listMapper
             ->addIdentifier('rapVISITEUR','many_to_one',array(
-                'label'=>'Rédacteur :'
+                'label'=>'Rédacteur :',
+                'associated_property'=>'usrNOM'
             ))
             ->add('rapDATE','date', array(
             'pattern' => 'dd MMM y G',
@@ -78,7 +80,42 @@ class RapportVisiteAdmin extends AbstractAdmin
             'label' => 'Date de la visite :'
         ));
     }
+    protected function configureShowFields(ShowMapper $showMapper){
+        $showMapper
+            ->with('Informations générales :', array('class' => 'col-md-6'))
+            ->add('rapDATE', 'date',array(
+                'label'=>'Date de la visite :'))
+            ->add('rapVISITEUR', 'sonata_type_model', array(
+                'class' => 'OCUserBundle\Entity\User',
+                'property' => 'usrNOM',
+                'label' => 'Visiteur :'))
+            ->add('rapPRATICIEN', 'sonata_type_model', array(
+                'class' => 'MainBundle\Entity\Praticien',
+                'property' => 'praNOM',
+                'label' => 'Praticien :'))
+            ->add('rapMOTIF', 'sonata_type_model', array(
+                'class' => 'MainBundle\Entity\Motif',
+                'property' => 'motifLIBELLE',
+                'associated_property' => 'motifLIBELLE',
+                'label' => 'motif de la visite :'))
+            ->add('rapECHANTILLONS', 'sonata_type_collection',
+                array(
+                    'by_reference' => false,
+                    'required' => false,
+                    'label' => 'Echantillons offerts :'
+                ), array(
+                    'edit' => 'inline',
+                    'inline' => 'table',))
+            ->end();
 
+        $showMapper
+            ->with('Bian de la visite :', array('class' => 'col-md-6'))
+            ->add('rapBILAN', 'textarea',array(
+                'label'=>'Bilan de la visite :'))
+            ->add('rapCOEFIMPACT', 'integer',array(
+                'label'=>'Coefiscient d\'impact de la visite :'))
+            ->end();
+    }
 
 
 

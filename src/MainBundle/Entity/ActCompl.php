@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MainBundle\Repository\ActComplRepository")
  * @ORM\Table(name="ActCompl")
  */
 class ActCompl
@@ -40,6 +40,11 @@ class ActCompl
      * @ORM\OneToMany(targetEntity="MainBundle\Entity\ActRea", mappedBy="actreaACTCOMPL", cascade={"persist"})
      */
     private $acACTREAS;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $states;
 
     /**
      * Get id
@@ -269,5 +274,29 @@ class ActCompl
     public function getAcACTREAS()
     {
         return $this->acACTREAS;
+    }
+
+    /**
+     * Set states
+     *
+     * @param string $states
+     *
+     * @return ActCompl
+     */
+    public function setStates($states)
+    {
+        $this->states = $states;
+
+        return $this;
+    }
+
+    /**
+     * Get states
+     *
+     * @return string
+     */
+    public function getStates()
+    {
+        return $this->states;
     }
 }

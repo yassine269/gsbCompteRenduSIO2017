@@ -12,6 +12,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 
 class TypeIndividuAdmin extends AbstractAdmin
@@ -23,6 +24,13 @@ class TypeIndividuAdmin extends AbstractAdmin
         ));
     }
 
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper->add('typeIndLIBELLE', 'text',array(
+            'label'=>'Libéllé du type d\'individu :'
+        ));
+    }
+
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper->add('typeIndLIBELLE');
@@ -30,7 +38,9 @@ class TypeIndividuAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('typeIndLIBELLE');
+        $listMapper->addIdentifier('typeIndLIBELLE',null,array(
+            'label'=>'Libéllé du type d\'individu :'
+        ));
     }
 
 

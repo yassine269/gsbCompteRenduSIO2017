@@ -12,6 +12,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 
 class ActComplAdmin extends AbstractAdmin
@@ -45,18 +46,73 @@ class ActComplAdmin extends AbstractAdmin
                 'inline' => 'table',
             ));
     }
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        $listMapper->add('acLIEU', 'text', array(
+            'label'=> "Lieu de l'activité :"
+        ));
+        $listMapper->add('acTHEME', 'text', array(
+            'label'=> "Théme de l'activité :"
+        ));
+        $listMapper->add('acDATE', 'date', array(
+            'label'=> "Date de l'activité :"
+        ));
+        $listMapper->add('acPRATICIEN', 'entity', array(
+            'associated_property'=>'praNOM',
+            'class' => 'MainBundle\Entity\Praticien',
+            'multiple' => true,
+            'required' => false,
+            'label'=> "Praticens convoqués :"
+        ));
+        $listMapper->add('acACTREAS', 'sonata_type_collection',
+            array(
+                'associated_property'=>'actreaVISITEUR.usrNOM',
+                'by_reference' => false,
+                'required' => false,
+                'label'=> "Réalisation de l'activité:"
+            ), array(
+                'edit' => 'inline',
+                'inline' => 'table',
+            ));
+    }
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper->add('acLIEU', 'text', array(
+            'label'=> "Lieu de l'activité :"
+        ));
+        $showMapper->add('acTHEME', 'text', array(
+            'label'=> "Théme de l'activité :"
+        ));
+        $showMapper->add('acDATE', 'date', array(
+            'label'=> "Date de l'activité :"
+        ));
+        $showMapper->add('acPRATICIEN', 'entity', array(
+            'associated_property'=>'praNOM',
+            'class' => 'MainBundle\Entity\Praticien',
+            'multiple' => true,
+            'required' => false,
+            'label'=> "Praticens convoqués :"
+        ));
+        $showMapper->add('acACTREAS', 'sonata_type_collection',
+            array(
+                'associated_property'=>'actreaVISITEUR.usrNOM',
+                'by_reference' => false,
+                'required' => false,
+                'label'=> "Réalisation de l'activité:"
+            ), array(
+                'edit' => 'inline',
+                'inline' => 'table',
+            ));
+    }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper->add('acDATE');
     }
 
-    protected function configureListFields(ListMapper $listMapper)
-    {
-        $listMapper->addIdentifier('acDATE','date',array('label'=>'Date de l\'activité complémentaire :'));
-    }
     public function preValidate($object){
         $actreas=$object->getAcACTREAS();
+        $object->setStates('VALIDATION_REQUISE');
         foreach ($actreas as $actrea){
             $actrea->setActreaACTCOMPL($object);
         }
