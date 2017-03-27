@@ -20,8 +20,12 @@ class DepartementAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('depCODE', 'text');
-        $formMapper->add('depLIBELLE', 'text');
+        $formMapper->add('depCODE', 'text',array(
+            'label'=>'Code de département :'
+        ));
+        $formMapper->add('depLIBELLE', 'text', array(
+            'label'=>'Libéllé du départment'
+        ));
         $formMapper->add('depREGION', 'sonata_type_model', array(
             'class' => 'OCUserBundle\Entity\Region',
             'property'=>'regLIBELLE',

@@ -62,13 +62,15 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
-        naming_strategy: doctrine.orm.naming_strategy.underscore
-        auto_mapping: true
-        # DECLARATION DE FONCTION POUR REQUEST DQL
         dql:
             string_functions:
                 MONTH: DoctrineExtensions\Query\Mysql\Month
                 YEAR: DoctrineExtensions\Query\Mysql\Year
+        auto_mapping: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+
+        # DECLARATION DE FONCTION POUR REQUEST DQL
+
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -91,7 +93,29 @@ fos_user:
         form:
             type: OCUserBundle\Form\RegistrationType
             validation_groups:  [RegistrationOC, Default]
-# CONFIG SONATA INTL
+
+fos_rest:
+    param_fetcher_listener: true
+    body_listener:          true
+    format_listener:        true
+    view:
+        view_response_listener: 'force'
+        formats:
+            xml: true
+            json : true
+        templating_formats:
+            html: true
+        force_redirects:
+            html: true
+        failed_validation: HTTP_BAD_REQUEST
+        default_engine: twig
+    routing_loader:
+        default_format: json
+    body_converter:
+        enabled: true
+        validate: true
+
+
 sonata_intl:
     timezone:
         locales:
@@ -106,9 +130,9 @@ sonata_block:
         sonata.block.service.stats: ~
 # CONFIG SONATA ADMIN
 sonata_admin:
-    # SET UP SECURITY AND ROLES ACCESS
     security:
         handler: sonata.admin.security.handler.role
+    # SET UP SECURITY AND ROLES ACCESS
     # CHANGE BASE TEMPLATE
     templates:
         layout:    MainBundle::standard_layout.html.twig
@@ -122,7 +146,7 @@ sonata_admin:
                 type: sonata.block.service.stats
                 settings:
                     title: Statistiques
-                roles: [ROLE_RESPONSABLE, ROLE_DELEGUE, ROLE_VISITEUR]
+                roles: [ROLE_VISITEUR]
             -
                 position: left
                 type: sonata.admin.block.admin_list
@@ -164,11 +188,13 @@ sonata_admin:
                       label:    Acceuil
                     - admin.rapportvisite
                     - admin.actcompl
+                    - admin.medicament
+                    - admin.praticien
                     - route:    main_statistique_visiteur
                       label:    Statistiques
                     - route:    fos_user_security_logout
                       label:    Déconnexion
-                roles: [ ROLE_VISITEUR ]
+                roles: [ROLE_VISITEUR]
 
 
             delegue:

@@ -2,25 +2,15 @@
 
 namespace OCUserBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use FOS\RestBundle\Controller\FOSRestController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
-class DefaultController extends Controller
+class UserController extends FOSRestController
+
 {
-    public function indexAction()
+    public function getUsersAction()
     {
-        $curentUser=$this->getUser();
-
-        $repository = $this
-            ->getDoctrine()
-            ->getManager()
-            ->getRepository('OCUserBundle:User');
-        ;
-
-        $listUsers=$repository->findAll();
-
-        return $this->render('OCUserBundle:Default:index.html.twig',array(
-            'currentUser'=>$curentUser,
-            'listUsers'=>$listUsers
-        ));
+        $data = $this->getDoctrine()->getManager()->getRepository('OCUserBundle:User')->findAll(); // get data, in this case list of users.
+        return  $data;
     }
 }

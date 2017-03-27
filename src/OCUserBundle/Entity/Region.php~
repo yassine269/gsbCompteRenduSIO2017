@@ -11,7 +11,7 @@ namespace OCUserBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="OCUserBundle\Repository\RegionRepository")
  * @ORM\Table(name="Region")
  */
 

@@ -6,10 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 
 
 /**
- * @ORM\Entity(repositoryClass="MainBundle\Repository\ActReaRepository")
- * @ORM\Table(name="ActRea")
+ * @ORM\Entity(repositoryClass="MainBundle\Repository\ActComplRepository")
+ * @ORM\Table(name="ActCompl")
  */
-class ActRea
+class ActCompl
 {
 
     /**
@@ -18,22 +18,33 @@ class ActRea
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    /**
+     * @ORM\Column(type="string",length=40)
+     */
+    private $acLIEU;
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $acDATE;
+    /**
+     * @ORM\Column(type="string", length=40)
+     */
+    private $acTHEME;
 
     /**
-     * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\User")
+     * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Praticien")
      */
-    private $actreaVISITEUR;
+    private $acPRATICIEN;
 
     /**
-     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\ActCompl", inversedBy="acACTREAS")
+     * @ORM\OneToMany(targetEntity="MainBundle\Entity\ActRea", mappedBy="actreaACTCOMPL", cascade={"persist"})
      */
-    private $actreaACTCOMPL;
+    private $acACTREAS;
 
     /**
-     * @ORM\Column(type="decimal", scale=3)
+     * @ORM\Column(type="string", length=20)
      */
-    private $actreaBUDGET;
-
+    private $states;
 
     /**
      * Get id
@@ -98,6 +109,32 @@ class ActRea
     public function __construct()
     {
         $this->acPRATICIEN = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->acACTREAS = new \Doctrine\Common\Collections\ArrayCollection();
+
+    }
+
+    /**
+     * Set acNUM
+     *
+     * @param string $acNUM
+     *
+     * @return ActCompl
+     */
+    public function setAcNUM($acNUM)
+    {
+        $this->acNUM = $acNUM;
+
+        return $this;
+    }
+
+    /**
+     * Get acNUM
+     *
+     * @return string
+     */
+    public function getAcNUM()
+    {
+        return $this->acNUM;
     }
 
     /**
@@ -105,7 +142,7 @@ class ActRea
      *
      * @param string $acLIEU
      *
-     * @return ActRea
+     * @return ActCompl
      */
     public function setAcLIEU($acLIEU)
     {
@@ -124,13 +161,35 @@ class ActRea
         return $this->acLIEU;
     }
 
+    /**
+     * Set acDATE
+     *
+     * @param $acDATE
+     *
+     * @return ActCompl
+     */
+    public function setAcDATE($acDATE)
+    {
+        $this->acDATE = $acDATE;
+
+        return $this;
+    }
+
+    /**
+     * Get acDATE
+
+     */
+    public function getAcDATE()
+    {
+        return $this->acDATE;
+    }
 
     /**
      * Set acTHEME
      *
      * @param string $acTHEME
      *
-     * @return ActRea
+     * @return ActCompl
      */
     public function setAcTHEME($acTHEME)
     {
@@ -150,59 +209,11 @@ class ActRea
     }
 
     /**
-     * Set actreaVISITEUR
-     *
-     * @param \OCUserBundle\Entity\User $actreaVISITEUR
-     *
-     * @return ActRea
-     */
-    public function setActreaVISITEUR(\OCUserBundle\Entity\User $actreaVISITEUR = null)
-    {
-        $this->actreaVISITEUR = $actreaVISITEUR;
-
-        return $this;
-    }
-
-    /**
-     * Get actreaVISITEUR
-     *
-     * @return \OCUserBundle\Entity\User
-     */
-    public function getActreaVISITEUR()
-    {
-        return $this->actreaVISITEUR;
-    }
-
-    /**
-     * Set actreaACTCOMPL
-     *
-     * @param \MainBundle\Entity\ActCompl $actreaACTCOMPL
-     *
-     * @return ActRea
-     */
-    public function setActreaACTCOMPL(\MainBundle\Entity\ActCompl $actreaACTCOMPL = null)
-    {
-        $this->actreaACTCOMPL = $actreaACTCOMPL;
-
-        return $this;
-    }
-
-    /**
-     * Get actreaACTCOMPL
-     *
-     * @return \MainBundle\Entity\ActCompl
-     */
-    public function getActreaACTCOMPL()
-    {
-        return $this->actreaACTCOMPL;
-    }
-
-    /**
      * Add acPRATICIEN
      *
      * @param \MainBundle\Entity\Praticien $acPRATICIEN
      *
-     * @return ActRea
+     * @return ActCompl
      */
     public function addAcPRATICIEN(\MainBundle\Entity\Praticien $acPRATICIEN)
     {
@@ -232,26 +243,60 @@ class ActRea
     }
 
     /**
-     * Set actreaBUDGET
+     * Add acACTREA
      *
-     * @param string $actreaBUDGET
+     * @param \MainBundle\Entity\ActRea $acACTREA
      *
-     * @return ActRea
+     * @return ActCompl
      */
-    public function setActreaBUDGET($actreaBUDGET)
+    public function addAcACTREA(\MainBundle\Entity\ActRea $acACTREA)
     {
-        $this->actreaBUDGET = $actreaBUDGET;
+        $this->acACTREAS[] = $acACTREA;
 
         return $this;
     }
 
     /**
-     * Get actreaBUDGET
+     * Remove acACTREA
+     *
+     * @param \MainBundle\Entity\ActRea $acACTREA
+     */
+    public function removeAcACTREA(\MainBundle\Entity\ActRea $acACTREA)
+    {
+        $this->acACTREAS->removeElement($acACTREA);
+    }
+
+    /**
+     * Get acACTREAS
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAcACTREAS()
+    {
+        return $this->acACTREAS;
+    }
+
+    /**
+     * Set states
+     *
+     * @param string $states
+     *
+     * @return ActCompl
+     */
+    public function setStates($states)
+    {
+        $this->states = $states;
+
+        return $this;
+    }
+
+    /**
+     * Get states
      *
      * @return string
      */
-    public function getActreaBUDGET()
+    public function getStates()
     {
-        return $this->actreaBUDGET;
+        return $this->states;
     }
 }

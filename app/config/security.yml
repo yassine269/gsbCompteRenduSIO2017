@@ -6,27 +6,111 @@ security:
 # SET UP SECURITY AND ROLES ACCESS
 
     role_hierarchy:
-        ROLE_SONATA_FOO_READER:
-            - ROLE_SONATA_ADMIN_DEMO_FOO_LIST
-            - ROLE_SONATA_ADMIN_DEMO_FOO_VIEW
-        ROLE_SONATA_FOO_EDITOR:
-            - ROLE_SONATA_ADMIN_DEMO_FOO_CREATE
-            - ROLE_SONATA_ADMIN_DEMO_FOO_EDIT
-        ROLE_SONATA_FOO_ADMIN:
-            - ROLE_SONATA_ADMIN_DEMO_FOO_DELETE
-            - ROLE_SONATA_ADMIN_DEMO_FOO_EXPORT
 
         # those are the roles I will use (less verbose)
         ROLE_STAFF:             [ROLE_USER, ROLE_SONATA_FOO_READER]
         ROLE_ADMIN:             [ROLE_STAFF, ROLE_SONATA_FOO_EDITOR, ROLE_SONATA_FOO_ADMIN]
         ROLE_SUPER_ADMIN:       [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_ALL_ADMIN:         [ROLE_STAFF, ROLE_SONATA_FOO_ALL]
+        ROLE_RESPONSABLE: ROLE_RESPONSABLE
+        ROLE_DELEGUE:     ROLE_DELEGUE
+        ROLE_PERMISS_VISITE:
+            - ROLE_SUPER_ADMIN
+            - ROLE_ADMIN_RAPPORTVISITE_VIEW
+            - ROLE_SONATA_MEDIA_MEDIA_LIST
+            - ROLE_ADMIN_RAPPORTVISITE_LIST
+            - ROLE_ADMIN_RAPPORTVISITE_CREATE
+            - ROLE_ADMIN_RAPPORTVISITE_EDIT
+            - ROLE_ADMIN_RAPPORTVISITE_EXPORT
+            - ROLE_ADMIN_RAPPORTECHANT_VIEW
+            - ROLE_ADMIN_RAPPORTECHANT_LIST
+            - ROLE_ADMIN_RAPPORTECHANT_CREATE
+            - ROLE_ADMIN_RAPPORTECHANT_EDIT
+            - ROLE_ADMIN_RAPPORTECHANT_EXPORT
+            - ROLE_ADMIN_ACTCOMPL_VIEW
+            - ROLE_ADMIN_ACTCOMPL_LIST
+            - ROLE_ADMIN_ACTCOMPL_CREATE
+            - ROLE_ADMIN_ACTCOMPL_EDIT
+            - ROLE_ADMIN_ACTCOMPL_EXPORT
+            - ROLE_ADMIN_ACTREA_VIEW
+            - ROLE_ADMIN_ACTREA_LIST
+            - ROLE_ADMIN_ACTREA_CREATE
+            - ROLE_ADMIN_ACTREA_EDIT
+            - ROLE_ADMIN_ACTREA_EXPORT
+            - ROLE_ADMIN_USER_VIEW
+            - ROLE_ADMIN_USER_LIST
+            - ROLE_ADMIN_MEDICAMENT_VIEW
+            - ROLE_ADMIN_MEDICAMENT_LIST
+            - ROLE_ADMIN_PRESCRIRE_VIEW
+            - ROLE_ADMIN_PRESCRIRE_LIST
+            - ROLE_ADMIN_SPECIALITE_VIEW
+            - ROLE_ADMIN_SPECIALITE_LIST
+            - ROLE_ADMIN_SPECPOSSEDER_VIEW
+            - ROLE_ADMIN_SPECPOSSEDER_LIST
+            - ROLE_ADMIN_TYPEINDIVIDU_VIEW
+            - ROLE_ADMIN_TYPEINDIVIDU_LIST
+            - ROLE_ADMIN_TYPEPRATICIEN_VIEW
+            - ROLE_ADMIN_TYPEPRATICIEN_LIST
+            - ROLE_ADMIN_PRATICIEN_VIEW
+            - ROLE_ADMIN_PRATICIEN_LIST
+            - ROLE_ADMIN_MOTIF_VIEW
+            - ROLE_ADMIN_MOTIF_LIST
+        ROLE_PERMISS_DELEGE:
+            - ROLE_ADMIN_RAPPORTVISITE_VIEW
+            - ROLE_ADMIN_RAPPORTVISITE_LIST
+            - ROLE_ADMIN_RAPPORTVISITE_EXPORT
+            - ROLE_ADMIN_ACTCOMPL_VIEW
+            - ROLE_ADMIN_ACTCOMPL_LIST
+            - ROLE_ADMIN_ACTCOMPL_EDIT
+            - ROLE_ADMIN_ACTCOMPL_EXPORT
+            - ROLE_ADMIN_ACTREA_VIEW
+            - ROLE_ADMIN_ACTREA_LIST
+            - ROLE_ADMIN_ACTREA_EDIT
+            - ROLE_ADMIN_ACTREA_EXPORT
+            - ROLE_ADMIN_USER_VIEW
+            - ROLE_ADMIN_USER_LIST
+        ROLE_VISITEUR: [ROLE_PERMISS_VISITE, ROLE_VISITEUR]
 
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
+        # you could alternatively use for an admin who has all rights
+        ROLE_ALL_ADMIN:         [ROLE_STAFF, ROLE_SONATA_FOO_ALL]
+
+    # set access_strategy to unanimous, else you may have unexpected behaviors
     access_decision_manager:
         strategy: unanimous
+
+
+
+ #
+ #       ROLE_SONATA_FOO_READER:
+ #           - ROLE_SONATA_ADMIN_DEMO_FOO_LIST
+ #           - ROLE_SONATA_ADMIN_DEMO_FOO_VIEW
+ #       ROLE_SONATA_FOO_EDITOR:
+ #           - ROLE_SONATA_ADMIN_DEMO_FOO_CREATE
+ #           - ROLE_SONATA_ADMIN_DEMO_FOO_EDIT
+ #       ROLE_SONATA_FOO_ADMIN:
+ #           - ROLE_SONATA_ADMIN_DEMO_FOO_DELETE
+ #           - ROLE_SONATA_ADMIN_DEMO_FOO_EXPORT
+#
+ #       # those are the roles I will use (less verbose)
+ #       ROLE_STAFF:             [ROLE_USER, ROLE_SONATA_FOO_READER]
+ #       ROLE_ADMIN:             [ROLE_STAFF, ROLE_SONATA_FOO_EDITOR, ROLE_SONATA_FOO_ADMIN]
+ ##       ROLE_SUPER_ADMIN:       [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+#
+  #  access_decision_manager:
+  #      strategy: unanimous
     providers:
         fos_userbundle:
             id: fos_user.user_provider.username
     firewalls:
+        #api:
+        #   pattern: ^/api
+        #   http_basic:
+        #       provider: fos_userbundle
+        #   form_login:
+        #       login_path: /api/login
+        #       check_path: /api/login
         main:
             pattern: ^/
             form_login:
@@ -38,10 +122,13 @@ security:
             logout:       true
             anonymous:    true
 
+
+
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/api, role: IS_AUTHENTICATED_FULLY }
 #        - { path: ^/admin/, role: IS_AUTHENTICATED_ANONYMOUSLY }
 #        - { path: ^/action/main/famille/, role: ROLE_ADMIN }
 #        - { path: ^/action/main/dosage/, role: ROLE_ADMIN }

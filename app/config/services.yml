@@ -116,7 +116,10 @@ services:
                 - {name: sonata.admin, manager_type: orm, label: Secteur}
     admin.RapportVisite:
             class: MainBundle\Admin\RapportVisiteAdmin
-            arguments: [~, MainBundle\Entity\RapportVisite ,~]
+            arguments:
+                - null
+                - MainBundle\Entity\RapportVisite
+                - OCUserBundle:CRUD
             tags:
                 - {name: sonata.admin, manager_type: orm, label: Rapport de visite}
     admin.RapportEchant:
