@@ -27,11 +27,11 @@ class Famille
     /**
      * @ORM\Column(type="string",length=40)
      */
-    private $famCODE;
+    private $famCode;
     /**
      * @ORM\Column(type="string",length=40)
      */
-    private $famLIBELLE;
+    private $famLibelle;
 
 
     /**
@@ -45,50 +45,50 @@ class Famille
     }
 
     /**
-     * Set famCODE
+     * Set famCode
      *
-     * @param string $famCODE
+     * @param string $famCode
      *
      * @return Famille
      */
-    public function setFamCODE($famCODE)
+    public function setFamCode($famCode)
     {
-        $this->famCODE = $famCODE;
+        $this->famCode = $famCode;
 
         return $this;
     }
 
     /**
-     * Get famCODE
+     * Get famCode
      *
      * @return string
      */
-    public function getFamCODE()
+    public function getFamCode()
     {
-        return $this->famCODE;
+        return $this->famCode;
     }
 
     /**
-     * Set famLIBELLE
+     * Set famLibelle
      *
-     * @param string $famLIBELLE
+     * @param string $famLibelle
      *
      * @return Famille
      */
-    public function setFamLIBELLE($famLIBELLE)
+    public function setFamLibelle($famLibelle)
     {
-        $this->famLIBELLE = $famLIBELLE;
+        $this->famLibelle = $famLibelle;
 
         return $this;
     }
 
     /**
-     * Get famLIBELLE
+     * Get famLibelle
      *
      * @return string
      */
-    public function getFamLIBELLE()
+    public function getFamLibelle()
     {
-        return $this->famLIBELLE;
+        return $this->famLibelle;
     }
 }

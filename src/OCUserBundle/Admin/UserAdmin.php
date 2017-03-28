@@ -23,37 +23,37 @@ class UserAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('usrMATRICULE', 'text');
-        $formMapper->add('usrNOM', 'text');
-        $formMapper->add('usrPRENOM', 'text');
-        $formMapper->add('usrADRESSE', 'text');
-        $formMapper->add('usrCP', 'text');
-        $formMapper->add('usrVILLE', 'text');
-        $formMapper->add('usrDATEEMBAUCHE', 'date');
+        $formMapper->add('usrMatricule', 'text');
+        $formMapper->add('usrNom', 'text');
+        $formMapper->add('usrPrenom', 'text');
+        $formMapper->add('usrAdresse', 'text');
+        $formMapper->add('usrCp', 'text');
+        $formMapper->add('usrVille', 'text');
+        $formMapper->add('usrDateEmbauche', 'date');
         $formMapper->add('email', 'email');
-        $formMapper->add('usrFONCTION', 'sonata_type_model', array(
+        $formMapper->add('usrFonction', 'sonata_type_model', array(
             'class' => 'OCUserBundle\Entity\Fonction',
-            'property'=>'LIBELLE',
+            'property'=>'fonctLibelle',
             'required' => false,
         ));
-        $formMapper->add('usrDEPARTEMENT', 'sonata_type_model', array(
+        $formMapper->add('usrDepartement', 'sonata_type_model', array(
             'class' => 'OCUserBundle\Entity\Departement',
-            'property'=>'depLIBELLE',
+            'property'=>'depLibelle',
             'required' => false,
         ));
-        $formMapper->add('usrREGION', 'sonata_type_model', array(
+        $formMapper->add('usrRegion', 'sonata_type_model', array(
             'class' => 'OCUserBundle\Entity\Region',
-            'property'=>'regLIBELLE',
+            'property'=>'regLibelle',
             'required' => false,
         ));
-        $formMapper->add('usrSECTEUR', 'sonata_type_model', array(
+        $formMapper->add('usrSecteur', 'sonata_type_model', array(
             'class' => 'OCUserBundle\Entity\Secteur',
-            'property'=>'secLIBELLE',
+            'property'=>'secLibelle',
             'required' => false,
         ));
-        $formMapper->add('usrSUPP', 'sonata_type_model', array(
+        $formMapper->add('usrSupp', 'sonata_type_model', array(
             'class' => 'OCUserBundle\Entity\User',
-            'property'=>'usrNOM',
+            'property'=>'usrNom',
             'required' => false,
         ));
     }
@@ -80,12 +80,12 @@ class UserAdmin extends AbstractAdmin
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('usrNOM');
+        $datagridMapper->add('usrNom');
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('usrMATRICULE');
-        $listMapper->add('usrNOM');
+        $listMapper->addIdentifier('usrMatricule');
+        $listMapper->add('usrNom');
 
     }
     public function configureOptions(OptionsResolver $resolver)

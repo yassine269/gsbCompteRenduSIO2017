@@ -21,22 +21,22 @@ class ActComplAdmin extends AbstractAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('acLIEU', 'text', array(
+        $formMapper->add('acLieu', 'text', array(
             'label'=> "Lieu de l'activité :"
         ));
-        $formMapper->add('acTHEME', 'text', array(
+        $formMapper->add('acTheme', 'text', array(
             'label'=> "Théme de l'activité :"
         ));
-        $formMapper->add('acDATE', 'date', array(
+        $formMapper->add('acDate', 'date', array(
             'label'=> "Date de l'activité :"
         ));
-        $formMapper->add('acPRATICIEN', 'entity', array(
+        $formMapper->add('acPraticien', 'entity', array(
             'class' => 'MainBundle\Entity\Praticien',
             'multiple' => true,
             'required' => false,
             'label'=> "Praticens convoqués :"
         ));
-        $formMapper->add('acACTREAS', 'sonata_type_collection',
+        $formMapper->add('acActReal', 'sonata_type_collection',
             array(
                 'by_reference' => false,
                 'required' => false,
@@ -48,25 +48,25 @@ class ActComplAdmin extends AbstractAdmin
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('acLIEU', 'text', array(
+        $listMapper->add('acLieu', 'text', array(
             'label'=> "Lieu de l'activité :"
         ));
-        $listMapper->add('acTHEME', 'text', array(
+        $listMapper->add('acTheme', 'text', array(
             'label'=> "Théme de l'activité :"
         ));
-        $listMapper->add('acDATE', 'date', array(
+        $listMapper->add('acDate', 'date', array(
             'label'=> "Date de l'activité :"
         ));
-        $listMapper->add('acPRATICIEN', 'entity', array(
-            'associated_property'=>'praNOM',
+        $listMapper->add('acPraticien', 'entity', array(
+            'associated_property'=>'praNom',
             'class' => 'MainBundle\Entity\Praticien',
             'multiple' => true,
             'required' => false,
             'label'=> "Praticens convoqués :"
         ));
-        $listMapper->add('acACTREAS', 'sonata_type_collection',
+        $listMapper->add('acActReal', 'sonata_type_collection',
             array(
-                'associated_property'=>'actreaVISITEUR.usrNOM',
+                'associated_property'=>'actReaVisiteur.usrNom',
                 'by_reference' => false,
                 'required' => false,
                 'label'=> "Réalisation de l'activité:"
@@ -77,25 +77,25 @@ class ActComplAdmin extends AbstractAdmin
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('acLIEU', 'text', array(
+        $showMapper->add('acLieu', 'text', array(
             'label'=> "Lieu de l'activité :"
         ));
-        $showMapper->add('acTHEME', 'text', array(
+        $showMapper->add('acTheme', 'text', array(
             'label'=> "Théme de l'activité :"
         ));
-        $showMapper->add('acDATE', 'date', array(
+        $showMapper->add('acDate', 'date', array(
             'label'=> "Date de l'activité :"
         ));
-        $showMapper->add('acPRATICIEN', 'entity', array(
-            'associated_property'=>'praNOM',
+        $showMapper->add('acPraticien', 'entity', array(
+            'associated_property'=>'praNom',
             'class' => 'MainBundle\Entity\Praticien',
             'multiple' => true,
             'required' => false,
             'label'=> "Praticens convoqués :"
         ));
-        $showMapper->add('acACTREAS', 'sonata_type_collection',
+        $showMapper->add('acActReal', 'sonata_type_collection',
             array(
-                'associated_property'=>'actreaVISITEUR.usrNOM',
+                'associated_property'=>'actReaVisiteur.usrNom',
                 'by_reference' => false,
                 'required' => false,
                 'label'=> "Réalisation de l'activité:"
@@ -107,7 +107,7 @@ class ActComplAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('acDATE');
+        $datagridMapper->add('acDate');
     }
 
     public function preValidate($object){

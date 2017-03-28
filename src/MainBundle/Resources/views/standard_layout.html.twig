@@ -62,7 +62,7 @@
                        {% endblock sonata_breadcrumb %}
                    </div>
                     <div class="navbar-right">
-                        <h1>Bonjour {{ app.user.usrNOM }} <small> {{ 'now'|date('d - m -Y') }} </small></h1>
+                        <h1>Bonjour {{ app.user.usrNom }} <small> {{ 'now'|date('d - m -Y') }} </small></h1>
                     </div>
                    {% block sonata_top_nav_menu %}
                        {% if app.user and is_granted('ROLE_SONATA_ADMIN') %}

@@ -19,38 +19,38 @@ class ActReaAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('actreaVISITEUR', 'sonata_type_model', array(
+        $formMapper->add('actReaVisiteur', 'sonata_type_model', array(
             'class' => 'OCUserBundle\Entity\User',
-            'property' => 'usrMATRICULE',
+            'property' => 'usrMatricule',
             'label'=>'Visiteur( (co)organisateur :'
         ));
-        $formMapper->add('actreaBUDGET', 'number',array(
+        $formMapper->add('actReaBudget', 'number',array(
             'label'=>'Budget alloué a cette organisateur :'
         ));
 
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('actreaVISITEUR', 'sonata_type_model', array(
-            'associated_property'=>'usrNOM',
+        $listMapper->add('actReaVisiteur', 'sonata_type_model', array(
+            'associated_property'=>'usrNom',
             'class' => 'OCUserBundle\Entity\User',
-            'property' => 'usrMATRICULE',
+            'property' => 'usrMatricule',
             'label'=>'Visiteur( (co)organisateur :'
         ));
-        $listMapper->add('actreaBUDGET', 'number',array(
+        $listMapper->add('actReaBudget', 'number',array(
             'label'=>'Budget alloué a cette organisateur :'
         ));
 
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('actreaVISITEUR', 'sonata_type_model', array(
-            'associated_property'=>'usrNOM',
+        $showMapper->add('actReaVisiteur', 'sonata_type_model', array(
+            'associated_property'=>'usrNom',
             'class' => 'OCUserBundle\Entity\User',
-            'property' => 'usrMATRICULE',
+            'property' => 'usrMatricule',
             'label'=>'Visiteur( (co)organisateur :'
         ));
-        $showMapper->add('actreaBUDGET', 'number',array(
+        $showMapper->add('actReaBudget', 'number',array(
             'label'=>'Budget alloué a cette organisateur :'
         ));
 
@@ -58,7 +58,7 @@ class ActReaAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('actreaVISITEUR');
+        $datagridMapper->add('actReaVisiteur');
     }
 
 

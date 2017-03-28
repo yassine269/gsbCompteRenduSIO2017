@@ -104,13 +104,11 @@ security:
         fos_userbundle:
             id: fos_user.user_provider.username
     firewalls:
-        #api:
-        #   pattern: ^/api
-        #   http_basic:
-        #       provider: fos_userbundle
-        #   form_login:
-        #       login_path: /api/login
-        #       check_path: /api/login
+        wsse_secured:
+            pattern:   ^/api/*
+            stateless: true
+            wsse:      true
+            anonymous: true
         main:
             pattern: ^/
             form_login:

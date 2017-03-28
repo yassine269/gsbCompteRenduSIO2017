@@ -28,15 +28,15 @@ class TypePraticien
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $typeCODE;
+    private $typeCode;
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $typeLIBELLE;
+    private $typeLibelle;
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $typeLIEU;
+    private $typeLieu;
 
 
     /**
@@ -50,74 +50,74 @@ class TypePraticien
     }
 
     /**
-     * Set typeCODE
+     * Set typeCode
      *
-     * @param string $typeCODE
+     * @param string $typeCode
      *
      * @return TypePraticien
      */
-    public function setTypeCODE($typeCODE)
+    public function setTypeCode($typeCode)
     {
-        $this->typeCODE = $typeCODE;
+        $this->typeCode = $typeCode;
 
         return $this;
     }
 
     /**
-     * Get typeCODE
+     * Get typeCode
      *
      * @return string
      */
-    public function getTypeCODE()
+    public function getTypeCode()
     {
-        return $this->typeCODE;
+        return $this->typeCode;
     }
 
     /**
-     * Set typeLIBELLE
+     * Set typeLibelle
      *
-     * @param string $typeLIBELLE
+     * @param string $typeLibelle
      *
      * @return TypePraticien
      */
-    public function setTypeLIBELLE($typeLIBELLE)
+    public function setTypeLibelle($typeLibelle)
     {
-        $this->typeLIBELLE = $typeLIBELLE;
+        $this->typeLibelle = $typeLibelle;
 
         return $this;
     }
 
     /**
-     * Get typeLIBELLE
+     * Get typeLibelle
      *
      * @return string
      */
-    public function getTypeLIBELLE()
+    public function getTypeLibelle()
     {
-        return $this->typeLIBELLE;
+        return $this->typeLibelle;
     }
 
     /**
-     * Set typeLIEU
+     * Set typeLieu
      *
-     * @param string $typeLIEU
+     * @param string $typeLieu
      *
      * @return TypePraticien
      */
-    public function setTypeLIEU($typeLIEU)
+    public function setTypeLieu($typeLieu)
     {
-        $this->typeLIEU = $typeLIEU;
+        $this->typeLieu = $typeLieu;
 
         return $this;
     }
 
     /**
-     * Get typeLIEU
+     * Get typeLieu
      *
      * @return string
      */
-    public function getTypeLIEU()
+    public function getTypeLieu()
     {
-        return $this->typeLIEU;
+        return $this->typeLieu;
     }
 }

@@ -27,11 +27,11 @@ class Secteur
     /**
      * @ORM\Column(type="string", length=10)
      */
-    private $secCODE;
+    private $secCode;
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $secLIBELLE;
+    private $secLibelle;
 
 
     /**
@@ -45,54 +45,54 @@ class Secteur
     }
 
     /**
-     * Set secCODE
+     * Set secCode
      *
-     * @param string $secCODE
+     * @param string $secCode
      *
      * @return Secteur
      */
-    public function setSecCODE($secCODE)
+    public function setSecCode($secCode)
     {
-        $this->secCODE = $secCODE;
+        $this->secCode = $secCode;
 
         return $this;
     }
 
     /**
-     * Get secCODE
+     * Get secCode
      *
      * @return string
      */
-    public function getSecCODE()
+    public function getSecCode()
     {
-        return $this->secCODE;
+        return $this->secCode;
     }
 
     /**
-     * Set secLIBELLE
+     * Set secLibelle
      *
-     * @param string $secLIBELLE
+     * @param string $secLibelle
      *
      * @return Secteur
      */
-    public function setSecLIBELLE($secLIBELLE)
+    public function setSecLibelle($secLibelle)
     {
-        $this->secLIBELLE = $secLIBELLE;
+        $this->secLibelle = $secLibelle;
 
         return $this;
     }
 
     /**
-     * Get secLIBELLE
+     * Get secLibelle
      *
      * @return string
      */
-    public function getSecLIBELLE()
+    public function getSecLibelle()
     {
-        return $this->secLIBELLE;
+        return $this->secLibelle;
     }
     public function __toString()
     {
-        return $this->secLIBELLE;
+        return $this->secLibelle;
     }
 }

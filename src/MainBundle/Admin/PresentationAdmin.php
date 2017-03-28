@@ -19,36 +19,36 @@ class PresentationAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('preCODE', 'text',array(
+        $formMapper->add('preCode', 'text',array(
             'label'=>'Code de la présentation :'
         ));
-        $formMapper->add('preLIBELLE', 'text',array(
+        $formMapper->add('preLibelle', 'text',array(
             'label'=>'Libellé de la présentation :'
         ));
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('preCODE', 'text',array(
+        $showMapper->add('preCode', 'text',array(
             'label'=>'Code de la présentation :'
         ));
-        $showMapper->add('preLIBELLE', 'text',array(
+        $showMapper->add('preLibelle', 'text',array(
             'label'=>'Libellé de la présentation :'
         ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('preLIBELLE');
+        $datagridMapper->add('preLibelle');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('rapEchantMEDICAMENT', 'sonata_type_model', array(
+        $listMapper->add('rapEchantMedicament', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\Medicament',
-            'property' => 'medNOMCOMMERCIAL',
+            'property' => 'medNomCommercial',
             'label' => 'Médicament :'
         ));
-        $listMapper->add('rapEchantQUANTITE', 'integer',array(
+        $listMapper->add('rapEchantQuantite', 'integer',array(
             'label'=>'Quantité d\'échantillons offerts :'
         ));
 

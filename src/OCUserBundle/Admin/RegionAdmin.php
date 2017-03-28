@@ -20,21 +20,21 @@ class RegionAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('regCODE', 'text');
-        $formMapper->add('regLIBELLE', 'text');
-        $formMapper->add('regSECTEUR', 'sonata_type_model', array(
+        $formMapper->add('regCode', 'text');
+        $formMapper->add('regLibelle', 'text');
+        $formMapper->add('regSecteur', 'sonata_type_model', array(
             'class' => 'OCUserBundle\Entity\Secteur',
-            'property'=>'secLIBELLE',
+            'property'=>'secLibelle',
             'required' => false,
         ));
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('regLIBELLE');
+        $datagridMapper->add('regLibelle');
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('regLIBELLE');
+        $listMapper->addIdentifier('regLibelle');
 
     }
 

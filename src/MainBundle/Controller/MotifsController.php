@@ -1,6 +1,6 @@
 <?php
 
-namespace OCUserBundle\Controller;
+namespace MainBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;

@@ -20,17 +20,17 @@ class Dosage
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
      */
-    private $dosCODE;
+    private $dosCode;
 
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $dosQUANTITE;
+    private $dosQuantite;
 
     /**
      * @ORM\Column(type="string",length=40)
      */
-    private $dosUNITE;
+    private $dosUnite;
 
 
 
@@ -45,75 +45,75 @@ class Dosage
     }
 
     /**
-     * Set dosCODE
+     * Set dosCode
      *
-     * @param string $dosCODE
+     * @param string $dosCode
      *
      * @return Dosage
      */
-    public function setDosCODE($dosCODE)
+    public function setDosCode($dosCode)
     {
-        $this->dosCODE = $dosCODE;
+        $this->dosCode = $dosCode;
 
         return $this;
     }
 
     /**
-     * Get dosCODE
+     * Get dosCode
      *
      * @return string
      */
-    public function getDosCODE()
+    public function getDosCode()
     {
-        return $this->dosCODE;
+        return $this->dosCode;
     }
 
     /**
-     * Set dosQUANTITE
+     * Set dosQuantite
      *
-     * @param string $dosQUANTITE
+     * @param string $dosQuantite
      *
      * @return Dosage
      */
-    public function setDosQUANTITE($dosQUANTITE)
+    public function setDosQuantite($dosQuantite)
     {
-        $this->dosQUANTITE = $dosQUANTITE;
+        $this->dosQuantite = $dosQuantite;
 
         return $this;
     }
 
     /**
-     * Get dosQUANTITE
+     * Get dosQuantite
      *
      * @return string
      */
-    public function getDosQUANTITE()
+    public function getDosQuantite()
     {
-        return $this->dosQUANTITE;
+        return $this->dosQuantite;
     }
 
     /**
-     * Set dosUNITE
+     * Set dosUnite
      *
-     * @param string $dosUNITE
+     * @param string $dosUnite
      *
      * @return Dosage
      */
-    public function setDosUNITE($dosUNITE)
+    public function setDosUnite($dosUnite)
     {
-        $this->dosUNITE = $dosUNITE;
+        $this->dosUnite = $dosUnite;
 
         return $this;
     }
 
     /**
-     * Get dosUNITE
+     * Get dosUnite
      *
      * @return string
      */
-    public function getDosUNITE()
+    public function getDosUnite()
     {
-        return $this->dosUNITE;
+        return $this->dosUnite;
     }
     /**
      * Constructor

@@ -3,6 +3,16 @@
 parameters:
 #    parameter_name: value
 services:
+    wsse.security.authentication.provider:
+        class: OCUserBundle\Security\Authentication\Provider\WsseProvider
+        arguments:
+           - ''
+           - '@cache.app'
+        public: false
+    wsse.security.authentication.listener:
+        class: OCUserBundle\Security\Firewall\WsseListener
+        arguments: ['@security.token_storage', '@security.authentication.manager']
+        public: false
     # DECLARATION DES BLOCK CREER EN TANT QUE SERVICE
     sonata.block.service.stats:
         class: MainBundle\Block\StatsBlockService

@@ -20,16 +20,16 @@ class SecteurAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('secCODE', 'text');
-        $formMapper->add('secLIBELLE', 'text');
+        $formMapper->add('secCode', 'text');
+        $formMapper->add('secLibelle', 'text');
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('secLIBELLE');
+        $datagridMapper->add('secLibelle');
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('secLIBELLE');
+        $listMapper->addIdentifier('secLibelle');
 
     }
 

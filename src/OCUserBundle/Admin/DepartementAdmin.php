@@ -20,25 +20,25 @@ class DepartementAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('depCODE', 'text',array(
+        $formMapper->add('depCode', 'text',array(
             'label'=>'Code de département :'
         ));
-        $formMapper->add('depLIBELLE', 'text', array(
+        $formMapper->add('depLibelle', 'text', array(
             'label'=>'Libéllé du départment'
         ));
-        $formMapper->add('depREGION', 'sonata_type_model', array(
+        $formMapper->add('depRegion', 'sonata_type_model', array(
             'class' => 'OCUserBundle\Entity\Region',
-            'property'=>'regLIBELLE',
+            'property'=>'regLibelle',
             'required' => false,
         ));
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('depLIBELLE');
+        $datagridMapper->add('depLibelle');
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('depLIBELLE');
+        $listMapper->addIdentifier('depLibelle');
 
     }
 

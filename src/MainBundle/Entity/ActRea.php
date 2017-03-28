@@ -22,17 +22,17 @@ class ActRea
     /**
      * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\User")
      */
-    private $actreaVISITEUR;
+    private $actReaVisiteur;
 
     /**
-     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\ActCompl", inversedBy="acACTREAS")
+     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\ActCompl", inversedBy="acActReal")
      */
-    private $actreaACTCOMPL;
+    private $actReaActCompl;
 
     /**
      * @ORM\Column(type="decimal", scale=3)
      */
-    private $actreaBUDGET;
+    private $actReaBudget;
 
 
     /**
@@ -46,7 +46,7 @@ class ActRea
     }
 
     /**
-     * Set compCODE
+     * Set compCode
      *
      * @param string $compCODE
      *
@@ -60,7 +60,7 @@ class ActRea
     }
 
     /**
-     * Get compCODE
+     * Get compCode
      *
      * @return string
      */
@@ -70,7 +70,7 @@ class ActRea
     }
 
     /**
-     * Set compLIBELLE
+     * Set compLibelle
      *
      * @param string $compLIBELLE
      *
@@ -84,7 +84,7 @@ class ActRea
     }
 
     /**
-     * Get compLIBELLE
+     * Get compLibelle
      *
      * @return string
      */
@@ -101,7 +101,7 @@ class ActRea
     }
 
     /**
-     * Set acLIEU
+     * Set acLieu
      *
      * @param string $acLIEU
      *
@@ -115,7 +115,7 @@ class ActRea
     }
 
     /**
-     * Get acLIEU
+     * Get acLieu
      *
      * @return string
      */
@@ -126,7 +126,7 @@ class ActRea
 
 
     /**
-     * Set acTHEME
+     * Set acTheme
      *
      * @param string $acTHEME
      *
@@ -140,7 +140,7 @@ class ActRea
     }
 
     /**
-     * Get acTHEME
+     * Get acTheme
      *
      * @return string
      */
@@ -150,55 +150,55 @@ class ActRea
     }
 
     /**
-     * Set actreaVISITEUR
+     * Set actReaVisiteur
      *
-     * @param \OCUserBundle\Entity\User $actreaVISITEUR
+     * @param \OCUserBundle\Entity\User $actReaVisiteur
      *
      * @return ActRea
      */
-    public function setActreaVISITEUR(\OCUserBundle\Entity\User $actreaVISITEUR = null)
+    public function setActReaVisiteur(\OCUserBundle\Entity\User $actReaVisiteur = null)
     {
-        $this->actreaVISITEUR = $actreaVISITEUR;
+        $this->actReaVisiteur = $actReaVisiteur;
 
         return $this;
     }
 
     /**
-     * Get actreaVISITEUR
+     * Get actReaVisiteur
      *
      * @return \OCUserBundle\Entity\User
      */
-    public function getActreaVISITEUR()
+    public function getActReaVisiteur()
     {
-        return $this->actreaVISITEUR;
+        return $this->actReaVisiteur;
     }
 
     /**
-     * Set actreaACTCOMPL
+     * Set actReaActCompl
      *
-     * @param \MainBundle\Entity\ActCompl $actreaACTCOMPL
+     * @param \MainBundle\Entity\ActCompl $actReaActCompl
      *
      * @return ActRea
      */
-    public function setActreaACTCOMPL(\MainBundle\Entity\ActCompl $actreaACTCOMPL = null)
+    public function setActReaActCompl(\MainBundle\Entity\ActCompl $actReaActCompl = null)
     {
-        $this->actreaACTCOMPL = $actreaACTCOMPL;
+        $this->actReaActCompl = $actReaActCompl;
 
         return $this;
     }
 
     /**
-     * Get actreaACTCOMPL
+     * Get actReaActCompl
      *
      * @return \MainBundle\Entity\ActCompl
      */
-    public function getActreaACTCOMPL()
+    public function getActReaActCompl()
     {
-        return $this->actreaACTCOMPL;
+        return $this->actReaActCompl;
     }
 
     /**
-     * Add acPRATICIEN
+     * Add acPraticien
      *
      * @param \MainBundle\Entity\Praticien $acPRATICIEN
      *
@@ -212,7 +212,7 @@ class ActRea
     }
 
     /**
-     * Remove acPRATICIEN
+     * Remove acPraticien
      *
      * @param \MainBundle\Entity\Praticien $acPRATICIEN
      */
@@ -222,7 +222,7 @@ class ActRea
     }
 
     /**
-     * Get acPRATICIEN
+     * Get acPraticien
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -232,26 +232,26 @@ class ActRea
     }
 
     /**
-     * Set actreaBUDGET
+     * Set actReaBudget
      *
-     * @param string $actreaBUDGET
+     * @param string $actReaBudget
      *
      * @return ActRea
      */
-    public function setActreaBUDGET($actreaBUDGET)
+    public function setActReaBudget($actReaBudget)
     {
-        $this->actreaBUDGET = $actreaBUDGET;
+        $this->actReaBudget = $actReaBudget;
 
         return $this;
     }
 
     /**
-     * Get actreaBUDGET
+     * Get actReaBudget
      *
      * @return string
      */
-    public function getActreaBUDGET()
+    public function getActReaBudget()
     {
-        return $this->actreaBUDGET;
+        return $this->actReaBudget;
     }
 }

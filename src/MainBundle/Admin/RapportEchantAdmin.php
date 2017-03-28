@@ -19,39 +19,39 @@ class RapportEchantAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('rapEchantMEDICAMENT', 'sonata_type_model', array(
+        $formMapper->add('rapEchantMedicament', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\Medicament',
-            'property' => 'medNOMCOMMERCIAL',
+            'property' => 'medNomCommercial',
             'label' => 'Médicament :'
         ));
-        $formMapper->add('rapEchantQUANTITE', 'integer',array(
+        $formMapper->add('rapEchantQuantite', 'integer',array(
             'label'=>'Quantité d\'échantillons offerts :'
         ));
 
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('rapEchantMEDICAMENT', 'sonata_type_model', array(
+        $showMapper->add('rapEchantMedicament', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\Medicament',
-            'property' => 'medNOMCOMMERCIAL',
+            'property' => 'medNomCommercial',
             'label' => 'Médicament :'
         ));
-        $showMapper->add('rapEchantQUANTITE', 'integer',array(
+        $showMapper->add('rapEchantQuantite', 'integer',array(
             'label'=>'Quantité d\'échantillons offerts :'
         ));
 
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('rapEchantMEDICAMENT');
+        $datagridMapper->add('rapEchantMedicament');
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('rapEchantMEDICAMENT','many_to_one', array(
+        $listMapper->add('rapEchantMedicament','many_to_one', array(
         'label' => 'Médicament :',
-        'associated_property'=>'medNOMCOMMERCIAL'
+        'associated_property'=>'medNomCommercial'
     ));
-        $listMapper->add('rapEchantQUANTITE', 'integer',array(
+        $listMapper->add('rapEchantQuantite', 'integer',array(
             'label'=>'Quantité d\'échantillons offerts :'
         ));
 

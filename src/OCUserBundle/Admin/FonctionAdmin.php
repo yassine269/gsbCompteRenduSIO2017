@@ -20,16 +20,16 @@ class FonctionAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('LIBELLE', 'text');
+        $formMapper->add('fonctLibelle', 'text');
 
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('LIBELLE');
+        $datagridMapper->add('fonctLibelle');
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('LIBELLE');
+        $listMapper->addIdentifier('fonctLibelle');
 
     }
 

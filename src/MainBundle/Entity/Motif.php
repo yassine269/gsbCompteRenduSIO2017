@@ -27,7 +27,7 @@ class Motif
     /**
      * @ORM\Column(type="string",length=40)
      */
-    private $motifLIBELLE;
+    private $motifLibelle;
     /**
      * Get id
      *
@@ -46,26 +46,26 @@ class Motif
     }
 
     /**
-     * Set motifLIBELLE
+     * Set motifLibelle
      *
-     * @param string $motifLIBELLE
+     * @param string $motifLibelle
      *
      * @return Motif
      */
-    public function setMotifLIBELLE($motifLIBELLE)
+    public function setMotifLibelle($motifLibelle)
     {
-        $this->motifLIBELLE = $motifLIBELLE;
+        $this->motifLibelle = $motifLibelle;
 
         return $this;
     }
 
     /**
-     * Get motifLIBELLE
+     * Get motifLibelle
      *
      * @return string
      */
-    public function getMotifLIBELLE()
+    public function getMotifLibelle()
     {
-        return $this->motifLIBELLE;
+        return $this->motifLibelle;
     }
 }

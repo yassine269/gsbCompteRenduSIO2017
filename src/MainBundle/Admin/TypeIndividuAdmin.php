@@ -19,26 +19,26 @@ class TypeIndividuAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('typeIndLIBELLE', 'text',array(
+        $formMapper->add('TypeIndLibelle', 'text',array(
             'label'=>'Libéllé du type d\'individu :'
         ));
     }
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('typeIndLIBELLE', 'text',array(
+        $showMapper->add('TypeIndLibelle', 'text',array(
             'label'=>'Libéllé du type d\'individu :'
         ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('typeIndLIBELLE');
+        $datagridMapper->add('TypeIndLibelle');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('typeIndLIBELLE',null,array(
+        $listMapper->addIdentifier('TypeIndLibelle',null,array(
             'label'=>'Libéllé du type d\'individu :'
         ));
     }

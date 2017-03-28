@@ -24,19 +24,19 @@ class RapportEchant
      */
     private $id;
     /**
-     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\RapportVisite", inversedBy="rapECHANTILLONS")
+     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\RapportVisite", inversedBy="rapEchantillons")
      */
-    private $rapEchantRAPPORT;
+    private $rapEchantRapport;
 
     /**
      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Medicament")
      */
-    private $rapEchantMEDICAMENT;
+    private $rapEchantMedicament;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $rapEchantQUANTITE;
+    private $rapEchantQuantite;
 
 
     /**
@@ -50,74 +50,74 @@ class RapportEchant
     }
 
     /**
-     * Set rapEchantQUANTITE
+     * Set rapEchantQuantite
      *
-     * @param integer $rapEchantQUANTITE
+     * @param integer $rapEchantQuantite
      *
      * @return RappportEchant
      */
-    public function setRapEchantQUANTITE($rapEchantQUANTITE)
+    public function setRapEchantQuantite($rapEchantQuantite)
     {
-        $this->rapEchantQUANTITE = $rapEchantQUANTITE;
+        $this->rapEchantQuantite = $rapEchantQuantite;
 
         return $this;
     }
 
     /**
-     * Get rapEchantQUANTITE
+     * Get rapEchantQuantite
      *
      * @return integer
      */
-    public function getRapEchantQUANTITE()
+    public function getRapEchantQuantite()
     {
-        return $this->rapEchantQUANTITE;
+        return $this->rapEchantQuantite;
     }
 
     /**
-     * Set rapEchantRAPPORT
+     * Set rapEchantRapport
      *
-     * @param \MainBundle\Entity\RapportVisite $rapEchantRAPPORT
+     * @param \MainBundle\Entity\RapportVisite $rapEchantRapport
      *
      * @return RappportEchant
      */
-    public function setRapEchantRAPPORT(\MainBundle\Entity\RapportVisite $rapEchantRAPPORT = null)
+    public function setRapEchantRapport(\MainBundle\Entity\RapportVisite $rapEchantRapport = null)
     {
-        $this->rapEchantRAPPORT = $rapEchantRAPPORT;
+        $this->rapEchantRapport = $rapEchantRapport;
 
         return $this;
     }
 
     /**
-     * Get rapEchantRAPPORT
+     * Get rapEchantRapport
      *
      * @return \MainBundle\Entity\RapportVisite
      */
-    public function getRapEchantRAPPORT()
+    public function getRapEchantRapport()
     {
-        return $this->rapEchantRAPPORT;
+        return $this->rapEchantRapport;
     }
 
     /**
-     * Set rapEchantMEDICAMENT
+     * Set rapEchantMedicament
      *
-     * @param \MainBundle\Entity\Medicament $rapEchantMEDICAMENT
+     * @param \MainBundle\Entity\Medicament $rapEchantMedicament
      *
      * @return RappportEchant
      */
-    public function setRapEchantMEDICAMENT(\MainBundle\Entity\Medicament $rapEchantMEDICAMENT = null)
+    public function setRapEchantMedicament(\MainBundle\Entity\Medicament $rapEchantMedicament = null)
     {
-        $this->rapEchantMEDICAMENT = $rapEchantMEDICAMENT;
+        $this->rapEchantMedicament = $rapEchantMedicament;
 
         return $this;
     }
 
     /**
-     * Get rapEchantMEDICAMENT
+     * Get rapEchantMedicament
      *
      * @return \MainBundle\Entity\Medicament
      */
-    public function getRapEchantMEDICAMENT()
+    public function getRapEchantMedicament()
     {
-        return $this->rapEchantMEDICAMENT;
+        return $this->rapEchantMedicament;
     }
 }

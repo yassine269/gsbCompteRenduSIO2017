@@ -38,12 +38,12 @@ class SpecPosseder
     /**
      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Specialite")
      */
-    private $specSPECIALITE;
+    private $specSpecialite;
 
     /**
      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Praticien")
      */
-    private $specPRATICIEN;
+    private $specPraticien;
 
 
 
@@ -107,50 +107,50 @@ class SpecPosseder
     }
 
     /**
-     * Set specSPECIALITE
+     * Set specSpecialite
      *
-     * @param \MainBundle\Entity\Specialite $specSPECIALITE
+     * @param \MainBundle\Entity\Specialite $specSpecialite
      *
      * @return SpecPosseder
      */
-    public function setSpecSPECIALITE(\MainBundle\Entity\Specialite $specSPECIALITE = null)
+    public function setSpecSpecialite(\MainBundle\Entity\Specialite $specSpecialite = null)
     {
-        $this->specSPECIALITE = $specSPECIALITE;
+        $this->specSpecialite = $specSpecialite;
 
         return $this;
     }
 
     /**
-     * Get specSPECIALITE
+     * Get specSpecialite
      *
      * @return \MainBundle\Entity\Specialite
      */
-    public function getSpecSPECIALITE()
+    public function getSpecSpecialite()
     {
-        return $this->specSPECIALITE;
+        return $this->specSpecialite;
     }
 
     /**
-     * Set specPRATICIEN
+     * Set specPraticien
      *
-     * @param \MainBundle\Entity\Praticien $specPRATICIEN
+     * @param \MainBundle\Entity\Praticien $specPraticien
      *
      * @return SpecPosseder
      */
-    public function setSpecPRATICIEN(\MainBundle\Entity\Praticien $specPRATICIEN = null)
+    public function setSpecPraticien(\MainBundle\Entity\Praticien $specPraticien = null)
     {
-        $this->specPRATICIEN = $specPRATICIEN;
+        $this->specPraticien = $specPraticien;
 
         return $this;
     }
 
     /**
-     * Get specPRATICIEN
+     * Get specPraticien
      *
      * @return \MainBundle\Entity\Praticien
      */
-    public function getSpecPRATICIEN()
+    public function getSpecPraticien()
     {
-        return $this->specPRATICIEN;
+        return $this->specPraticien;
     }
 }

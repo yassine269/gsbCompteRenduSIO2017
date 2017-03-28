@@ -19,35 +19,35 @@ class FamilleAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('famCODE', 'text',array(
+        $formMapper->add('famCode', 'text',array(
             'label'=>'Code de la famille de médicament :'
         ));
-        $formMapper->add('famLIBELLE', 'text',array(
+        $formMapper->add('famLibelle', 'text',array(
             'label'=>'Libellé de la famille de médicament'
         ));
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('famCODE', 'text',array(
+        $listMapper->add('famCode', 'text',array(
             'label'=>'Code de la famille de médicament :'
         ));
-        $listMapper->add('famLIBELLE', 'text',array(
+        $listMapper->add('famLibelle', 'text',array(
             'label'=>'Libellé de la famille de médicament'
         ));
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('famCODE', 'text',array(
+        $showMapper->add('famCode', 'text',array(
             'label'=>'Code de la famille de médicament :'
         ));
-        $showMapper->add('famLIBELLE', 'text',array(
+        $showMapper->add('famLibelle', 'text',array(
             'label'=>'Libellé de la famille de médicament'
         ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('famLIBELLE');
+        $datagridMapper->add('famLibelle');
     }
 
 

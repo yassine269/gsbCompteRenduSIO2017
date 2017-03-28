@@ -20,17 +20,17 @@ class PrescrireAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
 
-        $formMapper->add('presDOSAGE', 'sonata_type_model', array(
+        $formMapper->add('presDosage', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\Dosage',
-            'property' => 'dosCODE',
+            'property' => 'dosCode',
             'label' => 'Dosage :'
         ));
-        $formMapper->add('presTYPEINDIV', 'sonata_type_model', array(
+        $formMapper->add('presTypeIndiv', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\TypeIndividu',
-            'property' => 'typeIndLIBELLE',
+            'property' => 'TypeIndLibelle',
             'label' => 'Type d\'individu concerné :'
         ));
-        $formMapper->add('presPOSOLOGIE', 'text',array(
+        $formMapper->add('presPosologie', 'text',array(
             'label'=>'Posologie associé :'
         ));
 
@@ -39,17 +39,17 @@ class PrescrireAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper)
     {
 
-        $showMapper->add('presDOSAGE', 'sonata_type_model', array(
+        $showMapper->add('presDosage', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\Dosage',
-            'property' => 'dosCODE',
+            'property' => 'dosCode',
             'label' => 'Dosage :'
         ));
-        $showMapper->add('presTYPEINDIV', 'sonata_type_model', array(
+        $showMapper->add('presTypeIndiv', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\TypeIndividu',
-            'property' => 'typeIndLIBELLE',
+            'property' => 'TypeIndLibelle',
             'label' => 'Type d\'individu concerné :'
         ));
-        $showMapper->add('presPOSOLOGIE', 'text',array(
+        $showMapper->add('presPosologie', 'text',array(
             'label'=>'Posologie associé :'
         ));
 
@@ -58,21 +58,21 @@ class PrescrireAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('presMED');
+        $datagridMapper->add('presMed');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
 
-        $listMapper->add('presDOSAGE','many_to_one', array(
+        $listMapper->add('presDosage','many_to_one', array(
         'label' => 'Type du praticien :',
         'associated_property'=>'dosLIBELLE'
     ));
-        $listMapper->add('presTYPEINDIV','many_to_one', array(
+        $listMapper->add('presTypeIndiv','many_to_one', array(
             'label' => 'Type d\'individu :',
-            'associated_property'=>'typeIndLIBELLE'
+            'associated_property'=>'TypeIndLibelle'
         ));
-        $listMapper->add('presPOSOLOGIE', 'text',array(
+        $listMapper->add('presPosologie', 'text',array(
             'label'=>'Posologie associé :'
         ));
 

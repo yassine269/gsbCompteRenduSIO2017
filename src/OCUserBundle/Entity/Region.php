@@ -27,18 +27,18 @@ class Region
     /**
      * @ORM\Column(type="string", length=10)
      */
-    private $regCODE;
+    private $regCode;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $regLIBELLE;
+    private $regLibelle;
 
     /**
      * @ORM\ManyToOne(targetEntity="Secteur")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $regSECTEUR;
+    private $regSecteur;
 
 
     /**
@@ -52,78 +52,78 @@ class Region
     }
 
     /**
-     * Set regCODE
+     * Set regCode
      *
-     * @param string $regCODE
+     * @param string $regCode
      *
      * @return Region
      */
-    public function setRegCODE($regCODE)
+    public function setRegCode($regCode)
     {
-        $this->regCODE = $regCODE;
+        $this->regCode = $regCode;
 
         return $this;
     }
 
     /**
-     * Get regCODE
+     * Get regCode
      *
      * @return string
      */
-    public function getRegCODE()
+    public function getRegCode()
     {
-        return $this->regCODE;
+        return $this->regCode;
     }
 
     /**
-     * Set regLIBELLE
+     * Set regLibelle
      *
-     * @param string $regLIBELLE
+     * @param string $regLibelle
      *
      * @return Region
      */
-    public function setRegLIBELLE($regLIBELLE)
+    public function setRegLibelle($regLibelle)
     {
-        $this->regLIBELLE = $regLIBELLE;
+        $this->regLibelle = $regLibelle;
 
         return $this;
     }
 
     /**
-     * Get regLIBELLE
+     * Get regLibelle
      *
      * @return string
      */
-    public function getRegLIBELLE()
+    public function getRegLibelle()
     {
-        return $this->regLIBELLE;
+        return $this->regLibelle;
     }
 
     /**
-     * Set regSECTEUR
+     * Set regSecteur
      *
-     * @param \OCUserBundle\Entity\Secteur $regSECTEUR
+     * @param \OCUserBundle\Entity\Secteur $regSecteur
      *
      * @return Region
      */
-    public function setRegSECTEUR(\OCUserBundle\Entity\Secteur $regSECTEUR)
+    public function setRegSecteur(\OCUserBundle\Entity\Secteur $regSecteur)
     {
-        $this->regSECTEUR = $regSECTEUR;
+        $this->regSecteur = $regSecteur;
 
         return $this;
     }
 
     /**
-     * Get regSECTEUR
+     * Get regSecteur
      *
      * @return \OCUserBundle\Entity\Secteur
      */
-    public function getRegSECTEUR()
+    public function getRegSecteur()
     {
-        return $this->regSECTEUR;
+        return $this->regSecteur;
     }
     public function __toString()
     {
-        return $this->regLIBELLE;
+        return $this->regLibelle;
     }
 }

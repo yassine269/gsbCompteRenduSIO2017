@@ -19,44 +19,44 @@ class MedConstitutionAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('constCOMPOSANT', 'sonata_type_model', array(
-            'associated_property'=>'compLIBELLE',
+        $formMapper->add('constComposant', 'sonata_type_model', array(
+            'associated_property'=>'compLibelle',
             'class' => 'MainBundle\Entity\Composant',
-            'property' => 'compLIBELLE',
+            'property' => 'compLibelle',
             'label' => 'Composant constituant :'
         ));
-        $formMapper->add('constQUANTITE', 'integer',array(
+        $formMapper->add('constQuantite', 'integer',array(
             'label'=>'Quantité :'
         ));
 
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('constCOMPOSANT', 'sonata_type_model', array(
+        $showMapper->add('constComposant', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\Composant',
-            'property' => 'compLIBELLE',
+            'property' => 'compLibelle',
             'label' => 'Composant constituant :'
         ));
-        $showMapper->add('constQUANTITE', 'integer',array(
+        $showMapper->add('constQuantite', 'integer',array(
             'label'=>'Quantité :'
         ));
 
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('constCOMPOSANT', 'sonata_type_model', array(
-            'associated_property'=>'compLIBELLE',
+        $listMapper->add('constComposant', 'sonata_type_model', array(
+            'associated_property'=>'compLibelle',
             'class' => 'MainBundle\Entity\Composant',
-            'property' => 'compLIBELLE',
+            'property' => 'compLibelle',
             'label' => 'Composant constituant :'
         ));
-        $listMapper->add('constQUANTITE', 'integer',array(
+        $listMapper->add('constQuantite', 'integer',array(
             'label'=>'Quantité :'
         ));
 
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('constMEDICAMENT');
+        $datagridMapper->add('constMedicament');
     }
 }

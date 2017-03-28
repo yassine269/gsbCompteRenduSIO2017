@@ -27,44 +27,44 @@ class Praticien
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $praCODE = 'marchePas';
+    private $praCode;
 
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $praNOM;
+    private $praNom;
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $praPRENOM;
+    private $praPrenom;
 
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $praADRESSE;
+    private $praAdresse;
 
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $praCP;
+    private $praCp;
 
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $praVILLE;
+    private $praVille;
 
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $praCOEFNOTORIETE;
+    private $praCoefNotoriete;
     /**
      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\TypePraticien")
      */
-    private $praTYPE;
+    private $praType;
 
     public function __toString()
     {
-        return $this->praCODE;
+        return $this->praCode;
     }
 
     /**
@@ -102,194 +102,194 @@ class Praticien
     }
 
     /**
-     * Set praCODE
+     * Set praCode
      *
-     * @param string $praCODE
+     * @param string $praCode
      *
      * @return Praticien
      */
-    public function setPraCODE($praCODE)
+    public function setPraCode($praCode)
     {
-        $this->praCODE = $praCODE;
+        $this->praCode = $praCode;
 
         return $this;
     }
 
     /**
-     * Get praCODE
+     * Get praCode
      *
      * @return string
      */
-    public function getPraCODE()
+    public function getPraCode()
     {
-        return $this->praCODE;
+        return $this->praCode;
     }
 
     /**
-     * Set praNOM
+     * Set praNom
      *
-     * @param string $praNOM
+     * @param string $praNom
      *
      * @return Praticien
      */
-    public function setPraNOM($praNOM)
+    public function setPraNom($praNom)
     {
-        $this->praNOM = $praNOM;
+        $this->praNom = $praNom;
 
         return $this;
     }
 
     /**
-     * Get praNOM
+     * Get praNom
      *
      * @return string
      */
-    public function getPraNOM()
+    public function getPraNom()
     {
-        return $this->praNOM;
+        return $this->praNom;
     }
 
     /**
-     * Set praADRESSE
+     * Set praAdresse
      *
-     * @param string $praADRESSE
+     * @param string $praAdresse
      *
      * @return Praticien
      */
-    public function setPraADRESSE($praADRESSE)
+    public function setPraAdresse($praAdresse)
     {
-        $this->praADRESSE = $praADRESSE;
+        $this->praAdresse = $praAdresse;
 
         return $this;
     }
 
     /**
-     * Get praADRESSE
+     * Get praAdresse
      *
      * @return string
      */
-    public function getPraADRESSE()
+    public function getPraAdresse()
     {
-        return $this->praADRESSE;
+        return $this->praAdresse;
     }
 
     /**
-     * Set praCP
+     * Set praCp
      *
-     * @param string $praCP
+     * @param string $praCp
      *
      * @return Praticien
      */
-    public function setPraCP($praCP)
+    public function setPraCp($praCp)
     {
-        $this->praCP = $praCP;
+        $this->praCp = $praCp;
 
         return $this;
     }
 
     /**
-     * Get praCP
+     * Get praCp
      *
      * @return string
      */
-    public function getPraCP()
+    public function getPraCp()
     {
-        return $this->praCP;
+        return $this->praCp;
     }
 
     /**
-     * Set praVILLE
+     * Set praVille
      *
-     * @param string $praVILLE
+     * @param string $praVille
      *
      * @return Praticien
      */
-    public function setPraVILLE($praVILLE)
+    public function setPraVille($praVille)
     {
-        $this->praVILLE = $praVILLE;
+        $this->praVille = $praVille;
 
         return $this;
     }
 
     /**
-     * Get praVILLE
+     * Get praVille
      *
      * @return string
      */
-    public function getPraVILLE()
+    public function getPraVille()
     {
-        return $this->praVILLE;
+        return $this->praVille;
     }
 
     /**
-     * Set praCOEFNOTORIETE
+     * Set praCoefNotoriete
      *
-     * @param string $praCOEFNOTORIETE
+     * @param string $praCoefNotoriete
      *
      * @return Praticien
      */
-    public function setPraCOEFNOTORIETE($praCOEFNOTORIETE)
+    public function setPraCoefNotoriete($praCoefNotoriete)
     {
-        $this->praCOEFNOTORIETE = $praCOEFNOTORIETE;
+        $this->praCoefNotoriete = $praCoefNotoriete;
 
         return $this;
     }
 
     /**
-     * Get praCOEFNOTORIETE
+     * Get praCoefNotoriete
      *
      * @return string
      */
-    public function getPraCOEFNOTORIETE()
+    public function getPraCoefNotoriete()
     {
-        return $this->praCOEFNOTORIETE;
+        return $this->praCoefNotoriete;
     }
 
     /**
-     * Set praTYPE
+     * Set praType
      *
-     * @param \MainBundle\Entity\TypePraticien $praTYPE
+     * @param \MainBundle\Entity\TypePraticien $praType
      *
      * @return Praticien
      */
-    public function setPraTYPE(\MainBundle\Entity\TypePraticien $praTYPE = null)
+    public function setPraType(\MainBundle\Entity\TypePraticien $praType = null)
     {
-        $this->praTYPE = $praTYPE;
+        $this->praType = $praType;
 
         return $this;
     }
 
     /**
-     * Get praTYPE
+     * Get praType
      *
      * @return \MainBundle\Entity\TypePraticien
      */
-    public function getPraTYPE()
+    public function getPraType()
     {
-        return $this->praTYPE;
+        return $this->praType;
     }
 
     /**
-     * Set praPRENOM
+     * Set praPrenom
      *
-     * @param string $praPRENOM
+     * @param string $praPrenom
      *
      * @return Praticien
      */
-    public function setPraPRENOM($praPRENOM)
+    public function setPraPrenom($praPrenom)
     {
-        $this->praPRENOM = $praPRENOM;
+        $this->praPrenom = $praPrenom;
 
         return $this;
     }
 
     /**
-     * Get praPRENOM
+     * Get praPrenom
      *
      * @return string
      */
-    public function getPraPRENOM()
+    public function getPraPrenom()
     {
-        return $this->praPRENOM;
+        return $this->praPrenom;
     }
 }

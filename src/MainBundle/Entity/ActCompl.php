@@ -21,25 +21,25 @@ class ActCompl
     /**
      * @ORM\Column(type="string",length=40)
      */
-    private $acLIEU;
+    private $acLieu;
     /**
      * @ORM\Column(type="date")
      */
-    private $acDATE;
+    private $acDate;
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $acTHEME;
+    private $acTheme;
 
     /**
      * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Praticien")
      */
-    private $acPRATICIEN;
+    private $acPraticien;
 
     /**
-     * @ORM\OneToMany(targetEntity="MainBundle\Entity\ActRea", mappedBy="actreaACTCOMPL", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="MainBundle\Entity\ActRea", mappedBy="actReaActCompl", cascade={"persist"})
      */
-    private $acACTREAS;
+    private $acActReal;
 
     /**
      * @ORM\Column(type="string", length=20)
@@ -57,7 +57,7 @@ class ActCompl
     }
 
     /**
-     * Set compCODE
+     * Set compCode
      *
      * @param string $compCODE
      *
@@ -71,7 +71,7 @@ class ActCompl
     }
 
     /**
-     * Get compCODE
+     * Get compCode
      *
      * @return string
      */
@@ -81,7 +81,7 @@ class ActCompl
     }
 
     /**
-     * Set compLIBELLE
+     * Set compLibelle
      *
      * @param string $compLIBELLE
      *
@@ -95,7 +95,7 @@ class ActCompl
     }
 
     /**
-     * Get compLIBELLE
+     * Get compLibelle
      *
      * @return string
      */
@@ -108,8 +108,8 @@ class ActCompl
      */
     public function __construct()
     {
-        $this->acPRATICIEN = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->acACTREAS = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->acPraticien = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->acActReal = new \Doctrine\Common\Collections\ArrayCollection();
 
     }
 
@@ -138,78 +138,78 @@ class ActCompl
     }
 
     /**
-     * Set acLIEU
+     * Set acLieu
      *
-     * @param string $acLIEU
+     * @param string $acLieu
      *
      * @return ActCompl
      */
-    public function setAcLIEU($acLIEU)
+    public function setAcLieu($acLieu)
     {
-        $this->acLIEU = $acLIEU;
+        $this->acLieu = $acLieu;
 
         return $this;
     }
 
     /**
-     * Get acLIEU
+     * Get acLieu
      *
      * @return string
      */
-    public function getAcLIEU()
+    public function getAcLieu()
     {
-        return $this->acLIEU;
+        return $this->acLieu;
     }
 
     /**
-     * Set acDATE
+     * Set acDate
      *
-     * @param $acDATE
+     * @param $acDate
      *
      * @return ActCompl
      */
-    public function setAcDATE($acDATE)
+    public function setAcDate($acDate)
     {
-        $this->acDATE = $acDATE;
+        $this->acDate = $acDate;
 
         return $this;
     }
 
     /**
-     * Get acDATE
+     * Get acDate
 
      */
-    public function getAcDATE()
+    public function getAcDate()
     {
-        return $this->acDATE;
+        return $this->acDate;
     }
 
     /**
-     * Set acTHEME
+     * Set acTheme
      *
-     * @param string $acTHEME
+     * @param string $acTheme
      *
      * @return ActCompl
      */
-    public function setAcTHEME($acTHEME)
+    public function setAcTheme($acTheme)
     {
-        $this->acTHEME = $acTHEME;
+        $this->acTheme = $acTheme;
 
         return $this;
     }
 
     /**
-     * Get acTHEME
+     * Get acTheme
      *
      * @return string
      */
-    public function getAcTHEME()
+    public function getAcTheme()
     {
-        return $this->acTHEME;
+        return $this->acTheme;
     }
 
     /**
-     * Add acPRATICIEN
+     * Add acPraticien
      *
      * @param \MainBundle\Entity\Praticien $acPRATICIEN
      *
@@ -217,29 +217,29 @@ class ActCompl
      */
     public function addAcPRATICIEN(\MainBundle\Entity\Praticien $acPRATICIEN)
     {
-        $this->acPRATICIEN[] = $acPRATICIEN;
+        $this->acPraticien[] = $acPRATICIEN;
 
         return $this;
     }
 
     /**
-     * Remove acPRATICIEN
+     * Remove acPraticien
      *
      * @param \MainBundle\Entity\Praticien $acPRATICIEN
      */
     public function removeAcPRATICIEN(\MainBundle\Entity\Praticien $acPRATICIEN)
     {
-        $this->acPRATICIEN->removeElement($acPRATICIEN);
+        $this->acPraticien->removeElement($acPRATICIEN);
     }
 
     /**
-     * Get acPRATICIEN
+     * Get acPraticien
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getAcPRATICIEN()
+    public function getAcPraticien()
     {
-        return $this->acPRATICIEN;
+        return $this->acPraticien;
     }
 
     /**
@@ -251,7 +251,7 @@ class ActCompl
      */
     public function addAcACTREA(\MainBundle\Entity\ActRea $acACTREA)
     {
-        $this->acACTREAS[] = $acACTREA;
+        $this->acActReal[] = $acACTREA;
 
         return $this;
     }
@@ -263,17 +263,17 @@ class ActCompl
      */
     public function removeAcACTREA(\MainBundle\Entity\ActRea $acACTREA)
     {
-        $this->acACTREAS->removeElement($acACTREA);
+        $this->acActReal->removeElement($acACTREA);
     }
 
     /**
-     * Get acACTREAS
+     * Get acActReal
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getAcACTREAS()
+    public function getAcActReal()
     {
-        return $this->acACTREAS;
+        return $this->acActReal;
     }
 
     /**

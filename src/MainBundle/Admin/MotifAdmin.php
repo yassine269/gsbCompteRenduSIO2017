@@ -19,19 +19,19 @@ class MotifAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('motifLIBELLE', 'text',array(
+        $formMapper->add('motifLibelle', 'text',array(
             'label'=>'Libéllé du motif :'
         ));
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('motifLIBELLE', 'text',array(
+        $showMapper->add('motifLibelle', 'text',array(
             'label'=>'Libéllé du motif :'
         ));
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('motifLIBELLE', 'text',array(
+        $listMapper->add('motifLibelle', 'text',array(
             'label'=>'Libéllé du motif :'
         ));
     }
@@ -39,7 +39,7 @@ class MotifAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('motifLIBELLE');
+        $datagridMapper->add('motifLibelle');
     }
 
 

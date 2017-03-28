@@ -19,35 +19,35 @@ class ComposantAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('compCODE', 'text',array(
+        $formMapper->add('compCode', 'text',array(
             'label'=>'Code de la composant :'
         ));
-        $formMapper->add('compLIBELLE', 'text',array(
+        $formMapper->add('compLibelle', 'text',array(
             'label'=>'Libellé du composant :'
         ));
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('compCODE', 'text',array(
+        $showMapper->add('compCode', 'text',array(
             'label'=>'Code de la composant :'
         ));
-        $showMapper->add('compLIBELLE', 'text',array(
+        $showMapper->add('compLibelle', 'text',array(
             'label'=>'Libellé du composant :'
         ));
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('compCODE', 'text',array(
+        $listMapper->add('compCode', 'text',array(
             'label'=>'Code de la composant :'
         ));
-        $listMapper->add('compLIBELLE', 'text',array(
+        $listMapper->add('compLibelle', 'text',array(
             'label'=>'Libellé du composant :'
         ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('compLIBELLE');
+        $datagridMapper->add('compLibelle');
     }
 
 

@@ -26,7 +26,7 @@ class Fonction
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $LIBELLE;
+    private $fonctLibelle;
     /**
      * Get id
      *
@@ -46,9 +46,9 @@ class Fonction
      *
      * @return Fonction
      */
-    public function setLIBELLE($lIBELLE)
+    public function setFonctLibelle($lIBELLE)
     {
-        $this->LIBELLE = $lIBELLE;
+        $this->fonctLibelle = $lIBELLE;
 
         return $this;
     }
@@ -58,12 +58,12 @@ class Fonction
      *
      * @return string
      */
-    public function getLIBELLE()
+    public function getFonctLibelle()
     {
-        return $this->LIBELLE;
+        return $this->fonctLibelle;
     }
     public function __toString()
     {
-        return $this->LIBELLE;
+        return $this->fonctLibelle;
     }
 }

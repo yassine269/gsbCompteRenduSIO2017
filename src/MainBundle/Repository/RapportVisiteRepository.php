@@ -21,8 +21,8 @@ class RapportVisiteRepository extends EntityRepository
         $query=$this->_em->createQuery(
             'SELECT rap 
               FROM MainBundle:RapportVisite rap 
-              WHERE YEAR(rap.rapDATE) <= :anne AND YEAR(rap.rapDATE) >= :debut
-              AND rap.rapVISITEUR = :user'
+              WHERE YEAR(rap.rapDate) <= :anne AND YEAR(rap.rapDate) >= :debut
+              AND rap.rapVisiteur = :user'
         )->setParameters(array(
             'anne'=>$annee,
             'debut'=>$debut,
@@ -41,9 +41,9 @@ class RapportVisiteRepository extends EntityRepository
         $query=$this->_em->createQuery(
             'SELECT rap 
               FROM MainBundle:RapportVisite rap
-              JOIN rap.rapVISITEUR u 
-              WHERE u.usrREGION = :region
-              AND YEAR(rap.rapDATE) <= :anne AND YEAR(rap.rapDATE) >= :debut 
+              JOIN rap.rapVisiteur u 
+              WHERE u.usrRegion = :region
+              AND YEAR(rap.rapDate) <= :anne AND YEAR(rap.rapDate) >= :debut 
               '
         )->setParameters(array(
             'region' => $region,
@@ -63,9 +63,9 @@ class RapportVisiteRepository extends EntityRepository
         $query=$this->_em->createQuery(
             'SELECT rap 
               FROM MainBundle:RapportVisite rap
-              JOIN rap.rapVISITEUR u 
-              WHERE u.usrSECTEUR = :secteur
-              AND YEAR(rap.rapDATE) <= :anne AND YEAR(rap.rapDATE) >= :debut 
+              JOIN rap.rapVisiteur u 
+              WHERE u.usrSecteur = :secteur
+              AND YEAR(rap.rapDate) <= :anne AND YEAR(rap.rapDate) >= :debut 
               '
         )->setParameters(array(
             'secteur' => $secteur,

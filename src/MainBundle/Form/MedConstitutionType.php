@@ -12,9 +12,9 @@ class MedConstitutionType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('constMEDICAMENT',EntityType::class, array(
+        $builder->add('constMedicament',EntityType::class, array(
             'class' => 'MainBundle\Entity\Medicament'))
-                ->add('constCOMPOSANT',EntityType::class, array(
+                ->add('constComposant',EntityType::class, array(
             'class' => 'MainBundle\Entity\Composant'))
                 ->add('medQUANTITE', IntegerType::class);
     }

@@ -19,35 +19,35 @@ class DosageAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('dosQUANTITE', 'text',array(
+        $formMapper->add('dosQuantite', 'text',array(
             'label'=>'Quantité :'
         ));
-        $formMapper->add('dosUNITE', 'text',array(
+        $formMapper->add('dosUnite', 'text',array(
             'label'=>'Unité de mesure :'
         ));
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('dosQUANTITE', 'text',array(
+        $showMapper->add('dosQuantite', 'text',array(
             'label'=>'Quantité :'
         ));
-        $showMapper->add('dosUNITE', 'text',array(
+        $showMapper->add('dosUnite', 'text',array(
             'label'=>'Unité de mesure :'
         ));
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('dosQUANTITE', 'text',array(
+        $listMapper->add('dosQuantite', 'text',array(
             'label'=>'Quantité :'
         ));
-        $listMapper->add('dosUNITE', 'text',array(
+        $listMapper->add('dosUnite', 'text',array(
             'label'=>'Unité de mesure :'
         ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('dosCODE');
+        $datagridMapper->add('dosCode');
     }
 
     public function preValidate($object){

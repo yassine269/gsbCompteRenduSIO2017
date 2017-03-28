@@ -25,21 +25,21 @@ class Prescrire
      */
     private $id;
     /**
-     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Medicament", inversedBy="medPRESCRIPTIONS", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Medicament", inversedBy="medPrescriptions", cascade={"persist"})
      */
-    private $presMED;
+    private $presMed;
     /**
      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Dosage")
      */
-    private $presDOSAGE;
+    private $presDosage;
     /**
      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\TypeIndividu")
      */
-    private $presTYPEINDIV;
+    private $presTypeIndiv;
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $presPOSOLOGIE;
+    private $presPosologie;
 
 
 
@@ -54,98 +54,98 @@ class Prescrire
     }
 
     /**
-     * Set presMED
+     * Set presMed
      *
-     * @param \MainBundle\Entity\Medicament $presMED
+     * @param \MainBundle\Entity\Medicament $presMed
      *
      * @return Prescrire
      */
-    public function setPresMED(\MainBundle\Entity\Medicament $presMED = null)
+    public function setPresMed(\MainBundle\Entity\Medicament $presMed = null)
     {
-        $this->presMED = $presMED;
+        $this->presMed = $presMed;
 
         return $this;
     }
 
     /**
-     * Get presMED
+     * Get presMed
      *
      * @return \MainBundle\Entity\Medicament
      */
-    public function getPresMED()
+    public function getPresMed()
     {
-        return $this->presMED;
+        return $this->presMed;
     }
 
     /**
-     * Set presDOSAGE
+     * Set presDosage
      *
-     * @param \MainBundle\Entity\Dosage $presDOSAGE
+     * @param \MainBundle\Entity\Dosage $presDosage
      *
      * @return Prescrire
      */
-    public function setPresDOSAGE(\MainBundle\Entity\Dosage $presDOSAGE = null)
+    public function setPresDosage(\MainBundle\Entity\Dosage $presDosage = null)
     {
-        $this->presDOSAGE = $presDOSAGE;
+        $this->presDosage = $presDosage;
 
         return $this;
     }
 
     /**
-     * Get presDOSAGE
+     * Get presDosage
      *
      * @return \MainBundle\Entity\Dosage
      */
-    public function getPresDOSAGE()
+    public function getPresDosage()
     {
-        return $this->presDOSAGE;
+        return $this->presDosage;
     }
 
     /**
-     * Set presTYPEINDIV
+     * Set presTypeIndiv
      *
-     * @param \MainBundle\Entity\TypeIndividu $presTYPEINDIV
+     * @param \MainBundle\Entity\TypeIndividu $presTypeIndiv
      *
      * @return Prescrire
      */
-    public function setPresTYPEINDIV(\MainBundle\Entity\TypeIndividu $presTYPEINDIV = null)
+    public function setPresTypeIndiv(\MainBundle\Entity\TypeIndividu $presTypeIndiv = null)
     {
-        $this->presTYPEINDIV = $presTYPEINDIV;
+        $this->presTypeIndiv = $presTypeIndiv;
 
         return $this;
     }
 
     /**
-     * Get presTYPEINDIV
+     * Get presTypeIndiv
      *
      * @return \MainBundle\Entity\TypeIndividu
      */
-    public function getPresTYPEINDIV()
+    public function getPresTypeIndiv()
     {
-        return $this->presTYPEINDIV;
+        return $this->presTypeIndiv;
     }
 
     /**
-     * Set presPOSOLOGIE
+     * Set presPosologie
      *
-     * @param string $presPOSOLOGIE
+     * @param string $presPosologie
      *
      * @return Prescrire
      */
-    public function setPresPOSOLOGIE($presPOSOLOGIE)
+    public function setPresPosologie($presPosologie)
     {
-        $this->presPOSOLOGIE = $presPOSOLOGIE;
+        $this->presPosologie = $presPosologie;
 
         return $this;
     }
 
     /**
-     * Get presPOSOLOGIE
+     * Get presPosologie
      *
      * @return string
      */
-    public function getPresPOSOLOGIE()
+    public function getPresPosologie()
     {
-        return $this->presPOSOLOGIE;
+        return $this->presPosologie;
     }
 }

@@ -26,21 +26,21 @@ class RapportVisiteAdmin extends AbstractAdmin
 
         $formMapper
             ->with('Informations générales :', array('class' => 'col-md-9'))
-                ->add('rapDATE', 'date',array(
+                ->add('rapDate', 'date',array(
                 'label'=>'Date de la visite :'))
-                ->add('rapVISITEUR', 'sonata_type_model', array(
+                ->add('rapVisiteur', 'sonata_type_model', array(
                 'class' => 'OCUserBundle\Entity\User',
-                'property' => 'usrNOM',
+                'property' => 'usrNom',
                 'label' => 'Visiteur :'))
-                ->add('rapPRATICIEN', 'sonata_type_model', array(
+                ->add('rapPraticien', 'sonata_type_model', array(
                     'class' => 'MainBundle\Entity\Praticien',
-                    'property' => 'praNOM',
+                    'property' => 'praNom',
                     'label' => 'Praticien :'))
-                ->add('rapMOTIF', 'sonata_type_model', array(
+                ->add('rapMotif', 'sonata_type_model', array(
                     'class' => 'MainBundle\Entity\Motif',
-                    'property' => 'motifLIBELLE',
+                    'property' => 'motifLibelle',
                     'label' => 'motif de la visite :'))
-                ->add('rapECHANTILLONS', 'sonata_type_collection',
+                ->add('rapEchantillons', 'sonata_type_collection',
                     array(
                         'by_reference' => false,
                         'required' => false,
@@ -52,9 +52,9 @@ class RapportVisiteAdmin extends AbstractAdmin
 
         $formMapper
             ->with('Bian de la visite :', array('class' => 'col-md-3'))
-                ->add('rapBILAN', 'textarea',array(
+                ->add('rapBilan', 'textarea',array(
                 'label'=>'Bilan de la visite :'))
-                ->add('rapCOEFIMPACT', 'integer',array(
+                ->add('rapCoefImpact', 'integer',array(
                 'label'=>'Coefiscient d\'impact de la visite :'))
             ->end();
 
@@ -62,18 +62,18 @@ class RapportVisiteAdmin extends AbstractAdmin
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('rapVISITEUR',null,array(
+        $datagridMapper->add('rapVisiteur',null,array(
             'label'=>'Rédacteur'
         ));
     }
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('rapVISITEUR','many_to_one',array(
+            ->addIdentifier('rapVisiteur','many_to_one',array(
                 'label'=>'Rédacteur :',
-                'associated_property'=>'usrNOM'
+                'associated_property'=>'usrNom'
             ))
-            ->add('rapDATE','date', array(
+            ->add('rapDate','date', array(
             'pattern' => 'dd MMM y G',
             'locale' => 'fr',
             'timezone' => 'Europe/Paris',
@@ -83,22 +83,22 @@ class RapportVisiteAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper){
         $showMapper
             ->with('Informations générales :', array('class' => 'col-md-6'))
-            ->add('rapDATE', 'date',array(
+            ->add('rapDate', 'date',array(
                 'label'=>'Date de la visite :'))
-            ->add('rapVISITEUR', 'sonata_type_model', array(
+            ->add('rapVisiteur', 'sonata_type_model', array(
                 'class' => 'OCUserBundle\Entity\User',
-                'property' => 'usrNOM',
+                'property' => 'usrNom',
                 'label' => 'Visiteur :'))
-            ->add('rapPRATICIEN', 'sonata_type_model', array(
+            ->add('rapPraticien', 'sonata_type_model', array(
                 'class' => 'MainBundle\Entity\Praticien',
-                'property' => 'praNOM',
+                'property' => 'praNom',
                 'label' => 'Praticien :'))
-            ->add('rapMOTIF', 'sonata_type_model', array(
+            ->add('rapMotif', 'sonata_type_model', array(
                 'class' => 'MainBundle\Entity\Motif',
-                'property' => 'motifLIBELLE',
-                'associated_property' => 'motifLIBELLE',
+                'property' => 'motifLibelle',
+                'associated_property' => 'motifLibelle',
                 'label' => 'motif de la visite :'))
-            ->add('rapECHANTILLONS', 'sonata_type_collection',
+            ->add('rapEchantillons', 'sonata_type_collection',
                 array(
                     'by_reference' => false,
                     'required' => false,
@@ -110,9 +110,9 @@ class RapportVisiteAdmin extends AbstractAdmin
 
         $showMapper
             ->with('Bian de la visite :', array('class' => 'col-md-6'))
-            ->add('rapBILAN', 'textarea',array(
+            ->add('rapBilan', 'textarea',array(
                 'label'=>'Bilan de la visite :'))
-            ->add('rapCOEFIMPACT', 'integer',array(
+            ->add('rapCoefImpact', 'integer',array(
                 'label'=>'Coefiscient d\'impact de la visite :'))
             ->end();
     }

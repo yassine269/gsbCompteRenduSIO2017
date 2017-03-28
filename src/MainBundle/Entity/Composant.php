@@ -22,16 +22,16 @@ class Composant
     /**
      * @ORM\Column(type="string",length=40)
      */
-    private $compCODE;
+    private $compCode;
     /**
      * @ORM\Column(type="string",length=40)
      */
-    private $compLIBELLE;
+    private $compLibelle;
 
     /**
-     * @ORM\OneToMany(targetEntity="MainBundle\Entity\MedConstitution", mappedBy="constCOMPOSANT",cascade={"all"}))
+     * @ORM\OneToMany(targetEntity="MainBundle\Entity\MedConstitution", mappedBy="constComposant",cascade={"all"}))
      */
-    private $medCOMPOSITIONS;
+    private $medCompositions;
 
     /**
      * Get id
@@ -44,51 +44,51 @@ class Composant
     }
 
     /**
-     * Set compCODE
+     * Set compCode
      *
-     * @param string $compCODE
+     * @param string $compCode
      *
      * @return Composant
      */
-    public function setCompCODE($compCODE)
+    public function setCompCode($compCode)
     {
-        $this->compCODE = $compCODE;
+        $this->compCode = $compCode;
 
         return $this;
     }
 
     /**
-     * Get compCODE
+     * Get compCode
      *
      * @return string
      */
-    public function getCompCODE()
+    public function getCompCode()
     {
-        return $this->compCODE;
+        return $this->compCode;
     }
 
     /**
-     * Set compLIBELLE
+     * Set compLibelle
      *
-     * @param string $compLIBELLE
+     * @param string $compLibelle
      *
      * @return Composant
      */
-    public function setCompLIBELLE($compLIBELLE)
+    public function setCompLibelle($compLibelle)
     {
-        $this->compLIBELLE = $compLIBELLE;
+        $this->compLibelle = $compLibelle;
 
         return $this;
     }
 
     /**
-     * Get compLIBELLE
+     * Get compLibelle
      *
      * @return string
      */
-    public function getCompLIBELLE()
+    public function getCompLibelle()
     {
-        return $this->compLIBELLE;
+        return $this->compLibelle;
     }
     public function __construct()
     {
@@ -173,7 +173,7 @@ class Composant
      */
     public function addMedCOMPOSITION(\MainBundle\Entity\MedConstitution $medCOMPOSITION)
     {
-        $this->medCOMPOSITIONS[] = $medCOMPOSITION;
+        $this->medCompositions[] = $medCOMPOSITION;
 
         return $this;
     }
@@ -185,16 +185,16 @@ class Composant
      */
     public function removeMedCOMPOSITION(\MainBundle\Entity\MedConstitution $medCOMPOSITION)
     {
-        $this->medCOMPOSITIONS->removeElement($medCOMPOSITION);
+        $this->medCompositions->removeElement($medCOMPOSITION);
     }
 
     /**
-     * Get medCOMPOSITIONS
+     * Get medCompositions
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getMedCOMPOSITIONS()
+    public function getMedCompositions()
     {
-        return $this->medCOMPOSITIONS;
+        return $this->medCompositions;
     }
 }

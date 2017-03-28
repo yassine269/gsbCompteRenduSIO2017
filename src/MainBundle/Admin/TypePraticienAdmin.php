@@ -19,40 +19,40 @@ class TypePraticienAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('typeCODE', 'text',array(
+        $formMapper->add('typeCode', 'text',array(
             'label'=>'Code du type de praticien :'
         ));
-        $formMapper->add('typeLIBELLE', 'text',array(
+        $formMapper->add('typeLibelle', 'text',array(
             'label'=>'Libéllé du type de praticien :'
         ));
-        $formMapper->add('typeLIEU', 'text',array(
+        $formMapper->add('typeLieu', 'text',array(
             'label'=>'Lieu d\'exercice du praticien :'
         ));
     }
 
     protected function showLisFields(ShowMapper $showMapper)
     {
-        $showMapper->add('typeCODE', 'text',array(
+        $showMapper->add('typeCode', 'text',array(
             'label'=>'Code du type de praticien :'
         ));
-        $showMapper->add('typeLIBELLE', 'text',array(
+        $showMapper->add('typeLibelle', 'text',array(
             'label'=>'Libéllé du type de praticien :'
         ));
-        $showMapper->add('typeLIEU', 'text',array(
+        $showMapper->add('typeLieu', 'text',array(
             'label'=>'Lieu d\'exercice du praticien :'
         ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('typeLIBELLE');
+        $datagridMapper->add('typeLibelle');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('typeLIBELLE',null,array(
+        $listMapper->addIdentifier('typeLibelle',null,array(
             'label'=>'Libéllé du type :'))
-                    ->add('typeLIEU',null,array(
+                    ->add('typeLieu',null,array(
                         'label'=>'Lieu d\'exercice :'
                     ))
                     ->add('',null,array(

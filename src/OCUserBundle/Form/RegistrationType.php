@@ -22,51 +22,51 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('usrNOM',TextType::class,array(
+            ->add('usrNom',TextType::class,array(
                 'label'=> "Nom :"
             ))
-            ->add('usrPRENOM',TextType::class,array(
+            ->add('usrPrenom',TextType::class,array(
                 'label'=> 'Prénom :'
             ))
-            ->add('usrADRESSE',TextType::class,array(
+            ->add('usrAdresse',TextType::class,array(
                 'label'=> 'Adresse :'
             ))
-            ->add('usrCP',TextType::class,array(
+            ->add('usrCp',TextType::class,array(
                 'label'=> 'Code postal :'
             ))
-            ->add('usrVILLE',TextType::class,array(
+            ->add('usrVille',TextType::class,array(
                 'label'=> 'Ville :'
             ))
-            ->add('usrDATEEMBAUCHE',DateType::class,array(
+            ->add('usrDateEmbauche',DateType::class,array(
                 'label'=> 'Date d\'embauche :'
             ))
-            ->add('usrDEPARTEMENT',EntityType::class,array(
+            ->add('usrDepartement',EntityType::class,array(
                 'label'=> 'Département de rattachement du visiteur :',
                 'class'=>'OCUserBundle:Departement',
-                'choice_value'=>'depLIBELLE'
+                'choice_value'=>'depLibelle'
             ))
-            ->add('usrREGION',EntityType::class,array(
+            ->add('usrRegion',EntityType::class,array(
                 'label'=> 'Région de rattachement du délégué régional :',
                 'class'=>'OCUserBundle:Region',
-                'choice_value'=>'regLIBELLE'
+                'choice_value'=>'regLibelle'
             ))
-            ->add('usrSECTEUR',EntityType::class,array(
+            ->add('usrSecteur',EntityType::class,array(
                 'label'=> 'Secteur de rattachement du responsable de secteur :',
                 'class'=>'OCUserBundle:Secteur',
-                'choice_value'=>'secLIBELLE'
+                'choice_value'=>'secLibelle'
             ))
-            ->add('usrSUPP',EntityType::class,array(
+            ->add('usrSupp',EntityType::class,array(
                 'label'=> 'Supérieur hiérarchique :',
                 'class'=>'OCUserBundle:User',
-                'choice_value'=>'usrNOM'
+                'choice_value'=>'usrNom'
             ))
             ->add('email',EmailType::class,array(
                 'label'=> 'Adresse e-mail :'
             ))
-            ->add('usrFONCTION',EntityType::class,array(
+            ->add('usrFonction',EntityType::class,array(
                 'label'=> 'Fonction du collaborateur :',
                 'class'=>'OCUserBundle:Fonction',
-                'choice_value'=>'LIBELLE'
+                'choice_value'=>'fonctLibelle'
             ))
             ->add('Sumbit',SubmitType::class);
 
