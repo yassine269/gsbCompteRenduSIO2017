@@ -26,18 +26,18 @@ class Departement
     /**
      * @ORM\Column(type="string", length=10)
      */
-    private $depCODE;
+    private $depCode;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $depLIBELLE;
+    private $depLibelle;
 
     /**
      * @ORM\ManyToOne(targetEntity="Region")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $depREGION;
+    private $depRegion;
 
     /**
      * Get id
@@ -50,78 +50,78 @@ class Departement
     }
 
     /**
-     * Set depCODE
+     * Set depCode
      *
-     * @param string $depCODE
+     * @param string $depCode
      *
      * @return Departement
      */
-    public function setDepCODE($depCODE)
+    public function setDepCode($depCode)
     {
-        $this->depCODE = $depCODE;
+        $this->depCode = $depCode;
 
         return $this;
     }
 
     /**
-     * Get depCODE
+     * Get depCode
      *
      * @return string
      */
-    public function getDepCODE()
+    public function getDepCode()
     {
-        return $this->depCODE;
+        return $this->depCode;
     }
 
     /**
-     * Set depLIBELLE
+     * Set depLibelle
      *
-     * @param string $depLIBELLE
+     * @param string $depLibelle
      *
      * @return Departement
      */
-    public function setDepLIBELLE($depLIBELLE)
+    public function setDepLibelle($depLibelle)
     {
-        $this->depLIBELLE = $depLIBELLE;
+        $this->depLibelle = $depLibelle;
 
         return $this;
     }
 
     /**
-     * Get depLIBELLE
+     * Get depLibelle
      *
      * @return string
      */
-    public function getDepLIBELLE()
+    public function getDepLibelle()
     {
-        return $this->depLIBELLE;
+        return $this->depLibelle;
     }
 
     /**
-     * Set depREGION
+     * Set depRegion
      *
-     * @param \OCUserBundle\Entity\Region $depREGION
+     * @param \OCUserBundle\Entity\Region $depRegion
      *
      * @return Departement
      */
-    public function setDepREGION(\OCUserBundle\Entity\Region $depREGION)
+    public function setDepRegion(\OCUserBundle\Entity\Region $depRegion)
     {
-        $this->depREGION = $depREGION;
+        $this->depRegion = $depRegion;
 
         return $this;
     }
 
     /**
-     * Get depREGION
+     * Get depRegion
      *
      * @return \OCUserBundle\Entity\Region
      */
-    public function getDepREGION()
+    public function getDepRegion()
     {
-        return $this->depREGION;
+        return $this->depRegion;
     }
     public function __toString()
     {
-        return $this->depLIBELLE;
+        return $this->depLibelle;
     }
 }

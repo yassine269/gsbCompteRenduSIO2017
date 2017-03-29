@@ -29,71 +29,71 @@ class User extends BaseUser
     /**
      *@ORM\Column(type="string", length=10)
      */
-    private $usrMATRICULE;
+    private $usrMatricule;
 
     /**
      * @ORM\Column(type="string",length=40)
      */
-    private $usrNOM;
+    private $usrNom;
 
     /**
      * @ORM\Column(type="string",length=40)
      */
-    private $usrPRENOM;
+    private $usrPrenom;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
 
-    private $usrADRESSE;
+    private $usrAdresse;
 
     /**
      * @ORM\Column(type="integer")
      */
 
-    private $usrCP;
+    private $usrCp;
 
     /**
      * @ORM\Column(type="string", length=20)
      */
 
-    private $usrVILLE;
+    private $usrVille;
 
     /**
      * @ORM\Column(type="date")
      */
 
-    private $usrDATEEMBAUCHE;
+    private $usrDateEmbauche;
 
     /**
      * @ORM\ManyToOne(targetEntity="Fonction")
      *@ORM\JoinColumn(nullable=false)
      */
-    private $usrFONCTION;
+    private $usrFonction;
 
     /**
      * @ORM\ManyToOne(targetEntity="Departement")
      *@ORM\JoinColumn(nullable=true)
      */
-    private $usrDEPARTEMENT;
+    private $usrDepartement;
 
     /**
      * @ORM\ManyToOne(targetEntity="Region")
      * @ORM\JoinColumn(nullable=true)
      */
-    private $usrREGION;
+    private $usrRegion;
 
     /**
      * @ORM\ManyToOne(targetEntity="Secteur")
      * @ORM\JoinColumn(nullable=true)
      */
-    private $usrSECTEUR;
+    private $usrSecteur;
 
     /**
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(nullable=true)
      */
-    private $usrSUPP;
+    private $usrSupp;
 
     public function __construct()
     {
@@ -103,290 +103,290 @@ class User extends BaseUser
 
 
     /**
-     * Set usrMATRICULE
+     * Set usrMatricule
      *
-     * @param string $usrMATRICULE
+     * @param string $usrMatricule
      *
      * @return User
      */
-    public function setUsrMATRICULE($usrMATRICULE)
+    public function setUsrMatricule($usrMatricule)
     {
-        $this->usrMATRICULE = $usrMATRICULE;
+        $this->usrMatricule = $usrMatricule;
 
         return $this;
     }
 
     /**
-     * Get usrMATRICULE
+     * Get usrMatricule
      *
      * @return string
      */
-    public function getUsrMATRICULE()
+    public function getUsrMatricule()
     {
-        return $this->usrMATRICULE;
+        return $this->usrMatricule;
     }
 
     /**
-     * Set usrNOM
+     * Set usrNom
      *
-     * @param string $usrNOM
+     * @param string $usrNom
      *
      * @return User
      */
-    public function setUsrNOM($usrNOM)
+    public function setUsrNom($usrNom)
     {
-        $this->usrNOM = $usrNOM;
+        $this->usrNom = $usrNom;
 
         return $this;
     }
 
     /**
-     * Get usrNOM
+     * Get usrNom
      *
      * @return string
      */
-    public function getUsrNOM()
+    public function getUsrNom()
     {
-        return $this->usrNOM;
+        return $this->usrNom;
     }
 
     /**
-     * Set usrPRENOM
+     * Set usrPrenom
      *
-     * @param string $usrPRENOM
+     * @param string $usrPrenom
      *
      * @return User
      */
-    public function setUsrPRENOM($usrPRENOM)
+    public function setUsrPrenom($usrPrenom)
     {
-        $this->usrPRENOM = $usrPRENOM;
+        $this->usrPrenom = $usrPrenom;
 
         return $this;
     }
 
     /**
-     * Get usrPRENOM
+     * Get usrPrenom
      *
      * @return string
      */
-    public function getUsrPRENOM()
+    public function getUsrPrenom()
     {
-        return $this->usrPRENOM;
+        return $this->usrPrenom;
     }
 
     /**
-     * Set usrADRESSE
+     * Set usrAdresse
      *
-     * @param string $usrADRESSE
+     * @param string $usrAdresse
      *
      * @return User
      */
-    public function setUsrADRESSE($usrADRESSE)
+    public function setUsrAdresse($usrAdresse)
     {
-        $this->usrADRESSE = $usrADRESSE;
+        $this->usrAdresse = $usrAdresse;
 
         return $this;
     }
 
     /**
-     * Get usrADRESSE
+     * Get usrAdresse
      *
      * @return string
      */
-    public function getUsrADRESSE()
+    public function getUsrAdresse()
     {
-        return $this->usrADRESSE;
+        return $this->usrAdresse;
     }
 
     /**
-     * Set usrCP
+     * Set usrCp
      *
-     * @param integer $usrCP
+     * @param integer $usrCp
      *
      * @return User
      */
-    public function setUsrCP($usrCP)
+    public function setUsrCp($usrCp)
     {
-        $this->usrCP = $usrCP;
+        $this->usrCp = $usrCp;
 
         return $this;
     }
 
     /**
-     * Get usrCP
+     * Get usrCp
      *
      * @return integer
      */
-    public function getUsrCP()
+    public function getUsrCp()
     {
-        return $this->usrCP;
+        return $this->usrCp;
     }
 
     /**
-     * Set usrVILLE
+     * Set usrVille
      *
-     * @param string $usrVILLE
+     * @param string $usrVille
      *
      * @return User
      */
-    public function setUsrVILLE($usrVILLE)
+    public function setUsrVille($usrVille)
     {
-        $this->usrVILLE = $usrVILLE;
+        $this->usrVille = $usrVille;
 
         return $this;
     }
 
     /**
-     * Get usrVILLE
+     * Get usrVille
      *
      * @return string
      */
-    public function getUsrVILLE()
+    public function getUsrVille()
     {
-        return $this->usrVILLE;
+        return $this->usrVille;
     }
 
     /**
-     * Set usrDATEEMBAUCHE
+     * Set usrDateEmbauche
      *
-     * @param \DateTime $usrDATEEMBAUCHE
+     * @param \DateTime $usrDateEmbauche
      *
      * @return User
      */
-    public function setUsrDATEEMBAUCHE($usrDATEEMBAUCHE)
+    public function setUsrDateEmbauche($usrDateEmbauche)
     {
-        $this->usrDATEEMBAUCHE = $usrDATEEMBAUCHE;
+        $this->usrDateEmbauche = $usrDateEmbauche;
 
         return $this;
     }
 
     /**
-     * Get usrDATEEMBAUCHE
+     * Get usrDateEmbauche
      *
      * @return \DateTime
      */
-    public function getUsrDATEEMBAUCHE()
+    public function getUsrDateEmbauche()
     {
-        return $this->usrDATEEMBAUCHE;
+        return $this->usrDateEmbauche;
     }
 
     /**
-     * Set usrFONCTION
+     * Set usrFonction
      *
-     * @param \OCUserBundle\Entity\Fonction $usrFONCTION
+     * @param \OCUserBundle\Entity\Fonction $usrFonction
      *
      * @return User
      */
-    public function setUsrFONCTION(\OCUserBundle\Entity\Fonction $usrFONCTION)
+    public function setUsrFonction(\OCUserBundle\Entity\Fonction $usrFonction)
     {
-        $this->usrFONCTION = $usrFONCTION;
+        $this->usrFonction = $usrFonction;
 
         return $this;
     }
 
     /**
-     * Get usrFONCTION
+     * Get usrFonction
      *
      * @return \OCUserBundle\Entity\Fonction
      */
-    public function getUsrFONCTION()
+    public function getUsrFonction()
     {
-        return $this->usrFONCTION;
+        return $this->usrFonction;
     }
 
     /**
-     * Set usrDEPARTEMENT
+     * Set usrDepartement
      *
-     * @param \OCUserBundle\Entity\Departement $usrDEPARTEMENT
+     * @param \OCUserBundle\Entity\Departement $usrDepartement
      *
      * @return User
      */
-    public function setUsrDEPARTEMENT(\OCUserBundle\Entity\Departement $usrDEPARTEMENT = null)
+    public function setUsrDepartement(\OCUserBundle\Entity\Departement $usrDepartement = null)
     {
-        $this->usrDEPARTEMENT = $usrDEPARTEMENT;
+        $this->usrDepartement = $usrDepartement;
 
         return $this;
     }
 
     /**
-     * Get usrDEPARTEMENT
+     * Get usrDepartement
      *
      * @return \OCUserBundle\Entity\Departement
      */
-    public function getUsrDEPARTEMENT()
+    public function getUsrDepartement()
     {
-        return $this->usrDEPARTEMENT;
+        return $this->usrDepartement;
     }
 
     /**
-     * Set usrREGION
+     * Set usrRegion
      *
-     * @param \OCUserBundle\Entity\Region $usrREGION
+     * @param \OCUserBundle\Entity\Region $usrRegion
      *
      * @return User
      */
-    public function setUsrREGION(\OCUserBundle\Entity\Region $usrREGION = null)
+    public function setUsrRegion(\OCUserBundle\Entity\Region $usrRegion = null)
     {
-        $this->usrREGION = $usrREGION;
+        $this->usrRegion = $usrRegion;
 
         return $this;
     }
 
     /**
-     * Get usrREGION
+     * Get usrRegion
      *
      * @return \OCUserBundle\Entity\Region
      */
-    public function getUsrREGION()
+    public function getUsrRegion()
     {
-        return $this->usrREGION;
+        return $this->usrRegion;
     }
 
     /**
-     * Set usrSECTEUR
+     * Set usrSecteur
      *
-     * @param \OCUserBundle\Entity\Secteur $usrSECTEUR
+     * @param \OCUserBundle\Entity\Secteur $usrSecteur
      *
      * @return User
      */
-    public function setUsrSECTEUR(\OCUserBundle\Entity\Secteur $usrSECTEUR = null)
+    public function setUsrSecteur(\OCUserBundle\Entity\Secteur $usrSecteur = null)
     {
-        $this->usrSECTEUR = $usrSECTEUR;
+        $this->usrSecteur = $usrSecteur;
 
         return $this;
     }
 
     /**
-     * Get usrSECTEUR
+     * Get usrSecteur
      *
      * @return \OCUserBundle\Entity\Secteur
      */
-    public function getUsrSECTEUR()
+    public function getUsrSecteur()
     {
-        return $this->usrSECTEUR;
+        return $this->usrSecteur;
     }
 
     /**
-     * Set usrSUPP
+     * Set usrSupp
      *
-     * @param \OCUserBundle\Entity\User $usrSUPP
+     * @param \OCUserBundle\Entity\User $usrSupp
      *
      * @return User
      */
-    public function setUsrSUPP(\OCUserBundle\Entity\User $usrSUPP = null)
+    public function setUsrSupp(\OCUserBundle\Entity\User $usrSupp = null)
     {
-        $this->usrSUPP = $usrSUPP;
+        $this->usrSupp = $usrSupp;
 
         return $this;
     }
 
     /**
-     * Get usrSUPP
+     * Get usrSupp
      *
      * @return \OCUserBundle\Entity\User
      */
-    public function getUsrSUPP()
+    public function getUsrSupp()
     {
-        return $this->usrSUPP;
+        return $this->usrSupp;
     }
 }

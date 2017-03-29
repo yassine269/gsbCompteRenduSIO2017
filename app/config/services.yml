@@ -6,7 +6,7 @@ services:
     wsse.security.authentication.provider:
         class: OCUserBundle\Security\Authentication\Provider\WsseProvider
         arguments:
-           - ''
+           - 'fos_userbundle'
            - '@cache.app'
         public: false
     wsse.security.authentication.listener:

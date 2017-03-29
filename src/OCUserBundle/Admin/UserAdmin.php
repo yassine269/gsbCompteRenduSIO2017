@@ -63,8 +63,8 @@ class UserAdmin extends AbstractAdmin
         $matricule=mb_strimwidth($user->getUsrNom(),0,3);
         $user->setUsername($userName);
         $user->setPlainPassword($pwd);
-        $user->setUsrMATRICULE($matricule);
-        $role = $user->getUsrFONCTION()->getLIBELLE();
+        $user->setUsrMatricule($matricule);
+        $role = $user->getUsrFonction()->getFonctLibelle();
         if ($role == 'Responsable') {
             $user->addRole('ROLE_RESPONSABLE');
         }

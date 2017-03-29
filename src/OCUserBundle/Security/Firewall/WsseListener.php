@@ -49,15 +49,13 @@ class WsseListener implements ListenerInterface
 
             return;
         } catch (AuthenticationException $failed) {
-            // ... you might log something here
-
-            // To deny the authentication clear the token. This will redirect to the login page.
-            // Make sure to only clear your token, not those of other authentication listeners.
-            // $token = $this->tokenStorage->getToken();
-            // if ($token instanceof WsseUserToken && $this->providerKey === $token->getProviderKey()) {
-            //     $this->tokenStorage->setToken(null);
-            // }
-            // return;
+            $failedMessage = 'WSSE Login failed for '.$token->getUsername().'. Why ? '.$failed->getMessage();
+            // Deny authentication with a '403 Forbidden' HTTP response
+            $response = new Response();
+            $response->setStatusCode(403);
+            $response->setContent($failedMessage);
+            $event->setResponse($response);
+            return;
         }
 
         // By default deny authorization

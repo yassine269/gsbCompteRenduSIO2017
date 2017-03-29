@@ -299,4 +299,28 @@ class ActCompl
     {
         return $this->states;
     }
+
+    /**
+     * Add acActReal
+     *
+     * @param \MainBundle\Entity\ActRea $acActReal
+     *
+     * @return ActCompl
+     */
+    public function addAcActReal(\MainBundle\Entity\ActRea $acActReal)
+    {
+        $this->acActReal[] = $acActReal;
+
+        return $this;
+    }
+
+    /**
+     * Remove acActReal
+     *
+     * @param \MainBundle\Entity\ActRea $acActReal
+     */
+    public function removeAcActReal(\MainBundle\Entity\ActRea $acActReal)
+    {
+        $this->acActReal->removeElement($acActReal);
+    }
 }

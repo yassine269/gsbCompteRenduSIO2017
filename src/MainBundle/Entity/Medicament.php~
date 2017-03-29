@@ -28,36 +28,36 @@ class Medicament
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $medDEPOTLEGAL;
+    private $medDepotLegal;
 
     public function __toString() {
-        return $this->medDEPOTLEGAL;
+        return $this->medDepotLegal;
     }
 
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $medNOMCOMMERCIAL;
+    private $medNomCommercial;
 
     /**
-     * @ORM\OneToMany(targetEntity="MainBundle\Entity\MedConstitution", mappedBy="constMEDICAMENT", cascade={ "persist", "remove"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="MainBundle\Entity\MedConstitution", mappedBy="constMedicament", cascade={ "persist", "remove"}, orphanRemoval=true)
      */
-    private $medCOMPOSITIONS;
-
-    /**
-     * @ORM\Column(type="string", length=40)
-     */
-    private $medEFFETS;
+    private $medCompositions;
 
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $medCONTREINDIC;
+    private $medEffets;
+
+    /**
+     * @ORM\Column(type="string", length=40)
+     */
+    private $medContreIndic;
 
     /**
      * @ORM\Column(type="integer", length=40)
      */
-    private $medPRIXECHANT;
+    private $medPrixEchant;
     /**
      * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Medicament",cascade={"persist"})
      * @ORM\joinTable(name="medPreturbe")
@@ -72,28 +72,28 @@ class Medicament
     /**
      * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Presentation",cascade={"persist"})
      */
-    private $medPRESENTATION;
+    private $medPresentation;
 
     /**
      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Famille")
      */
-    private $medFAMILLE;
+    private $medFamille;
 
     /**
-     * @ORM\OneToMany(targetEntity="MainBundle\Entity\Prescrire", mappedBy="presMED", cascade={ "persist", "remove"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="MainBundle\Entity\Prescrire", mappedBy="presMed", cascade={ "persist", "remove"}, orphanRemoval=true)
      */
-    private $medPRESCRIPTIONS;
+    private $medPrescriptions;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->medCOMPOSITIONS = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->medCompositions = new \Doctrine\Common\Collections\ArrayCollection();
         $this->medPerturbe = new \Doctrine\Common\Collections\ArrayCollection();
         $this->medPerturbateur = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->medPRESENTATION = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->medPRESCRIPTIONS = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->medPresentation = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->medPrescriptions = new \Doctrine\Common\Collections\ArrayCollection();
 
     }
 
@@ -108,123 +108,123 @@ class Medicament
     }
 
     /**
-     * Set medDEPOTLEGAL
+     * Set medDepotLegal
      *
-     * @param string $medDEPOTLEGAL
+     * @param string $medDepotLegal
      *
      * @return Medicament
      */
-    public function setMedDEPOTLEGAL($medDEPOTLEGAL)
+    public function setMedDepotLegal($medDepotLegal)
     {
-        $this->medDEPOTLEGAL = $medDEPOTLEGAL;
+        $this->medDepotLegal = $medDepotLegal;
 
         return $this;
     }
 
     /**
-     * Get medDEPOTLEGAL
+     * Get medDepotLegal
      *
      * @return string
      */
-    public function getMedDEPOTLEGAL()
+    public function getMedDepotLegal()
     {
-        return $this->medDEPOTLEGAL;
+        return $this->medDepotLegal;
     }
 
     /**
-     * Set medNOMCOMMERCIAL
+     * Set medNomCommercial
      *
-     * @param string $medNOMCOMMERCIAL
+     * @param string $medNomCommercial
      *
      * @return Medicament
      */
-    public function setMedNOMCOMMERCIAL($medNOMCOMMERCIAL)
+    public function setMedNomCommercial($medNomCommercial)
     {
-        $this->medNOMCOMMERCIAL = $medNOMCOMMERCIAL;
+        $this->medNomCommercial = $medNomCommercial;
 
         return $this;
     }
 
     /**
-     * Get medNOMCOMMERCIAL
+     * Get medNomCommercial
      *
      * @return string
      */
-    public function getMedNOMCOMMERCIAL()
+    public function getMedNomCommercial()
     {
-        return $this->medNOMCOMMERCIAL;
+        return $this->medNomCommercial;
     }
 
     /**
-     * Set medEFFETS
+     * Set medEffets
      *
-     * @param string $medEFFETS
+     * @param string $medEffets
      *
      * @return Medicament
      */
-    public function setMedEFFETS($medEFFETS)
+    public function setMedEffets($medEffets)
     {
-        $this->medEFFETS = $medEFFETS;
+        $this->medEffets = $medEffets;
 
         return $this;
     }
 
     /**
-     * Get medEFFETS
+     * Get medEffets
      *
      * @return string
      */
-    public function getMedEFFETS()
+    public function getMedEffets()
     {
-        return $this->medEFFETS;
+        return $this->medEffets;
     }
 
     /**
-     * Set medCONTREINDIC
+     * Set medContreIndic
      *
-     * @param string $medCONTREINDIC
+     * @param string $medContreIndic
      *
      * @return Medicament
      */
-    public function setMedCONTREINDIC($medCONTREINDIC)
+    public function setMedContreIndic($medContreIndic)
     {
-        $this->medCONTREINDIC = $medCONTREINDIC;
+        $this->medContreIndic = $medContreIndic;
 
         return $this;
     }
 
     /**
-     * Get medCONTREINDIC
+     * Get medContreIndic
      *
      * @return string
      */
-    public function getMedCONTREINDIC()
+    public function getMedContreIndic()
     {
-        return $this->medCONTREINDIC;
+        return $this->medContreIndic;
     }
 
     /**
-     * Set medPRIXECHANT
+     * Set medPrixEchant
      *
-     * @param integer $medPRIXECHANT
+     * @param integer $medPrixEchant
      *
      * @return Medicament
      */
-    public function setMedPRIXECHANT($medPRIXECHANT)
+    public function setMedPrixEchant($medPrixEchant)
     {
-        $this->medPRIXECHANT = $medPRIXECHANT;
+        $this->medPrixEchant = $medPrixEchant;
 
         return $this;
     }
 
     /**
-     * Get medPRIXECHANT
+     * Get medPrixEchant
      *
      * @return integer
      */
-    public function getMedPRIXECHANT()
+    public function getMedPrixEchant()
     {
-        return $this->medPRIXECHANT;
+        return $this->medPrixEchant;
     }
 
     /**
@@ -236,7 +236,7 @@ class Medicament
      */
     public function addMedCOMPOSITION(\MainBundle\Entity\MedConstitution $medCOMPOSITION)
     {
-        $this->medCOMPOSITIONS[] = $medCOMPOSITION;
+        $this->medCompositions[] = $medCOMPOSITION;
 
         return $this;
     }
@@ -248,17 +248,17 @@ class Medicament
      */
     public function removeMedCOMPOSITION(\MainBundle\Entity\MedConstitution $medCOMPOSITION)
     {
-        $this->medCOMPOSITIONS->removeElement($medCOMPOSITION);
+        $this->medCompositions->removeElement($medCOMPOSITION);
     }
 
     /**
-     * Get medCOMPOSITIONS
+     * Get medCompositions
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getMedCOMPOSITIONS()
+    public function getMedCompositions()
     {
-        return $this->medCOMPOSITIONS;
+        return $this->medCompositions;
     }
 
     /**
@@ -330,7 +330,7 @@ class Medicament
     }
 
     /**
-     * Add medPRESENTATION
+     * Add medPresentation
      *
      * @param \MainBundle\Entity\Presentation $medPRESENTATION
      *
@@ -338,53 +338,53 @@ class Medicament
      */
     public function addMedPRESENTATION(\MainBundle\Entity\Presentation $medPRESENTATION)
     {
-        $this->medPRESENTATION[] = $medPRESENTATION;
+        $this->medPresentation[] = $medPRESENTATION;
 
         return $this;
     }
 
     /**
-     * Remove medPRESENTATION
+     * Remove medPresentation
      *
      * @param \MainBundle\Entity\Presentation $medPRESENTATION
      */
     public function removeMedPRESENTATION(\MainBundle\Entity\Presentation $medPRESENTATION)
     {
-        $this->medPRESENTATION->removeElement($medPRESENTATION);
+        $this->medPresentation->removeElement($medPRESENTATION);
     }
 
     /**
-     * Get medPRESENTATION
+     * Get medPresentation
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getMedPRESENTATION()
+    public function getMedPresentation()
     {
-        return $this->medPRESENTATION;
+        return $this->medPresentation;
     }
 
     /**
-     * Set medFAMILLE
+     * Set medFamille
      *
-     * @param \MainBundle\Entity\Famille $medFAMILLE
+     * @param \MainBundle\Entity\Famille $medFamille
      *
      * @return Medicament
      */
-    public function setMedFAMILLE(\MainBundle\Entity\Famille $medFAMILLE = null)
+    public function setMedFamille(\MainBundle\Entity\Famille $medFamille = null)
     {
-        $this->medFAMILLE = $medFAMILLE;
+        $this->medFamille = $medFamille;
 
         return $this;
     }
 
     /**
-     * Get medFAMILLE
+     * Get medFamille
      *
      * @return \MainBundle\Entity\Famille
      */
-    public function getMedFAMILLE()
+    public function getMedFamille()
     {
-        return $this->medFAMILLE;
+        return $this->medFamille;
     }
 
     /**
@@ -396,7 +396,7 @@ class Medicament
      */
     public function addMedPRESCRIPTION(\MainBundle\Entity\Prescrire $medPRESCRIPTION)
     {
-        $this->medPRESCRIPTIONS[] = $medPRESCRIPTION;
+        $this->medPrescriptions[] = $medPRESCRIPTION;
 
         return $this;
     }
@@ -408,16 +408,16 @@ class Medicament
      */
     public function removeMedPRESCRIPTION(\MainBundle\Entity\Prescrire $medPRESCRIPTION)
     {
-        $this->medPRESCRIPTIONS->removeElement($medPRESCRIPTION);
+        $this->medPrescriptions->removeElement($medPRESCRIPTION);
     }
 
     /**
-     * Get medPRESCRIPTIONS
+     * Get medPrescriptions
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getMedPRESCRIPTIONS()
+    public function getMedPrescriptions()
     {
-        return $this->medPRESCRIPTIONS;
+        return $this->medPrescriptions;
     }
 }

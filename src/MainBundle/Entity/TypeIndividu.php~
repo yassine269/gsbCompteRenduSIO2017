@@ -25,7 +25,7 @@ class TypeIndividu
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $typeIndLIBELLE;
+    private $TypeIndLibelle;
 
 
 
@@ -42,27 +42,27 @@ class TypeIndividu
     }
 
     /**
-     * Set typeIndLIBELLE
+     * Set TypeIndLibelle
      *
-     * @param string $typeIndLIBELLE
+     * @param string $TypeIndLibelle
      *
      * @return TypeIndividu
      */
-    public function setTypeIndLIBELLE($typeIndLIBELLE)
+    public function setTypeIndLibelle($TypeIndLibelle)
     {
-        $this->typeIndLIBELLE = $typeIndLIBELLE;
+        $this->TypeIndLibelle = $TypeIndLibelle;
 
         return $this;
     }
 
     /**
-     * Get typeIndLIBELLE
+     * Get TypeIndLibelle
      *
      * @return string
      */
-    public function getTypeIndLIBELLE()
+    public function getTypeIndLibelle()
     {
-        return $this->typeIndLIBELLE;
+        return $this->TypeIndLibelle;
     }
     /**
      * Constructor

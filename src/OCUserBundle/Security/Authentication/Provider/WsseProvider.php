@@ -10,10 +10,11 @@ namespace OCUserBundle\Security\Authentication\Provider;
 
 use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Security\Core\Authentication\Provider\AuthenticationProviderInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Exception\NonceExpiredException;
-use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Authentication\Token\AbstractToken;
 use OCUserBundle\Security\Authentication\Token\WsseUserToken;
 
 class WsseProvider implements AuthenticationProviderInterface
@@ -30,6 +31,7 @@ class WsseProvider implements AuthenticationProviderInterface
     public function authenticate(TokenInterface $token)
     {
         $user = $this->userProvider->loadUserByUsername($token->getUsername());
+
 
         if ($user && $this->validateDigest($token->digest, $token->nonce, $token->created, $user->getPassword())) {
             $authenticatedToken = new WsseUserToken($user->getRoles());
@@ -51,12 +53,12 @@ class WsseProvider implements AuthenticationProviderInterface
     {
         // Check created time is not in the future
         if (strtotime($created) > time()) {
-            return false;
+            throw new AuthenticationException("Back to the future...");
         }
 
         // Expire timestamp after 5 minutes
         if (time() - strtotime($created) > 300) {
-            return false;
+            throw new AuthenticationException("Too late for this timestamp... Watch your watch.");
         }
 
         // Try to fetch the cache item from pool

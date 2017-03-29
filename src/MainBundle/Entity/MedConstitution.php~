@@ -23,20 +23,20 @@ class MedConstitution
      */
     private $id;
      /**
-      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Medicament", inversedBy="medCOMPOSITIONS", cascade={"persist"})
+      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Medicament", inversedBy="medCompositions", cascade={"persist"})
       */
-    private $constMEDICAMENT ;
+    private $constMedicament ;
     /**
-      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Composant",inversedBy="medCOMPOSITIONS",cascade={"persist"})
+      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Composant",inversedBy="medCompositions",cascade={"persist"})
      */
-    private $constCOMPOSANT;
+    private $constComposant;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $constQUANTITE;
+    private $constQuantite;
 
-    private $constCompLIBELLE;
+    private $constCompLibelle;
 
 
 
@@ -51,74 +51,74 @@ class MedConstitution
     }
 
     /**
-     * Set constQUANTITE
+     * Set constQuantite
      *
-     * @param integer $constQUANTITE
+     * @param integer $constQuantite
      *
      * @return MedConstitution
      */
-    public function setConstQUANTITE($constQUANTITE)
+    public function setConstQuantite($constQuantite)
     {
-        $this->constQUANTITE = $constQUANTITE;
+        $this->constQuantite = $constQuantite;
 
         return $this;
     }
 
     /**
-     * Get constQUANTITE
+     * Get constQuantite
      *
      * @return integer
      */
-    public function getConstQUANTITE()
+    public function getConstQuantite()
     {
-        return $this->constQUANTITE;
+        return $this->constQuantite;
     }
 
     /**
-     * Set constMEDICAMENT
+     * Set constMedicament
      *
-     * @param \MainBundle\Entity\Medicament $constMEDICAMENT
+     * @param \MainBundle\Entity\Medicament $constMedicament
      *
      * @return MedConstitution
      */
-    public function setConstMEDICAMENT(\MainBundle\Entity\Medicament $constMEDICAMENT = null)
+    public function setConstMedicament(\MainBundle\Entity\Medicament $constMedicament = null)
     {
-        $this->constMEDICAMENT = $constMEDICAMENT;
+        $this->constMedicament = $constMedicament;
 
         return $this;
     }
 
     /**
-     * Get constMEDICAMENT
+     * Get constMedicament
      *
      * @return \MainBundle\Entity\Medicament
      */
-    public function getConstMEDICAMENT()
+    public function getConstMedicament()
     {
-        return $this->constMEDICAMENT;
+        return $this->constMedicament;
     }
 
     /**
-     * Set constCOMPOSANT
+     * Set constComposant
      *
-     * @param \MainBundle\Entity\Composant $constCOMPOSANT
+     * @param \MainBundle\Entity\Composant $constComposant
      *
      * @return MedConstitution
      */
-    public function setConstCOMPOSANT(\MainBundle\Entity\Composant $constCOMPOSANT = null)
+    public function setConstComposant(\MainBundle\Entity\Composant $constComposant = null)
     {
-        $this->constCOMPOSANT = $constCOMPOSANT;
+        $this->constComposant = $constComposant;
 
         return $this;
     }
 
     /**
-     * Get constCOMPOSANT
+     * Get constComposant
      *
      * @return \MainBundle\Entity\Composant
      */
-    public function getConstCOMPOSANT()
+    public function getConstComposant()
     {
-        return $this->constCOMPOSANT;
+        return $this->constComposant;
     }
 }

@@ -21,41 +21,41 @@ class RapportVisite
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="MainBundle\Entity\RapportEchant", mappedBy="rapEchantRAPPORT", cascade={ "persist", "remove"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="MainBundle\Entity\RapportEchant", mappedBy="rapEchantRapport", cascade={ "persist", "remove"}, orphanRemoval=true)
      */
-    private $rapECHANTILLONS;
+    private $rapEchantillons;
     /**
      * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\User")
      */
-    private $rapVISITEUR;
+    private $rapVisiteur;
 
     /**
      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Praticien")
      */
-    private $rapPRATICIEN;
+    private $rapPraticien;
 
     /**
      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Motif")
      */
-    private $rapMOTIF;
+    private $rapMotif;
     /**
      * @ORM\Column(type="date")
      */
-    private $rapDATE;
+    private $rapDate;
     /**
      * @ORM\Column(type="date", nullable=true)
      */
-    private $rapSAISIEDATE = NULL;
+    private $rapSaisieDate = NULL;
 
     /**
      * @ORM\Column(type="string", length=500)
 
      */
-    private $rapBILAN;
+    private $rapBilan;
     /**
      * @ORM\Column(type="integer")
      */
-    private $rapCOEFIMPACT;
+    private $rapCoefImpact;
 
 
 
@@ -70,178 +70,178 @@ class RapportVisite
     }
 
     /**
-     * Set rapDATE
+     * Set rapDate
      *
-     * @param DateType $rapDATE
+     * @param DateType $rapDate
      *
      * @return RapportVisite
      */
-    public function setRapDATE($rapDATE)
+    public function setRapDate($rapDate)
     {
-        $this->rapDATE = $rapDATE;
+        $this->rapDate = $rapDate;
 
         return $this;
     }
 
     /**
-     * Get rapDATE
+     * Get rapDate
      *
      * @return DateType
      */
-    public function getRapDATE()
+    public function getRapDate()
     {
-        return $this->rapDATE;
+        return $this->rapDate;
     }
 
     /**
-     * Set rapSAISIEDATE
+     * Set rapSaisieDate
      *
-     * @param \DateTime $rapSAISIEDATE
+     * @param \DateTime $rapSaisieDate
      *
      * @return RapportVisite
      */
-    public function setRapSAISIEDATE($rapSAISIEDATE)
+    public function setRapSaisieDate($rapSaisieDate)
     {
-        $this->rapSAISIEDATE = $rapSAISIEDATE;
+        $this->rapSaisieDate = $rapSaisieDate;
 
         return $this;
     }
 
     /**
-     * Get rapSAISIEDATE
+     * Get rapSaisieDate
      *
      * @return \DateTime
      */
-    public function getRapSAISIEDATE()
+    public function getRapSaisieDate()
     {
-        return $this->rapSAISIEDATE;
+        return $this->rapSaisieDate;
     }
 
     /**
-     * Set rapBILAN
+     * Set rapBilan
      *
-     * @param string $rapBILAN
+     * @param string $rapBilan
      *
      * @return RapportVisite
      */
-    public function setRapBILAN($rapBILAN)
+    public function setRapBilan($rapBilan)
     {
-        $this->rapBILAN = $rapBILAN;
+        $this->rapBilan = $rapBilan;
 
         return $this;
     }
 
     /**
-     * Get rapBILAN
+     * Get rapBilan
      *
      * @return string
      */
-    public function getRapBILAN()
+    public function getRapBilan()
     {
-        return $this->rapBILAN;
+        return $this->rapBilan;
     }
 
     /**
-     * Set rapCOEFIMPACT
+     * Set rapCoefImpact
      *
-     * @param integer $rapCOEFIMPACT
+     * @param integer $rapCoefImpact
      *
      * @return RapportVisite
      */
-    public function setRapCOEFIMPACT($rapCOEFIMPACT)
+    public function setRapCoefImpact($rapCoefImpact)
     {
-        $this->rapCOEFIMPACT = $rapCOEFIMPACT;
+        $this->rapCoefImpact = $rapCoefImpact;
 
         return $this;
     }
 
     /**
-     * Get rapCOEFIMPACT
+     * Get rapCoefImpact
      *
      * @return integer
      */
-    public function getRapCOEFIMPACT()
+    public function getRapCoefImpact()
     {
-        return $this->rapCOEFIMPACT;
+        return $this->rapCoefImpact;
     }
 
     /**
-     * Set rapVISITEUR
+     * Set rapVisiteur
      *
-     * @param \OCUserBundle\Entity\User $rapVISITEUR
+     * @param \OCUserBundle\Entity\User $rapVisiteur
      *
      * @return RapportVisite
      */
-    public function setRapVISITEUR(\OCUserBundle\Entity\User $rapVISITEUR = null)
+    public function setRapVisiteur(\OCUserBundle\Entity\User $rapVisiteur = null)
     {
-        $this->rapVISITEUR = $rapVISITEUR;
+        $this->rapVisiteur = $rapVisiteur;
 
         return $this;
     }
 
     /**
-     * Get rapVISITEUR
+     * Get rapVisiteur
      *
      * @return \OCUserBundle\Entity\User
      */
-    public function getRapVISITEUR()
+    public function getRapVisiteur()
     {
-        return $this->rapVISITEUR;
+        return $this->rapVisiteur;
     }
 
     /**
-     * Set rapPRATICIEN
+     * Set rapPraticien
      *
-     * @param \MainBundle\Entity\Praticien $rapPRATICIEN
+     * @param \MainBundle\Entity\Praticien $rapPraticien
      *
      * @return RapportVisite
      */
-    public function setRapPRATICIEN(\MainBundle\Entity\Praticien $rapPRATICIEN = null)
+    public function setRapPraticien(\MainBundle\Entity\Praticien $rapPraticien = null)
     {
-        $this->rapPRATICIEN = $rapPRATICIEN;
+        $this->rapPraticien = $rapPraticien;
 
         return $this;
     }
 
     /**
-     * Get rapPRATICIEN
+     * Get rapPraticien
      *
      * @return \MainBundle\Entity\Praticien
      */
-    public function getRapPRATICIEN()
+    public function getRapPraticien()
     {
-        return $this->rapPRATICIEN;
+        return $this->rapPraticien;
     }
 
     /**
-     * Set rapMOTIF
+     * Set rapMotif
      *
-     * @param \MainBundle\Entity\Motif $rapMOTIF
+     * @param \MainBundle\Entity\Motif $rapMotif
      *
      * @return RapportVisite
      */
-    public function setRapMOTIF(\MainBundle\Entity\Motif $rapMOTIF = null)
+    public function setRapMotif(\MainBundle\Entity\Motif $rapMotif = null)
     {
-        $this->rapMOTIF = $rapMOTIF;
+        $this->rapMotif = $rapMotif;
 
         return $this;
     }
 
     /**
-     * Get rapMOTIF
+     * Get rapMotif
      *
      * @return \MainBundle\Entity\Motif
      */
-    public function getRapMOTIF()
+    public function getRapMotif()
     {
-        return $this->rapMOTIF;
+        return $this->rapMotif;
     }
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->rapECHANTILLONS = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->rapEchantillons = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -253,7 +253,7 @@ class RapportVisite
      */
     public function addRapECHANTILLON(\MainBundle\Entity\RapportEchant $rapECHANTILLON)
     {
-        $this->rapECHANTILLONS[] = $rapECHANTILLON;
+        $this->rapEchantillons[] = $rapECHANTILLON;
 
         return $this;
     }
@@ -265,16 +265,16 @@ class RapportVisite
      */
     public function removeRapECHANTILLON(\MainBundle\Entity\RapportEchant $rapECHANTILLON)
     {
-        $this->rapECHANTILLONS->removeElement($rapECHANTILLON);
+        $this->rapEchantillons->removeElement($rapECHANTILLON);
     }
 
     /**
-     * Get rapECHANTILLONS
+     * Get rapEchantillons
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getRapECHANTILLONS()
+    public function getRapEchantillons()
     {
-        return $this->rapECHANTILLONS;
+        return $this->rapEchantillons;
     }
 }

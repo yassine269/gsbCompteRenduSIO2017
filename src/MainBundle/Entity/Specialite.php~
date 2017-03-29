@@ -27,12 +27,12 @@ class Specialite
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $speCODE;
+    private $speCode;
 
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $speLIBELLE;
+    private $speLibelle;
 
 
 
@@ -47,50 +47,50 @@ class Specialite
     }
 
     /**
-     * Set speCODE
+     * Set speCode
      *
-     * @param string $speCODE
+     * @param string $speCode
      *
      * @return Specialite
      */
-    public function setSpeCODE($speCODE)
+    public function setSpeCode($speCode)
     {
-        $this->speCODE = $speCODE;
+        $this->speCode = $speCode;
 
         return $this;
     }
 
     /**
-     * Get speCODE
+     * Get speCode
      *
      * @return string
      */
-    public function getSpeCODE()
+    public function getSpeCode()
     {
-        return $this->speCODE;
+        return $this->speCode;
     }
 
     /**
-     * Set speLIBELLE
+     * Set speLibelle
      *
-     * @param string $speLIBELLE
+     * @param string $speLibelle
      *
      * @return Specialite
      */
-    public function setSpeLIBELLE($speLIBELLE)
+    public function setSpeLibelle($speLibelle)
     {
-        $this->speLIBELLE = $speLIBELLE;
+        $this->speLibelle = $speLibelle;
 
         return $this;
     }
 
     /**
-     * Get speLIBELLE
+     * Get speLibelle
      *
      * @return string
      */
-    public function getSpeLIBELLE()
+    public function getSpeLibelle()
     {
-        return $this->speLIBELLE;
+        return $this->speLibelle;
     }
 }

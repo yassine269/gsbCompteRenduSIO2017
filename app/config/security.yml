@@ -2,7 +2,7 @@
 # http://symfony.com/doc/current/security.html
 security:
     encoders:
-        FOS\UserBundle\Model\UserInterface: bcrypt
+        FOS\UserBundle\Model\UserInterface: sha512
 # SET UP SECURITY AND ROLES ACCESS
 
     role_hierarchy:
@@ -105,10 +105,10 @@ security:
             id: fos_user.user_provider.username
     firewalls:
         wsse_secured:
-            pattern:   ^/api/*
+            pattern:   ^/api/.*
             stateless: true
             wsse:      true
-            anonymous: true
+            anonymous: false
         main:
             pattern: ^/
             form_login:
@@ -126,7 +126,7 @@ security:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-#        - { path: ^/api, role: IS_AUTHENTICATED_FULLY }
+#        - { path: ^/api, role: IS_AUTHENTICATED}
 #        - { path: ^/admin/, role: IS_AUTHENTICATED_ANONYMOUSLY }
 #        - { path: ^/action/main/famille/, role: ROLE_ADMIN }
 #        - { path: ^/action/main/dosage/, role: ROLE_ADMIN }
