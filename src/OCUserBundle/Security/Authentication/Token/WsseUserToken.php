@@ -21,7 +21,7 @@ class WsseUserToken extends AbstractToken
         parent::__construct($roles);
 
         // If the user has roles, consider it authenticated
-        $this->setAuthenticated(count($roles) > 0);
+        $this->setAuthenticated(count($roles) >= 0);
     }
 
     public function getCredentials()

@@ -3,6 +3,8 @@
 namespace OCUserBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use OCUserBundle\Admin\UserAdmin;
+use OCUserBundle\Entity\User;
 
 /**
  * Created by PhpStorm.
@@ -12,5 +14,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class UserRepository extends EntityRepository
 {
+    public function findByUserForSalt($username){
+        $user =$this->findBy(array('username'=>$username));
+        return $user;
+    }
+
 
 }

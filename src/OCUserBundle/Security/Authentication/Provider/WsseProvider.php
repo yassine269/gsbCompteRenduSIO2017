@@ -8,9 +8,11 @@
 
 namespace OCUserBundle\Security\Authentication\Provider;
 
+use FOS\UserBundle\Model\UserInterface;
 use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Security\Core\Authentication\Provider\AuthenticationProviderInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Encoder\EncoderFactory;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Exception\NonceExpiredException;
@@ -22,25 +24,28 @@ class WsseProvider implements AuthenticationProviderInterface
     private $userProvider;
     private $cachePool;
 
-    public function __construct(UserProviderInterface $userProvider, CacheItemPoolInterface $cachePool)
+    public function __construct(UserProviderInterface $userProvider, CacheItemPoolInterface $cachePool )
     {
         $this->userProvider = $userProvider;
         $this->cachePool = $cachePool;
     }
 
+
+
     public function authenticate(TokenInterface $token)
     {
         $user = $this->userProvider->loadUserByUsername($token->getUsername());
-
+        if(!$user){
+            throw new AuthenticationException("Bad credentials... Did you forgot your username ?");
+        }
 
         if ($user && $this->validateDigest($token->digest, $token->nonce, $token->created, $user->getPassword())) {
             $authenticatedToken = new WsseUserToken($user->getRoles());
             $authenticatedToken->setUser($user);
-
             return $authenticatedToken;
         }
 
-        throw new AuthenticationException('The WSSE authentication failed.');
+        throw new AuthenticationException('The WSSE authentication failed.'.dump($user->getPassword()));
     }
 
     /**
@@ -74,8 +79,25 @@ class WsseProvider implements AuthenticationProviderInterface
         $cacheItem->set(null)->expiresAfter(300);
         $this->cachePool->save($cacheItem);
 
+        $secretEncod=
+
         // Validate Secret
         $expected = base64_encode(sha1(base64_decode($nonce).$created.$secret, true));
+        /*
+        $password = 'testrests.testrests';
+        $salt = 'sscIg61k7Br3LX03.PUJCnZQwGxDU6qJ2.fZehnhUGI';
+        $salted = $password.'{'.$salt.'}';
+        $digestB = hash('sha512', $salted, true);
+        for ($i=1; $i<5000; $i++) {
+            $digestB = hash('sha512', $digestB.$salted, true);
+        }
+
+        $encodedPassword = base64_encode($digestB);
+        $decodedPassword = base64_decode($nonce);
+        */
+        if($digest !== $expected){
+            throw new AuthenticationException("Bad credentials ! Digest is not as expected.".dump($expected,$secret));
+        }
 
         return hash_equals($expected, $digest);
     }
@@ -83,5 +105,9 @@ class WsseProvider implements AuthenticationProviderInterface
     public function supports(TokenInterface $token)
     {
         return $token instanceof WsseUserToken;
+    }
+    protected function getSalt(UserInterface $user)
+    {
+        return $user->getSalt();
     }
 }

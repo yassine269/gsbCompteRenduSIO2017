@@ -8,6 +8,8 @@
 
 namespace OCUserBundle\Admin;
 
+use FOS\UserBundle\Event\GetResponseUserEvent;
+use FOS\UserBundle\FOSUserEvents;
 use MainBundle\Form\MedConstitutionType;
 use MainBundle\MainBundle;
 use OCUserBundle\Entity\User;
@@ -64,6 +66,7 @@ class UserAdmin extends AbstractAdmin
         $user->setUsername($userName);
         $user->setPlainPassword($pwd);
         $user->setUsrMatricule($matricule);
+        $user->setEnabled(true);
         $role = $user->getUsrFonction()->getFonctLibelle();
         if ($role == 'Responsable') {
             $user->addRole('ROLE_RESPONSABLE');

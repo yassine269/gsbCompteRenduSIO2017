@@ -11,12 +11,13 @@ _sonata_admin:
 admin_area:
     resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
     prefix: /action
-api_login:
-    path: /api/login
-    defaults: {_controller: OCUserBundle:Security:apiLogin}
 users:
     type:     rest
     resource: OCUserBundle\Controller\UserController
+    prefix: /api
+publicUser:
+    type:    rest
+    resource: OCUserBundle\Controller\PublicUserController
     prefix: /api
 motifs:
     type: rest

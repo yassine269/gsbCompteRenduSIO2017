@@ -11,7 +11,7 @@ security:
         ROLE_STAFF:             [ROLE_USER, ROLE_SONATA_FOO_READER]
         ROLE_ADMIN:             [ROLE_STAFF, ROLE_SONATA_FOO_EDITOR, ROLE_SONATA_FOO_ADMIN]
         ROLE_SUPER_ADMIN:       [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
-        ROLE_ALL_ADMIN:         [ROLE_STAFF, ROLE_SONATA_FOO_ALL]
+        ROLE_ALL_ADMIN:         [ROLE_STAFF, ROLE_RegisterSONATA_FOO_ALL]
         ROLE_RESPONSABLE: ROLE_RESPONSABLE
         ROLE_DELEGUE:     ROLE_DELEGUE
         ROLE_PERMISS_VISITE:
@@ -107,8 +107,9 @@ security:
         wsse_secured:
             pattern:   ^/api/.*
             stateless: true
-            wsse:      true
-            anonymous: false
+            anonymous: true
+            provider: fos_userbundle
+            wsse: true
         main:
             pattern: ^/
             form_login:

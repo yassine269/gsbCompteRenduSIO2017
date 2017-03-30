@@ -9,6 +9,7 @@ namespace MainBundle\Repository;
  * repository methods below.
  */
 use Doctrine\ORM\EntityRepository;
+
 class RapportVisiteRepository extends EntityRepository
 {
     // Requête pour statistiques annuel sur dashboard visiteur
