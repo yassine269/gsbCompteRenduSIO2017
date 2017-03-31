@@ -389,4 +389,8 @@ class User extends BaseUser
     {
         return $this->usrSupp;
     }
+    public function __toString()
+    {
+        return (string) 'Nom : '.$this->getUsrNom().' | Prénom : '.$this->getUsrPrenom();
+    }
 }

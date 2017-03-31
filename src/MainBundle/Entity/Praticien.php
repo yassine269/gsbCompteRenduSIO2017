@@ -24,10 +24,6 @@ class Praticien
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=40)
-     */
-    private $praCode;
 
     /**
      * @ORM\Column(type="string", length=40)
@@ -64,7 +60,7 @@ class Praticien
 
     public function __toString()
     {
-        return $this->praCode;
+        return $this->praNom;
     }
 
     /**

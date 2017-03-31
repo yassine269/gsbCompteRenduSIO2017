@@ -44,7 +44,7 @@ class ActCompl
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $states;
+    private $acStates;
 
     /**
      * Get id
@@ -57,53 +57,6 @@ class ActCompl
     }
 
     /**
-     * Set compCode
-     *
-     * @param string $compCODE
-     *
-     * @return Composant
-     */
-    public function setCompCODE($compCODE)
-    {
-        $this->compCODE = $compCODE;
-
-        return $this;
-    }
-
-    /**
-     * Get compCode
-     *
-     * @return string
-     */
-    public function getCompCODE()
-    {
-        return $this->compCODE;
-    }
-
-    /**
-     * Set compLibelle
-     *
-     * @param string $compLIBELLE
-     *
-     * @return Composant
-     */
-    public function setCompLIBELLE($compLIBELLE)
-    {
-        $this->compLIBELLE = $compLIBELLE;
-
-        return $this;
-    }
-
-    /**
-     * Get compLibelle
-     *
-     * @return string
-     */
-    public function getCompLIBELLE()
-    {
-        return $this->compLIBELLE;
-    }
-    /**
      * Constructor
      */
     public function __construct()
@@ -113,29 +66,6 @@ class ActCompl
 
     }
 
-    /**
-     * Set acNUM
-     *
-     * @param string $acNUM
-     *
-     * @return ActCompl
-     */
-    public function setAcNUM($acNUM)
-    {
-        $this->acNUM = $acNUM;
-
-        return $this;
-    }
-
-    /**
-     * Get acNUM
-     *
-     * @return string
-     */
-    public function getAcNUM()
-    {
-        return $this->acNUM;
-    }
 
     /**
      * Set acLieu
@@ -177,7 +107,6 @@ class ActCompl
 
     /**
      * Get acDate
-
      */
     public function getAcDate()
     {
@@ -211,13 +140,13 @@ class ActCompl
     /**
      * Add acPraticien
      *
-     * @param \MainBundle\Entity\Praticien $acPRATICIEN
+     * @param \MainBundle\Entity\Praticien $acPraticien
      *
      * @return ActCompl
      */
-    public function addAcPRATICIEN(\MainBundle\Entity\Praticien $acPRATICIEN)
+    public function addAcPraticien(\MainBundle\Entity\Praticien $acPraticien)
     {
-        $this->acPraticien[] = $acPRATICIEN;
+        $this->acPraticien[] = $acPraticien;
 
         return $this;
     }
@@ -225,11 +154,11 @@ class ActCompl
     /**
      * Remove acPraticien
      *
-     * @param \MainBundle\Entity\Praticien $acPRATICIEN
+     * @param \MainBundle\Entity\Praticien $acPraticien
      */
-    public function removeAcPRATICIEN(\MainBundle\Entity\Praticien $acPRATICIEN)
+    public function removeAcPraticien(\MainBundle\Entity\Praticien $acPraticien)
     {
-        $this->acPraticien->removeElement($acPRATICIEN);
+        $this->acPraticien->removeElement($acPraticien);
     }
 
     /**
@@ -240,64 +169,6 @@ class ActCompl
     public function getAcPraticien()
     {
         return $this->acPraticien;
-    }
-
-    /**
-     * Add acACTREA
-     *
-     * @param \MainBundle\Entity\ActRea $acACTREA
-     *
-     * @return ActCompl
-     */
-    public function addAcACTREA(\MainBundle\Entity\ActRea $acACTREA)
-    {
-        $this->acActReal[] = $acACTREA;
-
-        return $this;
-    }
-
-    /**
-     * Remove acACTREA
-     *
-     * @param \MainBundle\Entity\ActRea $acACTREA
-     */
-    public function removeAcACTREA(\MainBundle\Entity\ActRea $acACTREA)
-    {
-        $this->acActReal->removeElement($acACTREA);
-    }
-
-    /**
-     * Get acActReal
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getAcActReal()
-    {
-        return $this->acActReal;
-    }
-
-    /**
-     * Set states
-     *
-     * @param string $states
-     *
-     * @return ActCompl
-     */
-    public function setStates($states)
-    {
-        $this->states = $states;
-
-        return $this;
-    }
-
-    /**
-     * Get states
-     *
-     * @return string
-     */
-    public function getStates()
-    {
-        return $this->states;
     }
 
     /**
@@ -322,5 +193,39 @@ class ActCompl
     public function removeAcActReal(\MainBundle\Entity\ActRea $acActReal)
     {
         $this->acActReal->removeElement($acActReal);
+    }
+
+    /**
+     * Get acActReal
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAcActReal()
+    {
+        return $this->acActReal;
+    }
+
+    /**
+     * Set acStates
+     *
+     * @param string $acStates
+     *
+     * @return ActCompl
+     */
+    public function setAcStates($acStates)
+    {
+        $this->acStates = $acStates;
+
+        return $this;
+    }
+
+    /**
+     * Get acStates
+     *
+     * @return string
+     */
+    public function getAcStates()
+    {
+        return $this->acStates;
     }
 }

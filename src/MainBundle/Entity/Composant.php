@@ -22,10 +22,6 @@ class Composant
     /**
      * @ORM\Column(type="string",length=40)
      */
-    private $compCode;
-    /**
-     * @ORM\Column(type="string",length=40)
-     */
     private $compLibelle;
 
     /**
@@ -196,5 +192,9 @@ class Composant
     public function getMedCompositions()
     {
         return $this->medCompositions;
+    }
+    public function __toString()
+    {
+        return $this->getCompLibelle();
     }
 }

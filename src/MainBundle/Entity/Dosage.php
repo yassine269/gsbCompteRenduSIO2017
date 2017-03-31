@@ -18,11 +18,6 @@ class Dosage
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=true)
-     */
-    private $dosCode;
-
-    /**
      * @ORM\Column(type="string", length=40)
      */
     private $dosQuantite;

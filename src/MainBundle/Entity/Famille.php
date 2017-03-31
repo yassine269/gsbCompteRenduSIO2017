@@ -24,10 +24,7 @@ class Famille
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="string",length=40)
-     */
-    private $famCode;
+
     /**
      * @ORM\Column(type="string",length=40)
      */

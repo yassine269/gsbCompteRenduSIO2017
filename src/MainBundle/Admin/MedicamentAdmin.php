@@ -56,12 +56,12 @@ class MedicamentAdmin extends AbstractAdmin
         $formMapper->add('medPrixEchant', 'text',array(
             'label'=>'Prx de l\'échantillon du médicament :'
         ));
-        $formMapper->add('medPerturbe', 'entity', array(
+        $formMapper->add('medPerturbe', 'entity',
+            array(
             'class' => 'MainBundle\Entity\Medicament',
             'multiple' => true,
             'required' => false,
             'label' => 'Medicaments perturbés par ce médicament :'
-
         ));
         $formMapper->add('medPerturbateur', 'entity', array(
             'class' => 'MainBundle\Entity\Medicament',

@@ -30,9 +30,7 @@ class Medicament
      */
     private $medDepotLegal;
 
-    public function __toString() {
-        return $this->medDepotLegal;
-    }
+
 
     /**
      * @ORM\Column(type="string", length=40)
@@ -419,5 +417,8 @@ class Medicament
     public function getMedPrescriptions()
     {
         return $this->medPrescriptions;
+    }
+    public function __toString() {
+        return (string) $this->getMedNomCommercial();
     }
 }

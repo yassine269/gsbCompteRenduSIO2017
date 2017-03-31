@@ -22,7 +22,7 @@ class ActReaAdmin extends AbstractAdmin
         $formMapper->add('actReaVisiteur', 'sonata_type_model', array(
             'class' => 'OCUserBundle\Entity\User',
             'property' => 'usrMatricule',
-            'label'=>'Visiteur( (co)organisateur :'
+            'label'=>'Organisateurs :'
         ));
         $formMapper->add('actReaBudget', 'number',array(
             'label'=>'Budget alloué a cette organisateur :'
@@ -34,11 +34,17 @@ class ActReaAdmin extends AbstractAdmin
         $listMapper->add('actReaVisiteur', 'sonata_type_model', array(
             'associated_property'=>'usrNom',
             'class' => 'OCUserBundle\Entity\User',
-            'property' => 'usrMatricule',
-            'label'=>'Visiteur( (co)organisateur :'
+            'property' => 'usrNom',
+            'label'=>'Organisateurs :'
         ));
         $listMapper->add('actReaBudget', 'number',array(
             'label'=>'Budget alloué a cette organisateur :'
+        ));
+        $listMapper->add('actReaActCompl', 'sonata_type_model',array(
+            'associated_property'=>'id',
+            'class' => 'OCUserBundle\Entity\ActCompl',
+            'property' => 'id',
+            'label'=>'Activité complémentaire concernée :'
         ));
 
     }
@@ -47,18 +53,32 @@ class ActReaAdmin extends AbstractAdmin
         $showMapper->add('actReaVisiteur', 'sonata_type_model', array(
             'associated_property'=>'usrNom',
             'class' => 'OCUserBundle\Entity\User',
-            'property' => 'usrMatricule',
-            'label'=>'Visiteur( (co)organisateur :'
+            'property' => 'usrNom',
+            'label'=>'Organisateurs :'
         ));
         $showMapper->add('actReaBudget', 'number',array(
             'label'=>'Budget alloué a cette organisateur :'
         ));
+        $showMapper->add('actReaActCompl', 'sonata_type_model',array(
+            'associated_property'=>'id',
+            'class' => 'OCUserBundle\Entity\ActCompl',
+            'property' => 'id',
+            'label'=>'Activité complémentaire concernée :'
+        ));
 
     }
-
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('actReaVisiteur');
+        $datagridMapper->add('actReaVisiteur', 'doctrine_orm_model_autocomplete',
+            array(
+                'label'=> "Visiteur",
+            ),null,
+            array(
+                'property'=>'usrNom',
+                'multiple'=> true,
+                'placeholder'=> 'Nom des visiteurs :'
+            ));
+        $datagridMapper->add('actReaBudget',null,array('label'=>'Budget alloué'));
     }
 
 

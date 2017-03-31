@@ -8,6 +8,7 @@
 
 namespace MainBundle\Admin;
 
+use MainBundle\MainBundle;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
@@ -21,16 +22,20 @@ class ActComplAdmin extends AbstractAdmin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('acLieu', 'text', array(
+        $formMapper->add('acLieu', 'text',
+            array(
             'label'=> "Lieu de l'activité :"
         ));
-        $formMapper->add('acTheme', 'text', array(
+        $formMapper->add('acTheme', 'text',
+            array(
             'label'=> "Théme de l'activité :"
         ));
-        $formMapper->add('acDate', 'date', array(
+        $formMapper->add('acDate', 'date',
+            array(
             'label'=> "Date de l'activité :"
         ));
-        $formMapper->add('acPraticien', 'entity', array(
+        $formMapper->add('acPraticien', 'entity',
+            array(
             'class' => 'MainBundle\Entity\Praticien',
             'multiple' => true,
             'required' => false,
@@ -48,16 +53,20 @@ class ActComplAdmin extends AbstractAdmin
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('acLieu', 'text', array(
+        $listMapper->add('acLieu', 'text',
+            array(
             'label'=> "Lieu de l'activité :"
         ));
-        $listMapper->add('acTheme', 'text', array(
+        $listMapper->add('acTheme', 'text',
+            array(
             'label'=> "Théme de l'activité :"
         ));
-        $listMapper->add('acDate', 'date', array(
+        $listMapper->add('acDate', 'date',
+            array(
             'label'=> "Date de l'activité :"
         ));
-        $listMapper->add('acPraticien', 'entity', array(
+        $listMapper->add('acPraticien', 'entity',
+            array(
             'associated_property'=>'praNom',
             'class' => 'MainBundle\Entity\Praticien',
             'multiple' => true,
@@ -74,19 +83,27 @@ class ActComplAdmin extends AbstractAdmin
                 'edit' => 'inline',
                 'inline' => 'table',
             ));
+        $listMapper->add('acStates', 'text',
+            array(
+            'label'=> "Etat :"
+        ));
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('acLieu', 'text', array(
+        $showMapper->add('acLieu', 'text',
+            array(
             'label'=> "Lieu de l'activité :"
         ));
-        $showMapper->add('acTheme', 'text', array(
+        $showMapper->add('acTheme', 'text',
+            array(
             'label'=> "Théme de l'activité :"
         ));
-        $showMapper->add('acDate', 'date', array(
+        $showMapper->add('acDate', 'date',
+            array(
             'label'=> "Date de l'activité :"
         ));
-        $showMapper->add('acPraticien', 'entity', array(
+        $showMapper->add('acPraticien', 'entity',
+            array(
             'associated_property'=>'praNom',
             'class' => 'MainBundle\Entity\Praticien',
             'multiple' => true,
@@ -103,18 +120,54 @@ class ActComplAdmin extends AbstractAdmin
                 'edit' => 'inline',
                 'inline' => 'table',
             ));
+        $showMapper->add('acStates', 'text',
+            array(
+            'label'=> "Etat :"
+        ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('acDate');
+        $datagridMapper->add('acLieu', null,
+            array(
+            'label'=> "Lieu de l'activité"
+        ));
+        $datagridMapper->add('acTheme', null,
+            array(
+            'label'=> "Théme de l'activité"
+        ));
+        $datagridMapper->add('acDate', null,
+            array(
+            'label'=> "Date de l'activité"
+        ));
+        $datagridMapper->add('acPraticien', 'doctrine_orm_model_autocomplete',
+            array(
+            'label'=> 'Praticens convoqués ',
+            ),null,
+            array(
+                'property'=>'praNom',
+                'multiple'=> true,
+                'placeholder'=> 'Nom des praticiens'
+            ));
+        $datagridMapper->add('acActReal.actReaVisiteur', 'doctrine_orm_model_autocomplete',
+            array(
+                'label'=> "Equipes de réalisation ",
+            ),null,
+            array(
+                'property'=>'usrNom',
+                'multiple'=> true,
+                'placeholder'=> 'Nom des visiteurs :'
+            ));
+        $datagridMapper->add('acStates', null, array(
+            'label'=> "Etat "
+        ));
     }
 
     public function preValidate($object){
-        $actreas=$object->getAcACTREAS();
+        $actreas=$object->getAcActReal();
         $object->setStates('VALIDATION_REQUISE');
         foreach ($actreas as $actrea){
-            $actrea->setActreaACTCOMPL($object);
+            $actrea->setActReaActCompl($object);
         }
     }
 

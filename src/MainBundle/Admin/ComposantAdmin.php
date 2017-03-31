@@ -13,33 +13,25 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\CoreBundle\Validator\ErrorElement;
 
 
 class ComposantAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('compCode', 'text',array(
-            'label'=>'Code de la composant :'
-        ));
         $formMapper->add('compLibelle', 'text',array(
             'label'=>'Libellé du composant :'
         ));
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('compCode', 'text',array(
-            'label'=>'Code de la composant :'
-        ));
         $showMapper->add('compLibelle', 'text',array(
             'label'=>'Libellé du composant :'
         ));
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('compCode', 'text',array(
-            'label'=>'Code de la composant :'
-        ));
         $listMapper->add('compLibelle', 'text',array(
             'label'=>'Libellé du composant :'
         ));
@@ -47,7 +39,18 @@ class ComposantAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('compLibelle');
+        $datagridMapper->add('compLibelle',null,array('label'=>'Libellé du composant'));
+    }
+
+    public function validate(ErrorElement $errorElement, $object)
+    {
+        $errorElement
+            ->with('compLibelle')
+                ->assertLength(array('min' => 4,'max'=> 40))
+                ->assertNotNull()
+                ->assertNotBlank()
+            ->end()
+        ;
     }
 
 
