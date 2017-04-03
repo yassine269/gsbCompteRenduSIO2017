@@ -40,30 +40,6 @@ class Dosage
     }
 
     /**
-     * Set dosCode
-     *
-     * @param string $dosCode
-     *
-     * @return Dosage
-     */
-    public function setDosCode($dosCode)
-    {
-        $this->dosCode = $dosCode;
-
-        return $this;
-    }
-
-    /**
-     * Get dosCode
-     *
-     * @return string
-     */
-    public function getDosCode()
-    {
-        return $this->dosCode;
-    }
-
-    /**
      * Set dosQuantite
      *
      * @param string $dosQuantite
@@ -150,5 +126,9 @@ class Dosage
     public function getDosPRESCRIPTIONS()
     {
         return $this->dosPRESCRIPTIONS;
+    }
+    public function __toString()
+    {
+        return (string) $this->getDosQuantite().$this->getDosUnite();
     }
 }

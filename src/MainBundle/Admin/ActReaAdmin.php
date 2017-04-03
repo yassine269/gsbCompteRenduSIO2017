@@ -42,7 +42,7 @@ class ActReaAdmin extends AbstractAdmin
         ));
         $listMapper->add('actReaActCompl', 'sonata_type_model',array(
             'associated_property'=>'id',
-            'class' => 'OCUserBundle\Entity\ActCompl',
+            'class' => 'MainBundle\Entity\ActCompl',
             'property' => 'id',
             'label'=>'Activité complémentaire concernée :'
         ));

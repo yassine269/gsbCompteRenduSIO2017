@@ -148,4 +148,8 @@ class Prescrire
     {
         return $this->presPosologie;
     }
+    public function __toString()
+    {
+        return (string) $this->getPresTypeIndiv().' | '.$this->getPresDosage().' | '.$this->getPresPosologie();
+    }
 }

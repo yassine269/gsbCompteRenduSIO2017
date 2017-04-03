@@ -26,11 +26,6 @@ class Presentation
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $preCode;
-
-    /**
-     * @ORM\Column(type="string", length=40)
-     */
     private $preLibelle;
 
 
@@ -45,34 +40,6 @@ class Presentation
     }
 
     /**
-     * Set preCode
-     *
-     * @param string $preCode
-     *
-     * @return Presentation
-     */
-    public function setPreCode($preCode)
-    {
-        $this->preCode = $preCode;
-
-        return $this;
-    }
-    public function __toString()
-    {
-        return $this->preLibelle;
-    }
-
-    /**
-     * Get preCode
-     *
-     * @return string
-     */
-    public function getPreCode()
-    {
-        return $this->preCode;
-    }
-
-    /**
      * Set preLibelle
      *
      * @param string $preLibelle
@@ -84,6 +51,11 @@ class Presentation
         $this->preLibelle = $preLibelle;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getPreLibelle();
     }
 
     /**

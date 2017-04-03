@@ -77,7 +77,22 @@ class PraticienAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('praNom');
+        $datagridMapper->add('praNom',null,array('label'=>'Nom'));
+        $datagridMapper->add('praPrenom',null,array('label'=>'Prénom'));
+        $datagridMapper->add('praCp',null,array('label'=>'Code postal'));
+        $datagridMapper->add('praVille',null,array('label'=>'Ville'));
+        $datagridMapper->add('praCoefNotoriete',null,array('label'=>'Coef. Notoriété'));
+        $datagridMapper->add('praAdresse',null,array('label'=>'Adresse'));
+        $datagridMapper->add('praType','doctrine_orm_model_autocomplete',
+            array(
+                'label'=> "Type",
+            ),null,
+            array(
+                'property'=>'typeLibelle',
+                'multiple'=> false,
+                'placeholder'=> "Libellé du type"
+            ));
+
     }
     protected function configureListFields(ListMapper $listMapper)
     {

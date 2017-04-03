@@ -19,36 +19,27 @@ class SpecialiteAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('speCode', 'text',array(
-            'label'=>'Code de la spécialité :'
-        ));
         $formMapper->add('speLibelle', 'text',array(
-            'label'=>'Libéllé de la spécialité :'
+            'label'=>'Libellé de la spécialité :'
         ));
     }
 
     protected function configureShowFields(ShowMapper  $showMapper)
     {
-        $showMapper->add('speCode', 'text',array(
-            'label'=>'Code de la spécialité :'
-        ));
         $showMapper->add('speLibelle', 'text',array(
-            'label'=>'Libéllé de la spécialité :'
+            'label'=>'Libellé de la spécialité :'
         ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('speLibelle');
+        $datagridMapper->add('speLibelle',null,array('label'=>'libellé'));
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('speCode', 'text',array(
-            'label'=>'Code de la spécialité :'
-        ));
         $listMapper->add('speLibelle', 'text',array(
-            'label'=>'Libéllé de la spécialité :'
+            'label'=>'Libellé de la spécialité :'
         ));
     }
 

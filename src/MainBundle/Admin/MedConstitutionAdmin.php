@@ -28,7 +28,6 @@ class MedConstitutionAdmin extends AbstractAdmin
             'label'=>'Quantité :'
         ));
         $formMapper->add('constMedicament', 'sonata_type_model', array(
-            'associated_property'=>'medNomCommercial',
             'class' => 'MainBundle\Entity\Medicament',
             'property' => 'medNomCommercial',
             'label' => 'Médicament concerné :'
@@ -51,7 +50,6 @@ class MedConstitutionAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper->add('constComposant', 'sonata_type_model', array(
-            'associated_property'=>'compLibelle',
             'class' => 'MainBundle\Entity\Composant',
             'property' => 'compLibelle',
             'label' => 'Composant constituant :'
@@ -76,6 +74,15 @@ class MedConstitutionAdmin extends AbstractAdmin
                 'property'=>'compLibelle',
                 'multiple'=> true,
                 'placeholder'=> 'Libellé du composant'
-            ));
+            ))
+                        ->add('constMedicament','doctrine_orm_model_autocomplete',
+                            array(
+                                'label'=>'Médicament concerné'
+                            ),null,
+                            array(
+                                'property'=>'medNomCommercial',
+                                'multiple'=>true,
+                                'placeholder'=>'Nom commercial du médicament'
+                            ));
     }
 }

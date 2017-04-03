@@ -20,20 +20,20 @@ class TypeIndividuAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->add('TypeIndLibelle', 'text',array(
-            'label'=>'Libéllé du type d\'individu :'
+            'label'=>'Libellé du type d\'individu :'
         ));
     }
 
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper->add('TypeIndLibelle', 'text',array(
-            'label'=>'Libéllé du type d\'individu :'
+            'label'=>'Libellé du type d\'individu :'
         ));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('TypeIndLibelle');
+        $datagridMapper->add('TypeIndLibelle',null,array('label'=>'Libellé'));
     }
 
     protected function configureListFields(ListMapper $listMapper)

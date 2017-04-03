@@ -19,18 +19,14 @@ class PresentationAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('preCode', 'text',array(
-            'label'=>'Code de la présentation :'
-        ));
+
         $formMapper->add('preLibelle', 'text',array(
             'label'=>'Libellé de la présentation :'
         ));
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('preCode', 'text',array(
-            'label'=>'Code de la présentation :'
-        ));
+
         $showMapper->add('preLibelle', 'text',array(
             'label'=>'Libellé de la présentation :'
         ));
@@ -38,12 +34,12 @@ class PresentationAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('preLibelle');
+        $datagridMapper->add('preLibelle',null,array('label'=>'Libellé'));
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('rapEchantMedicament', 'sonata_type_model', array(
+        $listMapper->addIdentifier('rapEchantMedicament', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\Medicament',
             'property' => 'medNomCommercial',
             'label' => 'Médicament :'

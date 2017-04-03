@@ -38,7 +38,7 @@ class DosageAdmin extends AbstractAdmin
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('dosQuantite', 'number',array(
+        $listMapper->addIdentifier('dosQuantite', 'number',array(
             'label'=>'Quantité :'
         ));
         $listMapper->add('dosUnite', 'text',array(
@@ -69,11 +69,4 @@ class DosageAdmin extends AbstractAdmin
             ->end()
         ;
     }
-    public function preValidate($object){
-        $dosQ=$object->getDosQUANTITE();
-        $dosU=$object->getDosUNITE();
-        $object->setDosCODE($dosQ.' '.$dosU);
-    }
-
-
 }

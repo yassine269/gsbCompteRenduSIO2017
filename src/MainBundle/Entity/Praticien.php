@@ -60,7 +60,7 @@ class Praticien
 
     public function __toString()
     {
-        return $this->praNom;
+        return $this->getPraNom().' | '.$this->getPraPrenom();
     }
 
     /**

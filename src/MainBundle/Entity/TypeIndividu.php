@@ -105,4 +105,9 @@ class TypeIndividu
     {
         return $this->typeIndPRESCRIPTIONS;
     }
+
+    public function __toString()
+    {
+        return(string) $this->getTypeIndLibelle();
+    }
 }

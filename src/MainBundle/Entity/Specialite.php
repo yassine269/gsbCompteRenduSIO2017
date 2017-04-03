@@ -24,10 +24,6 @@ class Specialite
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=40)
-     */
-    private $speCode;
 
     /**
      * @ORM\Column(type="string", length=40)
@@ -44,30 +40,6 @@ class Specialite
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set speCode
-     *
-     * @param string $speCode
-     *
-     * @return Specialite
-     */
-    public function setSpeCode($speCode)
-    {
-        $this->speCode = $speCode;
-
-        return $this;
-    }
-
-    /**
-     * Get speCode
-     *
-     * @return string
-     */
-    public function getSpeCode()
-    {
-        return $this->speCode;
     }
 
     /**
@@ -92,5 +64,9 @@ class Specialite
     public function getSpeLibelle()
     {
         return $this->speLibelle;
+    }
+    public function __toString()
+    {
+        return(string) $this->getSpeLibelle();
     }
 }

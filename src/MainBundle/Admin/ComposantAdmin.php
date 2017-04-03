@@ -32,7 +32,7 @@ class ComposantAdmin extends AbstractAdmin
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('compLibelle', 'text',array(
+        $listMapper->addIdentifier('compLibelle', 'text',array(
             'label'=>'Libellé du composant :'
         ));
     }

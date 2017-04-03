@@ -228,4 +228,8 @@ class ActCompl
     {
         return $this->acStates;
     }
+    public function __toString()
+    {
+        return (string) $this->getId();
+    }
 }

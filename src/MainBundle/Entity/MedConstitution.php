@@ -121,4 +121,9 @@ class MedConstitution
     {
         return $this->constComposant;
     }
+
+    public function __toString()
+    {
+        return (string) $this->getConstComposant();
+    }
 }

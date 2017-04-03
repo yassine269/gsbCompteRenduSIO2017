@@ -165,7 +165,7 @@ class ActComplAdmin extends AbstractAdmin
 
     public function preValidate($object){
         $actreas=$object->getAcActReal();
-        $object->setStates('VALIDATION_REQUISE');
+        $object->setAcStates('VALIDATION_REQUISE');
         foreach ($actreas as $actrea){
             $actrea->setActReaActCompl($object);
         }

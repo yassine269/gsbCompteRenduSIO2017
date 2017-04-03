@@ -31,7 +31,7 @@ class MotifAdmin extends AbstractAdmin
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('motifLibelle', 'text',array(
+        $listMapper->addIdentifier('motifLibelle', 'text',array(
             'label'=>'Libéllé du motif :'
         ));
     }
@@ -39,7 +39,7 @@ class MotifAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('motifLibelle');
+        $datagridMapper->add('motifLibelle',null,array('label'=>'Libellé'));
     }
 
 

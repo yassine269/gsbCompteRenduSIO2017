@@ -68,4 +68,9 @@ class Motif
     {
         return $this->motifLibelle;
     }
+
+    public function __toString()
+    {
+        return(string) $this->getMotifLibelle();
+    }
 }

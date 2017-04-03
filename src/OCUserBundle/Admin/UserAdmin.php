@@ -83,13 +83,85 @@ class UserAdmin extends AbstractAdmin
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('usrNom');
-    }
+        $datagridMapper->add('usrMatricule',null,array('label'=>'Matricule utilisateur :'));
+        $datagridMapper->add('usrNom',null,array('label'=>'Nom :'));
+        $datagridMapper->add('usrPrenom',null,array('label'=>'Prénom :'));
+        $datagridMapper->add('usrCp',null,array('label'=>'Code postal :'));
+        $datagridMapper->add('usrVille',null,array('label'=>'Ville :'));
+        $datagridMapper->add('usrAdresse',null,array('label'=>'Adresse :'));
+        $datagridMapper->add('usrDateEmbauche',null,array('label'=>'Date d\'embauche :'));
+        $datagridMapper->add('email',null,array('label'=>'Email :'));
+        $datagridMapper->add('usrFonction', 'doctrine_orm_model_autocomplete',array(
+            'associated_property'=>'fonctLibelle',
+            'class' => 'OCUserBundle\Entity\Fonction',
+            'property' => 'fonctLibelle',
+            'label'=>'Fonction :'
+        ));
+        $datagridMapper->add('usrDepartement', 'doctrine_orm_model_autocomplete',array(
+            'associated_property'=>'depLibelle',
+            'class' => 'OCUserBundle\Entity\Departement',
+            'property' => 'depLibelle',
+            'label'=>'Libellé :'
+        ));
+        $datagridMapper->add('usrRegion', 'doctrine_orm_model_autocomplete',array(
+            'associated_property'=>'regLibelle',
+            'class' => 'OCUserBundle\Entity\Region',
+            'property' => 'regLibelle',
+            'label'=>'Région :'
+        ));
+        $datagridMapper->add('usrSecteur', 'doctrine_orm_model_autocomplete',array(
+            'associated_property'=>'secLibelle',
+            'class' => 'OCUserBundle\Entity\Secteur',
+            'property' => 'secLibelle',
+            'label'=>'libellé :'
+        ));
+        $datagridMapper->add('usrSupp', 'doctrine_orm_model_autocomplete',array(
+            'associated_property'=>'usrNom',
+            'class' => 'OCUserBundle\Entity\User',
+            'property' => 'usrNom',
+            'label'=>'Supérieur hiérarchique  :'
+        ));
+}
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('usrMatricule');
-        $listMapper->add('usrNom');
-
+        $listMapper->addIdentifier('usrMatricule',null,array('label'=>'Matricule utilisateur :'));
+        $listMapper->add('usrNom',null,array('label'=>'Nom :'));
+        $listMapper->add('usrPrenom',null,array('label'=>'Prénom :'));
+        $listMapper->add('usrCp',null,array('label'=>'Code postal :'));
+        $listMapper->add('usrVille',null,array('label'=>'Ville :'));
+        $listMapper->add('usrAdresse',null,array('label'=>'Adresse :'));
+        $listMapper->add('usrDateEmbauche',null,array('label'=>'Date d\'embauche :'));
+        $listMapper->add('usrEmail',null,array('label'=>'Email :'));
+        $listMapper->add('usrFonction', 'sonata_type_model',array(
+            'associated_property'=>'fonctLibelle',
+            'class' => 'OCUserBundle\Entity\Fonction',
+            'property' => 'fonctLibelle',
+            'label'=>'Fonction :'
+        ));
+        $listMapper->add('usrDepartement', 'sonata_type_model',array(
+            'associated_property'=>'depLibelle',
+            'class' => 'OCUserBundle\Entity\Departement',
+            'property' => 'depLibelle',
+            'label'=>'Libellé :'
+        ));
+        $listMapper->add('usrRegion', 'sonata_type_model',array(
+            'associated_property'=>'regLibelle',
+            'class' => 'OCUserBundle\Entity\Region',
+            'property' => 'regLibelle',
+            'label'=>'Région :'
+        ));
+        $listMapper->add('usrSecteur', 'sonata_type_model',array(
+            'associated_property'=>'secLibelle',
+            'class' => 'OCUserBundle\Entity\Secteur',
+            'property' => 'secLibelle',
+            'label'=>'libellé :'
+        ));
+        $listMapper->add('usrSupp', 'sonata_type_model',array(
+            'associated_property'=>'usrNom',
+            'class' => 'OCUserBundle\Entity\User',
+            'property' => 'usrNom',
+            'label'=>'Supérieur hiérarchique  :'
+        ));
     }
     public function configureOptions(OptionsResolver $resolver)
     {

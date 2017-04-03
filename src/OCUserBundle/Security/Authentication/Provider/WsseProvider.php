@@ -79,8 +79,6 @@ class WsseProvider implements AuthenticationProviderInterface
         $cacheItem->set(null)->expiresAfter(300);
         $this->cachePool->save($cacheItem);
 
-        $secretEncod=
-
         // Validate Secret
         $expected = base64_encode(sha1(base64_decode($nonce).$created.$secret, true));
         /*

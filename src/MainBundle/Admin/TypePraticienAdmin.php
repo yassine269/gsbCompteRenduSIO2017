@@ -19,9 +19,6 @@ class TypePraticienAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('typeCode', 'text',array(
-            'label'=>'Code du type de praticien :'
-        ));
         $formMapper->add('typeLibelle', 'text',array(
             'label'=>'Libéllé du type de praticien :'
         ));
@@ -32,9 +29,6 @@ class TypePraticienAdmin extends AbstractAdmin
 
     protected function showLisFields(ShowMapper $showMapper)
     {
-        $showMapper->add('typeCode', 'text',array(
-            'label'=>'Code du type de praticien :'
-        ));
         $showMapper->add('typeLibelle', 'text',array(
             'label'=>'Libéllé du type de praticien :'
         ));
@@ -45,20 +39,17 @@ class TypePraticienAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('typeLibelle');
+        $datagridMapper->add('typeLibelle',null,array('label'=>'Libellé'));
+        $datagridMapper->add('typeLieu',null,array('label'=>'Lieu d\'éxercice'));
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('typeLibelle',null,array(
-            'label'=>'Libéllé du type :'))
-                    ->add('typeLieu',null,array(
-                        'label'=>'Lieu d\'exercice :'
-                    ))
-                    ->add('',null,array(
-                        'label'=>'Code du type de praticien :'
-                    ))
-        ;
+        $listMapper
+            ->addIdentifier('typeLibelle',null,array(
+                'label'=>'Libéllé du type :'))
+            ->add('typeLieu',null,array(
+                'label'=>'Lieu d\'exercice :'));
     }
 
 

@@ -20,14 +20,18 @@ class FamilleAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('famLibelle', 'text',array(
-            'label'=>'Libellé de la famille'
-        ));
+        $formMapper
+            ->with('Informations :',array('class'=>'col-md-6 col-md-offset-3'))
+                ->add('famLibelle', 'text',array(
+                'label'=>'Libellé de la famille'
+                ))
+            ->end();
     }
     protected function configureListFields(ListMapper $listMapper)
     {
 
-        $listMapper->add('famLibelle', 'text',array(
+        $listMapper
+            ->addIdentifier('famLibelle', 'text',array(
             'label'=>'Libellé de la famille'
         ));
     }

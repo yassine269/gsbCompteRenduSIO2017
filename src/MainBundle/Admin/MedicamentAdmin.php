@@ -150,15 +150,14 @@ class MedicamentAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
 
-        $listMapper->add('medDepotLegal', 'text',array(
+        $listMapper->addIdentifier('medDepotLegal', 'text',array(
             'label'=>'Dépot légal du médicament :'
         ));
-        $listMapper->add('medNomCommercial', 'text',array(
+        $listMapper->addIdentifier('medNomCommercial', 'text',array(
             'label'=>'Nom commercial du médicament :'
         ));
         $listMapper->add('medCompositions', 'sonata_type_collection',
             array(
-                'associated_property'=>'constComposant.compLibelle',
                 'by_reference' => false,
                 'required' => false,
                 'label' => 'Composants du médicament :'
@@ -217,7 +216,65 @@ class MedicamentAdmin extends AbstractAdmin
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('medDepotLegal');
+        $datagridMapper->add('medDepotLegal',null,array('label'=>'Dépot légal'));
+        $datagridMapper->add('medNomCommercial',null,array('label'=>'Nom commercial'));
+        $datagridMapper->add('medEffets',null,array('label'=>'Efets'));
+        $datagridMapper->add('medContreIndic',null,array('label'=>'Contre Indication'));
+        $datagridMapper->add('medPrixEchant',null,array('label'=>'Prix échantillon'));
+        $datagridMapper->add('medCompositions','doctrine_orm_model_autocomplete',
+            array(
+                'label'=> "Compositions",
+            ),null,
+            array(
+                'property'=>'constComposant',
+                'multiple'=> true,
+                'placeholder'=> 'Nom du composant :'
+            ));
+        $datagridMapper->add('medPrescriptions','doctrine_orm_model_autocomplete',
+            array(
+                'label'=> "Prescriptions",
+            ),null,
+            array(
+                'property'=>'presTypeIndiv',
+                'multiple'=> true,
+                'placeholder'=> "Type d'individus"
+            ));
+        $datagridMapper->add('medPerturbe','doctrine_orm_model_autocomplete',
+            array(
+                'label'=> "Médicament pérturber",
+            ),null,
+            array(
+                'property'=>'medNomCommercial',
+                'multiple'=> true,
+                'placeholder'=> "Nom commercial du médicament"
+            ));
+        $datagridMapper->add('medPerturbateur','doctrine_orm_model_autocomplete',
+            array(
+                'label'=> "Médicament pérturbateur",
+            ),null,
+            array(
+                'property'=>'medNomCommercial',
+                'multiple'=> true,
+                'placeholder'=> "Nom commercial du médicament"
+            ));
+        $datagridMapper->add('medPresentation','doctrine_orm_model_autocomplete',
+            array(
+                'label'=> "Présentation",
+            ),null,
+            array(
+                'property'=>'preLibelle',
+                'multiple'=> true,
+                'placeholder'=> "Libellé de la présentation"
+            ));
+        $datagridMapper->add('medFamille','doctrine_orm_model_autocomplete',
+            array(
+                'label'=> "Famille",
+            ),null,
+            array(
+                'property'=>'famLibelle',
+                'multiple'=> false,
+                'placeholder'=> "Libellé de la famille"
+            ));
     }
     public function preValidate($object){
         $comp=$object->getMedCOMPOSITIONS();

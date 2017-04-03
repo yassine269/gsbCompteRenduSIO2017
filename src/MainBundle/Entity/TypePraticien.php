@@ -24,11 +24,6 @@ class TypePraticien
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @ORM\Column(type="string", length=40)
-     */
-    private $typeCode;
     /**
      * @ORM\Column(type="string", length=40)
      */
@@ -48,31 +43,6 @@ class TypePraticien
     {
         return $this->id;
     }
-
-    /**
-     * Set typeCode
-     *
-     * @param string $typeCode
-     *
-     * @return TypePraticien
-     */
-    public function setTypeCode($typeCode)
-    {
-        $this->typeCode = $typeCode;
-
-        return $this;
-    }
-
-    /**
-     * Get typeCode
-     *
-     * @return string
-     */
-    public function getTypeCode()
-    {
-        return $this->typeCode;
-    }
-
     /**
      * Set typeLibelle
      *
@@ -119,5 +89,9 @@ class TypePraticien
     public function getTypeLieu()
     {
         return $this->typeLieu;
+    }
+    public function __toString()
+    {
+        return (string) $this->getTypeLibelle();
     }
 }

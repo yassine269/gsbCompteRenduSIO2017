@@ -41,29 +41,6 @@ class Famille
         return $this->id;
     }
 
-    /**
-     * Set famCode
-     *
-     * @param string $famCode
-     *
-     * @return Famille
-     */
-    public function setFamCode($famCode)
-    {
-        $this->famCode = $famCode;
-
-        return $this;
-    }
-
-    /**
-     * Get famCode
-     *
-     * @return string
-     */
-    public function getFamCode()
-    {
-        return $this->famCode;
-    }
 
     /**
      * Set famLibelle
@@ -87,5 +64,9 @@ class Famille
     public function getFamLibelle()
     {
         return $this->famLibelle;
+    }
+    public function __toString()
+    {
+        return (string) $this->getFamLibelle();
     }
 }

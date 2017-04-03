@@ -11,11 +11,13 @@ security:
         ROLE_STAFF:             [ROLE_USER, ROLE_SONATA_FOO_READER]
         ROLE_ADMIN:             [ROLE_STAFF, ROLE_SONATA_FOO_EDITOR, ROLE_SONATA_FOO_ADMIN]
         ROLE_SUPER_ADMIN:       [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
-        ROLE_ALL_ADMIN:         [ROLE_STAFF, ROLE_RegisterSONATA_FOO_ALL]
+        # you could alternatively use for an admin who has all rights
+        ROLE_ALL_ADMIN:         [ROLE_STAFF, ROLE_SONATA_FOO_ALL]
         ROLE_RESPONSABLE: ROLE_RESPONSABLE
         ROLE_DELEGUE:     ROLE_DELEGUE
         ROLE_PERMISS_VISITE:
             - ROLE_SUPER_ADMIN
+            - ROLE_ALL_ADMIN
             - ROLE_ADMIN_RAPPORTVISITE_VIEW
             - ROLE_SONATA_MEDIA_MEDIA_LIST
             - ROLE_ADMIN_RAPPORTVISITE_LIST
