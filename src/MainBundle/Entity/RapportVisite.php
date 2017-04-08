@@ -277,4 +277,8 @@ class RapportVisite
     {
         return $this->rapEchantillons;
     }
+    public function __toString()
+{
+    return (string)$this->getId();
+}
 }

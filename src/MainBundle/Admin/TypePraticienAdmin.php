@@ -13,28 +13,32 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\CoreBundle\Validator\ErrorElement;
 
 
 class TypePraticienAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('typeLibelle', 'text',array(
+        $formMapper
+            ->add('typeLibelle', 'text',array(
             'label'=>'Libéllé du type de praticien :'
-        ));
-        $formMapper->add('typeLieu', 'text',array(
+            ))
+            ->add('typeLieu', 'text',array(
             'label'=>'Lieu d\'exercice du praticien :'
-        ));
+            ));
     }
 
-    protected function showLisFields(ShowMapper $showMapper)
+    protected function showFields(ShowMapper $showMapper)
     {
-        $showMapper->add('typeLibelle', 'text',array(
+        $showMapper
+            ->add('typeLibelle', 'text',array(
             'label'=>'Libéllé du type de praticien :'
-        ));
-        $showMapper->add('typeLieu', 'text',array(
+            ))
+            ->add('typeLieu', 'text',array(
             'label'=>'Lieu d\'exercice du praticien :'
-        ));
+            ));
+
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -49,8 +53,27 @@ class TypePraticienAdmin extends AbstractAdmin
             ->addIdentifier('typeLibelle',null,array(
                 'label'=>'Libéllé du type :'))
             ->add('typeLieu',null,array(
-                'label'=>'Lieu d\'exercice :'));
+                'label'=>'Lieu d\'exercice :'))
+            ->add('_action', 'actions', array(
+                    'actions' => array(
+                        'edit' => array(),
+                        'show' =>array()
+                    )
+                )
+            );
     }
+    public function validate(ErrorElement $errorElement,$object)
+    {
+        $errorElement
+            ->with('typeLibelle')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('TypeLieu')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end();
 
+    }
 
 }

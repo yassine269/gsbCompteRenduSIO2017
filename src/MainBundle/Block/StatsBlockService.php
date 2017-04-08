@@ -103,7 +103,7 @@ class StatsBlockService extends AbstractBlockService
         // TRAITEMENT DU RESULTAT
         $count=array(0,0,0,0,0,0,0,0,0,0,0,0);
         foreach ($data as $rap ){
-            $dateRap=$rap->getRapDATE();
+            $dateRap=$rap->getRapDate();
             $dateRap=$dateRap->format('Y-m-d');
             $dateExplode=explode("-",$dateRap);
             $mois=ltrim($dateExplode[1],'0')-1;

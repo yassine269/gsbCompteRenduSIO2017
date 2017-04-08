@@ -14,6 +14,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\CoreBundle\Validator\ErrorElement;
+use Sonata\AdminBundle\Route\RouteCollection;
 
 
 class FamilleAdmin extends AbstractAdmin
@@ -33,7 +34,13 @@ class FamilleAdmin extends AbstractAdmin
         $listMapper
             ->addIdentifier('famLibelle', 'text',array(
             'label'=>'Libellé de la famille'
-        ));
+            ))
+            ->add('_action', 'actions', array(
+                    'actions' => array(
+                        'show' =>array()
+                    )
+                )
+            );
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
@@ -58,7 +65,5 @@ class FamilleAdmin extends AbstractAdmin
             ->end()
         ;
     }
-
-
 
 }

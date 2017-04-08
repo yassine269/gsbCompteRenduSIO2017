@@ -15,6 +15,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\CoreBundle\Validator\ErrorElement;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 
@@ -22,52 +23,57 @@ class PraticienAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('praPrenom', 'text',array(
+        $formMapper
+            ->add('praPrenom', 'text',array(
             'label'=>'Prénom du praticien :'
-        ));
-        $formMapper->add('praNom', 'text',array(
+            ))
+            ->add('praNom', 'text',array(
             'label'=>'Nom du praticien :'
-        ));
-        $formMapper->add('praAdresse', 'text',array(
+            ))
+            ->add('praAdresse', 'text',array(
             'label'=>'Adresse du praticien :'
-        ));
-        $formMapper->add('praCp', 'text',array(
+            ))
+            ->add('praCp', 'text',array(
             'label'=>'Code postal du praticien :'
-        ));
-        $formMapper->add('praVille', 'text',array(
+            ))
+            ->add('praVille', 'text',array(
             'label'=>'Ville du praticien :'
-        ));
-        $formMapper->add('praCoefNotoriete', 'integer',array(
+            ))
+            ->add('praCoefNotoriete', 'integer',array(
             'label'=>'Coefiscient de notoriété du praticien :'
-        ));
-        $formMapper->add('praType', 'sonata_type_model', array(
+            ))
+            ->add('praType', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\TypePraticien',
             'property'=>'typeLibelle',
             'required' => false,
-            'label' => 'Type du praticien :'
+            'label' => 'Type du praticien :',
+            'btn_add'=>false,
+            'btn_delete'=>false,
+            'btn_catalogue'=>true
         ));
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('praPrenom', 'text',array(
+        $showMapper
+            ->add('praPrenom', 'text',array(
             'label'=>'Prénom du praticien :'
-        ));
-        $showMapper->add('praNom', 'text',array(
+            ))
+            ->add('praNom', 'text',array(
             'label'=>'Nom du praticien :'
-        ));
-        $showMapper->add('praAdresse', 'text',array(
+            ))
+            ->add('praAdresse', 'text',array(
             'label'=>'Adresse du praticien :'
-        ));
-        $showMapper->add('praCp', 'text',array(
+            ))
+            ->add('praCp', 'text',array(
             'label'=>'Code postal du praticien :'
-        ));
-        $showMapper->add('praVille', 'text',array(
+            ))
+            ->add('praVille', 'text',array(
             'label'=>'Ville du praticien :'
-        ));
-        $showMapper->add('praCoefNotoriete', 'integer',array(
+            ))
+            ->add('praCoefNotoriete', 'integer',array(
             'label'=>'Coefiscient de notoriété du praticien :'
-        ));
-        $showMapper->add('praType', 'sonata_type_model', array(
+            ))
+            ->add('praType', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\TypePraticien',
             'property'=>'typeLibelle',
             'required' => false,
@@ -77,13 +83,14 @@ class PraticienAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('praNom',null,array('label'=>'Nom'));
-        $datagridMapper->add('praPrenom',null,array('label'=>'Prénom'));
-        $datagridMapper->add('praCp',null,array('label'=>'Code postal'));
-        $datagridMapper->add('praVille',null,array('label'=>'Ville'));
-        $datagridMapper->add('praCoefNotoriete',null,array('label'=>'Coef. Notoriété'));
-        $datagridMapper->add('praAdresse',null,array('label'=>'Adresse'));
-        $datagridMapper->add('praType','doctrine_orm_model_autocomplete',
+        $datagridMapper
+            ->add('praNom',null,array('label'=>'Nom'))
+            ->add('praPrenom',null,array('label'=>'Prénom'))
+            ->add('praCp',null,array('label'=>'Code postal'))
+            ->add('praVille',null,array('label'=>'Ville'))
+            ->add('praCoefNotoriete',null,array('label'=>'Coef. Notoriété'))
+            ->add('praAdresse',null,array('label'=>'Adresse'))
+            ->add('praType','doctrine_orm_model_autocomplete',
             array(
                 'label'=> "Type",
             ),null,
@@ -98,34 +105,79 @@ class PraticienAdmin extends AbstractAdmin
     {
         $listMapper->add('praPrenom', 'text',array(
             'label'=>'Prénom du praticien :'
-        ));
-        $listMapper->add('praNom', 'text',array(
+            ))
+            ->add('praNom', 'text',array(
             'label'=>'Nom du praticien :'
-        ));
-        $listMapper->add('praAdresse', 'text',array(
+            ))
+            ->add('praAdresse', 'text',array(
             'label'=>'Adresse du praticien :'
-        ));
-        $listMapper->add('praCp', 'text',array(
+            ))
+            ->add('praCp', 'text',array(
             'label'=>'Code postal du praticien :'
-        ));
-        $listMapper->add('praVille', 'text',array(
+            ))
+            ->add('praVille', 'text',array(
             'label'=>'Ville du praticien :'
-        ));
-        $listMapper->add('praCoefNotoriete', 'integer',array(
+            ))
+            ->add('praCoefNotoriete', 'integer',array(
             'label'=>'Coefiscient de notoriété du praticien :'
-        ));
-        $listMapper->add('praType','many_to_one', array(
+            ))
+            ->add('praType','many_to_one', array(
             'label' => 'Type du praticien :',
             'associated_property'=>'typeLibelle'
-        ));
+            ))
+            ->add('_action', 'actions', array(
+                    'actions' => array(
+                        'show' =>array()
+                    )
+                )
+            );
     }
+
     public function preValidate($object)
     {
         $praNom=$object->getPraNOM();
         $praCP=substr($object->getPraCP(),0,2);
         $praCode='PRA'.$praCP.$praNom;
         $object->setPraCODE($praCode);
-}
+    }
+    public function validate(ErrorElement $errorElement,$object){
+        $errorElement
+            ->with('praNom')
+            ->assertLength(array('min' => 0,'max'=> 30))
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('praPrenom')
+            ->assertLength(array('min' => 0,'max'=> 30))
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('praCp')
+            ->assertLength(array('min' => 0,'max'=> 10))
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('praVille')
+            ->assertLength(array('min' => 0,'max'=> 30))
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('praAdresse')
+            ->assertLength(array('min' => 0,'max'=> 80))
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('praCoefNotoriete')
+            ->assertLength(array('min' => 0,'max'=> 2))
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('praType')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+        ;
+    }
 
 
 

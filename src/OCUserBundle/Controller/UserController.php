@@ -13,4 +13,9 @@ class UserController extends FOSRestController
         $data = $this->getDoctrine()->getManager()->getRepository('OCUserBundle:User')->findAll(); // get data, in this case list of users.
         return  $data;
     }
+    public function indexAction()
+    {
+        $data = $this->getDoctrine()->getManager()->getRepository('OCUserBundle:User')->findAll(); // get data, in this case list of users.
+        return  $data;
+    }
 }

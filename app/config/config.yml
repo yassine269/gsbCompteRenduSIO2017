@@ -130,6 +130,7 @@ sonata_block:
         sonata.block.service.stats: ~
 # CONFIG SONATA ADMIN
 sonata_admin:
+    show_mosaic_button:   false
     security:
         handler: sonata.admin.security.handler.role
     # SET UP SECURITY AND ROLES ACCESS
@@ -184,7 +185,7 @@ sonata_admin:
                 label:                Menu Visiteur
                 label_catalogue:      ~
                 items:
-                    - route:    main_homepage_visiteur
+                    - route:    sonata_admin_dashboard
                       label:    Acceuil
                     - admin.rapportvisite
                     - admin.actcompl
@@ -201,7 +202,7 @@ sonata_admin:
                 label:                Menu Delegue
                 label_catalogue:      ~
                 items:
-                    - route:    main_homepage_delegue
+                    - route:    sonata_admin_dashboard
                       label:    Acceuil
                     - route:    main_statistique_delegue
                       label:    Statistiques

@@ -15,6 +15,14 @@ users:
     type:     rest
     resource: OCUserBundle\Controller\UserController
     prefix: /api
+famille:
+    type:     rest
+    resource: MainBundle\Controller\FamilleController
+    prefix: /api
+Medicament:
+    type:     rest
+    resource: MainBundle\Controller\FamilleController
+    prefix: /api
 publicUser:
     type:    rest
     resource: OCUserBundle\Controller\PublicUserController
@@ -22,7 +30,7 @@ publicUser:
 motifs:
     type: rest
     resource: MainBundle\Controller\MotifsController
-
+    prefix: /api
 main:
     resource: "@MainBundle/Resources/config/routing.yml"
     prefix:   /

@@ -13,6 +13,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\CoreBundle\Validator\ErrorElement;
 
 
 class PrescrireAdmin extends AbstractAdmin
@@ -20,44 +21,50 @@ class PrescrireAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
 
-        $formMapper->add('presDosage', 'sonata_type_model', array(
+        $formMapper
+            ->add('presDosage', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\Dosage',
-            'label' => 'Dosage :'
-        ));
-        $formMapper->add('presTypeIndiv', 'sonata_type_model', array(
+            'label' => 'Dosage :',
+            'btn_add'=>false,
+            'btn_delete'=>false,
+            'btn_catalogue'=>true
+            ))
+            ->add('presTypeIndiv', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\TypeIndividu',
             'property' => 'TypeIndLibelle',
-            'label' => 'Type d\'individu concerné :'
-        ));
-        $formMapper->add('presPosologie', 'text',array(
+            'label' => 'Type d\'individu concerné :',
+            'btn_add'=>false,
+            'btn_delete'=>false,
+            'btn_catalogue'=>true
+            ))
+            ->add('presPosologie', 'text',array(
             'label'=>'Posologie associé :'
         ));
 
     }
-
     protected function configureShowFields(ShowMapper $showMapper)
     {
 
-        $showMapper->add('presDosage', 'sonata_type_model', array(
+        $showMapper
+            ->add('presDosage', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\Dosage',
             'property' => 'id',
             'label' => 'Dosage :'
-        ));
-        $showMapper->add('presTypeIndiv', 'sonata_type_model', array(
+            ))
+            ->add('presTypeIndiv', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\TypeIndividu',
             'property' => 'TypeIndLibelle',
             'label' => 'Type d\'individu concerné :'
-        ));
-        $showMapper->add('presPosologie', 'text',array(
+            ))
+            ->add('presPosologie', 'text',array(
             'label'=>'Posologie associé :'
-        ));
+            ));
 
     }
-
-
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('presTypeIndiv','doctrine_orm_model_autocomplete',
+        $datagridMapper
+            ->add('presTypeIndiv','doctrine_orm_model_autocomplete',
             array(
                 'label'=> "Type d'individus",
             ),null,
@@ -65,8 +72,8 @@ class PrescrireAdmin extends AbstractAdmin
                 'property'=>'typeIndLibelle',
                 'multiple'=> true,
                 'placeholder'=> "Libellé du type d'individu'"
-            ));
-        $datagridMapper->add('presDosage','doctrine_orm_model_autocomplete',
+            ))
+            ->add('presDosage','doctrine_orm_model_autocomplete',
             array(
                 'label'=> "Dosage",
             ),null,
@@ -76,27 +83,53 @@ class PrescrireAdmin extends AbstractAdmin
                 'placeholder'=> "Quantité"
             ));
     }
-
     protected function configureListFields(ListMapper $listMapper)
     {
 
-        $listMapper->add('presDosage','many_to_one', array(
-        'label' => 'Dosage :',
-        'associated_property'=>'dosQuantite'
-    ));
-        $listMapper->add('presTypeIndiv','many_to_one', array(
+        $listMapper
+            ->add('presDosage','many_to_one', array(
+            'label' => 'Dosage :',
+            'associated_property'=>'dosQuantite'
+            ))
+            ->add('presTypeIndiv','many_to_one', array(
             'label' => 'Type d\'individu :',
             'associated_property'=>'TypeIndLibelle'
-        ));
-        $listMapper->add('presPosologie', 'text',array(
+            ))
+            ->add('presPosologie', 'text',array(
             'label'=>'Posologie associé :'
-        ));
-        $listMapper->add('presMEd', 'sonata_type_model',array(
+            ))
+            ->add('presMed', 'sonata_type_model',array(
             'label'=>'Médicament associé :',
             'class'=>'MainBundle\Entity\Medicament',
             'associated_property'=>'medNomCommercial'
-        ));
+            ))
+            ->add('_action', 'actions', array(
+                    'actions' => array(
+                        'show' =>array()
+                    )
+                )
+            );
 
+    }
+    public function validate(ErrorElement $errorElement,$object)
+    {
+        $errorElement
+            ->with('presDosage')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('presTypeInd')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('presPosologie')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('presMed')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end();
     }
 
 

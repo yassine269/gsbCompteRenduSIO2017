@@ -13,32 +13,35 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\CoreBundle\Validator\ErrorElement;
 
 
 class RapportEchantAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('rapEchantMedicament', 'sonata_type_model', array(
+        $formMapper
+            ->add('rapEchantMedicament', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\Medicament',
             'property' => 'medNomCommercial',
             'label' => 'Médicament :'
-        ));
-        $formMapper->add('rapEchantQuantite', 'integer',array(
+            ))
+            ->add('rapEchantQuantite', 'integer',array(
             'label'=>'Quantité d\'échantillons offerts :'
-        ));
+            ));
 
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('rapEchantMedicament', 'sonata_type_model', array(
+        $showMapper
+            ->add('rapEchantMedicament', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\Medicament',
             'property' => 'medNomCommercial',
             'label' => 'Médicament :'
-        ));
-        $showMapper->add('rapEchantQuantite', 'integer',array(
+            ))
+            ->add('rapEchantQuantite', 'integer',array(
             'label'=>'Quantité d\'échantillons offerts :'
-        ));
+            ));
 
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -47,14 +50,29 @@ class RapportEchantAdmin extends AbstractAdmin
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('rapEchantMedicament','many_to_one', array(
-        'label' => 'Médicament :',
-        'associated_property'=>'medNomCommercial'
-    ));
-        $listMapper->add('rapEchantQuantite', 'integer',array(
+        $listMapper
+            ->add('rapEchantMedicament','many_to_one', array(
+            'label' => 'Médicament :',
+            'associated_property'=>'medNomCommercial'
+            ))
+            ->add('rapEchantQuantite', 'integer',array(
             'label'=>'Quantité d\'échantillons offerts :'
-        ));
+            ))
+            ->add('_action', 'actions', array(
+                    'actions' => array(
+                        'show' =>array()
+                    )
+                )
+            );
 
+    }
+    public function validate(ErrorElement $errorElement,$object)
+    {
+        $errorElement
+            ->with('rapEchantQuantite')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end();
     }
     public function preValidate($object){
         $echants=$object->getRapECHANTILLONS();

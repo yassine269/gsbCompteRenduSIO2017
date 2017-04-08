@@ -13,18 +13,23 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\CoreBundle\Validator\ErrorElement;
 
 
 class ActReaAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('actReaVisiteur', 'sonata_type_model', array(
+        $formMapper
+            ->add('actReaVisiteur', 'sonata_type_model', array(
             'class' => 'OCUserBundle\Entity\User',
             'property' => 'usrMatricule',
-            'label'=>'Organisateurs :'
-        ));
-        $formMapper->add('actReaBudget', 'number',array(
+            'label'=>'Organisateurs :',
+            'btn_add'=>false,
+            'btn_delete'=>false,
+            'btn_catalogue'=>true,
+        ))
+            ->add('actReaBudget', 'number',array(
             'label'=>'Budget alloué a cette organisateur :'
         ));
 
@@ -36,40 +41,48 @@ class ActReaAdmin extends AbstractAdmin
             'class' => 'OCUserBundle\Entity\User',
             'property' => 'usrNom',
             'label'=>'Organisateurs :'
-        ));
-        $listMapper->add('actReaBudget', 'number',array(
+             ))
+             ->add('actReaBudget', 'number',array(
             'label'=>'Budget alloué a cette organisateur :'
-        ));
-        $listMapper->add('actReaActCompl', 'sonata_type_model',array(
+             ))
+             ->add('actReaActCompl', 'sonata_type_model',array(
             'associated_property'=>'id',
             'class' => 'MainBundle\Entity\ActCompl',
             'property' => 'id',
             'label'=>'Activité complémentaire concernée :'
-        ));
+             ))
+            ->add('_action', 'actions', array(
+                    'actions' => array(
+                        'show' =>array()
+                    )
+                )
+            );
 
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('actReaVisiteur', 'sonata_type_model', array(
+        $showMapper
+            ->add('actReaVisiteur', 'sonata_type_model', array(
             'associated_property'=>'usrNom',
             'class' => 'OCUserBundle\Entity\User',
             'property' => 'usrNom',
             'label'=>'Organisateurs :'
-        ));
-        $showMapper->add('actReaBudget', 'number',array(
+            ))
+            ->add('actReaBudget', 'number',array(
             'label'=>'Budget alloué a cette organisateur :'
-        ));
-        $showMapper->add('actReaActCompl', 'sonata_type_model',array(
+            ))
+            ->add('actReaActCompl', 'sonata_type_model',array(
             'associated_property'=>'id',
             'class' => 'OCUserBundle\Entity\ActCompl',
             'property' => 'id',
             'label'=>'Activité complémentaire concernée :'
-        ));
+            ));
 
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('actReaVisiteur', 'doctrine_orm_model_autocomplete',
+        $datagridMapper
+            ->add('actReaVisiteur', 'doctrine_orm_model_autocomplete',
             array(
                 'label'=> "Visiteur",
             ),null,
@@ -77,8 +90,21 @@ class ActReaAdmin extends AbstractAdmin
                 'property'=>'usrNom',
                 'multiple'=> true,
                 'placeholder'=> 'Nom des visiteurs :'
-            ));
-        $datagridMapper->add('actReaBudget',null,array('label'=>'Budget alloué'));
+            ))
+            ->add('actReaBudget',null,array('label'=>'Budget alloué'));
+    }
+    public function validate(ErrorElement $errorElement, $object)
+    {
+        $errorElement
+            ->with('actReaVisiteur')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('actReaBudget')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+        ;
     }
 
 

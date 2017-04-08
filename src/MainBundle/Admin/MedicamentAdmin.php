@@ -16,6 +16,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Sonata\CoreBundle\Validator\ErrorElement;
 
 
 class MedicamentAdmin extends AbstractAdmin
@@ -23,13 +24,14 @@ class MedicamentAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
 
-        $formMapper->add('medDepotLegal', 'text',array(
+        $formMapper
+            ->add('medDepotLegal', 'text',array(
             'label'=>'Dépot légal du médicament :'
-        ));
-        $formMapper->add('medNomCommercial', 'text',array(
+        ))
+            ->add('medNomCommercial', 'text',array(
             'label'=>'Nom commercial du médicament :'
-        ));
-        $formMapper->add('medCompositions', 'sonata_type_collection',
+        ))
+            ->add('medCompositions', 'sonata_type_collection',
             array(
                 'by_reference' => false,
                 'required' => false,
@@ -37,8 +39,8 @@ class MedicamentAdmin extends AbstractAdmin
             ), array(
                 'edit' => 'inline',
                 'inline' => 'table',
-        ));
-        $formMapper->add('medPrescriptions', 'sonata_type_collection',
+            ))
+            ->add('medPrescriptions', 'sonata_type_collection',
             array(
                 'by_reference' => false,
                 'required' => false,
@@ -46,53 +48,56 @@ class MedicamentAdmin extends AbstractAdmin
             ), array(
                 'edit' => 'inline',
                 'inline' => 'table',
-            ));
-        $formMapper->add('medEffets', 'text',array(
+            ))
+            ->add('medEffets', 'text',array(
             'label'=>'Effet du médicament :'
-        ));
-        $formMapper->add('medContreIndic', 'text',array(
+            ))
+            ->add('medContreIndic', 'text',array(
             'label'=>'Contre indication lié au médicament :'
-        ));
-        $formMapper->add('medPrixEchant', 'text',array(
+            ))
+            ->add('medPrixEchant', 'text',array(
             'label'=>'Prx de l\'échantillon du médicament :'
-        ));
-        $formMapper->add('medPerturbe', 'entity',
+            ))
+            ->add('medPerturbe', 'entity',
             array(
             'class' => 'MainBundle\Entity\Medicament',
             'multiple' => true,
             'required' => false,
             'label' => 'Medicaments perturbés par ce médicament :'
-        ));
-        $formMapper->add('medPerturbateur', 'entity', array(
+            ))
+            ->add('medPerturbateur', 'entity', array(
             'class' => 'MainBundle\Entity\Medicament',
             'multiple' => true,
             'required' => false,
             'label' => 'Médicaments perturbant ce médicament :'
-        ));
-        $formMapper->add('medPresentation', 'entity', array(
+            ))
+            ->add('medPresentation', 'entity', array(
             'class' => 'MainBundle\Entity\Presentation',
             'multiple' => true,
             'required' => false,
             'label' => 'Présentation du médicament :'
-        ));
-        $formMapper->add('medFamille', 'sonata_type_model', array(
+            ))
+            ->add('medFamille', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\Famille',
             'property' => 'famLibelle',
-            'label' => 'Famille du médicament :'
-        ));
+            'label' => 'Famille du médicament :',
+            'btn_add'=>false,
+            'btn_delete'=>false,
+            'btn_catalogue'=>true
+            ));
 
 
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-
-        $showMapper->add('medDepotLegal', 'text',array(
+        $showMapper
+            ->add('medDepotLegal', 'text',array(
             'label'=>'Dépot légal du médicament :'
-        ));
-        $showMapper->add('medNomCommercial', 'text',array(
+            ))
+            ->add('medNomCommercial', 'text',array(
             'label'=>'Nom commercial du médicament :'
-        ));
-        $showMapper->add('medCompositions', 'sonata_type_collection',
+            ))
+            ->add('medCompositions', 'sonata_type_collection',
             array(
                 'associated_property'=>'constComposant',
                 'by_reference' => false,
@@ -101,8 +106,8 @@ class MedicamentAdmin extends AbstractAdmin
             ), array(
                 'edit' => 'inline',
                 'inline' => 'table',
-            ));
-        $showMapper->add('medPrescriptions', 'sonata_type_collection',
+            ))
+            ->add('medPrescriptions', 'sonata_type_collection',
             array(
                 'by_reference' => false,
                 'required' => false,
@@ -110,53 +115,54 @@ class MedicamentAdmin extends AbstractAdmin
             ), array(
                 'edit' => 'inline',
                 'inline' => 'table',
-            ));
-        $showMapper->add('medEffets', 'text',array(
+            ))
+            ->add('medEffets', 'text',array(
             'label'=>'Effet du médicament :'
-        ));
-        $showMapper->add('medContreIndic', 'text',array(
+            ))
+            ->add('medContreIndic', 'text',array(
             'label'=>'Contre indication lié au médicament :'
-        ));
-        $showMapper->add('medPrixEchant', 'text',array(
+            ))
+            ->add('medPrixEchant', 'text',array(
             'label'=>'Prx de l\'échantillon du médicament :'
-        ));
-        $showMapper->add('medPerturbe', 'entity', array(
+            ))
+            ->add('medPerturbe', 'entity', array(
             'class' => 'MainBundle\Entity\Medicament',
             'multiple' => true,
             'required' => false,
             'label' => 'Medicaments perturbés par ce médicament :'
 
-        ));
-        $showMapper->add('medPerturbateur', 'entity', array(
+            ))
+            ->add('medPerturbateur', 'entity', array(
             'class' => 'MainBundle\Entity\Medicament',
             'multiple' => true,
             'required' => false,
             'label' => 'Médicaments perturbant ce médicament :'
-        ));
-        $showMapper->add('medPresentation', 'entity', array(
+            ))
+            ->add('medPresentation', 'entity', array(
             'class' => 'MainBundle\Entity\Presentation',
             'multiple' => true,
             'required' => false,
             'label' => 'Présentation du médicament :'
-        ));
-        $showMapper->add('medFamille', 'sonata_type_model', array(
+            ))
+            ->add('medFamille', 'sonata_type_model', array(
             'class' => 'MainBundle\Entity\Famille',
             'property' => 'famLibelle',
             'label' => 'Famille du médicament :'
-        ));
+            ));
 
 
     }
     protected function configureListFields(ListMapper $listMapper)
     {
 
-        $listMapper->addIdentifier('medDepotLegal', 'text',array(
+        $listMapper
+            ->addIdentifier('medDepotLegal', 'text',array(
             'label'=>'Dépot légal du médicament :'
-        ));
-        $listMapper->addIdentifier('medNomCommercial', 'text',array(
+            ))
+             ->addIdentifier('medNomCommercial', 'text',array(
             'label'=>'Nom commercial du médicament :'
-        ));
-        $listMapper->add('medCompositions', 'sonata_type_collection',
+            ))
+             ->add('medCompositions', 'sonata_type_collection',
             array(
                 'by_reference' => false,
                 'required' => false,
@@ -164,8 +170,8 @@ class MedicamentAdmin extends AbstractAdmin
             ), array(
                 'edit' => 'inline',
                 'inline' => 'table',
-            ));
-        $listMapper->add('medPrescriptions', 'sonata_type_collection',
+            ))
+             ->add('medPrescriptions', 'sonata_type_collection',
             array(
                 'associated_property'=>'presPosologie',
                 'by_reference' => false,
@@ -174,54 +180,61 @@ class MedicamentAdmin extends AbstractAdmin
             ), array(
                 'edit' => 'inline',
                 'inline' => 'table',
-            ));
-        $listMapper->add('medEffets', 'text',array(
+            ))
+             ->add('medEffets', 'text',array(
             'label'=>'Effet du médicament :'
-        ));
-        $listMapper->add('medContreIndic', 'text',array(
+            ))
+             ->add('medContreIndic', 'text',array(
             'label'=>'Contre indication lié au médicament :'
-        ));
-        $listMapper->add('medPrixEchant', 'text',array(
+            ))
+             ->add('medPrixEchant', 'text',array(
             'label'=>'Prx de l\'échantillon du médicament :'
-        ));
-        $listMapper->add('medPerturbe', 'entity', array(
+            ))
+             ->add('medPerturbe', 'entity', array(
             'associated_property'=>'medNomCommercial',
             'class' => 'MainBundle\Entity\Medicament',
             'multiple' => true,
             'required' => false,
             'label' => 'Medicaments perturbés par ce médicament :'
 
-        ));
-        $listMapper->add('medPerturbateur', 'entity', array(
+            ))
+             ->add('medPerturbateur', 'entity', array(
             'associated_property'=>'medNomCommercial',
             'class' => 'MainBundle\Entity\Medicament',
             'multiple' => true,
             'required' => false,
             'label' => 'Médicaments perturbant ce médicament :'
-        ));
-        $listMapper->add('medPresentation', 'entity', array(
+            ))
+             ->add('medPresentation', 'entity', array(
             'class' => 'MainBundle\Entity\Presentation',
             'multiple' => true,
             'required' => false,
             'label' => 'Présentation du médicament :'
-        ));
-        $listMapper->add('medFamille', 'sonata_type_model', array(
+            ))
+             ->add('medFamille', 'sonata_type_model', array(
             'associated_property'=>'famLibelle',
             'class' => 'MainBundle\Entity\Famille',
             'property' => 'famLibelle',
             'label' => 'Famille du médicament :'
-        ));
+            ))
+            ->add('_action', 'actions', array(
+                    'actions' => array(
+                        'show' =>array()
+                    )
+                )
+            );
 
 
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('medDepotLegal',null,array('label'=>'Dépot légal'));
-        $datagridMapper->add('medNomCommercial',null,array('label'=>'Nom commercial'));
-        $datagridMapper->add('medEffets',null,array('label'=>'Efets'));
-        $datagridMapper->add('medContreIndic',null,array('label'=>'Contre Indication'));
-        $datagridMapper->add('medPrixEchant',null,array('label'=>'Prix échantillon'));
-        $datagridMapper->add('medCompositions','doctrine_orm_model_autocomplete',
+        $datagridMapper
+            ->add('medDepotLegal',null,array('label'=>'Dépot légal'))
+            ->add('medNomCommercial',null,array('label'=>'Nom commercial'))
+            ->add('medEffets',null,array('label'=>'Efets'))
+            ->add('medContreIndic',null,array('label'=>'Contre Indication'))
+            ->add('medPrixEchant',null,array('label'=>'Prix échantillon'))
+            ->add('medCompositions','doctrine_orm_model_autocomplete',
             array(
                 'label'=> "Compositions",
             ),null,
@@ -229,8 +242,8 @@ class MedicamentAdmin extends AbstractAdmin
                 'property'=>'constComposant',
                 'multiple'=> true,
                 'placeholder'=> 'Nom du composant :'
-            ));
-        $datagridMapper->add('medPrescriptions','doctrine_orm_model_autocomplete',
+            ))
+            ->add('medPrescriptions','doctrine_orm_model_autocomplete',
             array(
                 'label'=> "Prescriptions",
             ),null,
@@ -238,8 +251,8 @@ class MedicamentAdmin extends AbstractAdmin
                 'property'=>'presTypeIndiv',
                 'multiple'=> true,
                 'placeholder'=> "Type d'individus"
-            ));
-        $datagridMapper->add('medPerturbe','doctrine_orm_model_autocomplete',
+            ))
+            ->add('medPerturbe','doctrine_orm_model_autocomplete',
             array(
                 'label'=> "Médicament pérturber",
             ),null,
@@ -247,8 +260,8 @@ class MedicamentAdmin extends AbstractAdmin
                 'property'=>'medNomCommercial',
                 'multiple'=> true,
                 'placeholder'=> "Nom commercial du médicament"
-            ));
-        $datagridMapper->add('medPerturbateur','doctrine_orm_model_autocomplete',
+            ))
+            ->add('medPerturbateur','doctrine_orm_model_autocomplete',
             array(
                 'label'=> "Médicament pérturbateur",
             ),null,
@@ -256,8 +269,8 @@ class MedicamentAdmin extends AbstractAdmin
                 'property'=>'medNomCommercial',
                 'multiple'=> true,
                 'placeholder'=> "Nom commercial du médicament"
-            ));
-        $datagridMapper->add('medPresentation','doctrine_orm_model_autocomplete',
+            ))
+            ->add('medPresentation','doctrine_orm_model_autocomplete',
             array(
                 'label'=> "Présentation",
             ),null,
@@ -265,8 +278,8 @@ class MedicamentAdmin extends AbstractAdmin
                 'property'=>'preLibelle',
                 'multiple'=> true,
                 'placeholder'=> "Libellé de la présentation"
-            ));
-        $datagridMapper->add('medFamille','doctrine_orm_model_autocomplete',
+            ))
+            ->add('medFamille','doctrine_orm_model_autocomplete',
             array(
                 'label'=> "Famille",
             ),null,
@@ -287,6 +300,54 @@ class MedicamentAdmin extends AbstractAdmin
         }
 
     }
+    public function validate(ErrorElement $errorElement, $object)
+    {
+        $errorElement
+            ->with('medDepotLegal')
+            ->assertLength(array('min' => 4,'max'=> 50))
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('medNomCommercial')
+            ->assertLength(array('min' => 4,'max'=> 50))
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('medEffets')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('medContreIndic')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('medPrixEchant')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('medFamille')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('medCompositions')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('medPrescriptions')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+            ->with('medPerturbe')
+            ->end()
+            ->with('medPerturbateur')
+            ->end()
+            ->with('medPresentation')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end()
+        ;
+    }
+
 
 
 

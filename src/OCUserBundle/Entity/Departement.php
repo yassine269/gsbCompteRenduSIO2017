@@ -23,10 +23,6 @@ class Departement
      */
     protected $id;
 
-    /**
-     * @ORM\Column(type="string", length=10)
-     */
-    private $depCode;
 
     /**
      * @ORM\Column(type="string", length=50)
@@ -47,30 +43,6 @@ class Departement
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set depCode
-     *
-     * @param string $depCode
-     *
-     * @return Departement
-     */
-    public function setDepCode($depCode)
-    {
-        $this->depCode = $depCode;
-
-        return $this;
-    }
-
-    /**
-     * Get depCode
-     *
-     * @return string
-     */
-    public function getDepCode()
-    {
-        return $this->depCode;
     }
 
     /**

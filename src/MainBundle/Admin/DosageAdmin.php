@@ -20,40 +20,50 @@ class DosageAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('dosQuantite', 'number',array(
+        $formMapper
+            ->add('dosQuantite', 'number',array(
             'label'=>'Quantité :'
-        ));
-        $formMapper->add('dosUnite', 'text',array(
+            ))
+            ->add('dosUnite', 'text',array(
             'label'=>'Unité de mesure :'
-        ));
+            ));
     }
     protected function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('dosQuantite', 'number',array(
+        $showMapper
+            ->add('dosQuantite', 'number',array(
             'label'=>'Quantité :'
-        ));
-        $showMapper->add('dosUnite', 'text',array(
+        ))
+            ->add('dosUnite', 'text',array(
             'label'=>'Unité de mesure :'
         ));
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('dosQuantite', 'number',array(
+        $listMapper
+            ->addIdentifier('dosQuantite', 'number',array(
             'label'=>'Quantité :'
-        ));
-        $listMapper->add('dosUnite', 'text',array(
+            ))
+            ->add('dosUnite', 'text',array(
             'label'=>'Unité de mesure :'
-        ));
+            ))
+            ->add('_action', 'actions', array(
+                    'actions' => array(
+                        'show' =>array()
+                    )
+                )
+            );
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('dosQuantite', null,array(
+        $datagridMapper
+            ->add('dosQuantite', null,array(
             'label'=>'Quantité'
-        ));
-        $datagridMapper->add('dosUnite', null,array(
+            ))
+            ->add('dosUnite', null,array(
             'label'=>'Unité de mesure'
-        ));
+            ));
     }
     public function validate(ErrorElement $errorElement, $object)
     {

@@ -24,10 +24,6 @@ class Region
      */
     protected $id;
 
-    /**
-     * @ORM\Column(type="string", length=10)
-     */
-    private $regCode;
 
     /**
      * @ORM\Column(type="string", length=50)
@@ -50,31 +46,6 @@ class Region
     {
         return $this->id;
     }
-
-    /**
-     * Set regCode
-     *
-     * @param string $regCode
-     *
-     * @return Region
-     */
-    public function setRegCode($regCode)
-    {
-        $this->regCode = $regCode;
-
-        return $this;
-    }
-
-    /**
-     * Get regCode
-     *
-     * @return string
-     */
-    public function getRegCode()
-    {
-        return $this->regCode;
-    }
-
     /**
      * Set regLibelle
      *

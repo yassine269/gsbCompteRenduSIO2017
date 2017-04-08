@@ -13,6 +13,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\CoreBundle\Validator\ErrorElement;
 
 
 class TypeIndividuAdmin extends AbstractAdmin
@@ -38,9 +39,26 @@ class TypeIndividuAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('TypeIndLibelle',null,array(
+        $listMapper
+            ->addIdentifier('TypeIndLibelle',null,array(
             'label'=>'Libéllé du type d\'individu :'
-        ));
+            ))
+            ->add('_action', 'actions', array(
+                    'actions' => array(
+                        'edit' => array(),
+                        'show' =>array()
+                    )
+                )
+            );
+    }
+    public function validate(ErrorElement $errorElement,$object)
+    {
+        $errorElement
+            ->with('typeIndLibelle')
+            ->assertNotNull()
+            ->assertNotBlank()
+            ->end();
+
     }
 
 

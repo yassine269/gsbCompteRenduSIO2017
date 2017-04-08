@@ -16,6 +16,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\CoreBundle\Validator\ErrorElement;
 
 
+
 class ComposantAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
@@ -32,9 +33,16 @@ class ComposantAdmin extends AbstractAdmin
     }
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('compLibelle', 'text',array(
+        $listMapper
+            ->addIdentifier('compLibelle', 'text',array(
             'label'=>'Libellé du composant :'
-        ));
+            ))
+            ->add('_action', 'actions', array(
+                    'actions' => array(
+                        'show' =>array()
+                    )
+                )
+            );
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

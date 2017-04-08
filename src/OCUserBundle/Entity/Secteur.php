@@ -25,10 +25,6 @@ class Secteur
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=10)
-     */
-    private $secCode;
-    /**
      * @ORM\Column(type="string", length=20)
      */
     private $secLibelle;
@@ -43,31 +39,6 @@ class Secteur
     {
         return $this->id;
     }
-
-    /**
-     * Set secCode
-     *
-     * @param string $secCode
-     *
-     * @return Secteur
-     */
-    public function setSecCode($secCode)
-    {
-        $this->secCode = $secCode;
-
-        return $this;
-    }
-
-    /**
-     * Get secCode
-     *
-     * @return string
-     */
-    public function getSecCode()
-    {
-        return $this->secCode;
-    }
-
     /**
      * Set secLibelle
      *

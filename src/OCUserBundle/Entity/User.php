@@ -391,6 +391,6 @@ class User extends BaseUser
     }
     public function __toString()
     {
-        return (string) 'Nom : '.$this->getUsrNom().' | Prénom : '.$this->getUsrPrenom();
+        return (string) $this->getUsrNom();
     }
 }
