@@ -134,7 +134,7 @@ class UserAdmin extends AbstractAdmin
             ->add('usrVille',null,array('label'=>'Ville'))
             ->add('usrAdresse',null,array('label'=>'Adresse'))
             ->add('usrDateEmbauche',null,array('label'=>'Date d\'embauche'))
-            ->add('usrEmail',null,array('label'=>'Email'))
+            ->add('email',null,array('label'=>'Email'))
             ->add('usrFonction', 'sonata_type_model',array(
             'associated_property'=>'fonctLibelle',
             'class' => 'OCUserBundle\Entity\Fonction',
@@ -202,7 +202,7 @@ class UserAdmin extends AbstractAdmin
             ->assertNotNull()
             ->assertNotBlank()
             ->end()
-            ->with('usrEmail')
+            ->with('email')
             ->assertNotNull()
             ->assertNotBlank()
             ->end()
