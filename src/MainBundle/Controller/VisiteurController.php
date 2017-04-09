@@ -9,6 +9,8 @@ class VisiteurController extends Controller
     public function indexAction(){
 
         $currentUser=$this->getUser();
+
+
         return $this->render('MainBundle:Visiteur:index.html.twig',array(
             'currentUser' => $currentUser
         ));

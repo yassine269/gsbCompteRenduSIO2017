@@ -1,5 +1,4 @@
 {% extends 'MainBundle::standard_layout.html.twig' %}
-{% block mainContainer %}
-    {{ render(controller(
-    'OCUserBundle:CRUD:list')) }}
+{% block sonata_admin_content %}
+    {{ sonata_block_render({ 'type': 'sonata.block.service.stats' }) }}
 {% endblock %}

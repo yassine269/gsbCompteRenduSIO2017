@@ -93,7 +93,7 @@ class StatsBlockService extends AbstractBlockService
         if($this->authChecker->isGranted('ROLE_DELEGUE')){
             $settings = $blockContext->getSettings();
             $date=date("Y-m-d");
-            $data = $this->em->getRepository("MainBundle:RapportVisite")->findByRegionYearToNow($date,$user->getUsrREGION());
+            $data = $this->em->getRepository("MainBundle:RapportVisite")->findByRegionYearToNow($date,$user->getUsrRegion());
         }
         if($this->authChecker->isGranted('ROLE_RESPONSABLE')){
             $settings = $blockContext->getSettings();
