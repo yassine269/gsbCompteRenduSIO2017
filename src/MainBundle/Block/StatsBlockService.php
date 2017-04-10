@@ -82,70 +82,79 @@ class StatsBlockService extends AbstractBlockService
      */
     public function execute(BlockContextInterface $blockContext, Response $response = null)
     {
+
         // RECUPERATION DE L'UTILISATEUR COURANT
         $user = $this->secureToken->getToken()->getUser();
-        // REQUETE POUR STATISTIQUES DASHBOARD EN FONCTION DU ROLE DE L'UTILISATEUR
-        if($this->authChecker->isGranted('ROLE_VISITEUR')){
-            $settings = $blockContext->getSettings();
-            $date=date("Y-m-d");
-            $data = $this->em->getRepository("MainBundle:RapportVisite")->findByUserYearToNow($date,$user->getId());
-        }
-        if($this->authChecker->isGranted('ROLE_DELEGUE')){
-            $settings = $blockContext->getSettings();
-            $date=date("Y-m-d");
-            $data = $this->em->getRepository("MainBundle:RapportVisite")->findByRegionYearToNow($date,$user->getUsrRegion());
-        }
-        if($this->authChecker->isGranted('ROLE_RESPONSABLE')){
-            $settings = $blockContext->getSettings();
-            $date=date("Y-m-d");
-            $data = $this->em->getRepository("MainBundle:RapportVisite")->findBySecteurYearToNow($date,$user->getUsrSECTEUR());
-        }
-        // TRAITEMENT DU RESULTAT
-        $count=array(0,0,0,0,0,0,0,0,0,0,0,0);
-        $tabEchants=array(0,0,0,0,0,0,0,0,0,0,0,0);
-        foreach ($data as $rap ){
-            $budget=0;
-            $echants=$rap->getRapEchantillons();
-            $dateRap=$rap->getRapDate();
-            $dateRap=$dateRap->format('m');
-            $mois=$dateRap-1;
-            $count[$mois]=$count[$mois]+1;
-            foreach($echants as $echant){
-                $budget= $budget +$echant->getRapEchantMedicament()->getMedPrixEchant();
-            }
-            $tabEchants[$mois]=$budget;
-        }
-        // PARAMETRAGE DU GRAPHIQUE
-        $series = array(
-            array("name" => "Nombre de rapport",    "data" => $count)
-        );
-        $categories = array('Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aôu', 'Sep', 'Oct', 'Nov', 'Dec');
-        $ob = new Highchart();
-        $ob->chart->renderTo('linechart');  // The #id of the div where to render the chart
-        $ob->title->text('Statistiques de saisie de rapport sur l\'année en cour :');
-        $ob->chart->type('column');
-        $ob->xAxis->title(array('text'  => "Mois"));
-        $ob->xAxis->categories($categories);
-        $ob->yAxis->title(array('text'  => "Nombre de rapports"));
-        $ob->series($series);
-        $seriesEchant=array(
-            array('name'=>"Budget d'Echantillons offerts", "data" => $tabEchants)
-        );
-        $categories = array('Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aôu', 'Sep', 'Oct', 'Nov', 'Dec');
-        $obEchant=new Highchart();
-        $obEchant->chart->renderTo('linechartEchant');
-        $obEchant->chart->type('column');
-        $obEchant->title->text('Evolution du budget d\'échantillons offerts :');
-        $obEchant->xAxis->title(array('text'=>'Mois'));
-        $obEchant->xAxis->categories($categories);
-        $obEchant->yAxis->title(array('text'=>"Budget d'échantillons dépender"));
-        $obEchant->series($seriesEchant);
+        if(!$this->authChecker->isGranted('ROLE_ADMIN')) {
+            // REQUETE POUR STATISTIQUES DASHBOARD EN FONCTION DU ROLE DE L'UTILISATEUR
 
-        // RENDER TEMPLATE AVEC GRAPHIQUE
+            if ($this->authChecker->isGranted('ROLE_VISITEUR')) {
+                $settings = $blockContext->getSettings();
+                $date = date("Y-m-d");
+                $data = $this->em->getRepository("MainBundle:RapportVisite")->findByUserYearToNow($date, $user->getId());
+            }
+            if ($this->authChecker->isGranted('ROLE_DELEGUE')) {
+                $settings = $blockContext->getSettings();
+                $date = date("Y-m-d");
+                $data = $this->em->getRepository("MainBundle:RapportVisite")->findByRegionYearToNow($date, $user->getUsrRegion());
+            }
+            if ($this->authChecker->isGranted('ROLE_RESPONSABLE')) {
+                $settings = $blockContext->getSettings();
+                $date = date("Y-m-d");
+                $data = $this->em->getRepository("MainBundle:RapportVisite")->findBySecteurYearToNow($date, $user->getUsrSECTEUR());
+            }
+            // TRAITEMENT DU RESULTAT
+            $count = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            $tabEchants = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            foreach ($data as $rap) {
+                $budget = 0;
+                $echants = $rap->getRapEchantillons();
+                $dateRap = $rap->getRapDate();
+                $dateRap = $dateRap->format('m');
+                $mois = $dateRap - 1;
+                $count[$mois] = $count[$mois] + 1;
+                foreach ($echants as $echant) {
+                    $budget = $budget + $echant->getRapEchantMedicament()->getMedPrixEchant();
+                }
+                $tabEchants[$mois] = $budget;
+            }
+            // PARAMETRAGE DU GRAPHIQUE
+            $series = array(
+                array("name" => "Nombre de rapport", "data" => $count)
+            );
+            $categories = array('Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aôu', 'Sep', 'Oct', 'Nov', 'Dec');
+            $ob = new Highchart();
+            $ob->chart->renderTo('linechart');  // The #id of the div where to render the chart
+            $ob->title->text('Statistiques de saisie de rapport sur l\'année en cour :');
+            $ob->chart->type('column');
+            $ob->xAxis->title(array('text' => "Mois"));
+            $ob->xAxis->categories($categories);
+            $ob->yAxis->title(array('text' => "Nombre de rapports"));
+            $ob->series($series);
+            $seriesEchant = array(
+                array('name' => "Budget d'Echantillons offerts", "data" => $tabEchants)
+            );
+            $categories = array('Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aôu', 'Sep', 'Oct', 'Nov', 'Dec');
+            $obEchant = new Highchart();
+            $obEchant->chart->renderTo('linechartEchant');
+            $obEchant->chart->type('column');
+            $obEchant->title->text('Evolution du budget d\'échantillons offerts :');
+            $obEchant->xAxis->title(array('text' => 'Mois'));
+            $obEchant->xAxis->categories($categories);
+            $obEchant->yAxis->title(array('text' => "Budget d'échantillons dépender"));
+            $obEchant->series($seriesEchant);
+
+            // RENDER TEMPLATE AVEC GRAPHIQUE
+            return $this->renderResponse($blockContext->getTemplate(), array(
+                'user' => $user,
+                'ob' => $ob,
+                'obEchant' => $obEchant,
+                'block' => $blockContext->getBlock(),
+                'settings' => $settings,
+            ), $response);
+        }
         return $this->renderResponse($blockContext->getTemplate(), array(
-            'user'=>$user,
-            'ob' => $ob,
-            'obEchant'=>$obEchant,
+            'user' => $user,
             'block' => $blockContext->getBlock(),
             'settings' => $settings,
         ), $response);
