@@ -31,14 +31,6 @@ class MedConstitutionAdmin extends AbstractAdmin
             ))
             ->add('constQuantite', 'integer',array(
             'label'=>'Quantité :'
-            ))
-            ->add('constMedicament', 'sonata_type_model', array(
-            'class' => 'MainBundle\Entity\Medicament',
-            'property' => 'medNomCommercial',
-            'label' => 'Médicament concerné :',
-            'btn_add'=>false,
-            'btn_delete'=>false,
-            'btn_catalogue'=>true
             ));
     }
     protected function configureShowFields(ShowMapper $showMapper)
@@ -108,6 +100,9 @@ class MedConstitutionAdmin extends AbstractAdmin
             ->assertNotNull()
             ->assertNotBlank()
             ->end();
+
+    }
+    public function preValidate($object){
 
     }
 }
