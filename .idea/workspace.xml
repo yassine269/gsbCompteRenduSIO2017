@@ -35,8 +35,8 @@
           <file leaf-file-name="StatsBlockService.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/MainBundle/Block/StatsBlockService.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="161" column="0" lean-forward="true" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+                <state relative-caret-position="323">
+                  <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
                   <folding>
                     <element signature="e#285#344#0#PHP" expanded="true" />
                   </folding>
@@ -215,9 +215,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s doctrine:schema:update --force " />
-      <command text="git status" />
-      <command text="git add -A" />
       <command text="git status" />
       <command text="git commit -m &quot;All entities methods OK | ROLE VISITEUR MODIFY | ACTION DEPEND ON RIGHTS OK &quot;" />
       <command text="git push origin master" />
@@ -239,6 +236,9 @@
       <command text="git push origin master" />
       <command text="git add -A" />
       <command text="git commit -m &quot;little change for prod&quot;" />
+      <command text="git push origin master" />
+      <command text="git add -A" />
+      <command text="git commit -m &quot;adminDash wihout stats&quot;" />
       <command text="git push origin master" />
     </commandsHistory>
   </component>
@@ -480,12 +480,12 @@
       <workItem from="1491310987721" duration="7670000" />
       <workItem from="1491579226590" duration="27682000" />
       <workItem from="1491764409467" duration="2639000" />
-      <workItem from="1491846080753" duration="7760000" />
+      <workItem from="1491846080753" duration="7834000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117194000" />
+    <option name="totallyTimeSpent" value="117268000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1020,8 +1020,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Block/StatsBlockService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="161" column="0" lean-forward="true" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+        <state relative-caret-position="323">
+          <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
           <folding>
             <element signature="e#285#344#0#PHP" expanded="true" />
           </folding>

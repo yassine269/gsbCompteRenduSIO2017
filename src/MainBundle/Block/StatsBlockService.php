@@ -156,7 +156,6 @@ class StatsBlockService extends AbstractBlockService
         return $this->renderResponse($blockContext->getTemplate(), array(
             'user' => $user,
             'block' => $blockContext->getBlock(),
-            'settings' => $settings,
         ), $response);
     }
 
