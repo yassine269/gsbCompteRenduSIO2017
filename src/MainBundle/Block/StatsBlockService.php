@@ -102,29 +102,50 @@ class StatsBlockService extends AbstractBlockService
         }
         // TRAITEMENT DU RESULTAT
         $count=array(0,0,0,0,0,0,0,0,0,0,0,0);
+        $tabEchants=array(0,0,0,0,0,0,0,0,0,0,0,0);
         foreach ($data as $rap ){
+            $budget=0;
+            $echants=$rap->getRapEchantillons();
             $dateRap=$rap->getRapDate();
-            $dateRap=$dateRap->format('Y-m-d');
-            $dateExplode=explode("-",$dateRap);
-            $mois=ltrim($dateExplode[1],'0')-1;
+            $dateRap=$dateRap->format('m');
+            $mois=$dateRap-1;
             $count[$mois]=$count[$mois]+1;
+            foreach($echants as $echant){
+                $budget= $budget +$echant->getRapEchantMedicament()->getMedPrixEchant();
+            }
+            $tabEchants[$mois]=$budget;
         }
         // PARAMETRAGE DU GRAPHIQUE
         $series = array(
             array("name" => "Nombre de rapport",    "data" => $count)
         );
-        $categories = array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
+        $categories = array('Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aôu', 'Sep', 'Oct', 'Nov', 'Dec');
         $ob = new Highchart();
         $ob->chart->renderTo('linechart');  // The #id of the div where to render the chart
-        $ob->title->text('Statistiques annuel :');
+        $ob->title->text('Statistiques de saisie de rapport sur l\'année en cour :');
+        $ob->chart->type('column');
         $ob->xAxis->title(array('text'  => "Mois"));
         $ob->xAxis->categories($categories);
         $ob->yAxis->title(array('text'  => "Nombre de rapports"));
         $ob->series($series);
+        $seriesEchant=array(
+            array('name'=>"Budget d'Echantillons offerts", "data" => $tabEchants)
+        );
+        $categories = array('Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aôu', 'Sep', 'Oct', 'Nov', 'Dec');
+        $obEchant=new Highchart();
+        $obEchant->chart->renderTo('linechartEchant');
+        $obEchant->chart->type('column');
+        $obEchant->title->text('Evolution du budget d\'échantillons offerts :');
+        $obEchant->xAxis->title(array('text'=>'Mois'));
+        $obEchant->xAxis->categories($categories);
+        $obEchant->yAxis->title(array('text'=>"Budget d'échantillons dépender"));
+        $obEchant->series($seriesEchant);
+
         // RENDER TEMPLATE AVEC GRAPHIQUE
         return $this->renderResponse($blockContext->getTemplate(), array(
             'user'=>$user,
             'ob' => $ob,
+            'obEchant'=>$obEchant,
             'block' => $blockContext->getBlock(),
             'settings' => $settings,
         ), $response);

@@ -147,7 +147,6 @@ sonata_admin:
                 type: sonata.block.service.stats
                 settings:
                     title: Statistiques
-                roles: [ROLE_VISITEUR]
             -
                 position: left
                 type: sonata.admin.block.admin_list

@@ -32,6 +32,14 @@ class RapportVisiteRepository extends EntityRepository
         return $query->getResult();
 
     }
+
+    public function findByEchantVisiteur($user){
+        $query=$this->_em->createQuery(
+            ''
+        )->setParameters(array(
+            ''
+        ));
+    }
     // Requête pour statistiques annuel sur dashboard Delegue
     public function findByRegionYearToNow($date,$region,$debut = 0){
         $dateExplode=explode("-",$date);
