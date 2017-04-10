@@ -221,10 +221,6 @@ class UserAdmin extends AbstractAdmin
             ->with('usrSecteur')
             ->assertNotNull()
             ->assertNotBlank()
-            ->end()
-            ->with('usrSupp')
-            ->assertNotNull()
-            ->assertNotBlank()
             ->end();
     }
     public function preValidate($user){

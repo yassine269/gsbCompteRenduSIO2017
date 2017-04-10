@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3500015-12c5-4790-bd39-5f58827ea4c9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Block/StatsBlockService.php" afterPath="$PROJECT_DIR$/src/MainBundle/Block/StatsBlockService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Repository/RapportVisiteRepository.php" afterPath="$PROJECT_DIR$/src/MainBundle/Repository/RapportVisiteRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Resources/views/Block/block_core_stats.html.twig" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/Block/block_core_stats.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php" afterPath="$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,11 +24,11 @@
           <file leaf-file-name="UserAdmin.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="393">
-                  <caret line="241" column="23" lean-forward="false" selection-start-line="241" selection-start-column="23" selection-end-line="241" selection-end-column="23" />
+                <state relative-caret-position="87">
+                  <caret line="223" column="20" lean-forward="false" selection-start-line="223" selection-start-column="20" selection-end-line="223" selection-end-column="20" />
                   <folding>
-                    <element signature="e#9915#10199#0#PHP" expanded="false" />
-                    <element signature="e#10204#10288#0#PHP" expanded="false" />
+                    <element signature="e#9804#10088#0#PHP" expanded="false" />
+                    <element signature="e#10093#10177#0#PHP" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -79,11 +76,51 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="security.yml" pinned="false" current-in-tab="true">
+          <file leaf-file-name="standard_layout.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="69">
+                  <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#61#301#0#Twig" expanded="false" />
+                    <element signature="e#82#286#0#Twig" expanded="false" />
+                    <element signature="e#302#582#0#Twig" expanded="false" />
+                    <element signature="e#945#3748#0#Twig" expanded="false" />
+                    <element signature="e#1057#3658#0#Twig" expanded="false" />
+                    <element signature="e#1231#3574#0#Twig" expanded="false" />
+                    <element signature="e#1304#3408#0#Twig" expanded="false" />
+                    <element signature="e#1378#3353#0#Twig" expanded="false" />
+                    <element signature="e#1494#1571#0#Twig" expanded="false" />
+                    <element signature="e#1623#1653#0#Twig" expanded="false" />
+                    <element signature="e#1705#1966#0#Twig" expanded="false" />
+                    <element signature="e#1812#1901#0#Twig" expanded="false" />
+                    <element signature="e#2019#3293#0#Twig" expanded="false" />
+                    <element signature="e#2162#3003#0#Twig" expanded="false" />
+                    <element signature="e#2349#2719#0#Twig" expanded="false" />
+                    <element signature="e#3954#5757#0#Twig" expanded="false" />
+                    <element signature="e#4009#5723#0#Twig" expanded="false" />
+                    <element signature="e#4217#4828#0#Twig" expanded="false" />
+                    <element signature="e#4864#5617#0#Twig" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Entity/User.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="130">
+                  <caret line="93" column="12" lean-forward="true" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="12" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/config/security.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+                <state relative-caret-position="170">
+                  <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
@@ -92,8 +129,8 @@
           <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/config/config.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="152" column="50" lean-forward="false" selection-start-line="152" selection-start-column="50" selection-end-line="152" selection-end-column="50" />
+                <state relative-caret-position="358">
+                  <caret line="134" column="1" lean-forward="false" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -104,26 +141,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="189">
                   <caret line="57" column="25" lean-forward="false" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="25" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="RapportVisite.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/MainBundle/Entity/RapportVisite.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="275" column="20" lean-forward="false" selection-start-line="275" selection-start-column="20" selection-end-line="275" selection-end-column="40" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MedicamentRepository.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/MainBundle/Repository/MedicamentRepository.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -192,13 +209,12 @@
       <find>Echan</find>
       <find>stat</find>
       <find>validate</find>
+      <find>sonata</find>
+      <find>user</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s cache:clear" />
-      <command text="s debug:router" />
-      <command text="s doctrine:generate:crud MainBundle:Medicament" />
       <command text="s debug:router " />
       <command text="s cache:clear" />
       <command text="s doctrine:cache:clear-metadata" />
@@ -221,10 +237,16 @@
       <command text="git add -A" />
       <command text="git commit -m &quot;page stats OK&quot;" />
       <command text="git push origin master" />
+      <command text="git add -A" />
+      <command text="git commit -m &quot;prod&quot;" />
+      <command text="git push origin master" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -269,17 +291,17 @@
         <option value="$PROJECT_DIR$/src/OCUserBundle/Admin/SecteurAdmin.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Admin/RapportVisiteAdmin.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Controller/VisiteurController.php" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Visiteur/index.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Responsable/index.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Delegue/index.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Repository/RapportVisiteRepository.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Repository/MedicamentRepository.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Block/block_core_stats.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/MainBundle/Block/StatsBlockService.php" />
         <option value="$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig" />
       </list>
     </option>
   </component>
@@ -338,6 +360,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -346,7 +386,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
-    <property name="SearchEverywhereHistoryKey" value="UserA&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;stats&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Resources/views/Block/block_core_stats.html.twig&#10;RapportEchant&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportEchant.php&#10;Medicamen&#9;null&#9;null&#10;Rapport&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportVisite.php&#10;security&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;standar&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/standard_layout.html.twig&#10;Service&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/services.yml&#10;block&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Block/StatsBlockService.php&#10;Statisti&#9;null&#9;null&#10;UserAdm&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;Secur&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;rappo&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportVisite.php&#10;RapEc&#9;null&#9;null&#10;Sect&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/Secteur.php&#10;Region&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/Region.php&#10;Depar&#9;null&#9;null&#10;actCompl&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/ActCompl.php&#10;list_edi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/CRUD/list__action_edit.html.twig&#10;CRUD&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Controller/CRUDController.php&#10;CRU&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Controller/CRUDController.php&#10;AbstractAdm&#9;null&#9;null&#10;Rappor&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportVisite.php&#10;actC&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/ActComplAdmin.php&#10;User&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/User.php&#10;Present&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/Presentation.php&#10;Dosa&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/DosageAdmin.php&#10;ErrorElem&#9;null&#9;null&#10;Pres&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/PrescrireAdmin.php&#10;dosCode&#9;null&#9;null&#10;ActC&#9;null&#9;null&#10;Regis&#9;FILE&#9;file://C:/Users/charles.daud/Desktop/wamp/UwAmp/www/gsbCompteRendu/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;Re&#9;FILE&#9;file://C:/Users/charles.daud/Desktop/wamp/UwAmp/www/gsbCompteRendu/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;AbstractToken&#9;null&#9;null&#10;Registra&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="usrS&#9;null&#9;null&#10;User&#9;null&#9;null&#10;UserA&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;stats&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Resources/views/Block/block_core_stats.html.twig&#10;RapportEchant&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportEchant.php&#10;Medicamen&#9;null&#9;null&#10;Rapport&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportVisite.php&#10;security&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;standar&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/standard_layout.html.twig&#10;Service&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/services.yml&#10;block&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Block/StatsBlockService.php&#10;Statisti&#9;null&#9;null&#10;UserAdm&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;Secur&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;rappo&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportVisite.php&#10;RapEc&#9;null&#9;null&#10;Sect&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/Secteur.php&#10;Region&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/Region.php&#10;Depar&#9;null&#9;null&#10;actCompl&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/ActCompl.php&#10;list_edi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/CRUD/list__action_edit.html.twig&#10;CRUD&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Controller/CRUDController.php&#10;CRU&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Controller/CRUDController.php&#10;AbstractAdm&#9;null&#9;null&#10;Rappor&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportVisite.php&#10;actC&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/ActComplAdmin.php&#10;Present&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/Presentation.php&#10;Dosa&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/DosageAdmin.php&#10;ErrorElem&#9;null&#9;null&#10;Pres&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/PrescrireAdmin.php&#10;dosCode&#9;null&#9;null&#10;ActC&#9;null&#9;null&#10;Regis&#9;FILE&#9;file://C:/Users/charles.daud/Desktop/wamp/UwAmp/www/gsbCompteRendu/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;Re&#9;FILE&#9;file://C:/Users/charles.daud/Desktop/wamp/UwAmp/www/gsbCompteRendu/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;AbstractToken&#9;null&#9;null&#10;Registra&#9;null&#9;null" />
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
@@ -440,21 +480,22 @@
       <workItem from="1491310987721" duration="7670000" />
       <workItem from="1491579226590" duration="27682000" />
       <workItem from="1491764409467" duration="2639000" />
-      <workItem from="1491846080753" duration="4626000" />
+      <workItem from="1491846080753" duration="5990000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114060000" />
+    <option name="totallyTimeSpent" value="115424000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14882506" sideWeight="0.5075" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28590077" sideWeight="0.51" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28590077" sideWeight="0.49" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.491875" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -463,7 +504,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14882506" sideWeight="0.4925" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -506,14 +546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="579">
           <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="393" column="43" lean-forward="false" selection-start-line="393" selection-start-column="43" selection-end-line="393" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -700,6 +732,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -792,35 +825,6 @@
         <state relative-caret-position="5372">
           <caret line="316" column="24" lean-forward="false" selection-start-line="316" selection-start-column="24" selection-end-line="316" selection-end-column="56" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding>
-            <element signature="e#61#301#0#Twig" expanded="false" />
-            <element signature="e#82#286#0#Twig" expanded="false" />
-            <element signature="e#302#582#0#Twig" expanded="false" />
-            <element signature="e#594#5839#0#Twig" expanded="false" />
-            <element signature="e#945#3748#0#Twig" expanded="false" />
-            <element signature="e#1057#3658#0#Twig" expanded="false" />
-            <element signature="e#1231#3574#0#Twig" expanded="false" />
-            <element signature="e#1304#3408#0#Twig" expanded="false" />
-            <element signature="e#1378#3353#0#Twig" expanded="false" />
-            <element signature="e#1494#1571#0#Twig" expanded="false" />
-            <element signature="e#1623#1653#0#Twig" expanded="false" />
-            <element signature="e#1705#1966#0#Twig" expanded="false" />
-            <element signature="e#1812#1901#0#Twig" expanded="false" />
-            <element signature="e#2019#3293#0#Twig" expanded="false" />
-            <element signature="e#2162#3003#0#Twig" expanded="false" />
-            <element signature="e#2349#2719#0#Twig" expanded="false" />
-            <element signature="e#3977#5780#0#Twig" expanded="false" />
-            <element signature="e#4032#5746#0#Twig" expanded="false" />
-            <element signature="e#4240#4851#0#Twig" expanded="false" />
-            <element signature="e#4887#5640#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -919,14 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="152" column="50" lean-forward="false" selection-start-line="152" selection-start-column="50" selection-end-line="152" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Block/StatsBlockService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -937,21 +933,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="241" column="23" lean-forward="false" selection-start-line="241" selection-start-column="23" selection-end-line="241" selection-end-column="23" />
+        <state relative-caret-position="87">
+          <caret line="223" column="20" lean-forward="false" selection-start-line="223" selection-start-column="20" selection-end-line="223" selection-end-column="20" />
           <folding>
-            <element signature="e#9915#10199#0#PHP" expanded="false" />
-            <element signature="e#10204#10288#0#PHP" expanded="false" />
+            <element signature="e#9804#10088#0#PHP" expanded="false" />
+            <element signature="e#10093#10177#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        <state relative-caret-position="358">
+          <caret line="134" column="1" lean-forward="false" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#61#301#0#Twig" expanded="false" />
+            <element signature="e#82#286#0#Twig" expanded="false" />
+            <element signature="e#302#582#0#Twig" expanded="false" />
+            <element signature="e#945#3748#0#Twig" expanded="false" />
+            <element signature="e#1057#3658#0#Twig" expanded="false" />
+            <element signature="e#1231#3574#0#Twig" expanded="false" />
+            <element signature="e#1304#3408#0#Twig" expanded="false" />
+            <element signature="e#1378#3353#0#Twig" expanded="false" />
+            <element signature="e#1494#1571#0#Twig" expanded="false" />
+            <element signature="e#1623#1653#0#Twig" expanded="false" />
+            <element signature="e#1705#1966#0#Twig" expanded="false" />
+            <element signature="e#1812#1901#0#Twig" expanded="false" />
+            <element signature="e#2019#3293#0#Twig" expanded="false" />
+            <element signature="e#2162#3003#0#Twig" expanded="false" />
+            <element signature="e#2349#2719#0#Twig" expanded="false" />
+            <element signature="e#3954#5757#0#Twig" expanded="false" />
+            <element signature="e#4009#5723#0#Twig" expanded="false" />
+            <element signature="e#4217#4828#0#Twig" expanded="false" />
+            <element signature="e#4864#5617#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="93" column="12" lean-forward="true" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="12" />
           <folding />
         </state>
       </provider>
