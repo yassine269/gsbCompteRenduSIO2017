@@ -17,6 +17,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Sonata\CoreBundle\Validator\ErrorElement;
@@ -80,6 +81,62 @@ class UserAdmin extends AbstractAdmin
                 'btn_delete'=>false,
                 'btn_catalogue'=>true))
         ->end();
+    }
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper
+            ->with('Informations civil :', array('class' => 'col-md-6'))
+            ->add('usrNom', 'text',array('label'=>'Nom :'))
+            ->add('usrPrenom', 'text',array('label'=>'Prénom :'))
+            ->add('usrAdresse', 'text',array('label'=>'Adresse :'))
+            ->add('usrCp', 'text',array('label'=>'Code postal :'))
+            ->add('usrVille', 'text',array('label'=>'Ville :'))
+            ->add('email', 'email',array('label'=>'adresse e-mail :'))
+            ->end();
+        $showMapper
+            ->with('Informations salarié :', array('class' => 'col-md-6'))
+            ->add('usrDateEmbauche', 'date',array('label'=>'Date d\'embauche'))
+            ->add('usrFonction', 'sonata_type_model', array(
+                'class' => 'OCUserBundle\Entity\Fonction',
+                'property'=>'fonctLibelle',
+                'label'=>'Fonction :',
+                'required' => false,
+                'btn_add'=>false,
+                'btn_delete'=>false,
+                'btn_catalogue'=>true))
+            ->add('usrDepartement', 'sonata_type_model', array(
+                'class' => 'OCUserBundle\Entity\Departement',
+                'property'=>'depLibelle',
+                'required' => false,
+                'label'=>'Departement :',
+                'btn_add'=>false,
+                'btn_delete'=>false,
+                'btn_catalogue'=>true))
+            ->add('usrRegion', 'sonata_type_model', array(
+                'class' => 'OCUserBundle\Entity\Region',
+                'property'=>'regLibelle',
+                'label' => 'Région :',
+                'required' => false,
+                'btn_add'=>false,
+                'btn_delete'=>false,
+                'btn_catalogue'=>true))
+            ->add('usrSecteur', 'sonata_type_model', array(
+                'class' => 'OCUserBundle\Entity\Secteur',
+                'property'=>'secLibelle',
+                'required' => false,
+                'label'=>'Secteur :',
+                'btn_add'=>false,
+                'btn_delete'=>false,
+                'btn_catalogue'=>true))
+            ->add('usrSupp', 'sonata_type_model', array(
+                'class' => 'OCUserBundle\Entity\User',
+                'property'=>'usrNom',
+                'required' => false,
+                'label'=>'Supérieur hiérarchique :',
+                'btn_add'=>false,
+                'btn_delete'=>false,
+                'btn_catalogue'=>true))
+            ->end();
     }
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {

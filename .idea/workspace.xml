@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3500015-12c5-4790-bd39-5f58827ea4c9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php" afterPath="$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Admin/RapportVisiteAdmin.php" afterPath="$PROJECT_DIR$/src/MainBundle/Admin/RapportVisiteAdmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php" afterPath="$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,17 +19,19 @@
     <splitter split-orientation="horizontal" split-proportion="0.6106383">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="MedicamentAdmin.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/MainBundle/Admin/MedicamentAdmin.php">
+          <file leaf-file-name="UserAdmin.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="171">
-                  <caret line="292" column="44" lean-forward="false" selection-start-line="292" selection-start-column="44" selection-end-line="292" selection-end-column="44" />
+                <state relative-caret-position="459">
+                  <caret line="321" column="1" lean-forward="true" selection-start-line="321" selection-start-column="1" selection-end-line="321" selection-end-column="1" />
                   <folding>
-                    <element signature="e#8213#8906#0#PHP" expanded="false" />
-                    <element signature="e#8213#9225#0#PHP" expanded="false" />
-                    <element signature="e#8213#9561#0#PHP" expanded="false" />
-                    <element signature="e#8213#9904#0#PHP" expanded="false" />
-                    <element signature="e#8213#10228#0#PHP" expanded="false" />
+                    <element signature="e#733#3308#0#PHP" expanded="false" />
+                    <element signature="e#5849#8105#0#PHP" expanded="false" />
+                    <element signature="e#8110#10206#0#PHP" expanded="false" />
+                    <element signature="e#10211#11607#0#PHP" expanded="false" />
+                    <element signature="e#11612#12375#0#PHP" expanded="false" />
+                    <element signature="e#12380#12664#0#PHP" expanded="false" />
+                    <element signature="e#12669#12753#0#PHP" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -62,11 +61,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ActComplAdmin.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ActComplAdmin.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="340">
-                  <caret line="207" column="4" lean-forward="false" selection-start-line="207" selection-start-column="4" selection-end-line="207" selection-end-column="4" />
+                  <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
                   <folding>
                     <element signature="e#1628#3157#0#PHP" expanded="false" />
                     <element signature="e#1705#1814#0#PHP" expanded="false" />
@@ -161,7 +160,7 @@
             <entry file="file://$PROJECT_DIR$/src/MainBundle/Block/StatsBlockService.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="34">
-                  <caret line="93" column="75" lean-forward="true" selection-start-line="93" selection-start-column="75" selection-end-line="93" selection-end-column="75" />
+                  <caret line="93" column="75" lean-forward="false" selection-start-line="93" selection-start-column="75" selection-end-line="93" selection-end-column="75" />
                   <folding />
                 </state>
               </provider>
@@ -185,7 +184,7 @@
             <entry file="file://$PROJECT_DIR$/src/MainBundle/Repository/RapportVisiteRepository.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="119">
-                  <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+                  <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
                   <folding>
                     <element signature="e#337#942#0#PHP" expanded="false" />
                     <element signature="e#948#1112#0#PHP" expanded="false" />
@@ -202,7 +201,7 @@
             <entry file="file://$PROJECT_DIR$/src/MainBundle/Entity/ActCompl.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="459">
-                  <caret line="51" column="22" lean-forward="true" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+                  <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -248,9 +247,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="git commit -m &quot;page stats OK&quot;" />
-      <command text="git add -A" />
-      <command text="git commit -m &quot;page stats OK&quot;" />
       <command text="git push origin master" />
       <command text="git add -A" />
       <command text="git commit -m &quot;prod&quot;" />
@@ -272,6 +268,9 @@
       <command text="git push origin master" />
       <command text="git add -A" />
       <command text="git commit -m &quot;adminDash wihout stats&quot;" />
+      <command text="git push origin master" />
+      <command text="git add -A" />
+      <command text="git commit -m &quot;prod OK for BTS BLANC&quot;" />
       <command text="git push origin master" />
     </commandsHistory>
   </component>
@@ -325,7 +324,6 @@
         <option value="$PROJECT_DIR$/src/MainBundle/Repository/RapportVisiteRepository.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Repository/MedicamentRepository.php" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php" />
         <option value="$PROJECT_DIR$/src/OCUserBundle/Entity/Fonction.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Block/StatsBlockService.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Block/block_core_stats.html.twig" />
@@ -335,6 +333,7 @@
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/MainBundle/Admin/RapportVisiteAdmin.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php" />
+        <option value="$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php" />
       </list>
     </option>
   </component>
@@ -441,7 +440,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
-    <property name="SearchEverywhereHistoryKey" value="actC&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/ActCompl.php&#10;Rappor&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/RapportVisiteAdmin.php&#10;stat&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Block/StatsBlockService.php&#10;config&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/config.yml&#10;Security&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;stats&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Block/StatsBlockService.php&#10;standa&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Resources/views/standard_layout.html.twig&#10;RapportVisi&#9;null&#9;null&#10;security&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;User&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/User.php&#10;Rapport&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/RapportVisiteAdmin.php&#10;ac&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/ActComplAdmin.php&#10;actRe&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/ActReaAdmin.php&#10;MedC&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/MedConstitutionAdmin.php&#10;Medica&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/MedicamentAdmin.php&#10;Medi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/Medicament.php&#10;confi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/config.yml&#10;fonction&#9;null&#9;null&#10;fonc&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/FonctionAdmin.php&#10;usrS&#9;null&#9;null&#10;UserA&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;RapportEchant&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportEchant.php&#10;Medicamen&#9;null&#9;null&#10;standar&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/standard_layout.html.twig&#10;Service&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/services.yml&#10;block&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Block/StatsBlockService.php&#10;Statisti&#9;null&#9;null&#10;UserAdm&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;Secur&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;rappo&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportVisite.php&#10;RapEc&#9;null&#9;null&#10;Sect&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/Secteur.php&#10;Region&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/Region.php&#10;Depar&#9;null&#9;null&#10;actCompl&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/ActCompl.php&#10;list_edi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/CRUD/list__action_edit.html.twig&#10;CRUD&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Controller/CRUDController.php&#10;CRU&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Controller/CRUDController.php&#10;AbstractAdm&#9;null&#9;null&#10;Present&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/Presentation.php&#10;Dosa&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/DosageAdmin.php&#10;ErrorElem&#9;null&#9;null&#10;Pres&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/PrescrireAdmin.php&#10;dosCode&#9;null&#9;null&#10;ActC&#9;null&#9;null&#10;Regis&#9;FILE&#9;file://C:/Users/charles.daud/Desktop/wamp/UwAmp/www/gsbCompteRendu/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;Re&#9;FILE&#9;file://C:/Users/charles.daud/Desktop/wamp/UwAmp/www/gsbCompteRendu/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;AbstractToken&#9;null&#9;null&#10;Registra&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="UserA&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;actC&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/ActCompl.php&#10;Rappor&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/RapportVisiteAdmin.php&#10;stat&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Block/StatsBlockService.php&#10;config&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/config.yml&#10;Security&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;stats&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Block/StatsBlockService.php&#10;standa&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Resources/views/standard_layout.html.twig&#10;RapportVisi&#9;null&#9;null&#10;security&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;User&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/User.php&#10;Rapport&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/RapportVisiteAdmin.php&#10;ac&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/ActComplAdmin.php&#10;actRe&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/ActReaAdmin.php&#10;MedC&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/MedConstitutionAdmin.php&#10;Medica&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/MedicamentAdmin.php&#10;Medi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/Medicament.php&#10;confi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/config.yml&#10;fonction&#9;null&#9;null&#10;fonc&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/FonctionAdmin.php&#10;usrS&#9;null&#9;null&#10;RapportEchant&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportEchant.php&#10;Medicamen&#9;null&#9;null&#10;standar&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/standard_layout.html.twig&#10;Service&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/services.yml&#10;block&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Block/StatsBlockService.php&#10;Statisti&#9;null&#9;null&#10;UserAdm&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;Secur&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;rappo&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportVisite.php&#10;RapEc&#9;null&#9;null&#10;Sect&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/Secteur.php&#10;Region&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/Region.php&#10;Depar&#9;null&#9;null&#10;actCompl&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/ActCompl.php&#10;list_edi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/CRUD/list__action_edit.html.twig&#10;CRUD&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Controller/CRUDController.php&#10;CRU&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Controller/CRUDController.php&#10;AbstractAdm&#9;null&#9;null&#10;Present&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/Presentation.php&#10;Dosa&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/DosageAdmin.php&#10;ErrorElem&#9;null&#9;null&#10;Pres&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/PrescrireAdmin.php&#10;dosCode&#9;null&#9;null&#10;ActC&#9;null&#9;null&#10;Regis&#9;FILE&#9;file://C:/Users/charles.daud/Desktop/wamp/UwAmp/www/gsbCompteRendu/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;Re&#9;FILE&#9;file://C:/Users/charles.daud/Desktop/wamp/UwAmp/www/gsbCompteRendu/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;AbstractToken&#9;null&#9;null&#10;Registra&#9;null&#9;null" />
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
@@ -535,12 +534,12 @@
       <workItem from="1491310987721" duration="7670000" />
       <workItem from="1491579226590" duration="27682000" />
       <workItem from="1491764409467" duration="2639000" />
-      <workItem from="1491846080753" duration="12705000" />
+      <workItem from="1491846080753" duration="12910000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122139000" />
+    <option name="totallyTimeSpent" value="122344000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -912,17 +911,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="223" column="20" lean-forward="false" selection-start-line="223" selection-start-column="20" selection-end-line="223" selection-end-column="20" />
-          <folding>
-            <element signature="e#9804#10088#0#PHP" expanded="false" />
-            <element signature="e#10093#10177#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Admin/FonctionAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -1058,7 +1046,7 @@
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Block/StatsBlockService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="93" column="75" lean-forward="true" selection-start-line="93" selection-start-column="75" selection-end-line="93" selection-end-column="75" />
+          <caret line="93" column="75" lean-forward="false" selection-start-line="93" selection-start-column="75" selection-end-line="93" selection-end-column="75" />
           <folding />
         </state>
       </provider>
@@ -1078,7 +1066,7 @@
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Repository/RapportVisiteRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#337#942#0#PHP" expanded="false" />
             <element signature="e#948#1112#0#PHP" expanded="false" />
@@ -1093,7 +1081,7 @@
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Entity/ActCompl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="51" column="22" lean-forward="true" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+          <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1101,7 +1089,7 @@
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="207" column="4" lean-forward="false" selection-start-line="207" selection-start-column="4" selection-end-line="207" selection-end-column="4" />
+          <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
           <folding>
             <element signature="e#1628#3157#0#PHP" expanded="false" />
             <element signature="e#1705#1814#0#PHP" expanded="false" />
@@ -1111,6 +1099,22 @@
             <element signature="e#4462#5640#0#PHP" expanded="false" />
             <element signature="e#5645#5880#0#PHP" expanded="false" />
             <element signature="e#5885#6427#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="321" column="1" lean-forward="true" selection-start-line="321" selection-start-column="1" selection-end-line="321" selection-end-column="1" />
+          <folding>
+            <element signature="e#733#3308#0#PHP" expanded="false" />
+            <element signature="e#5849#8105#0#PHP" expanded="false" />
+            <element signature="e#8110#10206#0#PHP" expanded="false" />
+            <element signature="e#10211#11607#0#PHP" expanded="false" />
+            <element signature="e#11612#12375#0#PHP" expanded="false" />
+            <element signature="e#12380#12664#0#PHP" expanded="false" />
+            <element signature="e#12669#12753#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
