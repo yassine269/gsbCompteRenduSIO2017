@@ -107,9 +107,10 @@ class RapportVisiteAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('rapVisiteur', 'many_to_one', array(
+            ->add('rapVisiteur', 'many_to_one', array(
                 'label' => 'Rédacteur :',
                 'associated_property' => 'usrNom',
+                'action'=>array('show'=>array())
             ))
             ->add('rapDate', 'date', array(
                 'pattern' => 'dd MMM y',
@@ -201,6 +202,39 @@ class RapportVisiteAdmin extends AbstractAdmin
             ->assertNotNull()
             ->assertNotBlank()
             ->end();
+
+    }
+    public function createQuery($context = 'list')
+    {
+        $query = parent::createQuery($context);
+        $visiteur = $this->getConfigurationPool()->getContainer()->get('security.token_storage')->getToken()->getUser();
+        if ($visiteur->getUsrFonction()->getFonctLibelle()=='Visiteur') {
+            $query = parent::createQuery($context);
+            $query->andWhere(
+                $query->expr()->eq($query->getRootAliases()[0] . '.rapVisiteur', ':user')
+            );
+            $query->setParameter(':user', $visiteur);
+        }
+
+        if ($visiteur->getUsrFonction()->getFonctLibelle()=='Delegue') {
+            $query = parent::createQuery($context);
+            $query->join($query->getRootAliases()[0].'.rapVisiteur','r');
+            $query->andWhere(
+                $query->expr()->eq('r.usrRegion', ':region')
+            );
+            $query->setParameter(':region', $visiteur->getUsrRegion());
+        }
+        if ($visiteur->getUsrFonction()->getFonctLibelle()=='Responsable') {
+            $query = parent::createQuery($context);
+            $query->join($query->getRootAliases()[0].'.rapVisiteur','r');
+            $query->andWhere(
+                $query->expr()->eq('r.usrSecteur', ':secteur')
+            );
+            $query->setParameter(':secteur', $visiteur->getUsrSecteur());
+        }
+
+
+        return $query;
 
     }
 
