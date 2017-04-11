@@ -91,7 +91,7 @@ services:
             - {name: sonata.admin, manager_type: orm, label: Prescription}
     admin.ActCompl:
             class: MainBundle\Admin\ActComplAdmin
-            arguments: [~, MainBundle\Entity\ActCompl, ~]
+            arguments: [~, MainBundle\Entity\ActCompl, MainBundle:CRUD]
             tags:
                 - {name: sonata.admin, manager_type: orm, label: Activite complementaire}
     admin.ActRea:

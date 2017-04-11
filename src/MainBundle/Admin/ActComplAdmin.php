@@ -13,6 +13,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\CoreBundle\Validator\ErrorElement;
 use Sonata\AdminBundle\Show\ShowMapper;
 
@@ -20,6 +21,11 @@ use Sonata\AdminBundle\Show\ShowMapper;
 class ActComplAdmin extends AbstractAdmin
 {
     protected $baseRouteName = 'action';
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        $collection->add('validAct', $this->getRouterIdParameter().'/validAct');
+        $collection->add('invalidAct', $this->getRouterIdParameter().'/invalidAct');
+    }
     // CONFIGURATION DES CHAMP DU FORMULAIRE CREATION / EDITION
     protected function configureFormFields(FormMapper $formMapper)
     {
@@ -95,7 +101,13 @@ class ActComplAdmin extends AbstractAdmin
                         'edit' => array(
                             'template' => 'MainBundle:List:list_action_edit_actCompl.html.twig',
                         ),
-                        'show' =>array()
+                        'show' =>array(),
+                        'validAct' => array(
+                            'template' => 'MainBundle:CRUD:list_action_valid_actCompl.html.twig'
+                        ),
+                        'invalidActAction'=>array(
+                            'template'=>'MainBundle:CRUD:list_action_invalid_actCompl.html.twig'
+                        )
                     )
                 )
             );

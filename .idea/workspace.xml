@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3500015-12c5-4790-bd39-5f58827ea4c9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php" afterPath="$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Controller/CRUDController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/CRUD/list_action_invalid_actCompl.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/CRUD/list_action_valid_actCompl.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php" afterPath="$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Resources/views/List/list_action_edit_actCompl.html.twig" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/List/list_action_edit_actCompl.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig" afterPath="$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,14 +23,14 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6106383">
+    <splitter split-orientation="horizontal" split-proportion="0.7404255">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="UserAdmin.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="UserAdmin.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="459">
-                  <caret line="321" column="1" lean-forward="true" selection-start-line="321" selection-start-column="1" selection-end-line="321" selection-end-column="1" />
+                <state relative-caret-position="1088">
+                  <caret line="136" column="36" lean-forward="false" selection-start-line="136" selection-start-column="36" selection-end-line="136" selection-end-column="36" />
                   <folding>
                     <element signature="e#733#3308#0#PHP" expanded="false" />
                     <element signature="e#5849#8105#0#PHP" expanded="false" />
@@ -37,23 +44,16 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="RapportVisite.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/MainBundle/Entity/RapportVisite.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="275" column="20" lean-forward="false" selection-start-line="275" selection-start-column="20" selection-end-line="275" selection-end-column="40" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="RapportVisiteAdmin.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/MainBundle/Admin/RapportVisiteAdmin.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="314">
-                  <caret line="206" column="24" lean-forward="false" selection-start-line="206" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+                <state relative-caret-position="255">
+                  <caret line="138" column="30" lean-forward="false" selection-start-line="138" selection-start-column="30" selection-end-line="138" selection-end-column="30" />
                   <folding>
-                    <element signature="e#4739#6501#0#PHP" expanded="false" />
+                    <element signature="e#693#2302#0#PHP" expanded="false" />
+                    <element signature="e#2308#3629#0#PHP" expanded="false" />
+                    <element signature="e#3635#4733#0#PHP" expanded="false" />
+                    <element signature="e#6507#6880#0#PHP" expanded="false" />
                     <element signature="e#6885#7321#0#PHP" expanded="false" />
                     <element signature="e#7326#8687#0#PHP" expanded="false" />
                   </folding>
@@ -64,28 +64,18 @@
           <file leaf-file-name="ActComplAdmin.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+                <state relative-caret-position="256">
+                  <caret line="108" column="95" lean-forward="false" selection-start-line="108" selection-start-column="95" selection-end-line="108" selection-end-column="95" />
                   <folding>
-                    <element signature="e#1628#3157#0#PHP" expanded="false" />
-                    <element signature="e#1705#1814#0#PHP" expanded="false" />
-                    <element signature="e#1705#2704#0#PHP" expanded="false" />
-                    <element signature="e#1705#2803#0#PHP" expanded="false" />
-                    <element signature="e#3213#4424#0#PHP" expanded="false" />
-                    <element signature="e#4462#5640#0#PHP" expanded="false" />
-                    <element signature="e#5645#5880#0#PHP" expanded="false" />
-                    <element signature="e#5885#6427#0#PHP" expanded="false" />
+                    <element signature="e#861#1864#0#PHP" expanded="false" />
+                    <element signature="e#1997#2106#0#PHP" expanded="false" />
+                    <element signature="e#1997#2996#0#PHP" expanded="false" />
+                    <element signature="e#1997#3095#0#PHP" expanded="false" />
+                    <element signature="e#3849#5060#0#PHP" expanded="false" />
+                    <element signature="e#5098#6276#0#PHP" expanded="false" />
+                    <element signature="e#6281#6516#0#PHP" expanded="false" />
+                    <element signature="e#6521#7063#0#PHP" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Entity/User.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="154">
-                  <caret line="119" column="10" lean-forward="false" selection-start-line="119" selection-start-column="7" selection-end-line="119" selection-end-column="10" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -93,8 +83,8 @@
           <file leaf-file-name="standard_layout.html.twig" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+                <state relative-caret-position="357">
+                  <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
                   <folding>
                     <element signature="e#61#301#0#Twig" expanded="false" />
                     <element signature="e#82#286#0#Twig" expanded="false" />
@@ -111,12 +101,45 @@
                     <element signature="e#2019#3293#0#Twig" expanded="false" />
                     <element signature="e#2162#3003#0#Twig" expanded="false" />
                     <element signature="e#2349#2719#0#Twig" expanded="false" />
-                    <element signature="e#3982#5785#0#Twig" expanded="false" />
-                    <element signature="e#4037#5751#0#Twig" expanded="false" />
-                    <element signature="e#4245#4856#0#Twig" expanded="false" />
-                    <element signature="e#4892#5645#0#Twig" expanded="false" />
-                    <marker date="1491888274106" expanded="true" signature="594:5844" ph="{% block sonata_nav ...%}" />
+                    <element signature="e#3868#5671#0#Twig" expanded="false" />
+                    <element signature="e#3923#5637#0#Twig" expanded="false" />
+                    <element signature="e#4131#4742#0#Twig" expanded="false" />
+                    <element signature="e#4778#5531#0#Twig" expanded="false" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CRUDController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/CRUDController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="69" column="1" lean-forward="false" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+                  <folding>
+                    <element signature="e#130#193#0#PHP" expanded="true" />
+                    <element signature="e#362#1348#0#PHP" expanded="false" />
+                    <element signature="e#1353#2340#0#PHP" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="list_action_valid_actCompl.html.twig" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/CRUD/list_action_valid_actCompl.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="list_action_invalid_actCompl.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/CRUD/list_action_invalid_actCompl.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="204">
+                  <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -124,34 +147,9 @@
           <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/config/security.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="135" column="28" lean-forward="false" selection-start-line="135" selection-start-column="28" selection-end-line="135" selection-end-column="28" />
+                <state relative-caret-position="17">
+                  <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MedConstitutionAdmin.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/MainBundle/Admin/MedConstitutionAdmin.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#966#1387#0#PHP" expanded="false" />
-                    <element signature="e#1392#2267#0#PHP" expanded="false" />
-                    <element signature="e#2272#3177#0#PHP" expanded="false" />
-                    <element signature="e#3182#3395#0#PHP" expanded="false" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -160,7 +158,7 @@
             <entry file="file://$PROJECT_DIR$/src/MainBundle/Block/StatsBlockService.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="34">
-                  <caret line="93" column="75" lean-forward="false" selection-start-line="93" selection-start-column="75" selection-end-line="93" selection-end-column="75" />
+                  <caret line="86" column="34" lean-forward="false" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
@@ -173,14 +171,14 @@
           <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/config/services.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
-                  <caret line="26" column="48" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+                <state relative-caret-position="324">
+                  <caret line="93" column="70" lean-forward="false" selection-start-line="93" selection-start-column="70" selection-end-line="93" selection-end-column="70" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="RapportVisiteRepository.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="RapportVisiteRepository.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/MainBundle/Repository/RapportVisiteRepository.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="119">
@@ -197,7 +195,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ActCompl.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ActCompl.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/MainBundle/Entity/ActCompl.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="459">
@@ -249,9 +247,6 @@
     <commandsHistory>
       <command text="git push origin master" />
       <command text="git add -A" />
-      <command text="git commit -m &quot;prod&quot;" />
-      <command text="git push origin master" />
-      <command text="git add -A" />
       <command text="git commit -m &quot;little change for prod&quot;" />
       <command text="git push origin master" />
       <command text="git add -A" />
@@ -272,6 +267,9 @@
       <command text="git add -A" />
       <command text="git commit -m &quot;prod OK for BTS BLANC&quot;" />
       <command text="git push origin master" />
+      <command text="git add -A" />
+      <command text="git commit -m &quot;prod OK for BTS BLANC&quot;" />
+      <command text="git push origin master" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -283,9 +281,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/MainBundle/Entity/Prescrire.php" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Entity/Praticien.php" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Entity/ActCompl.php" />
         <option value="$PROJECT_DIR$/src/OCUserBundle/Security/Authentication/Provider/WsseProvider.php" />
         <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
         <option value="$PROJECT_DIR$/src/OCUserBundle/Controller/UserController.php" />
@@ -294,10 +289,8 @@
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/MainBundle/Controller/MedicamentController.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Entity/RapportVisite.php" />
-        <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/OCUserBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/List/list_action_edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/List/list_action_edit_actCompl.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Admin/DosageAdmin.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Admin/FamilleAdmin.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Admin/PraticienAdmin.php" />
@@ -323,17 +316,22 @@
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Delegue/index.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Repository/RapportVisiteRepository.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Repository/MedicamentRepository.php" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/OCUserBundle/Entity/Fonction.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Block/StatsBlockService.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/Block/block_core_stats.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Admin/MedConstitutionAdmin.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Admin/MedicamentAdmin.php" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/MainBundle/Admin/RapportVisiteAdmin.php" />
-        <option value="$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php" />
         <option value="$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/List/list_action_edit_actCompl.html.twig" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Controller/CRUDController.php" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/CRUD/list_action_valid_actCompl.html.twig" />
+        <option value="$PROJECT_DIR$/src/MainBundle/Resources/views/CRUD/list_action_invalid_actCompl.html.twig" />
       </list>
     </option>
   </component>
@@ -428,7 +426,63 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="List" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -440,11 +494,12 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
-    <property name="SearchEverywhereHistoryKey" value="UserA&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;actC&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/ActCompl.php&#10;Rappor&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/RapportVisiteAdmin.php&#10;stat&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Block/StatsBlockService.php&#10;config&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/config.yml&#10;Security&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;stats&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Block/StatsBlockService.php&#10;standa&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Resources/views/standard_layout.html.twig&#10;RapportVisi&#9;null&#9;null&#10;security&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;User&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/User.php&#10;Rapport&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/RapportVisiteAdmin.php&#10;ac&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/ActComplAdmin.php&#10;actRe&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/ActReaAdmin.php&#10;MedC&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/MedConstitutionAdmin.php&#10;Medica&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/MedicamentAdmin.php&#10;Medi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/Medicament.php&#10;confi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/config.yml&#10;fonction&#9;null&#9;null&#10;fonc&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/FonctionAdmin.php&#10;usrS&#9;null&#9;null&#10;RapportEchant&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportEchant.php&#10;Medicamen&#9;null&#9;null&#10;standar&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/standard_layout.html.twig&#10;Service&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/services.yml&#10;block&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Block/StatsBlockService.php&#10;Statisti&#9;null&#9;null&#10;UserAdm&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;Secur&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;rappo&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportVisite.php&#10;RapEc&#9;null&#9;null&#10;Sect&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/Secteur.php&#10;Region&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/Region.php&#10;Depar&#9;null&#9;null&#10;actCompl&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/ActCompl.php&#10;list_edi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/CRUD/list__action_edit.html.twig&#10;CRUD&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Controller/CRUDController.php&#10;CRU&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Controller/CRUDController.php&#10;AbstractAdm&#9;null&#9;null&#10;Present&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/Presentation.php&#10;Dosa&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/DosageAdmin.php&#10;ErrorElem&#9;null&#9;null&#10;Pres&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/PrescrireAdmin.php&#10;dosCode&#9;null&#9;null&#10;ActC&#9;null&#9;null&#10;Regis&#9;FILE&#9;file://C:/Users/charles.daud/Desktop/wamp/UwAmp/www/gsbCompteRendu/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;Re&#9;FILE&#9;file://C:/Users/charles.daud/Desktop/wamp/UwAmp/www/gsbCompteRendu/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;AbstractToken&#9;null&#9;null&#10;Registra&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="act&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/ActComplAdmin.php&#10;ac&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/ActComplAdmin.php&#10;Rappor&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/RapportVisiteAdmin.php&#10;service&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/services.yml&#10;standar&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Resources/views/standard_layout.html.twig&#10;securi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;stats&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Block/StatsBlockService.php&#10;UserA&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;actC&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/ActCompl.php&#10;stat&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Block/StatsBlockService.php&#10;config&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/config.yml&#10;Security&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;standa&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Resources/views/standard_layout.html.twig&#10;RapportVisi&#9;null&#9;null&#10;security&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;User&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/User.php&#10;Rapport&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/RapportVisiteAdmin.php&#10;actRe&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/ActReaAdmin.php&#10;MedC&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/MedConstitutionAdmin.php&#10;Medica&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/MedicamentAdmin.php&#10;Medi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/Medicament.php&#10;confi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/config.yml&#10;fonction&#9;null&#9;null&#10;fonc&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/FonctionAdmin.php&#10;usrS&#9;null&#9;null&#10;RapportEchant&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportEchant.php&#10;Medicamen&#9;null&#9;null&#10;Service&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/services.yml&#10;block&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Block/StatsBlockService.php&#10;Statisti&#9;null&#9;null&#10;UserAdm&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Admin/UserAdmin.php&#10;Secur&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/app/config/security.yml&#10;rappo&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/RapportVisite.php&#10;RapEc&#9;null&#9;null&#10;Sect&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/Secteur.php&#10;Region&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/OCUserBundle/Entity/Region.php&#10;Depar&#9;null&#9;null&#10;actCompl&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/ActCompl.php&#10;list_edi&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Resources/views/CRUD/list__action_edit.html.twig&#10;CRUD&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Controller/CRUDController.php&#10;CRU&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/vendor/sonata-project/admin-bundle/Controller/CRUDController.php&#10;AbstractAdm&#9;null&#9;null&#10;Present&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Entity/Presentation.php&#10;Dosa&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/DosageAdmin.php&#10;ErrorElem&#9;null&#9;null&#10;Pres&#9;FILE&#9;file://C:/wamp64/www/gsbCompteRendu/src/MainBundle/Admin/PrescrireAdmin.php&#10;dosCode&#9;null&#9;null&#10;ActC&#9;null&#9;null&#10;Regis&#9;FILE&#9;file://C:/Users/charles.daud/Desktop/wamp/UwAmp/www/gsbCompteRendu/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;Re&#9;FILE&#9;file://C:/Users/charles.daud/Desktop/wamp/UwAmp/www/gsbCompteRendu/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" />
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\gsbCompteRendu\src\MainBundle\Resources\views\CRUD" />
       <recent name="C:\wamp64\www\gsbCompteRendu\src\MainBundle\Resources\views\List" />
       <recent name="C:\Users\charles.daud\Desktop\wamp\UwAmp\www\gsbCompteRendu\src\OCUserBundle\Controller" />
     </key>
@@ -534,22 +589,23 @@
       <workItem from="1491310987721" duration="7670000" />
       <workItem from="1491579226590" duration="27682000" />
       <workItem from="1491764409467" duration="2639000" />
-      <workItem from="1491846080753" duration="12910000" />
+      <workItem from="1491846080753" duration="13299000" />
+      <workItem from="1491892904729" duration="2799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122344000" />
+    <option name="totallyTimeSpent" value="125532000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28590077" sideWeight="0.51" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2845953" sideWeight="0.5125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28590077" sideWeight="0.49" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2845953" sideWeight="0.4875" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.491875" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -603,35 +659,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/sonata-project/admin-bundle/Admin/AbstractAdmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="164" column="35" lean-forward="false" selection-start-line="164" selection-start-column="35" selection-end-line="164" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/sonata-project/admin-bundle/Controller/CRUDController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="123" column="31" lean-forward="false" selection-start-line="123" selection-start-column="31" selection-end-line="123" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/sonata-project/admin-bundle/Resources/views/CRUD/list__action_edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/List/list_action_edit_actCompl.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/List/list_action_edit_rapport.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -800,9 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#128#171#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -851,7 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5372">
           <caret line="316" column="24" lean-forward="false" selection-start-line="316" selection-start-column="24" selection-end-line="316" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -859,7 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="53" lean-forward="false" selection-start-line="0" selection-start-column="53" selection-end-line="0" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -867,7 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -875,15 +896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="26" column="48" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -915,7 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -923,7 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="46" column="17" lean-forward="false" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -931,9 +941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -941,7 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="57" column="27" lean-forward="false" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -971,7 +977,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Entity/RapportVisite.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="4658">
           <caret line="275" column="20" lean-forward="false" selection-start-line="275" selection-start-column="20" selection-end-line="275" selection-end-column="40" />
           <folding />
         </state>
@@ -979,7 +985,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
+        <state relative-caret-position="1921">
           <caret line="119" column="10" lean-forward="false" selection-start-line="119" selection-start-column="7" selection-end-line="119" selection-end-column="10" />
           <folding />
         </state>
@@ -987,7 +993,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Admin/MedConstitutionAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="510">
           <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding>
             <element signature="e#966#1387#0#PHP" expanded="false" />
@@ -998,10 +1004,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2278">
+          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="136" column="36" lean-forward="false" selection-start-line="136" selection-start-column="36" selection-end-line="136" selection-end-column="36" />
+          <folding>
+            <element signature="e#733#3308#0#PHP" expanded="false" />
+            <element signature="e#5849#8105#0#PHP" expanded="false" />
+            <element signature="e#8110#10206#0#PHP" expanded="false" />
+            <element signature="e#10211#11607#0#PHP" expanded="false" />
+            <element signature="e#11612#12375#0#PHP" expanded="false" />
+            <element signature="e#12380#12664#0#PHP" expanded="false" />
+            <element signature="e#12669#12753#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Block/StatsBlockService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="86" column="34" lean-forward="false" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/standard_layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        <state relative-caret-position="357">
+          <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
           <folding>
             <element signature="e#61#301#0#Twig" expanded="false" />
             <element signature="e#82#286#0#Twig" expanded="false" />
@@ -1018,48 +1064,27 @@
             <element signature="e#2019#3293#0#Twig" expanded="false" />
             <element signature="e#2162#3003#0#Twig" expanded="false" />
             <element signature="e#2349#2719#0#Twig" expanded="false" />
-            <element signature="e#3982#5785#0#Twig" expanded="false" />
-            <element signature="e#4037#5751#0#Twig" expanded="false" />
-            <element signature="e#4245#4856#0#Twig" expanded="false" />
-            <element signature="e#4892#5645#0#Twig" expanded="false" />
-            <marker date="1491888274106" expanded="true" signature="594:5844" ph="{% block sonata_nav ...%}" />
+            <element signature="e#3868#5671#0#Twig" expanded="false" />
+            <element signature="e#3923#5637#0#Twig" expanded="false" />
+            <element signature="e#4131#4742#0#Twig" expanded="false" />
+            <element signature="e#4778#5531#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Entity/ActCompl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="135" column="28" lean-forward="false" selection-start-line="135" selection-start-column="28" selection-end-line="135" selection-end-column="28" />
+        <state relative-caret-position="459">
+          <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+        <state relative-caret-position="324">
+          <caret line="93" column="70" lean-forward="false" selection-start-line="93" selection-start-column="70" selection-end-line="93" selection-end-column="70" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Block/StatsBlockService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="93" column="75" lean-forward="false" selection-start-line="93" selection-start-column="75" selection-end-line="93" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Admin/RapportVisiteAdmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="206" column="24" lean-forward="false" selection-start-line="206" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
-          <folding>
-            <element signature="e#4739#6501#0#PHP" expanded="false" />
-            <element signature="e#6885#7321#0#PHP" expanded="false" />
-            <element signature="e#7326#8687#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1078,44 +1103,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainBundle/Entity/ActCompl.php">
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Admin/RapportVisiteAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+        <state relative-caret-position="255">
+          <caret line="138" column="30" lean-forward="false" selection-start-line="138" selection-start-column="30" selection-end-line="138" selection-end-column="30" />
+          <folding>
+            <element signature="e#693#2302#0#PHP" expanded="false" />
+            <element signature="e#2308#3629#0#PHP" expanded="false" />
+            <element signature="e#3635#4733#0#PHP" expanded="false" />
+            <element signature="e#6507#6880#0#PHP" expanded="false" />
+            <element signature="e#6885#7321#0#PHP" expanded="false" />
+            <element signature="e#7326#8687#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/List/list_action_edit_actCompl.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="107" lean-forward="false" selection-start-line="11" selection-start-column="107" selection-end-line="11" selection-end-column="107" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+        <state relative-caret-position="256">
+          <caret line="108" column="95" lean-forward="false" selection-start-line="108" selection-start-column="95" selection-end-line="108" selection-end-column="95" />
           <folding>
-            <element signature="e#1628#3157#0#PHP" expanded="false" />
-            <element signature="e#1705#1814#0#PHP" expanded="false" />
-            <element signature="e#1705#2704#0#PHP" expanded="false" />
-            <element signature="e#1705#2803#0#PHP" expanded="false" />
-            <element signature="e#3213#4424#0#PHP" expanded="false" />
-            <element signature="e#4462#5640#0#PHP" expanded="false" />
-            <element signature="e#5645#5880#0#PHP" expanded="false" />
-            <element signature="e#5885#6427#0#PHP" expanded="false" />
+            <element signature="e#861#1864#0#PHP" expanded="false" />
+            <element signature="e#1997#2106#0#PHP" expanded="false" />
+            <element signature="e#1997#2996#0#PHP" expanded="false" />
+            <element signature="e#1997#3095#0#PHP" expanded="false" />
+            <element signature="e#3849#5060#0#PHP" expanded="false" />
+            <element signature="e#5098#6276#0#PHP" expanded="false" />
+            <element signature="e#6281#6516#0#PHP" expanded="false" />
+            <element signature="e#6521#7063#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php">
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Controller/CRUDController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="321" column="1" lean-forward="true" selection-start-line="321" selection-start-column="1" selection-end-line="321" selection-end-column="1" />
+        <state relative-caret-position="238">
+          <caret line="69" column="1" lean-forward="false" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
           <folding>
-            <element signature="e#733#3308#0#PHP" expanded="false" />
-            <element signature="e#5849#8105#0#PHP" expanded="false" />
-            <element signature="e#8110#10206#0#PHP" expanded="false" />
-            <element signature="e#10211#11607#0#PHP" expanded="false" />
-            <element signature="e#11612#12375#0#PHP" expanded="false" />
-            <element signature="e#12380#12664#0#PHP" expanded="false" />
-            <element signature="e#12669#12753#0#PHP" expanded="false" />
+            <element signature="e#130#193#0#PHP" expanded="true" />
+            <element signature="e#362#1348#0#PHP" expanded="false" />
+            <element signature="e#1353#2340#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/CRUD/list_action_invalid_actCompl.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainBundle/Resources/views/CRUD/list_action_valid_actCompl.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
