@@ -64,6 +64,6 @@ class Secteur
     }
     public function __toString()
     {
-        return $this->secLibelle;
+        return (string) $this->secLibelle;
     }
 }

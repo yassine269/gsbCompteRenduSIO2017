@@ -1,0 +1,232 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: "@OCUserBundle/Resources/config/services.yml" }
+    - { resource: "@MainBundle/Resources/config/services.yml" }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: fr
+
+framework:
+    #esi:             ~
+    #translator:      { fallbacks: ["%locale%"] }
+    secret:          "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
+    #serializer:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale:  "%locale%"
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    session:
+        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id:  session.handler.native_file
+        save_path:   "/var/lib/php/sessions"
+    fragments:       ~
+    http_method_override: true
+    assets: ~
+    php_errors:
+        log: true
+    translator: {fallbacks: [fr]}
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+    form_themes:
+        - 'bootstrap_3_layout.html.twig'
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:   pdo_mysql
+        host:     "%database_host%"
+        port:     "%database_port%"
+        dbname:   "%database_name%"
+        user:     "%database_user%"
+        password: "%database_password%"
+        charset:  UTF8
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: "%kernel.root_dir%/../var/data/data.sqlite"
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #path:     "%database_path%"
+
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        dql:
+            string_functions:
+                MONTH: DoctrineExtensions\Query\Mysql\Month
+                YEAR: DoctrineExtensions\Query\Mysql\Year
+        auto_mapping: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+
+        # DECLARATION DE FONCTION POUR REQUEST DQL
+
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: "%mailer_transport%"
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
+    spool:     { type: memory }
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: OCUserBundle\Entity\User
+    from_email:
+        address: "%mailer_user%"
+        sender_name: "%mailer_user%"
+    registration:
+        confirmation:
+            enabled: false
+        form:
+            type: OCUserBundle\Form\RegistrationType
+            validation_groups:  [RegistrationOC, Default]
+
+fos_rest:
+    param_fetcher_listener: true
+    body_listener:          true
+    format_listener:        true
+    view:
+        view_response_listener: 'force'
+        formats:
+            xml: false
+            json : true
+        templating_formats:
+            html: true
+        force_redirects:
+            html: true
+        failed_validation: HTTP_BAD_REQUEST
+        default_engine: twig
+    routing_loader:
+        default_format: json
+    body_converter:
+        enabled: true
+        validate: true
+
+
+sonata_intl:
+    timezone:
+        locales:
+            fr:    Europe/Paris
+# CONFIG SONATA BLOCK
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+        #DECLATATION DU BLOC STATISTIQUE
+        sonata.block.service.stats: ~
+# CONFIG SONATA ADMIN
+sonata_admin:
+    show_mosaic_button:   false
+    #security:
+    #    handler: sonata.admin.security.handler.role
+    # SET UP SECURITY AND ROLES ACCESS
+    # CHANGE BASE TEMPLATE
+    templates:
+        layout:    MainBundle::standard_layout.html.twig
+        dashboard: MainBundle::dashboard.html.twig
+    # PARAM DASHBOARD
+    dashboard:
+        # PERSONALISATION DU DASHBOARD EN FONCTION DU ROLE
+        blocks:
+            -
+                position: right
+                type: sonata.block.service.stats
+                settings:
+                    title: Statistiques
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+        #  ATTRIBUTION DES PANEL D'ADMIN ACCESSIBLE PAR ROLE
+        groups:
+            admin:
+                label:  Menu Admin
+                label_catalogue:  ~
+                items:
+                    - admin.famille
+                    - admin.dosage
+                    - admin.typepraticien
+                    - admin.composant
+                    - admin.presentation
+                    - admin.motif
+                    - admin.specialite
+                    - admin.typeindividu
+                    - admin.medconstitution
+                    - admin.medicament
+                    - admin.praticien
+                    - admin.prescrire
+                    - admin.actcompl
+                    - admin.actrea
+                    - admin.user
+                    - admin.fonction
+                    - admin.departement
+                    - admin.secteur
+                    - admin.region
+                    - admin.rapportvisite
+                    - admin.rapportechant
+                    - route:    fos_user_security_logout
+                      label:    Déconnexion
+                roles: [ ROLE_SUPER_ADMIN ]
+            visiteur:
+                label:                Menu Visiteur
+                label_catalogue:      ~
+                items:
+                    - route:    sonata_admin_dashboard
+                      label:    Acceuil
+                    - admin.rapportvisite
+                    - admin.actcompl
+                    - admin.medicament
+                    - admin.praticien
+                    - route:    main_statistique_visiteur
+                      label:    Statistiques
+                    - route:    fos_user_security_logout
+                      label:    Déconnexion
+                roles: [ROLE_VISITEUR]
+
+
+            delegue:
+                label:                Menu Delegue
+                label_catalogue:      ~
+                items:
+                    - route:    sonata_admin_dashboard
+                      label:    Acceuil
+                    - admin.rapportvisite
+                    - admin.actcompl
+                    - route:    main_statistique_delegue
+                      label:    Statistiques
+                    - route:    fos_user_security_logout
+                      label:    Déconnexion
+                roles: [ ROLE_DELEGUE ]
+
+            responsable:
+                label:                Menu Responsable
+                label_catalogue:      ~
+                items:
+                    - route:        main_homepage_responsable
+                      label:        Acceuil
+                    - route:    main_statistique_responsable
+                      label:    Statistiques
+                    - route:    fos_user_security_logout
+                      label:    Déconnexion
+                roles: [ ROLE_RESPONSABLE ]
+
+#assetic:
+#    debug:          '%kernel.debug%'
+#    use_controller: '%kernel.debug%'
+#    filters:
+#        cssrewrite: ~
+
+
