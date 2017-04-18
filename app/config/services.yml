@@ -24,6 +24,16 @@ services:
             - "@security.token_storage"
         tags:
             - { name: sonata.block }
+    sonata.block.service.notif:
+            class: MainBundle\Block\NotifBlockService
+            arguments:
+                - sonata.block.service.stats
+                - "@templating"
+                - "@doctrine.orm.entity_manager"
+                - "@security.authorization_checker"
+                - "@security.token_storage"
+            tags:
+                - { name: sonata.block }
     # DECLARATION DE TOUT LES PANELS D'ADMIN D'ENTITE
     app.form.registration:
         class: OCUserBundle\Form\RegistrationType

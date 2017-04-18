@@ -8,6 +8,7 @@
 
 namespace MainBundle\Controller;
 
+use MainBundle\Entity\Notification;
 use Sonata\AdminBundle\Controller\CRUDController as Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -25,6 +26,21 @@ class CRUDController extends Controller
         // Be careful, you may need to overload the __clone method of your object
         // to set its id to null !
         $object->setAcStates('VALIDER');
+        $actReals=$object->getAcActReal();
+        foreach ($actReals as $actReal){
+            $usersNotif=$actReal->getActReaVisiteur();
+            $notif=new Notification();
+            $notif->setNotifAct($object);
+            $notif->setNotifUser($usersNotif);
+            $notif->setNotifMessage("Une activité as été accepter !");
+            $em = $this->getDoctrine()->getManager();
+
+            // tells Doctrine you want to (eventually) save the Product (no queries yet)
+            $em->persist($notif);
+
+            // actually executes the queries (i.e. the INSERT query)
+            $em->flush();
+        }
         $em = $this->getDoctrine()->getManager();
 
         // tells Doctrine you want to (eventually) save the Product (no queries yet)
@@ -51,6 +67,21 @@ class CRUDController extends Controller
         // Be careful, you may need to overload the __clone method of your object
         // to set its id to null !
         $object->setAcStates('REFUSER');
+        $actReals=$object->getAcActReal();
+        foreach ($actReals as $actReal){
+            $usersNotif=$actReal->getActReaVisiteur();
+            $notif=new Notification();
+            $notif->setNotifAct($object);
+            $notif->setNotifUser($usersNotif);
+            $notif->setNotifMessage("Une activité as été refusé !");
+            $em = $this->getDoctrine()->getManager();
+
+            // tells Doctrine you want to (eventually) save the Product (no queries yet)
+            $em->persist($notif);
+
+            // actually executes the queries (i.e. the INSERT query)
+            $em->flush();
+        }
         $em = $this->getDoctrine()->getManager();
 
         // tells Doctrine you want to (eventually) save the Product (no queries yet)
