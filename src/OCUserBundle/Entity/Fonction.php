@@ -64,6 +64,6 @@ class Fonction
     }
     public function __toString()
     {
-        return $this->getFonctLibelle();
+        return (string) $this->getFonctLibelle();
     }
 }

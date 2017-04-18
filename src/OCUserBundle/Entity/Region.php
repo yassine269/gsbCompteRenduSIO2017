@@ -95,6 +95,6 @@ class Region
     }
     public function __toString()
     {
-        return $this->regLibelle;
+        return (string) $this->getRegLibelle();
     }
 }

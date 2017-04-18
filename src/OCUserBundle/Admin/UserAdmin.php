@@ -292,7 +292,7 @@ class UserAdmin extends AbstractAdmin
         if ($role == 'Responsable') {
             $user->addRole('ROLE_RESPONSABLE');
         }
-        if ($role == 'delegue') {
+        if ($role == 'Delegue') {
             $user->addRole('ROLE_DELEGUE');
         }
         if ($role == 'Visiteur') {

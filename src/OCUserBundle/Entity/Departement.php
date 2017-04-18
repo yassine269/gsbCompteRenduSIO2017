@@ -94,6 +94,6 @@ class Departement
     }
     public function __toString()
     {
-        return $this->depLibelle;
+        return (string) $this->getDepLibelle();
     }
 }
