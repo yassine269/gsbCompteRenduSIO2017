@@ -217,6 +217,40 @@ class ActComplAdmin extends AbstractAdmin
             ->end();
 
     }
+    public function createQuery($context = 'list')
+    {
+        $query = parent::createQuery($context);
+        $visiteur = $this->getConfigurationPool()->getContainer()->get('security.token_storage')->getToken()->getUser();
+        if ($visiteur->getUsrFonction()->getFonctLibelle()=='Visiteur') {
+            $query = parent::createQuery($context);
+            $query->join($query->getRootAliases()[0].'.acActReal','a');
+            $query->andWhere(
+                $query->expr()->eq('a.actReaVisiteur', ':user')
+            );
+            $query->setParameter(':user', $visiteur);
+        }
+        if ($visiteur->getUsrFonction()->getFonctLibelle()=='Delegue') {
+            $query = parent::createQuery($context);
+            $query->join($query->getRootAliases()[0].'.acActReal','a');
+            $query->join($query->getRootAliases()[0].'.acAcReal.actReaVisiteur','v');
+            $query->andWhere(
+                $query->expr()->eq('v.usrRegion', ':region')
+            );
+            $query->setParameter(':region', $visiteur->getUsrRegion());
+        }
+        if ($visiteur->getUsrFonction()->getFonctLibelle()=='Responsable') {
+            $query = parent::createQuery($context);
+            $query->join($query->getRootAliases()[0].'.acActReal','a');
+            $query->join($query->getRootAliases()[0].'.acAcReal.actReaVisiteur','v');
+            $query->andWhere(
+                $query->expr()->eq('v.usrSecteur', ':secteur')
+            );
+            $query->setParameter(':secteur', $visiteur->getUsrSecteur());
+        }
+        return $query;
+
+    }
+
 
 
 
