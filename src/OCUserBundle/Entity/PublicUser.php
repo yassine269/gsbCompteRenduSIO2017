@@ -15,6 +15,23 @@ class PublicUser
     private $id;
     private $username;
     private $salt;
+    private $fonction;
+
+    /**
+     * @return mixed
+     */
+    public function getFonction()
+    {
+        return $this->fonction;
+    }
+
+    /**
+     * @param mixed $fonction
+     */
+    public function setFonction($fonction)
+    {
+        $this->fonction = $fonction;
+    }
 
 
 
