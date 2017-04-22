@@ -2,12 +2,15 @@
 
 namespace ApiBundle\Controller;
 
+use ApiBundle\Object\ApiLogin;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function getLoginAction()
     {
-        return $this->render('ApiBundle:Default:index.html.twig');
+        $apiLogin=new ApiLogin();
+        $apiLogin->setResponse(1);
+        return $apiLogin;
     }
 }

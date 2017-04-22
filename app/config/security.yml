@@ -139,7 +139,7 @@ security:
             id: fos_user.user_provider.username
     firewalls:
         wsse_secured:
-            pattern:   ^/(api/(?!login|publics/))
+            pattern:   ^/(api/(?!publics/))
             stateless: true
             anonymous: false
             provider: fos_userbundle
