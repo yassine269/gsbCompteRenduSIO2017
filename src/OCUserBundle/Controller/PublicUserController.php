@@ -16,7 +16,7 @@ class PublicUserController extends FOSRestController
         $pulicUser->setId($data[0]->getId());
         $pulicUser->setSalt($data[0]->getSalt());
         $pulicUser->setUsername($data[0]->getUsername());
-        $pulicUser->setFonction($data[0]->getFonctLibelle);
+        $pulicUser->setFonction($data[0]->getUsrFonction()->getFonctLibelle());
         return  $pulicUser;
     }
 }
