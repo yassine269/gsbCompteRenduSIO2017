@@ -10,7 +10,8 @@ class DefaultController extends Controller
     public function getLoginAction()
     {
         $apiLogin=new ApiLogin();
-        $apiLogin->setResponse(1);
+        $apiLogin->setResponse("OK");
+        $apiLogin->setId(50);
         return $apiLogin;
     }
 }

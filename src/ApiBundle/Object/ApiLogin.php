@@ -9,6 +9,23 @@ namespace ApiBundle\Object;
  */
 class ApiLogin
 {
+    private $id;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
     private  $response;
 
     /**
@@ -26,9 +43,4 @@ class ApiLogin
     {
         $this->response = $response;
     }
-
-    public function ApiLogin($response){
-        $this->response=$response;
-    }
-
 }
