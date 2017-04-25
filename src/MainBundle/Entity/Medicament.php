@@ -10,10 +10,12 @@
 namespace MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use JMS\Serializer\Annotation\MaxDepth;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Expose;
 
 
 /**
+ * @ExclusionPolicy("all")
  * @ORM\Entity(repositoryClass="MainBundle\Repository\MedicamentRepository")
  * @ORM\Table(name="Medicament")
  */
@@ -24,11 +26,13 @@ class Medicament
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Expose
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=40)
+     * @Expose
      */
     private $medDepotLegal;
 
@@ -36,45 +40,53 @@ class Medicament
 
     /**
      * @ORM\Column(type="string", length=40)
+     * @Expose
      */
     private $medNomCommercial;
 
     /**
+     * @Expose
      * @ORM\OneToMany(targetEntity="MainBundle\Entity\MedConstitution", mappedBy="constMedicament", cascade={ "persist", "remove"}, orphanRemoval=true)
      */
     private $medCompositions;
 
     /**
+     * @Expose
      * @ORM\Column(type="string", length=40)
      */
     private $medEffets;
 
     /**
+     * @Expose
      * @ORM\Column(type="string", length=40)
      */
     private $medContreIndic;
 
     /**
+     * @Expose
      * @ORM\Column(type="integer", length=40)
      */
     private $medPrixEchant;
     /**
      * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Medicament",cascade={"persist"})
-     * @ORM\joinTable(name="medPreturbe")
+     * @ORM\JoinTable(name="medPreturbe")
+     *
      */
     private $medPerturbe;
 
     /**
      * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Medicament",cascade={"persist"})
-     * @ORM\joinTable(name="medPreturbateur")
+     * @ORM\JoinTable(name="medPreturbateur")
      */
     private $medPerturbateur;
     /**
+     * @Expose
      * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Presentation",cascade={"persist"})
      */
     private $medPresentation;
 
     /**
+     * @Expose
      * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Famille")
      */
     private $medFamille;
