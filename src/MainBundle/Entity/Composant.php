@@ -3,9 +3,10 @@
 namespace MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use JMS\Serializer\Annotation as JMS;
 
 /**
+ * @JMS\ExclusionPolicy("all")
  * @ORM\Entity(repositoryClass="MainBundle\Repository\ComposantRepository")
  * @ORM\Table(name="Composant")
  */
@@ -20,9 +21,11 @@ class Composant
     private $id;
 
     /**
+     * @JMS\Expose
      * @ORM\Column(type="string",length=40)
      */
     private $compLibelle;
+
 
     /**
      * @ORM\OneToMany(targetEntity="MainBundle\Entity\MedConstitution", mappedBy="constComposant",cascade={"all"}))

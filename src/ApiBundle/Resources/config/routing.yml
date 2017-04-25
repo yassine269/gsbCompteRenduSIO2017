@@ -2,3 +2,7 @@ api_login:
     type:    rest
     resource: ApiBundle\Controller\DefaultController
     prefix: /
+api_rapport:
+    type:    rest
+    resource: ApiBundle\Controller\RapportVisiteController
+    prefix: /

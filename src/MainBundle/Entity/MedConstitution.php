@@ -9,6 +9,8 @@
 namespace MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\MaxDepth;
+
 
 /**
  * @ORM\Entity(repositoryClass="MainBundle\Repository\MedConstitutionRepository")
@@ -26,19 +28,16 @@ class MedConstitution
       * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Medicament", inversedBy="medCompositions", cascade={"persist"})
       */
     private $constMedicament ;
+
     /**
       * @ORM\ManyToOne(targetEntity="MainBundle\Entity\Composant",inversedBy="medCompositions",cascade={"persist"})
      */
     private $constComposant;
-
     /**
      * @ORM\Column(type="integer")
      */
     private $constQuantite;
-
     private $constCompLibelle;
-
-
 
     /**
      * Get id

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Rapportvisite</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ rapportVisite.id }}</td>
+            </tr>
+            <tr>
+                <th>Rapdate</th>
+                <td>{% if rapportVisite.rapDate %}{{ rapportVisite.rapDate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Rapsaisiedate</th>
+                <td>{% if rapportVisite.rapSaisieDate %}{{ rapportVisite.rapSaisieDate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Rapbilan</th>
+                <td>{{ rapportVisite.rapBilan }}</td>
+            </tr>
+            <tr>
+                <th>Rapcoefimpact</th>
+                <td>{{ rapportVisite.rapCoefImpact }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('rapportvisite_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('rapportvisite_edit', { 'id': rapportVisite.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

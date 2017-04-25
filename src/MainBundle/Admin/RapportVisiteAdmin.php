@@ -29,30 +29,30 @@ class RapportVisiteAdmin extends AbstractAdmin
 
         $formMapper
             ->with('Informations générales :', array('class' => 'col-md-6'))
-            ->add('rapDate', 'date', array(
-                'label' => 'Date de la visite :'))
-            ->add('rapPraticien', 'sonata_type_model', array(
-                'class' => 'MainBundle\Entity\Praticien',
-                'property' => 'praNom',
-                'btn_add' => false,
-                'btn_delete' => false,
-                'btn_catalogue' => true,
-                'label' => 'Praticien :'))
-            ->add('rapMotif', 'sonata_type_model', array(
-                'class' => 'MainBundle\Entity\Motif',
-                'property' => 'motifLibelle',
-                'btn_add' => false,
-                'btn_delete' => false,
-                'btn_catalogue' => true,
-                'label' => 'motif de la visite :'))
-            ->add('rapEchantillons', 'sonata_type_collection',
-                array(
-                    'by_reference' => false,
-                    'required' => false,
-                    'label' => 'Echantillons offerts :'
-                ), array(
-                    'edit' => 'inline',
-                    'inline' => 'table',))
+                ->add('rapDate', 'date', array(
+                    'label' => 'Date de la visite :'))
+                ->add('rapPraticien', 'sonata_type_model', array(
+                    'class' => 'MainBundle\Entity\Praticien',
+                    'property' => 'praNom',
+                    'btn_add' => false,
+                    'btn_delete' => false,
+                    'btn_catalogue' => true,
+                    'label' => 'Praticien :'))
+                ->add('rapMotif', 'sonata_type_model', array(
+                    'class' => 'MainBundle\Entity\Motif',
+                    'property' => 'motifLibelle',
+                    'btn_add' => false,
+                    'btn_delete' => false,
+                    'btn_catalogue' => true,
+                    'label' => 'motif de la visite :'))
+                ->add('rapEchantillons', 'sonata_type_collection',
+                    array(
+                        'by_reference' => false,
+                        'required' => false,
+                        'label' => 'Echantillons offerts :'
+                    ), array(
+                        'edit' => 'inline',
+                        'inline' => 'table'))
             ->end();
 
         $formMapper
@@ -79,8 +79,7 @@ class RapportVisiteAdmin extends AbstractAdmin
                     'placeholder'=> 'Nom du rédacteur'
                 ))
             ->add('rapDate','doctrine_orm_date', array(
-                'label' => 'Date de la visite'
-            ))
+                'label' => 'Date de la visite'))
             ->add('rapPraticien', 'doctrine_orm_model_autocomplete',
             array(
                 'label'=> 'Praticen',
@@ -116,7 +115,7 @@ class RapportVisiteAdmin extends AbstractAdmin
                 'pattern' => 'dd MMM y',
                 'locale' => 'fr',
                 'timezone' => 'Europe/Paris',
-                'label' => 'Date de la visite :'
+                'label' => 'Date de la visite :',
             ))
             ->add('rapCoefImpact', 'integer', array(
                 'label' => 'Coeficien d\'impact de la visite :'
@@ -163,10 +162,12 @@ class RapportVisiteAdmin extends AbstractAdmin
                 array(
                     'by_reference' => false,
                     'required' => false,
+                    'associated_property'=>'rapEchantMedicament.medNomCommercial',
                     'label' => 'Echantillons offerts :'
                 ), array(
                     'edit' => 'inline',
-                    'inline' => 'table',))
+                    'inline' => 'table',
+                    ))
             ->end();
 
         $showMapper

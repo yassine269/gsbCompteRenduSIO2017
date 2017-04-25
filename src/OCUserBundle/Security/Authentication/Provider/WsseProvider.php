@@ -89,12 +89,10 @@ class WsseProvider implements AuthenticationProviderInterface
         for ($i=1; $i<5000; $i++) {
             $digestB = hash('sha512', $digestB.$salted, true);
         }
+*/
 
-        $encodedPassword = base64_encode($digestB);
-        $decodedPassword = base64_decode($nonce);
-        */
         if($digest !== $expected){
-            throw new AuthenticationException("Bad credentials ! Digest is not as expected.".dump($expected,$secret));
+            throw new AuthenticationException("Bad credentials ! Digest is not as expected.".dump($expected,$secret,$nonce,$created));
         }
 
         return hash_equals($expected, $digest);

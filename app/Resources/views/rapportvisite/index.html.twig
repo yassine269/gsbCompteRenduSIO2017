@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Rapportvisites list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Rapdate</th>
+                <th>Rapsaisiedate</th>
+                <th>Rapbilan</th>
+                <th>Rapcoefimpact</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rapportVisite in rapportVisites %}
+            <tr>
+                <td><a href="{{ path('rapportvisite_show', { 'id': rapportVisite.id }) }}">{{ rapportVisite.id }}</a></td>
+                <td>{% if rapportVisite.rapDate %}{{ rapportVisite.rapDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if rapportVisite.rapSaisieDate %}{{ rapportVisite.rapSaisieDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ rapportVisite.rapBilan }}</td>
+                <td>{{ rapportVisite.rapCoefImpact }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('rapportvisite_show', { 'id': rapportVisite.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('rapportvisite_edit', { 'id': rapportVisite.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('rapportvisite_new') }}">Create a new rapportVisite</a>
+        </li>
+    </ul>
+{% endblock %}
