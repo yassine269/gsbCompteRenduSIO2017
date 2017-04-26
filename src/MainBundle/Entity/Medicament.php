@@ -72,12 +72,14 @@ class Medicament
      * @ORM\JoinTable(name="medPreturbe")
      *
      */
+
     private $medPerturbe;
 
     /**
      * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Medicament",cascade={"persist"})
      * @ORM\JoinTable(name="medPreturbateur")
      */
+
     private $medPerturbateur;
     /**
      * @Expose
