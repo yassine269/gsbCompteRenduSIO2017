@@ -178,7 +178,6 @@ class RapportVisiteAdmin extends AbstractAdmin
                 'label' => 'Coefiscient d\'impact de la visite :'))
             ->end();
     }
-
     public function preValidate($object)
     {
         $visiteur = $this->getConfigurationPool()->getContainer()->get('security.token_storage')->getToken()->getUser();

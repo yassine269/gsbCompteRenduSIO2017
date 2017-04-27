@@ -48,7 +48,7 @@ class Fonction
      */
     public function setFonctLibelle($lIBELLE)
     {
-        $this->fonctLibelle = $lIBELLE;
+        $thicos->fonctLibelle = $lIBELLE;
 
         return $this;
     }

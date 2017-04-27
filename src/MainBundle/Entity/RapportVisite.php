@@ -4,6 +4,9 @@ namespace MainBundle\Entity;
 
 use Doctrine\DBAL\Types\DateType;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as JMS;
+
+
 
 
 /**
@@ -22,6 +25,7 @@ class RapportVisite
 
     /**
      * @ORM\OneToMany(targetEntity="MainBundle\Entity\RapportEchant", mappedBy="rapEchantRapport", cascade={ "persist", "remove"}, orphanRemoval=true)
+     * @JMS\Type("ArrayCollection<MainBundle\Entity\RapportEchant>")
      */
     private $rapEchantillons;
     /**

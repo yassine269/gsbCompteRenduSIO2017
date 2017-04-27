@@ -2,3 +2,87 @@ services:
 #    main.example:
 #        class: MainBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+    admin.Famille:
+        class: MainBundle\Admin\FamilleAdmin
+        arguments: [~, MainBundle\Entity\Famille, ~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: Famille de médicament}
+    admin.Dosage:
+        class: MainBundle\Admin\DosageAdmin
+        arguments: [~, MainBundle\Entity\Dosage,~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: Dosage}
+    admin.TypePraticien:
+        class: MainBundle\Admin\TypePraticienAdmin
+        arguments: [~, MainBundle\Entity\TypePraticien, ~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: Type de praticien}
+    admin.Composant:
+        class: MainBundle\Admin\ComposantAdmin
+        arguments: [~, MainBundle\Entity\Composant, ~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: Composant}
+    admin.Presentation:
+        class: MainBundle\Admin\PresentationAdmin
+        arguments: [~, MainBundle\Entity\Presentation, ~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: Presentation de médicament}
+    admin.Motif:
+        class: MainBundle\Admin\MotifAdmin
+        arguments: [~, MainBundle\Entity\Motif, ~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: Motif de visite}
+    admin.Specialite:
+        class: MainBundle\Admin\SpecialiteAdmin
+        arguments: [~, MainBundle\Entity\Specialite, ~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: Specialite de praticien}
+    admin.TypeIndividu:
+        class: MainBundle\Admin\TypeIndividuAdmin
+        arguments: [~, MainBundle\Entity\TypeIndividu, ~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: Type d'individu}
+    admin.MedConstitution:
+        class: MainBundle\Admin\MedConstitutionAdmin
+        arguments: [~, MainBundle\Entity\MedConstitution, ~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: Constitution medicament}
+    admin.Medicament:
+        class: MainBundle\Admin\MedicamentAdmin
+        arguments: [~, MainBundle\Entity\Medicament,~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: Medicament}
+    admin.Praticien:
+        class: MainBundle\Admin\PraticienAdmin
+        arguments: [~, MainBundle\Entity\Praticien,~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: Praticien}
+    admin.Prescrire:
+        class: MainBundle\Admin\PrescrireAdmin
+        arguments: [~, MainBundle\Entity\Prescrire,~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: Prescription}
+    admin.ActCompl:
+            class: MainBundle\Admin\ActComplAdmin
+            arguments: [~, MainBundle\Entity\ActCompl, MainBundle:CRUD]
+            tags:
+                - {name: sonata.admin, manager_type: orm, label: Activite complementaire}
+    admin.ActRea:
+            class: MainBundle\Admin\ActReaAdmin
+            arguments: [~, MainBundle\Entity\ActRea,~]
+            tags:
+                - {name: sonata.admin, manager_type: orm, label: Realisation Activite complementaire}
+    admin.RapportVisite:
+            class: MainBundle\Admin\RapportVisiteAdmin
+            arguments:
+                - null
+                - MainBundle\Entity\RapportVisite
+                - ~
+
+            tags:
+                - {name: sonata.admin, manager_type: orm, label: Rapport de visite}
+    admin.RapportEchant:
+            class: MainBundle\Admin\RapportEchantAdmin
+            arguments: [~, MainBundle\Entity\RapportEchant ,~]
+            tags:
+                - {name: sonata.admin, manager_type: orm, label: Rapport echantillons}

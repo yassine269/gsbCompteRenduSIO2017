@@ -1,5 +1,5 @@
 <?php
-namespace MainBundle\Form;
+namespace ApiBundle\Form;
 
 use MainBundle\Entity\MedConstitution;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;

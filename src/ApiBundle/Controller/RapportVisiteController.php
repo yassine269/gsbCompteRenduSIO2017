@@ -2,7 +2,12 @@
 
 namespace ApiBundle\Controller;
 
+use DateTime;
+use DoctrineExtensions\Query\Mysql\Date;
+use MainBundle\Admin\RapportVisiteAdmin;
 use MainBundle\Entity\RapportVisite;
+use ApiBundle\Form\RapportVisiteType;
+use Sonata\AdminBundle\Admin\AdminInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -18,7 +23,28 @@ class RapportVisiteController extends Controller
     /**
      * Lists all rapportVisite entities.
      *
+     * {
+    "mainbundle_rapportvisite":
+    {
+    "rapEchantillons": [],
+    "rapVisiteur": 28,
+    "rapPraticien": 1,
+    "rapMotif": 1,
+    "rapDate": "2017-01-27T00:00:00+0000",
+    "rapBilan": "okok",
+    "rapCoefImpact": 6
+    }
+    }
+     *
      */
+
+    /**
+     * The related Admin class.
+     *
+     * @var AdminInterface
+     */
+    protected $admin;
+
     public function getRapportsAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -41,26 +67,26 @@ class RapportVisiteController extends Controller
      * Creates a new rapportVisite entity.
      *
      */
-    public function newAction(Request $request)
+    public function postRapportAction(Request $request)
     {
-        $rapportVisite = new Rapportvisite();
-        $form = $this->createForm('MainBundle\Form\RapportVisiteType', $rapportVisite);
+        $rapport=new RapportVisite();
+        $form=$this->createForm(RapportVisiteType::class,$rapport);
         $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($rapportVisite);
-            $em->flush();
-
-            return $this->redirectToRoute('rapportvisite_show', array('id' => $rapportVisite->getId()));
+        $rapEchants=$rapport->getRapEchantillons();
+        foreach ($rapEchants as $rapEchant){
+            $rapEchant->setRapEchantRapport($rapport);
         }
-
-        return $this->render('rapportvisite/new.html.twig', array(
-            'rapportVisite' => $rapportVisite,
-            'form' => $form->createView(),
-        ));
+        $date=$rapport->getRapDate();
+        $rapport->setRapDate(new \DateTime($date));
+        dump($rapport);
+        if ($form->isValid()){
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($rapport);
+            $em->flush();
+            return $rapport;
+        }
+        else return $form;
     }
-
     /**
      * Finds and displays a rapportVisite entity.
      *
