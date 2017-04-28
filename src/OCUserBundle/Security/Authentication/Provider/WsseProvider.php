@@ -57,8 +57,8 @@ class WsseProvider implements AuthenticationProviderInterface
     protected function validateDigest($digest, $nonce, $created, $secret)
     {
         // Check created time is not in the future
-        if (strtotime($created) > time()) {
-            throw new AuthenticationException("Back to the future...".strtotime($created).'  OOOOPPP  '.time());
+        if (strtotime($created) > (time()+2) ) {
+            throw new AuthenticationException("Back to the future...".strtotime($created).'  OOOOPPP  '.(time()+2));
         }
 
         // Expire timestamp after 5 minutes

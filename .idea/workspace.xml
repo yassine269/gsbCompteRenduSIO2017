@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3500015-12c5-4790-bd39-5f58827ea4c9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OCUserBundle/Security/Authentication/Provider/WsseProvider.php" afterPath="$PROJECT_DIR$/src/OCUserBundle/Security/Authentication/Provider/WsseProvider.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,7 +56,7 @@
             <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Security/Authentication/Token/WsseUserToken.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="254">
-                  <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+                  <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -64,8 +65,8 @@
           <file leaf-file-name="WsseProvider.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Security/Authentication/Provider/WsseProvider.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="328">
-                  <caret line="60" column="110" lean-forward="false" selection-start-line="60" selection-start-column="110" selection-end-line="60" selection-end-column="110" />
+                <state relative-caret-position="102">
+                  <caret line="60" column="114" lean-forward="false" selection-start-line="60" selection-start-column="114" selection-end-line="60" selection-end-column="114" />
                   <folding />
                 </state>
               </provider>
@@ -290,9 +291,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="git commit -m &quot;change for api secured area&quot;" />
-      <command text="git push origin master" />
-      <command text="s doctrine:generate:crud CompteRendu" />
       <command text="s debug:router " />
       <command text="s doctrine:schema:update --force " />
       <command text="git add -A" />
@@ -312,6 +310,9 @@
       <command text="git pull origin master" />
       <command text="php composer install" />
       <command text="composer install" />
+      <command text="git add -A" />
+      <command text="git commit -m &quot;change prod&quot;" />
+      <command text="git push origin master" />
       <command text="git add -A" />
       <command text="git commit -m &quot;change prod&quot;" />
       <command text="git push origin master" />
@@ -708,12 +709,12 @@
       <workItem from="1493278430774" duration="17432000" />
       <workItem from="1493303720018" duration="1343000" />
       <workItem from="1493323152481" duration="1523000" />
-      <workItem from="1493398545296" duration="2869000" />
+      <workItem from="1493398545296" duration="3606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195934000" />
+    <option name="totallyTimeSpent" value="196671000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -723,7 +724,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4530026" sideWeight="0.5225" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13968669" sideWeight="0.4775" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12924282" sideWeight="0.4775" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.491875" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1162,15 +1163,15 @@
     <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Security/Authentication/Token/WsseUserToken.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
-          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+          <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Security/Authentication/Provider/WsseProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="60" column="110" lean-forward="false" selection-start-line="60" selection-start-column="110" selection-end-line="60" selection-end-column="110" />
+        <state relative-caret-position="102">
+          <caret line="60" column="114" lean-forward="false" selection-start-line="60" selection-start-column="114" selection-end-line="60" selection-end-column="114" />
           <folding />
         </state>
       </provider>
