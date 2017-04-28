@@ -4,14 +4,17 @@ namespace ApiBundle\Controller;
 
 use DateTime;
 use DoctrineExtensions\Query\Mysql\Date;
+use FOS\RestBundle\Request\ParamFetcher;
 use MainBundle\Admin\RapportVisiteAdmin;
 use MainBundle\Entity\RapportVisite;
 use ApiBundle\Form\RapportVisiteType;
 use Sonata\AdminBundle\Admin\AdminInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-
-
+use FOS\RestBundle\Controller\Annotations\QueryParam;
+use FOS\RestBundle\Controller\Annotations as Rest;
+use Symfony\Component\HttpFoundation\Response;
 
 
 /**
@@ -38,21 +41,58 @@ class RapportVisiteController extends Controller
      *
      */
 
+
+    //GET rapportVisite with filter and without it
     /**
-     * The related Admin class.
+     * @QueryParam(name="datevisite", requirements="\d+", default="", description="Filtre par Date de visite")
+     * @QueryParam(name="redacteur", requirements="\d+", default="", description="Filtre par rédacteur")
+     * @QueryParam(name="praticien", requirements="\d+", default="", description="Filtre par Praticien")
+     * @QueryParam(name="motif", requirements="\d+", default="", description="Filtre par Motif")
+     * @QueryParam(name="coef", requirements="\d+", default="", description="Filtre par Coef")
      *
-     * @var AdminInterface
      */
-    protected $admin;
-
-    public function getRapportsAction()
+    public function getRapportsAction(Request $request, ParamFetcher $paramFetcher)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $rapportVisites = $em->getRepository('MainBundle:RapportVisite')->findAll();
+        // INIT RESPONSE
+        $rapportVisites=[];
+        // GET QUERY PARAMETERS
+        $redacteur=$paramFetcher->get('redacteur');
+        $dateVisite=$paramFetcher->get('datevisite');
+        $praticien=$paramFetcher->get('praticien');
+        $motif=$paramFetcher->get('motif');
+        $coef=$paramFetcher->get('coef');
+        // GET REPOSITORY
+        $repo=$this->getDoctrine()->getRepository('MainBundle:RapportVisite');
+        // TEST EXISTANCE FILTRES
+            //FILTRE VISITEUR
+        if($redacteur!=""){
+            $user=$this->getDoctrine()->getRepository('OCUserBundle:User')->find($redacteur);
+            $rapportVisites=$repo->findBy(array('rapVisiteur'=>$user));
+        }
+            //FILTRE DATE VISITE
+        if ($dateVisite!=""){
+            $dateVisite= new \DateTime($dateVisite);
+            $rapportVisites=$repo->findBy(array('rapDate'=>$dateVisite));
+        }
+            //FILTRE PRATICIEN
+        if ($praticien!=""){
+            $praticien=$this->getDoctrine()->getRepository('MainBundle:Praticien')->find($praticien);
+            $rapportVisites=$repo->findBy(array('rapPraticien'=>$praticien));
+        }
+            // FILTRE MOTIF
+        if ($motif!=""){
+            $motif=$this->getDoctrine()->getRepository('MainBundle:Motif')->find($motif);
+            $rapportVisites=$repo->findBy(array('rapMotif'=>$motif));
+        }
+            // FILTRE COEF
+        if ($coef!=""){
+            $rapportVisites=$repo->findBy(array('rapCoefImpact'=>$coef));
+        }
 
         return $rapportVisites;
     }
+
+        // GET ONE RAPPORT (VIEW)
     public function getOnerapportAction($id)
     {
         $em = $this->getDoctrine()->getManager();
@@ -63,15 +103,12 @@ class RapportVisiteController extends Controller
         return $rapportVisites;
     }
 
-    /**
-     * Creates a new rapportVisite entity.
-     *
-     */
+     //Creates a new rapportVisite entity POST REQUEST
     public function postRapportAction(Request $request)
     {
         $rapport=new RapportVisite();
         $form=$this->createForm(RapportVisiteType::class,$rapport);
-        $form->handleRequest($request);
+        $form->submit($request->request->all());
         $rapEchants=$rapport->getRapEchantillons();
         foreach ($rapEchants as $rapEchant){
             $rapEchant->setRapEchantRapport($rapport);
@@ -87,74 +124,58 @@ class RapportVisiteController extends Controller
         }
         else return $form;
     }
-    /**
-     * Finds and displays a rapportVisite entity.
-     *
-     */
-    public function showAction(RapportVisite $rapportVisite)
-    {
-        $deleteForm = $this->createDeleteForm($rapportVisite);
 
-        return $this->render('rapportvisite/show.html.twig', array(
-            'rapportVisite' => $rapportVisite,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
-    /**
-     * Displays a form to edit an existing rapportVisite entity.
-     *
-     */
-    public function editAction(Request $request, RapportVisite $rapportVisite)
-    {
-        $deleteForm = $this->createDeleteForm($rapportVisite);
-        $editForm = $this->createForm('MainBundle\Form\RapportVisiteType', $rapportVisite);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('rapportvisite_edit', array('id' => $rapportVisite->getId()));
+    // TOTAL REPLACE RAPPORTVISITE (ID DU RAPPORT EN PARAMETRE URL)
+    public function putRapportAction(Request $request){
+        $rapport=$this->getDoctrine()->getRepository('MainBundle:RapportVisite')->find($request->get('id'));
+        if(empty($rapport)){
+            return new JsonResponse(['message'=>'Rapport introuvable'], Response::HTTP_NOT_FOUND);
         }
-
-        return $this->render('rapportvisite/edit.html.twig', array(
-            'rapportVisite' => $rapportVisite,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
-    /**
-     * Deletes a rapportVisite entity.
-     *
-     */
-    public function deleteAction(Request $request, RapportVisite $rapportVisite)
-    {
-        $form = $this->createDeleteForm($rapportVisite);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($rapportVisite);
+        $form=$this->createForm(RapportVisiteType::class,$rapport);
+        $form->submit($request->request->all());
+        $rapEchants=$rapport->getRapEchantillons();
+        foreach ($rapEchants as $rapEchant){
+            $rapEchant->setRapEchantRapport($rapport);
+        }
+        dump($rapport);
+        if ($form->isValid()){
+            $em=$this->getDoctrine()->getManager();
+            $em->merge($rapport);
             $em->flush();
+            return $rapport;
         }
-
-        return $this->redirectToRoute('rapportvisite_index');
+        else return $form;
     }
 
-    /**
-     * Creates a form to delete a rapportVisite entity.
-     *
-     * @param RapportVisite $rapportVisite The rapportVisite entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(RapportVisite $rapportVisite)
+    // PARTIAL REPLACE RAPPORTVISITE (ID DU RAPPORT EN PARAMETRE URL)
+    public function patchRapportAction(Request $request){
+        return $this->updateRapport($request,false);
+    }
+
+    public function deleteRapportAction(Request $request){
+
+    }
+
+    private function updateRapport(Request $request, $clearMissing)
     {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('rapportvisite_delete', array('id' => $rapportVisite->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
+        $rapport=$this->getDoctrine()->getRepository('MainBundle:RapportVisite')->find($request->get('id'));
+        if(empty($rapport)){
+            return new JsonResponse(['message'=>'Rapport introuvable'], Response::HTTP_NOT_FOUND);
+        }
+        $form=$this->createForm(RapportVisiteType::class,$rapport);
+        $form->submit($request->request->all(),$clearMissing);
+        $rapEchants=$rapport->getRapEchantillons();
+        foreach ($rapEchants as $rapEchant){
+            $rapEchant->setRapEchantRapport($rapport);
+        }
+        if ($form->isValid()){
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($rapport);
+            $em->flush();
+            return $rapport;
+        }
+        else return $form;
+
     }
+
 }

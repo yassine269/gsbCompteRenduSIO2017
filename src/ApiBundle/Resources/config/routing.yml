@@ -6,3 +6,7 @@ api_rapport:
     type:    rest
     resource: ApiBundle\Controller\RapportVisiteController
     prefix: /
+api_activite:
+    type:    rest
+    resource: ApiBundle\Controller\ActComplController
+    prefix: /

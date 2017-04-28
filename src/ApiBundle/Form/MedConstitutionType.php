@@ -21,7 +21,9 @@ class MedConstitutionType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => MedConstitution::class,
+            'data_class' => 'MainBundle\Entity\MedConstitution',
+            'csrf_protection' => false,
+            'allow_extra_fields' => true
         ));
     }
 }

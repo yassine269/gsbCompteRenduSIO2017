@@ -2,6 +2,8 @@
 
 namespace ApiBundle\Form;
 
+use MainBundle\Entity\ActRea;
+use MainBundle\Entity\Praticien;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -11,34 +13,28 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 
-class RapportVisiteType extends AbstractType
+class ActComplType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('rapDate',DateType::class,array(
-                    'widget'=>'single_text'
+        $builder->add('acLieu',TextType::class)
+                ->add('acTheme',TextType::class)
+                ->add('acPraticien',EntityType::class,array(
+                    'class'=>Praticien::class,
+                    'multiple'=>true
                 ))
-                ->add('rapSaisieDate',TextType::class)
-                ->add('rapBilan',TextareaType::class)
-                ->add('rapCoefImpact')
-                ->add('rapVisiteur',EntityType::class,array(
-                    'class'=>'OCUserBundle:User'
-                ))
-                ->add('rapPraticien',EntityType::class,array(
-                    'class'=>"MainBundle:Praticien"
-                ))
-                ->add('rapEchantillons',CollectionType::class,array(
-                    'entry_type'=>RapportEchantType::class,
+                ->add('acActReal',CollectionType::class,array(
+                    'entry_type'=>ActRea::class,
                     'allow_add'=>true
                 ))
-                ->add('rapMotif',EntityType::class,array(
-                    'class'=>'MainBundle:Motif'
-                ));
+                ->add('acStates',TextType::class)
+                ->add('acDate',DateTime::class);
     }
     
     /**
@@ -47,7 +43,7 @@ class RapportVisiteType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MainBundle\Entity\RapportVisite',
+            'data_class' => 'MainBundle\Entity\ActCompl',
             'allow_extra_fields'=>true,
             'csrf_protection' => false,
 
@@ -59,7 +55,7 @@ class RapportVisiteType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'mainbundle_rapportvisite';
+        return 'mainbundle_actcompl';
     }
 
 

@@ -22,7 +22,9 @@ class MedicamentType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MainBundle\Entity\Medicament'
+            'data_class' => 'MainBundle\Entity\Medicament',
+            'csrf_protection' => false,
+            'allow_extra_fields' => true
         ));
     }
 

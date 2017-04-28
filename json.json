@@ -1,117 +1,72 @@
-{
-  "id": 6,
-  "rap_echantillons": [
-    {
-      "id": 5,
-      "rap_echant_medicament": {
-        "id": 15,
-        "med_depot_legal": "",
-        "med_nom_commercial": "",
-        "med_compositions": [],
-        "med_effets": "testMEd34",
-        "med_contre_indic": "",
-        "med_prix_echant": 9,
-        "med_presentation": [],
-        "med_famille": {
-          "id": 1,
-          "fam_libelle": "anabolisant"
-        }
-      },
-      "rap_echant_quantite": 5
-    },
-    {
-      "id": 6,
-      "rap_echant_medicament": {
-        "id": 14,
-        "med_depot_legal": "",
-        "med_nom_commercial": "",
-        "med_compositions": [
-          {
-            "id": 11,
-            "const_composant": {
-              "comp_libelle": "compTEST"
-            },
-            "const_quantite": 1
+[
+  {
+    "id": 6,
+    "rap_echantillons": [
+      {
+        "id": 5,
+        "rap_echant_medicament": {
+          "id": 15,
+          "med_depot_legal": "",
+          "med_nom_commercial": "",
+          "med_compositions": [],
+          "med_effets": "testMEd34",
+          "med_contre_indic": "",
+          "med_prix_echant": 9,
+          "med_presentation": [],
+          "med_famille": {
+            "id": 1,
+            "fam_libelle": "anabolisant"
           }
-        ],
-        "med_effets": "testMed31",
-        "med_contre_indic": "",
-        "med_prix_echant": 9,
-        "med_presentation": [],
-        "med_famille": {
-          "id": 1,
-          "fam_libelle": "anabolisant"
-        }
+        },
+        "rap_echant_quantite": 5
       },
-      "rap_echant_quantite": 5
-    }
-  ],
-  "rap_visiteur": {
-    "id": 28,
-    "username": "testrests.testrests",
-    "username_canonical": "testrests.testrests",
-    "email": "testrests@testrests.fr",
-    "email_canonical": "testrests@testrests.fr",
-    "enabled": true,
-    "salt": "sscIg61k7Br3LX03.PUJCnZQwGxDU6qJ2.fZehnhUGI",
-    "password": "HiANAzS0XG7bzbJGlDTBsmDqHGHf\/oo+NN9Ziq20ML0poz1Uc9Jm6KKntpovamdppK3pM2H0TF8ivkBwa6bI+Q==",
-    "last_login": "2017-04-27T08:17:51+0000",
-    "roles": [
-      "ROLE_VISITEUR"
+      {
+        "id": 6,
+        "rap_echant_medicament": {
+          "id": 14,
+          "med_depot_legal": "",
+          "med_nom_commercial": "",
+          "med_compositions": [
+            {
+              "id": 11,
+              "const_composant": {
+                "comp_libelle": "compTEST"
+              },
+              "const_quantite": 1
+            }
+          ],
+          "med_effets": "testMed31",
+          "med_contre_indic": "",
+          "med_prix_echant": 9,
+          "med_presentation": [],
+          "med_famille": {
+            "id": 1,
+            "fam_libelle": "anabolisant"
+          }
+        },
+        "rap_echant_quantite": 5
+      }
     ],
-    "usr_matricule": "tes",
-    "usr_nom": "testrests",
-    "usr_prenom": "testrests",
-    "usr_adresse": "testrests",
-    "usr_cp": 69,
-    "usr_ville": "testrests",
-    "usr_date_embauche": "2012-01-01T00:00:00+0000",
-    "usr_fonction": {
-      "id": 1,
-      "fonct_libelle": "Visiteur"
-    },
-    "usr_departement": {
-      "id": 1,
-      "dep_libelle": "Meurthe-et-Moselle",
-      "dep_region": {
-        "id": 1,
-        "reg_libelle": "Alsace Lorraine",
-        "reg_secteur": {
-          "id": 1,
-          "sec_libelle": "EST"
-        }
-      }
-    },
-    "usr_region": {
-      "id": 1,
-      "reg_libelle": "Alsace Lorraine",
-      "reg_secteur": {
-        "id": 1,
-        "sec_libelle": "EST"
-      }
-    },
-    "usr_secteur": {
-      "id": 1,
-      "sec_libelle": "EST"
-    },
-    "usr_supp": {
-      "id": 19,
-      "username": "deleguetest.deleguetest",
-      "username_canonical": "deleguetest.deleguetest",
-      "email": "charleskoms@gmail.ko",
-      "email_canonical": "charleskoms@gmail.ko",
+    "rap_visiteur": {
+      "id": 28,
+      "username": "testrests.testrests",
+      "username_canonical": "testrests.testrests",
+      "email": "testrests@testrests.fr",
+      "email_canonical": "testrests@testrests.fr",
       "enabled": true,
-      "password": "$2y$13$c.c4\/96w0AH0N3N1GXT55.KYFNqqh9GYCkpP58pORzxMCkgM8ylAe",
+      "salt": "sscIg61k7Br3LX03.PUJCnZQwGxDU6qJ2.fZehnhUGI",
+      "password": "HiANAzS0XG7bzbJGlDTBsmDqHGHf\/oo+NN9Ziq20ML0poz1Uc9Jm6KKntpovamdppK3pM2H0TF8ivkBwa6bI+Q==",
+      "last_login": "2017-04-28T08:05:04+0000",
       "roles": [
         "ROLE_VISITEUR"
       ],
-      "usr_matricule": "del",
-      "usr_nom": "deleguetest",
-      "usr_prenom": "deleguetest",
-      "usr_adresse": "test",
-      "usr_cp": 69006,
-      "usr_ville": "LYON",
-      "usr_date_embauche": "2012-01-02T00:00:00+0000",
+      "usr_matricule": "tes",
+      "usr_nom": "testrests",
+      "usr_prenom": "testrests",
+      "usr_adresse": "testrests",
+      "usr_cp": 69,
+      "usr_ville": "testrests",
+      "usr_date_embauche": "2012-01-01T00:00:00+0000",
       "usr_fonction": {
         "id": 1,
         "fonct_libelle": "Visiteur"
@@ -137,28 +92,27 @@
         }
       },
       "usr_secteur": {
-        "id": 2,
-        "sec_libelle": "NORD"
+        "id": 1,
+        "sec_libelle": "EST"
       },
       "usr_supp": {
-        "id": 18,
-        "username": "visiteur.visiteur",
-        "username_canonical": "visiteur.visiteur",
-        "email": "visiteur@kk.gg",
-        "email_canonical": "visiteur@kk.gg",
+        "id": 19,
+        "username": "deleguetest.deleguetest",
+        "username_canonical": "deleguetest.deleguetest",
+        "email": "charleskoms@gmail.ko",
+        "email_canonical": "charleskoms@gmail.ko",
         "enabled": true,
-        "password": "$2y$13$kg\/pWRuO2vgnjt2USyPc0eOzH5LdMYKq2wcD0i\/kfRPIida1LgOoW",
-        "last_login": "2017-03-29T08:44:53+0000",
+        "password": "$2y$13$c.c4\/96w0AH0N3N1GXT55.KYFNqqh9GYCkpP58pORzxMCkgM8ylAe",
         "roles": [
           "ROLE_VISITEUR"
         ],
-        "usr_matricule": "vis",
-        "usr_nom": "visiteur",
-        "usr_prenom": "visiteur",
-        "usr_adresse": "27 rue visiteur",
+        "usr_matricule": "del",
+        "usr_nom": "deleguetest",
+        "usr_prenom": "deleguetest",
+        "usr_adresse": "test",
         "usr_cp": 69006,
-        "usr_ville": "Lyon",
-        "usr_date_embauche": "2012-01-01T00:00:00+0000",
+        "usr_ville": "LYON",
+        "usr_date_embauche": "2012-01-02T00:00:00+0000",
         "usr_fonction": {
           "id": 1,
           "fonct_libelle": "Visiteur"
@@ -174,29 +128,638 @@
               "sec_libelle": "EST"
             }
           }
+        },
+        "usr_region": {
+          "id": 1,
+          "reg_libelle": "Alsace Lorraine",
+          "reg_secteur": {
+            "id": 1,
+            "sec_libelle": "EST"
+          }
+        },
+        "usr_secteur": {
+          "id": 2,
+          "sec_libelle": "NORD"
+        },
+        "usr_supp": {
+          "id": 18,
+          "username": "visiteur.visiteur",
+          "username_canonical": "visiteur.visiteur",
+          "email": "visiteur@kk.gg",
+          "email_canonical": "visiteur@kk.gg",
+          "enabled": true,
+          "password": "$2y$13$kg\/pWRuO2vgnjt2USyPc0eOzH5LdMYKq2wcD0i\/kfRPIida1LgOoW",
+          "last_login": "2017-03-29T08:44:53+0000",
+          "roles": [
+            "ROLE_VISITEUR"
+          ],
+          "usr_matricule": "vis",
+          "usr_nom": "visiteur",
+          "usr_prenom": "visiteur",
+          "usr_adresse": "27 rue visiteur",
+          "usr_cp": 69006,
+          "usr_ville": "Lyon",
+          "usr_date_embauche": "2012-01-01T00:00:00+0000",
+          "usr_fonction": {
+            "id": 1,
+            "fonct_libelle": "Visiteur"
+          },
+          "usr_departement": {
+            "id": 1,
+            "dep_libelle": "Meurthe-et-Moselle",
+            "dep_region": {
+              "id": 1,
+              "reg_libelle": "Alsace Lorraine",
+              "reg_secteur": {
+                "id": 1,
+                "sec_libelle": "EST"
+              }
+            }
+          }
         }
       }
-    }
-  },
-  "rap_praticien": {
-    "id": 1,
-    "pra_nom": "test",
-    "pra_prenom": "test",
-    "pra_adresse": "test",
-    "pra_cp": "69006",
-    "pra_ville": "LYON",
-    "pra_coef_notoriete": "1",
-    "pra_type": {
+    },
+    "rap_praticien": {
       "id": 1,
-      "type_libelle": "testType",
-      "type_lieu": "testType"
-    }
+      "pra_nom": "test",
+      "pra_prenom": "test",
+      "pra_adresse": "test",
+      "pra_cp": "69006",
+      "pra_ville": "LYON",
+      "pra_coef_notoriete": "1",
+      "pra_type": {
+        "id": 1,
+        "type_libelle": "testType",
+        "type_lieu": "testType"
+      }
+    },
+    "rap_motif": {
+      "id": 1,
+      "motif_libelle": "p\u00e9riodicit\u00e9"
+    },
+    "rap_date": "2017-01-27T00:00:00+0000",
+    "rap_bilan": "okok",
+    "rap_coef_impact": 6
   },
-  "rap_motif": {
-    "id": 1,
-    "motif_libelle": "p\u00e9riodicit\u00e9"
+  {
+    "id": 7,
+    "rap_echantillons": [],
+    "rap_visiteur": {
+      "id": 28,
+      "username": "testrests.testrests",
+      "username_canonical": "testrests.testrests",
+      "email": "testrests@testrests.fr",
+      "email_canonical": "testrests@testrests.fr",
+      "enabled": true,
+      "salt": "sscIg61k7Br3LX03.PUJCnZQwGxDU6qJ2.fZehnhUGI",
+      "password": "HiANAzS0XG7bzbJGlDTBsmDqHGHf\/oo+NN9Ziq20ML0poz1Uc9Jm6KKntpovamdppK3pM2H0TF8ivkBwa6bI+Q==",
+      "last_login": "2017-04-28T08:05:04+0000",
+      "roles": [
+        "ROLE_VISITEUR"
+      ],
+      "usr_matricule": "tes",
+      "usr_nom": "testrests",
+      "usr_prenom": "testrests",
+      "usr_adresse": "testrests",
+      "usr_cp": 69,
+      "usr_ville": "testrests",
+      "usr_date_embauche": "2012-01-01T00:00:00+0000",
+      "usr_fonction": {
+        "id": 1,
+        "fonct_libelle": "Visiteur"
+      },
+      "usr_departement": {
+        "id": 1,
+        "dep_libelle": "Meurthe-et-Moselle",
+        "dep_region": {
+          "id": 1,
+          "reg_libelle": "Alsace Lorraine",
+          "reg_secteur": {
+            "id": 1,
+            "sec_libelle": "EST"
+          }
+        }
+      },
+      "usr_region": {
+        "id": 1,
+        "reg_libelle": "Alsace Lorraine",
+        "reg_secteur": {
+          "id": 1,
+          "sec_libelle": "EST"
+        }
+      },
+      "usr_secteur": {
+        "id": 1,
+        "sec_libelle": "EST"
+      },
+      "usr_supp": {
+        "id": 19,
+        "username": "deleguetest.deleguetest",
+        "username_canonical": "deleguetest.deleguetest",
+        "email": "charleskoms@gmail.ko",
+        "email_canonical": "charleskoms@gmail.ko",
+        "enabled": true,
+        "password": "$2y$13$c.c4\/96w0AH0N3N1GXT55.KYFNqqh9GYCkpP58pORzxMCkgM8ylAe",
+        "roles": [
+          "ROLE_VISITEUR"
+        ],
+        "usr_matricule": "del",
+        "usr_nom": "deleguetest",
+        "usr_prenom": "deleguetest",
+        "usr_adresse": "test",
+        "usr_cp": 69006,
+        "usr_ville": "LYON",
+        "usr_date_embauche": "2012-01-02T00:00:00+0000",
+        "usr_fonction": {
+          "id": 1,
+          "fonct_libelle": "Visiteur"
+        },
+        "usr_departement": {
+          "id": 1,
+          "dep_libelle": "Meurthe-et-Moselle",
+          "dep_region": {
+            "id": 1,
+            "reg_libelle": "Alsace Lorraine",
+            "reg_secteur": {
+              "id": 1,
+              "sec_libelle": "EST"
+            }
+          }
+        },
+        "usr_region": {
+          "id": 1,
+          "reg_libelle": "Alsace Lorraine",
+          "reg_secteur": {
+            "id": 1,
+            "sec_libelle": "EST"
+          }
+        },
+        "usr_secteur": {
+          "id": 2,
+          "sec_libelle": "NORD"
+        },
+        "usr_supp": {
+          "id": 18,
+          "username": "visiteur.visiteur",
+          "username_canonical": "visiteur.visiteur",
+          "email": "visiteur@kk.gg",
+          "email_canonical": "visiteur@kk.gg",
+          "enabled": true,
+          "password": "$2y$13$kg\/pWRuO2vgnjt2USyPc0eOzH5LdMYKq2wcD0i\/kfRPIida1LgOoW",
+          "last_login": "2017-03-29T08:44:53+0000",
+          "roles": [
+            "ROLE_VISITEUR"
+          ],
+          "usr_matricule": "vis",
+          "usr_nom": "visiteur",
+          "usr_prenom": "visiteur",
+          "usr_adresse": "27 rue visiteur",
+          "usr_cp": 69006,
+          "usr_ville": "Lyon",
+          "usr_date_embauche": "2012-01-01T00:00:00+0000",
+          "usr_fonction": {
+            "id": 1,
+            "fonct_libelle": "Visiteur"
+          },
+          "usr_departement": {
+            "id": 1,
+            "dep_libelle": "Meurthe-et-Moselle",
+            "dep_region": {
+              "id": 1,
+              "reg_libelle": "Alsace Lorraine",
+              "reg_secteur": {
+                "id": 1,
+                "sec_libelle": "EST"
+              }
+            }
+          }
+        }
+      }
+    },
+    "rap_praticien": {
+      "id": 1,
+      "pra_nom": "test",
+      "pra_prenom": "test",
+      "pra_adresse": "test",
+      "pra_cp": "69006",
+      "pra_ville": "LYON",
+      "pra_coef_notoriete": "1",
+      "pra_type": {
+        "id": 1,
+        "type_libelle": "testType",
+        "type_lieu": "testType"
+      }
+    },
+    "rap_motif": {
+      "id": 1,
+      "motif_libelle": "p\u00e9riodicit\u00e9"
+    },
+    "rap_date": "2017-01-27T00:00:00+0000",
+    "rap_bilan": "okok",
+    "rap_coef_impact": 6
   },
-  "rap_date": "2017-01-27T00:00:00+0000",
-  "rap_bilan": "okok",
-  "rap_coef_impact": 6
-}
+  {
+    "id": 8,
+    "rap_echantillons": [
+      {
+        "id": 7,
+        "rap_echant_medicament": {
+          "id": 15,
+          "med_depot_legal": "",
+          "med_nom_commercial": "",
+          "med_compositions": [],
+          "med_effets": "testMEd34",
+          "med_contre_indic": "",
+          "med_prix_echant": 9,
+          "med_presentation": [],
+          "med_famille": {
+            "id": 1,
+            "fam_libelle": "anabolisant"
+          }
+        },
+        "rap_echant_quantite": 2
+      },
+      {
+        "id": 8,
+        "rap_echant_medicament": {
+          "id": 14,
+          "med_depot_legal": "",
+          "med_nom_commercial": "",
+          "med_compositions": [
+            {
+              "id": 11,
+              "const_composant": {
+                "comp_libelle": "compTEST"
+              },
+              "const_quantite": 1
+            }
+          ],
+          "med_effets": "testMed31",
+          "med_contre_indic": "",
+          "med_prix_echant": 9,
+          "med_presentation": [],
+          "med_famille": {
+            "id": 1,
+            "fam_libelle": "anabolisant"
+          }
+        },
+        "rap_echant_quantite": 2
+      }
+    ],
+    "rap_visiteur": {
+      "id": 28,
+      "username": "testrests.testrests",
+      "username_canonical": "testrests.testrests",
+      "email": "testrests@testrests.fr",
+      "email_canonical": "testrests@testrests.fr",
+      "enabled": true,
+      "salt": "sscIg61k7Br3LX03.PUJCnZQwGxDU6qJ2.fZehnhUGI",
+      "password": "HiANAzS0XG7bzbJGlDTBsmDqHGHf\/oo+NN9Ziq20ML0poz1Uc9Jm6KKntpovamdppK3pM2H0TF8ivkBwa6bI+Q==",
+      "last_login": "2017-04-28T08:05:04+0000",
+      "roles": [
+        "ROLE_VISITEUR"
+      ],
+      "usr_matricule": "tes",
+      "usr_nom": "testrests",
+      "usr_prenom": "testrests",
+      "usr_adresse": "testrests",
+      "usr_cp": 69,
+      "usr_ville": "testrests",
+      "usr_date_embauche": "2012-01-01T00:00:00+0000",
+      "usr_fonction": {
+        "id": 1,
+        "fonct_libelle": "Visiteur"
+      },
+      "usr_departement": {
+        "id": 1,
+        "dep_libelle": "Meurthe-et-Moselle",
+        "dep_region": {
+          "id": 1,
+          "reg_libelle": "Alsace Lorraine",
+          "reg_secteur": {
+            "id": 1,
+            "sec_libelle": "EST"
+          }
+        }
+      },
+      "usr_region": {
+        "id": 1,
+        "reg_libelle": "Alsace Lorraine",
+        "reg_secteur": {
+          "id": 1,
+          "sec_libelle": "EST"
+        }
+      },
+      "usr_secteur": {
+        "id": 1,
+        "sec_libelle": "EST"
+      },
+      "usr_supp": {
+        "id": 19,
+        "username": "deleguetest.deleguetest",
+        "username_canonical": "deleguetest.deleguetest",
+        "email": "charleskoms@gmail.ko",
+        "email_canonical": "charleskoms@gmail.ko",
+        "enabled": true,
+        "password": "$2y$13$c.c4\/96w0AH0N3N1GXT55.KYFNqqh9GYCkpP58pORzxMCkgM8ylAe",
+        "roles": [
+          "ROLE_VISITEUR"
+        ],
+        "usr_matricule": "del",
+        "usr_nom": "deleguetest",
+        "usr_prenom": "deleguetest",
+        "usr_adresse": "test",
+        "usr_cp": 69006,
+        "usr_ville": "LYON",
+        "usr_date_embauche": "2012-01-02T00:00:00+0000",
+        "usr_fonction": {
+          "id": 1,
+          "fonct_libelle": "Visiteur"
+        },
+        "usr_departement": {
+          "id": 1,
+          "dep_libelle": "Meurthe-et-Moselle",
+          "dep_region": {
+            "id": 1,
+            "reg_libelle": "Alsace Lorraine",
+            "reg_secteur": {
+              "id": 1,
+              "sec_libelle": "EST"
+            }
+          }
+        },
+        "usr_region": {
+          "id": 1,
+          "reg_libelle": "Alsace Lorraine",
+          "reg_secteur": {
+            "id": 1,
+            "sec_libelle": "EST"
+          }
+        },
+        "usr_secteur": {
+          "id": 2,
+          "sec_libelle": "NORD"
+        },
+        "usr_supp": {
+          "id": 18,
+          "username": "visiteur.visiteur",
+          "username_canonical": "visiteur.visiteur",
+          "email": "visiteur@kk.gg",
+          "email_canonical": "visiteur@kk.gg",
+          "enabled": true,
+          "password": "$2y$13$kg\/pWRuO2vgnjt2USyPc0eOzH5LdMYKq2wcD0i\/kfRPIida1LgOoW",
+          "last_login": "2017-03-29T08:44:53+0000",
+          "roles": [
+            "ROLE_VISITEUR"
+          ],
+          "usr_matricule": "vis",
+          "usr_nom": "visiteur",
+          "usr_prenom": "visiteur",
+          "usr_adresse": "27 rue visiteur",
+          "usr_cp": 69006,
+          "usr_ville": "Lyon",
+          "usr_date_embauche": "2012-01-01T00:00:00+0000",
+          "usr_fonction": {
+            "id": 1,
+            "fonct_libelle": "Visiteur"
+          },
+          "usr_departement": {
+            "id": 1,
+            "dep_libelle": "Meurthe-et-Moselle",
+            "dep_region": {
+              "id": 1,
+              "reg_libelle": "Alsace Lorraine",
+              "reg_secteur": {
+                "id": 1,
+                "sec_libelle": "EST"
+              }
+            }
+          }
+        }
+      }
+    },
+    "rap_praticien": {
+      "id": 1,
+      "pra_nom": "test",
+      "pra_prenom": "test",
+      "pra_adresse": "test",
+      "pra_cp": "69006",
+      "pra_ville": "LYON",
+      "pra_coef_notoriete": "1",
+      "pra_type": {
+        "id": 1,
+        "type_libelle": "testType",
+        "type_lieu": "testType"
+      }
+    },
+    "rap_motif": {
+      "id": 1,
+      "motif_libelle": "p\u00e9riodicit\u00e9"
+    },
+    "rap_date": "2017-01-27T00:00:00+0000",
+    "rap_bilan": "okok",
+    "rap_coef_impact": 6
+  },
+  {
+    "id": 9,
+    "rap_echantillons": [
+      {
+        "id": 9,
+        "rap_echant_medicament": {
+          "id": 15,
+          "med_depot_legal": "",
+          "med_nom_commercial": "",
+          "med_compositions": [],
+          "med_effets": "testMEd34",
+          "med_contre_indic": "",
+          "med_prix_echant": 9,
+          "med_presentation": [],
+          "med_famille": {
+            "id": 1,
+            "fam_libelle": "anabolisant"
+          }
+        },
+        "rap_echant_quantite": 2
+      },
+      {
+        "id": 10,
+        "rap_echant_medicament": {
+          "id": 14,
+          "med_depot_legal": "",
+          "med_nom_commercial": "",
+          "med_compositions": [
+            {
+              "id": 11,
+              "const_composant": {
+                "comp_libelle": "compTEST"
+              },
+              "const_quantite": 1
+            }
+          ],
+          "med_effets": "testMed31",
+          "med_contre_indic": "",
+          "med_prix_echant": 9,
+          "med_presentation": [],
+          "med_famille": {
+            "id": 1,
+            "fam_libelle": "anabolisant"
+          }
+        },
+        "rap_echant_quantite": 2
+      }
+    ],
+    "rap_visiteur": {
+      "id": 28,
+      "username": "testrests.testrests",
+      "username_canonical": "testrests.testrests",
+      "email": "testrests@testrests.fr",
+      "email_canonical": "testrests@testrests.fr",
+      "enabled": true,
+      "salt": "sscIg61k7Br3LX03.PUJCnZQwGxDU6qJ2.fZehnhUGI",
+      "password": "HiANAzS0XG7bzbJGlDTBsmDqHGHf\/oo+NN9Ziq20ML0poz1Uc9Jm6KKntpovamdppK3pM2H0TF8ivkBwa6bI+Q==",
+      "last_login": "2017-04-28T08:05:04+0000",
+      "roles": [
+        "ROLE_VISITEUR"
+      ],
+      "usr_matricule": "tes",
+      "usr_nom": "testrests",
+      "usr_prenom": "testrests",
+      "usr_adresse": "testrests",
+      "usr_cp": 69,
+      "usr_ville": "testrests",
+      "usr_date_embauche": "2012-01-01T00:00:00+0000",
+      "usr_fonction": {
+        "id": 1,
+        "fonct_libelle": "Visiteur"
+      },
+      "usr_departement": {
+        "id": 1,
+        "dep_libelle": "Meurthe-et-Moselle",
+        "dep_region": {
+          "id": 1,
+          "reg_libelle": "Alsace Lorraine",
+          "reg_secteur": {
+            "id": 1,
+            "sec_libelle": "EST"
+          }
+        }
+      },
+      "usr_region": {
+        "id": 1,
+        "reg_libelle": "Alsace Lorraine",
+        "reg_secteur": {
+          "id": 1,
+          "sec_libelle": "EST"
+        }
+      },
+      "usr_secteur": {
+        "id": 1,
+        "sec_libelle": "EST"
+      },
+      "usr_supp": {
+        "id": 19,
+        "username": "deleguetest.deleguetest",
+        "username_canonical": "deleguetest.deleguetest",
+        "email": "charleskoms@gmail.ko",
+        "email_canonical": "charleskoms@gmail.ko",
+        "enabled": true,
+        "password": "$2y$13$c.c4\/96w0AH0N3N1GXT55.KYFNqqh9GYCkpP58pORzxMCkgM8ylAe",
+        "roles": [
+          "ROLE_VISITEUR"
+        ],
+        "usr_matricule": "del",
+        "usr_nom": "deleguetest",
+        "usr_prenom": "deleguetest",
+        "usr_adresse": "test",
+        "usr_cp": 69006,
+        "usr_ville": "LYON",
+        "usr_date_embauche": "2012-01-02T00:00:00+0000",
+        "usr_fonction": {
+          "id": 1,
+          "fonct_libelle": "Visiteur"
+        },
+        "usr_departement": {
+          "id": 1,
+          "dep_libelle": "Meurthe-et-Moselle",
+          "dep_region": {
+            "id": 1,
+            "reg_libelle": "Alsace Lorraine",
+            "reg_secteur": {
+              "id": 1,
+              "sec_libelle": "EST"
+            }
+          }
+        },
+        "usr_region": {
+          "id": 1,
+          "reg_libelle": "Alsace Lorraine",
+          "reg_secteur": {
+            "id": 1,
+            "sec_libelle": "EST"
+          }
+        },
+        "usr_secteur": {
+          "id": 2,
+          "sec_libelle": "NORD"
+        },
+        "usr_supp": {
+          "id": 18,
+          "username": "visiteur.visiteur",
+          "username_canonical": "visiteur.visiteur",
+          "email": "visiteur@kk.gg",
+          "email_canonical": "visiteur@kk.gg",
+          "enabled": true,
+          "password": "$2y$13$kg\/pWRuO2vgnjt2USyPc0eOzH5LdMYKq2wcD0i\/kfRPIida1LgOoW",
+          "last_login": "2017-03-29T08:44:53+0000",
+          "roles": [
+            "ROLE_VISITEUR"
+          ],
+          "usr_matricule": "vis",
+          "usr_nom": "visiteur",
+          "usr_prenom": "visiteur",
+          "usr_adresse": "27 rue visiteur",
+          "usr_cp": 69006,
+          "usr_ville": "Lyon",
+          "usr_date_embauche": "2012-01-01T00:00:00+0000",
+          "usr_fonction": {
+            "id": 1,
+            "fonct_libelle": "Visiteur"
+          },
+          "usr_departement": {
+            "id": 1,
+            "dep_libelle": "Meurthe-et-Moselle",
+            "dep_region": {
+              "id": 1,
+              "reg_libelle": "Alsace Lorraine",
+              "reg_secteur": {
+                "id": 1,
+                "sec_libelle": "EST"
+              }
+            }
+          }
+        }
+      }
+    },
+    "rap_praticien": {
+      "id": 1,
+      "pra_nom": "test",
+      "pra_prenom": "test",
+      "pra_adresse": "test",
+      "pra_cp": "69006",
+      "pra_ville": "LYON",
+      "pra_coef_notoriete": "1",
+      "pra_type": {
+        "id": 1,
+        "type_libelle": "testType",
+        "type_lieu": "testType"
+      }
+    },
+    "rap_motif": {
+      "id": 1,
+      "motif_libelle": "p\u00e9riodicit\u00e9"
+    },
+    "rap_date": "2017-01-27T00:00:00+0000",
+    "rap_bilan": "okok",
+    "rap_coef_impact": 6
+  }
+]

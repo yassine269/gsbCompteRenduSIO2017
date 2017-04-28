@@ -22,7 +22,9 @@ class FamilleType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MainBundle\Entity\Famille'
+            'data_class' => 'MainBundle\Entity\Famille',
+            'csrf_protection' => false,
+            'allow_extra_fields' => true
         ));
     }
 

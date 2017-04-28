@@ -32,14 +32,6 @@ class RapportVisiteRepository extends EntityRepository
         return $query->getResult();
 
     }
-
-    public function findByEchantVisiteur($user){
-        $query=$this->_em->createQuery(
-            ''
-        )->setParameters(array(
-            ''
-        ));
-    }
     // Requête pour statistiques annuel sur dashboard Delegue
     public function findByRegionYearToNow($date,$region,$debut = 0){
         $dateExplode=explode("-",$date);
@@ -84,6 +76,29 @@ class RapportVisiteRepository extends EntityRepository
         return $query->getResult();
 
     }
+
+    public function findByVisiteur($visiteur){
+        $query=$this->_em->createQuery(
+            'SELECT rap
+            FROM MainBundle:RapportVisite rap
+            WHERE rap.rapVisiteur = :visiteur'
+        )->setParameters(array(
+            'visiteur'=>$visiteur
+        ));
+        return $query->getResult();
+    }
+
+    public function findByDateVisite($dateVisite){
+        $query=$this->_em->createQuery(
+            'SELECT rap
+            FROM MainBundle:RapportVisite rap
+            WHERE rap.rapDate = :dateVisite'
+        )->setParameters(array(
+            'dateVisite'=>$dateVisite
+        ));
+        return $query->getResult();
+    }
+
 
 
 }
