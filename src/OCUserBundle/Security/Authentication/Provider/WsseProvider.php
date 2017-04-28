@@ -58,7 +58,7 @@ class WsseProvider implements AuthenticationProviderInterface
     {
         // Check created time is not in the future
         if (strtotime($created) > time()) {
-            throw new AuthenticationException("Back to the future...");
+            throw new AuthenticationException("Back to the future...".strtotime($created).'  OOOOPPP  '.time());
         }
 
         // Expire timestamp after 5 minutes
