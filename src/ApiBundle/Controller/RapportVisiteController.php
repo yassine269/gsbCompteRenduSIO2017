@@ -49,12 +49,12 @@ class RapportVisiteController extends Controller
      * @QueryParam(name="praticien", requirements="\d+", default="", description="Filtre par Praticien")
      * @QueryParam(name="motif", requirements="\d+", default="", description="Filtre par Motif")
      * @QueryParam(name="coef", requirements="\d+", default="", description="Filtre par Coef")
-     *
      */
     public function getRapportsAction(Request $request, ParamFetcher $paramFetcher)
     {
         // INIT RESPONSE
-        $rapportVisites=[];
+        $repo=$this->getDoctrine()->getRepository('MainBundle:RapportVisite');
+        $rapportVisites=$repo->findAll();
         // GET QUERY PARAMETERS
         $redacteur=$paramFetcher->get('redacteur');
         $dateVisite=$paramFetcher->get('datevisite');
@@ -62,7 +62,6 @@ class RapportVisiteController extends Controller
         $motif=$paramFetcher->get('motif');
         $coef=$paramFetcher->get('coef');
         // GET REPOSITORY
-        $repo=$this->getDoctrine()->getRepository('MainBundle:RapportVisite');
         // TEST EXISTANCE FILTRES
             //FILTRE VISITEUR
         if($redacteur!=""){
@@ -88,7 +87,6 @@ class RapportVisiteController extends Controller
         if ($coef!=""){
             $rapportVisites=$repo->findBy(array('rapCoefImpact'=>$coef));
         }
-
         return $rapportVisites;
     }
 
