@@ -45,7 +45,7 @@ class WsseProvider implements AuthenticationProviderInterface
             return $authenticatedToken;
         }
 
-        throw new AuthenticationException('The WSSE authentication failed.'.dump($user->getPassword()));
+        throw new AuthenticationException('The WSSE authentication failed.');
     }
 
     /**
@@ -92,7 +92,7 @@ class WsseProvider implements AuthenticationProviderInterface
 */
 
         if($digest !== $expected){
-            throw new AuthenticationException("Bad credentials ! Digest is not as expected.".dump($expected,$secret,$nonce,$created));
+            throw new AuthenticationException("Bad credentials ! Digest is not as expected.");
         }
 
         return hash_equals($expected, $digest);

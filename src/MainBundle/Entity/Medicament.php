@@ -68,6 +68,7 @@ class Medicament
      */
     private $medPrixEchant;
     /**
+     * @Expose
      * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Medicament",cascade={"persist"})
      * @ORM\JoinTable(name="medPreturbe")
      *
@@ -76,6 +77,7 @@ class Medicament
     private $medPerturbe;
 
     /**
+     * @Expose
      * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Medicament",cascade={"persist"})
      * @ORM\JoinTable(name="medPreturbateur")
      */
