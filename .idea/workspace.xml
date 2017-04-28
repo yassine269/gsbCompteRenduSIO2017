@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3500015-12c5-4790-bd39-5f58827ea4c9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OCUserBundle/Security/Authentication/Provider/WsseProvider.php" afterPath="$PROJECT_DIR$/src/OCUserBundle/Security/Authentication/Provider/WsseProvider.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,8 +64,8 @@
           <file leaf-file-name="WsseProvider.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Security/Authentication/Provider/WsseProvider.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="60" column="114" lean-forward="false" selection-start-line="60" selection-start-column="114" selection-end-line="60" selection-end-column="114" />
+                <state relative-caret-position="363">
+                  <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -291,9 +290,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s debug:router " />
-      <command text="s doctrine:schema:update --force " />
-      <command text="git add -A" />
       <command text="git commit -m &quot;change rest prod&quot;" />
       <command text="git push origin master" />
       <command text="git add -A" />
@@ -310,6 +306,9 @@
       <command text="git pull origin master" />
       <command text="php composer install" />
       <command text="composer install" />
+      <command text="git add -A" />
+      <command text="git commit -m &quot;change prod&quot;" />
+      <command text="git push origin master" />
       <command text="git add -A" />
       <command text="git commit -m &quot;change prod&quot;" />
       <command text="git push origin master" />
@@ -709,12 +708,12 @@
       <workItem from="1493278430774" duration="17432000" />
       <workItem from="1493303720018" duration="1343000" />
       <workItem from="1493323152481" duration="1523000" />
-      <workItem from="1493398545296" duration="3606000" />
+      <workItem from="1493398545296" duration="4162000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196671000" />
+    <option name="totallyTimeSpent" value="197227000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1170,8 +1169,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Security/Authentication/Provider/WsseProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="60" column="114" lean-forward="false" selection-start-line="60" selection-start-column="114" selection-end-line="60" selection-end-column="114" />
+        <state relative-caret-position="363">
+          <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding />
         </state>
       </provider>

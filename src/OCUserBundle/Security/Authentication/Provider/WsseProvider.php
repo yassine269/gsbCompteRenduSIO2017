@@ -92,7 +92,7 @@ class WsseProvider implements AuthenticationProviderInterface
 */
 
         if($digest !== $expected){
-            throw new AuthenticationException("Bad credentials ! Digest is not as expected.");
+            throw new AuthenticationException("Bad credentials ! Digest is not as expected.".$digest.': EXP : '.$expected.': Hash :'.$secret);
         }
 
         return hash_equals($expected, $digest);
