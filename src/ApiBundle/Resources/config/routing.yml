@@ -10,3 +10,16 @@ api_activite:
     type:    rest
     resource: ApiBundle\Controller\ActComplController
     prefix: /
+api_motif:
+    type:    rest
+    resource: ApiBundle\Controller\MotifController
+    prefix: /
+api_praticien:
+    type:    rest
+    resource: ApiBundle\Controller\PraticienController
+    prefix: /
+api_medicament:
+    type:    rest
+    resource: ApiBundle\Controller\MedicamentController
+    prefix: /
+

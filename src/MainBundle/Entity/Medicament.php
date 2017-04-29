@@ -12,6 +12,7 @@ namespace MainBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\MaxDepth;
 
 
 /**
@@ -69,6 +70,8 @@ class Medicament
     private $medPrixEchant;
     /**
      * @Expose
+     * @MaxDepth(2)
+     * @Expose
      * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Medicament",cascade={"persist"})
      * @ORM\JoinTable(name="medPreturbe")
      *
@@ -77,6 +80,8 @@ class Medicament
     private $medPerturbe;
 
     /**
+     *
+     * @MaxDepth(2)
      * @Expose
      * @ORM\ManyToMany(targetEntity="MainBundle\Entity\Medicament",cascade={"persist"})
      * @ORM\JoinTable(name="medPreturbateur")
