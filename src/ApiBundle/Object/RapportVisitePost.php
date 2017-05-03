@@ -8,15 +8,11 @@ namespace ApiBundle\Object;
  * Time: 16:55
  */
 
-use JMS\Serializer\Annotation as JMS;
 
 class RapportVisitePost
 {
     private $id;
 
-    /**
-     * @JMS\Type("ArrayCollection<MainBundle\Entity\RapportEchantPost>")
-     */
     private $rapEchantillons;
 
     private $rapVisiteur;
