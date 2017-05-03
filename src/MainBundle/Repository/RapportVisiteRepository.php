@@ -99,6 +99,25 @@ class RapportVisiteRepository extends EntityRepository
         return $query->getResult();
     }
 
+    public function findByDateForEdit($user){
+        $date = date("m");
+        $date=$date-3;
+        $year=date("Y");
+        $query=$this->_em->createQuery(
+        'SELECT rap 
+              FROM MainBundle:RapportVisite rap 
+              WHERE MONTH (rap.rapDate) >= :date AND YEAR (rap.rapDate) = :year
+              AND rap.rapVisiteur = :user'
+        )->setParameters(array(
+            'date'=>$date,
+            'user' =>$user,
+            'year' =>$year
+        ));
+        return$query->getResult();
+
+
+    }
+
 
 
 }

@@ -24,7 +24,6 @@ use Symfony\Component\Ldap\Adapter\ExtLdap\Collection;
 /**
  * Rapportvisite controller.
  *
- * @Rest\View(statusCode=Response::HTTP_CREATED)
  */
 class RapportVisiteController extends Controller
 {
@@ -54,6 +53,7 @@ class RapportVisiteController extends Controller
      * @QueryParam(name="praticien", requirements="\d+", default="", description="Filtre par Praticien")
      * @QueryParam(name="motif", requirements="\d+", default="", description="Filtre par Motif")
      * @QueryParam(name="coef", requirements="\d+", default="", description="Filtre par Coef")
+     * @QueryParam(name="template", default="", description="type de template")
      */
     public function getRapportsAction(Request $request, ParamFetcher $paramFetcher)
     {
@@ -66,6 +66,7 @@ class RapportVisiteController extends Controller
         $praticien=$paramFetcher->get('praticien');
         $motif=$paramFetcher->get('motif');
         $coef=$paramFetcher->get('coef');
+        $template=$paramFetcher->get('template');
         // GET REPOSITORY
         // TEST EXISTANCE FILTRES
             //FILTRE VISITEUR
@@ -92,6 +93,10 @@ class RapportVisiteController extends Controller
         if ($coef!=""){
             $rapportVisites=$repo->findBy(array('rapCoefImpact'=>$coef));
         }
+        if ($template=="edit"){
+            $user=$this->getDoctrine()->getRepository('OCUserBundle:User')->find($redacteur);
+            $rapportVisites=$repo->findByDateForEdit($user);
+        }
         return $rapportVisites;
     }
 
@@ -106,6 +111,9 @@ class RapportVisiteController extends Controller
         return $rapportVisites;
     }
 
+    /**
+     * @Rest\View(statusCode=Response::HTTP_CREATED)
+     */
      //Creates a new rapportVisite entity POST REQUEST
     public function postRapportAction(Request $request)
     {
