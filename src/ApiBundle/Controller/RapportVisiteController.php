@@ -111,8 +111,8 @@ class RapportVisiteController extends Controller
         foreach ($rapEchants as $rapEchant){
             $rapEchant->setRapEchantRapport($rapport);
         }
-        $date=$rapport->getRapDate();
-        $rapport->setRapDate(new \DateTime($date));
+        #$date=$rapport->getRapDate();
+        #$rapport->setRapDate(new \DateTime($date));
         dump($rapport);
         if ($form->isValid()){
             $em=$this->getDoctrine()->getManager();
