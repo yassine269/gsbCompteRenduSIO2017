@@ -174,7 +174,7 @@ class RapportVisiteController extends Controller
     }
 
     // PARTIAL REPLACE RAPPORTVISITE (ID DU RAPPORT EN PARAMETRE URL)
-    public function patchRapportAction(Request $request){
+    public function patchUpdaterapportAction(Request $request){
         return $this->updateRapport($request,false);
     }
 
