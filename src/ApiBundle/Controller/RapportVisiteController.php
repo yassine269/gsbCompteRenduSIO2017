@@ -198,7 +198,23 @@ class RapportVisiteController extends Controller
             $em=$this->getDoctrine()->getManager();
             $em->persist($rapport);
             $em->flush();
-            return $rapport;
+            $rapportPost=new RapportVisitePost();
+            $rapportPost->setRapPraticien($rapport->getRapPraticien()->getId());
+            $rapportPost->setRapVisiteur($rapport->getRapVisiteur()->getId());
+            $rapportPost->setRapMotif($rapport->getRapMotif()->getId());
+            $rapportPost->setId($rapport->getId());
+            $rapportPost->setRapBilan($rapport->getRapBilan());
+            $rapportPost->setRapDate($rapport->getRapDate());
+            $rapportPost->setRapCoefImpact($rapport->getRapCoefImpact());
+            $rapportPost->setRapSaisieDate($rapport->getRapSaisieDate());
+            foreach ($rapEchants as $rapEchant){
+                $rapEchantPost=new RapportEchantPost();
+                $rapEchantPost->setRapEchantMedicament($rapEchant->getRapEchantMedicament()->getId());
+                $rapEchantPost->setRapEchantRapport($rapport->getId());
+                $rapEchantPost->setRapEchantQuantite($rapEchant->getRapEchantQuantite());
+                $rapportPost->addRapECHANTILLON($rapEchantPost);
+            }
+            return $rapportPost;
         }
         else return $form;
 
