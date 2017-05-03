@@ -6,6 +6,7 @@ use DateTime;
 use DoctrineExtensions\Query\Mysql\Date;
 use FOS\RestBundle\Request\ParamFetcher;
 use MainBundle\Admin\RapportVisiteAdmin;
+use MainBundle\Entity\Praticien;
 use MainBundle\Entity\RapportVisite;
 use ApiBundle\Form\RapportVisiteType;
 use Sonata\AdminBundle\Admin\AdminInterface;
@@ -118,6 +119,9 @@ class RapportVisiteController extends Controller
             $em=$this->getDoctrine()->getManager();
             $em->persist($rapport);
             $em->flush();
+            $rapport->setRapPraticien($rapport->getRapPraticien()->getId());
+            $rapport->setRapVisiteur($rapport->getRapVisiteur()->getId());
+            $rapport->setRapMotif($rapport->getRapMotif()->getId());
             return $rapport;
         }
         else return $form;
