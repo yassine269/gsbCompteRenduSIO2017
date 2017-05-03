@@ -133,8 +133,9 @@ class RapportVisiteController extends Controller
             $rapportPost->setRapSaisieDate($rapport->getRapSaisieDate());
             foreach ($rapEchants as $rapEchant){
                 $rapEchantPost=new RapportEchantPost();
-                $rapEchantPost->setRapEchantRapport($rapport->getId());
                 $rapEchantPost->setRapEchantMedicament($rapEchant->getRapEchantMedicament()->getId());
+                $rapEchantPost->setRapEchantRapport($rapport->getId());
+                $rapEchantPost->setRapEchantQuantite($rapEchant->getRapEchantQuantite());
                 $rapportPost->addRapECHANTILLON($rapEchantPost);
             }
             return $rapportPost;
