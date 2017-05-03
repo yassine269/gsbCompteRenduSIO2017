@@ -7,6 +7,9 @@ namespace ApiBundle\Object;
  * Date: 22/04/2017
  * Time: 16:55
  */
+
+use JMS\Serializer\Annotation as JMS;
+
 class RapportVisitePost
 {
     private $id;
