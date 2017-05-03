@@ -45,7 +45,7 @@ class RapportVisitePost
      *
      * @return RapportVisitePost
      */
-    public function addRapECHANTILLON(\MainBundle\Entity\RapportEchant $rapECHANTILLON)
+    public function addRapECHANTILLON(\ApiBundle\Object\RapportEchantPost $rapECHANTILLON)
     {
         $this->rapEchantillons[] = $rapECHANTILLON;
 
@@ -57,7 +57,7 @@ class RapportVisitePost
      *
      * @param \ApiBundle\Object\RapportEchantPost $rapECHANTILLON
      */
-    public function removeRapECHANTILLON(\MainBundle\Entity\RapportEchant $rapECHANTILLON)
+    public function removeRapECHANTILLON(\ApiBundle\Object\RapportEchantPost $rapECHANTILLON)
     {
         $this->rapEchantillons->removeElement($rapECHANTILLON);
     }
