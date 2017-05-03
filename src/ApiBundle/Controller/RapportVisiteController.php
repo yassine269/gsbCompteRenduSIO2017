@@ -122,6 +122,10 @@ class RapportVisiteController extends Controller
             $rapport->setRapPraticien($rapport->getRapPraticien()->getId());
             $rapport->setRapVisiteur($rapport->getRapVisiteur()->getId());
             $rapport->setRapMotif($rapport->getRapMotif()->getId());
+            foreach ($rapEchants as $rapEchant){
+                $rapEchant->setRapEchantRapport($rapport->getId());
+                $rapEchant->setRapEchantMedicament($rapEchant->getRapEchantMedicament()->getId());
+            }
             return $rapport;
         }
         else return $form;
