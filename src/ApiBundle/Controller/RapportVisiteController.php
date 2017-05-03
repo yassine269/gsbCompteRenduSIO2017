@@ -2,6 +2,7 @@
 
 namespace ApiBundle\Controller;
 
+use ApiBundle\Object\RapportVisitePost;
 use DateTime;
 use DoctrineExtensions\Query\Mysql\Date;
 use FOS\RestBundle\Request\ParamFetcher;
@@ -119,14 +120,21 @@ class RapportVisiteController extends Controller
             $em=$this->getDoctrine()->getManager();
             $em->persist($rapport);
             $em->flush();
-            $rapport->setRapPraticien($rapport->getRapPraticien()->getId());
-            $rapport->setRapVisiteur($rapport->getRapVisiteur()->getId());
-            $rapport->setRapMotif($rapport->getRapMotif()->getId());
+            $rapportPost=new RapportVisitePost();
+            $rapportPost->setRapPraticien($rapport->getRapPraticien()->getId());
+            $rapportPost->setRapVisiteur($rapport->getRapVisiteur()->getId());
+            $rapportPost->setRapMotif($rapport->getRapMotif()->getId());
+            $rapportPost->setId($rapport->getId());
+            $rapportPost->setRapBilan($rapport->getRapBilan());
+            $rapportPost->setRapDate($rapport->getRapDate());
+            $rapportPost->setRapCoefImpact($rapport->getRapCoefImpact());
+            $rapportPost->setRapSaisieDate($rapport->getRapSaisieDate());
             foreach ($rapEchants as $rapEchant){
                 $rapEchant->setRapEchantRapport($rapport->getId());
                 $rapEchant->setRapEchantMedicament($rapEchant->getRapEchantMedicament()->getId());
             }
-            return $rapport;
+            $rapportPost->setRapEchantillons($rapEchants);
+            return $rapportPost;
         }
         else return $form;
     }
