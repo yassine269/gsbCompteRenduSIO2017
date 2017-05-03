@@ -113,7 +113,6 @@ class RapportVisiteController extends Controller
         }
         #$date=$rapport->getRapDate();
         #$rapport->setRapDate(new \DateTime($date));
-        dump($rapport);
         if ($form->isValid()){
             $em=$this->getDoctrine()->getManager();
             $em->persist($rapport);
