@@ -20,6 +20,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Rapportvisite controller.
  *
+ * @Rest\View(statusCode=Response::HTTP_CREATED)
  */
 class RapportVisiteController extends Controller
 {
