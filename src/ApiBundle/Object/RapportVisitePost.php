@@ -12,7 +12,7 @@ class RapportVisitePost
     private $id;
 
     /**
-     * @JMS\Type("ArrayCollection<MainBundle\Entity\RapportEchant>")
+     * @JMS\Type("ArrayCollection<MainBundle\Entity\RapportEchantPost>")
      */
     private $rapEchantillons;
 
@@ -39,21 +39,38 @@ class RapportVisitePost
     }
 
     /**
-     * @return mixed
+     * Add rapECHANTILLON
+     *
+     * @param \ApiBundle\Object\RapportEchantPost $rapECHANTILLON
+     *
+     * @return RapportVisitePost
+     */
+    public function addRapECHANTILLON(\MainBundle\Entity\RapportEchant $rapECHANTILLON)
+    {
+        $this->rapEchantillons[] = $rapECHANTILLON;
+
+        return $this;
+    }
+
+    /**
+     * Remove rapECHANTILLON
+     *
+     * @param \ApiBundle\Object\RapportEchantPost $rapECHANTILLON
+     */
+    public function removeRapECHANTILLON(\MainBundle\Entity\RapportEchant $rapECHANTILLON)
+    {
+        $this->rapEchantillons->removeElement($rapECHANTILLON);
+    }
+
+    /**
+     * Get rapEchantillons
+     *
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getRapEchantillons()
     {
         return $this->rapEchantillons;
     }
-
-    /**
-     * @param mixed $rapEchantillons
-     */
-    public function setRapEchantillons($rapEchantillons)
-    {
-        $this->rapEchantillons = $rapEchantillons;
-    }
-
     /**
      * @return mixed
      */

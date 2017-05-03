@@ -2,6 +2,7 @@
 
 namespace ApiBundle\Controller;
 
+use ApiBundle\Object\RapportEchantPost;
 use ApiBundle\Object\RapportVisitePost;
 use DateTime;
 use DoctrineExtensions\Query\Mysql\Date;
@@ -17,6 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\Controller\Annotations\QueryParam;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Ldap\Adapter\ExtLdap\Collection;
 
 
 /**
@@ -130,10 +132,11 @@ class RapportVisiteController extends Controller
             $rapportPost->setRapCoefImpact($rapport->getRapCoefImpact());
             $rapportPost->setRapSaisieDate($rapport->getRapSaisieDate());
             foreach ($rapEchants as $rapEchant){
-                $rapEchant->setRapEchantRapport($rapport->getId());
-                $rapEchant->setRapEchantMedicament($rapEchant->getRapEchantMedicament()->getId());
+                $rapEchantPost=new RapportEchantPost();
+                $rapEchantPost->setRapEchantRapport($rapport->getId());
+                $rapEchantPost->setRapEchantMedicament($rapEchant->getRapEchantMedicament()->getId());
+                $rapportPost->addRapECHANTILLON($rapEchantPost);
             }
-            $rapportPost->setRapEchantillons($rapEchants);
             return $rapportPost;
         }
         else return $form;
