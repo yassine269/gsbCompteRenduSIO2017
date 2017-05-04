@@ -22,4 +22,8 @@ api_medicament:
     type:    rest
     resource: ApiBundle\Controller\MedicamentController
     prefix: /
+api_user:
+    type:    rest
+    resource: ApiBundle\Controller\UserController
+    prefix: /
 

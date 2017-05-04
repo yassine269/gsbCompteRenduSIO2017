@@ -21,9 +21,9 @@ class RapportVisiteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('rapDate',DateType::class,array(
-                    'widget'=>'single_text',
-                    'format'=>'M-D-YYYY'
-                ))
+            'widget' => 'single_text',
+            'format' => 'yyyy-MM-dd'
+        ))
                 ->add('rapSaisieDate',TextType::class)
                 ->add('rapBilan',TextareaType::class)
                 ->add('rapCoefImpact')
