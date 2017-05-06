@@ -10,4 +10,74 @@ namespace MainBundle\Repository;
  */
 class ActComplRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findByRealisation($user){
+
+        $query=$this->_em->createQuery(
+            'SELECT ac
+                      FROM MainBundle:ActCompl ac
+                      JOIN ac.acActReal rea 
+                      WHERE rea.actReaVisiteur = :user
+                      '
+        )->setParameters(array(
+            'user' => $user
+        ));
+        return $query->getResult();
+    }
+    public function findByRealisationForValid($user){
+        $states="VALIDATION_REQUISE";
+        $query=$this->_em->createQuery(
+            'SELECT ac
+              FROM MainBundle:ActCompl ac
+              JOIN ac.acActReal rea 
+              WHERE ac.acStates = :etat AND rea.actReaVisiteur = :usr
+                  '
+        )->setParameters(array(
+            'usr' => $user,
+            'etat'=>'VALIDATION_REQUISE'
+        ));
+        return $query->getResult();
+    }
+    public function findByRegionForValid($region){
+        $states='VALIDATION_REQUISE';
+        $query=$this->_em->createQuery(
+            'SELECT ac 
+                      FROM MainBundle:ActCompl ac
+                      JOIN ac.acActReal rea
+                      JOIN rea.actReaVisiteur usr
+                      WHERE usr.usrRegion = :region
+                      AND ac.acStates LIKE :states
+                      '
+        )->setParameters(array(
+            'region' => $region,
+            'states'=>$states
+        ));
+        return $query->getResult();
+    }
+    public function findBySecteur($secteur){
+        $query=$this->_em->createQuery(
+            'SELECT ac 
+                      FROM MainBundle:ActCompl ac
+                      JOIN ac.acActReal rea
+                      JOIN rea.actReaVisiteur usr
+                      WHERE usr.usrSecteur = :secteur
+                      '
+        )->setParameters(array(
+            'secteur' => $secteur
+        ));
+        return $query->getResult();
+    }
+    public function findByRegion($region){
+        $query=$this->_em->createQuery(
+            'SELECT ac 
+                      FROM MainBundle:ActCompl ac
+                      JOIN ac.acActReal rea
+                      JOIN rea.actReaVisiteur usr
+                      WHERE usr.usrRegion = :region
+                      '
+        )->setParameters(array(
+            'region' => $region
+        ));
+        return $query->getResult();
+    }
+
 }

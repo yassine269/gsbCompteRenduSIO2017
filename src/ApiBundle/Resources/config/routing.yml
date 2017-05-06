@@ -26,4 +26,8 @@ api_user:
     type:    rest
     resource: ApiBundle\Controller\UserController
     prefix: /
+api_actcompl:
+    type:    rest
+    resource: ApiBundle\Controller\ActComplController
+    prefix: /
 

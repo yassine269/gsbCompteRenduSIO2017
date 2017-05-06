@@ -193,6 +193,7 @@ sonata_admin:
                     - admin.actcompl
                     - admin.medicament
                     - admin.praticien
+                    - admin.user
                     - route:    main_statistique_visiteur
                       label:    Statistiques
                     - route:    fos_user_security_logout

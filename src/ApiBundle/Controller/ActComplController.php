@@ -32,22 +32,51 @@ class ActComplController extends Controller
 
 
     //GET Activité complémentaire with filter and without it
-
-    public function getActivitesAction(Request $request, ParamFetcher $paramFetcher)
+    /**
+     * @QueryParam(name="states", requirements="\d+", default="", description="Filtre par status")
+     * @QueryParam(name="realisation", requirements="\d+", default="", description="Filtre par realisation")
+     * @QueryParam(name="region", requirements="\d+", default="", description="Filtre par region")
+     * @QueryParam(name="secteur", requirements="\d+", default="", description="Filtre par secteur")
+     * @QueryParam(name="template", default="", description="type de template")
+     */
+    public function getActcomplAction(Request $request, ParamFetcher $paramFetcher)
     {
         // INIT RESPONSE
         $activites=[];
         // GET QUERY PARAMETERS
         // GET REPOSITORY
         $repo=$this->getDoctrine()->getRepository('MainBundle:ActCompl');
-        $activites=$repo->findAll();
-
+        $realisation=$paramFetcher->get('realisation');
+        $states=$paramFetcher->get('states');
+        $region=$paramFetcher->get('region');
+        $secteur=$paramFetcher->get('secteur');
+        $template=$paramFetcher->get('template');
+        if($realisation!=""){
+            $user=$this->getDoctrine()->getRepository('OCUserBundle:User')->find($realisation);
+            $activites=$this->getDoctrine()->getRepository('MainBundle:ActCompl')->findByRealisation($user);
+        }
+        if ($template=="edit"){
+            $user=$this->getDoctrine()->getRepository('OCUserBundle:User')->find($realisation);
+            $activites=$repo->findByRealisationForValid($user);
+        }
+        if ($states!="" && $region!=""){
+            $region=$this->getDoctrine()->getRepository('OCUserBundle:Region')->find($region);
+            $activites=$this->getDoctrine()->getRepository('MainBundle:ActCompl')->findByRegionForValid($region);
+        }
+        if ($region!=""){
+            $region=$this->getDoctrine()->getRepository('OCUserBundle:Region')->find($region);
+            $activites=$this->getDoctrine()->getRepository('MainBundle:ActCompl')->findByRegion($region);
+        }
+        if ($secteur!=""){
+            $secteur=$this->getDoctrine()->getRepository('OCUserBundle:Secteur')->find($secteur);
+            $activites=$this->getDoctrine()->getRepository('MainBundle:ActCompl')->findBySecteur($secteur);
+        }
 
         return $activites;
     }
 
         // GET ONE RAPPORT (VIEW)
-    public function getOneactiviteAction($id)
+    public function getOneactcomplAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -58,7 +87,7 @@ class ActComplController extends Controller
     }
 
      //Creates a new rapportVisite entity POST REQUEST
-    public function postActiviteAction(Request $request)
+    public function postActcomplAction(Request $request)
     {
         $activite=new ActCompl();
         $form=$this->createForm(ActComplType::class,$activite);
@@ -67,8 +96,8 @@ class ActComplController extends Controller
         foreach ($acActReals as $acActReal){
             $acActReal->setActReaActCompl($activite);
         }
-        $date=$activite->getAcDate();
-        $activite->setAcDate(new \DateTime($date));
+        #$date=$activite->getAcDate();
+        #$activite->setAcDate(new \DateTime($date));
         if ($form->isValid()){
             $em=$this->getDoctrine()->getManager();
             $em->persist($activite);
@@ -79,7 +108,7 @@ class ActComplController extends Controller
     }
 
     // TOTAL REPLACE RAPPORTVISITE (ID DU RAPPORT EN PARAMETRE URL)
-    public function putActiviteAction(Request $request){
+    public function putActcomplAction(Request $request){
         $activite=$this->getDoctrine()->getRepository('MainBundle:ActCompl')->find($request->get('id'));
         if(empty($activite)){
             return new JsonResponse(['message'=>'Activité complémentaire introuvable'], Response::HTTP_NOT_FOUND);
@@ -102,7 +131,7 @@ class ActComplController extends Controller
     }
 
     // PARTIAL REPLACE RAPPORTVISITE (ID DU RAPPORT EN PARAMETRE URL)
-    public function patchActiviteAction(Request $request){
+    public function patchActcomplAction(Request $request){
         return $this->updateActivite($request,false);
     }
 
