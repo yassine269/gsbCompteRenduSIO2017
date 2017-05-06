@@ -232,7 +232,7 @@ class ActComplAdmin extends AbstractAdmin
         if ($visiteur->getUsrFonction()->getFonctLibelle()=='Delegue') {
             $query = parent::createQuery($context);
             $query->join($query->getRootAliases()[0].'.acActReal','a');
-            $query->join($query->getRootAliases()[0].'.acAcReal.actReaVisiteur','v');
+            $query->join($query->getRootAliases()[0].'.acActReal.actReaVisiteur','v');
             $query->andWhere(
                 $query->expr()->eq('v.usrRegion', ':region')
             );

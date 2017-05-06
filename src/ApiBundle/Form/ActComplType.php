@@ -2,6 +2,7 @@
 
 namespace ApiBundle\Form;
 
+use ApiBundle\ApiBundle;
 use MainBundle\Entity\ActRea;
 use MainBundle\Entity\Praticien;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -30,11 +31,14 @@ class ActComplType extends AbstractType
                     'multiple'=>true
                 ))
                 ->add('acActReal',CollectionType::class,array(
-                    'entry_type'=>ActRea::class,
+                    'entry_type'=>ActReaType::class,
                     'allow_add'=>true
                 ))
                 ->add('acStates',TextType::class)
-                ->add('acDate',DateTime::class);
+                ->add('acDate',DateType::class,array(
+                    'widget' => 'single_text',
+                    'format' => 'yyyy-MM-dd'
+                ));
     }
     
     /**

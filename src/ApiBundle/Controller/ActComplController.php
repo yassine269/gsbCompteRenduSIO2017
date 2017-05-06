@@ -3,6 +3,7 @@
 namespace ApiBundle\Controller;
 
 use ApiBundle\Form\ActComplType;
+use ApiBundle\Object\ActComplPost;
 use DateTime;
 use DoctrineExtensions\Query\Mysql\Date;
 use FOS\RestBundle\Request\ParamFetcher;
@@ -87,12 +88,17 @@ class ActComplController extends Controller
     }
 
      //Creates a new rapportVisite entity POST REQUEST
+
+    /**
+     * @Rest\View(statusCode=Response::HTTP_CREATED)
+     */
     public function postActcomplAction(Request $request)
     {
         $activite=new ActCompl();
         $form=$this->createForm(ActComplType::class,$activite);
         $form->submit($request->request->all());
         $acActReals=$activite->getAcActReal();
+        $activite->setAcStates("VALIDATION_REQUISE");
         foreach ($acActReals as $acActReal){
             $acActReal->setActReaActCompl($activite);
         }
@@ -102,6 +108,17 @@ class ActComplController extends Controller
             $em=$this->getDoctrine()->getManager();
             $em->persist($activite);
             $em->flush();
+            $actPost=new ActComplPost();
+            $actPost->setId($activite->getId());
+            $actPost->setAcLieu($activite->getAcLieu());
+            $actPost->setAcDate($activite->getAcDate());
+            $actPost->setAcStates($activite->getAcStates());
+            foreach ($activite->getAcPraticien() as $praticien){
+                $actPost->addAcPraticien($praticien->getId());
+            }
+            foreach ($activite->getAcActReal() as $actReal){
+                $actPost->addAcActReal($actReal);
+            }
             return $activite;
         }
         else return $form;
@@ -131,7 +148,7 @@ class ActComplController extends Controller
     }
 
     // PARTIAL REPLACE RAPPORTVISITE (ID DU RAPPORT EN PARAMETRE URL)
-    public function patchActcomplAction(Request $request){
+    public function patchUpdateactcomplAction(Request $request){
         return $this->updateActivite($request,false);
     }
 
@@ -148,19 +165,29 @@ class ActComplController extends Controller
         $form=$this->createForm(ActComplType::class,$activite);
         $form->submit($request->request->all(),$clearMissing);
         $acActReals=$activite->getAcActReal();
+        $activite->setAcStates("VALIDATION_REQUISE");
         foreach ($acActReals as $acActReal){
             $acActReal->setActReaActCompl($activite);
         }
-        $date=$activite->getAcDate();
-        $activite->setAcDate(new \DateTime($date));
+        #$date=$activite->getAcDate();
+        #$activite->setAcDate(new \DateTime($date));
         if ($form->isValid()){
             $em=$this->getDoctrine()->getManager();
             $em->persist($activite);
             $em->flush();
+            $actPost=new ActComplPost();
+            $actPost->setId($activite->getId());
+            $actPost->setAcLieu($activite->getAcLieu());
+            $actPost->setAcDate($activite->getAcDate());
+            $actPost->setAcStates($activite->getAcStates());
+            foreach ($activite->getAcPraticien() as $praticien){
+                $actPost->addAcPraticien($praticien->getId());
+            }
+            foreach ($activite->getAcActReal() as $actReal){
+                $actPost->addAcActReal($actReal);
+            }
             return $activite;
         }
         else return $form;
-
     }
-
 }

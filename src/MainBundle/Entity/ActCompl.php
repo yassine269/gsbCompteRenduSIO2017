@@ -3,6 +3,8 @@
 namespace MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as JMS;
+
 
 
 /**
@@ -38,6 +40,7 @@ class ActCompl
 
     /**
      * @ORM\OneToMany(targetEntity="MainBundle\Entity\ActRea", mappedBy="actReaActCompl", cascade={"persist"})
+     * @JMS\Type("ArrayCollection<MainBundle\Entity\ActRea>")
      */
     private $acActReal;
 

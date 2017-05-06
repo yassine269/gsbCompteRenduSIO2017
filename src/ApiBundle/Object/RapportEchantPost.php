@@ -15,6 +15,8 @@ class RapportEchantPost
 
     private $rapEchantMedicament;
 
+    private $rapEchantQuantite;
+
     /**
      * @return mixed
      */
@@ -79,5 +81,4 @@ class RapportEchantPost
         $this->rapEchantQuantite = $rapEchantQuantite;
     }
 
-    private $rapEchantQuantite;
 }
