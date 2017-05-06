@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3500015-12c5-4790-bd39-5f58827ea4c9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ApiBundle/Form/ActReaType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ApiBundle/Object/ActComplPost.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ApiBundle/Object/ActReaPost.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Controller/ActComplController.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Controller/ActComplController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Form/ActComplType.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Form/ActComplType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Form/RapportVisiteType.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Form/RapportVisiteType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Object/RapportEchantPost.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Object/RapportEchantPost.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php" afterPath="$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Entity/ActCompl.php" afterPath="$PROJECT_DIR$/src/MainBundle/Entity/ActCompl.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -323,8 +315,8 @@
           <file leaf-file-name="ActComplAdmin.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="291">
-                  <caret line="234" column="64" lean-forward="false" selection-start-line="234" selection-start-column="64" selection-end-line="234" selection-end-column="64" />
+                <state relative-caret-position="444">
+                  <caret line="243" column="26" lean-forward="false" selection-start-line="243" selection-start-column="26" selection-end-line="243" selection-end-column="26" />
                   <folding />
                 </state>
               </provider>
@@ -393,16 +385,13 @@
       <find>rap_echantillons</find>
       <find>dump</find>
       <find>rest</find>
-      <find>update</find>
       <find>acActRea</find>
       <find>actRea</find>
+      <find>update</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="git add -A" />
-      <command text="git commit -m &quot;change for REST /annotation JMS&quot;" />
-      <command text="git push origin master" />
       <command text="git add -A" />
       <command text="git status" />
       <command text="git add -A" />
@@ -425,6 +414,9 @@
       <command text="git commit -m &quot;CREATE API USER : OK reste a faire : API ACTCOMPL et finition PPE&quot;" />
       <command text="git push origin master" />
       <command text="s debug:router " />
+      <command text="git add -A" />
+      <command text="git commit -m &quot;CREATE API USER : OK reste a faire : API ACTCOMPL et finition PPE&quot;" />
+      <command text="git push origin master" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -877,15 +869,15 @@
       <workItem from="1493796964044" duration="19779000" />
       <workItem from="1493909280294" duration="13498000" />
       <workItem from="1494050639055" duration="2404000" />
-      <workItem from="1494078116894" duration="10519000" />
+      <workItem from="1494078116894" duration="10915000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251081000" />
+    <option name="totallyTimeSpent" value="251477000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1560,8 +1552,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="234" column="64" lean-forward="false" selection-start-line="234" selection-start-column="64" selection-end-line="234" selection-end-column="64" />
+        <state relative-caret-position="444">
+          <caret line="243" column="26" lean-forward="false" selection-start-line="243" selection-start-column="26" selection-end-line="243" selection-end-column="26" />
           <folding />
         </state>
       </provider>
