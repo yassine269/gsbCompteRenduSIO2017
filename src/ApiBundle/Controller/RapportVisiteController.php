@@ -54,6 +54,8 @@ class RapportVisiteController extends Controller
      * @QueryParam(name="motif", requirements="\d+", default="", description="Filtre par Motif")
      * @QueryParam(name="coef", requirements="\d+", default="", description="Filtre par Coef")
      * @QueryParam(name="template", default="", description="type de template")
+     * @QueryParam(name="region", default="", description="region")
+     * @QueryParam(name="secteur", default="", description="secteur")
      */
     public function getRapportsAction(Request $request, ParamFetcher $paramFetcher)
     {
@@ -67,6 +69,8 @@ class RapportVisiteController extends Controller
         $motif=$paramFetcher->get('motif');
         $coef=$paramFetcher->get('coef');
         $template=$paramFetcher->get('template');
+        $region=$paramFetcher->get('region');
+        $secteur=$paramFetcher->get('secteur');
         // GET REPOSITORY
         // TEST EXISTANCE FILTRES
             //FILTRE VISITEUR
@@ -84,7 +88,7 @@ class RapportVisiteController extends Controller
             $praticien=$this->getDoctrine()->getRepository('MainBundle:Praticien')->find($praticien);
             $rapportVisites=$repo->findBy(array('rapPraticien'=>$praticien));
         }
-            // FILTRE MOTIF
+        // FILTRE MOTIF
         if ($motif!=""){
             $motif=$this->getDoctrine()->getRepository('MainBundle:Motif')->find($motif);
             $rapportVisites=$repo->findBy(array('rapMotif'=>$motif));
@@ -96,6 +100,14 @@ class RapportVisiteController extends Controller
         if ($template=="edit"){
             $user=$this->getDoctrine()->getRepository('OCUserBundle:User')->find($redacteur);
             $rapportVisites=$repo->findByDateForEdit($user);
+        }
+        if ($region==1){
+            $user=$this->getDoctrine()->getRepository('OCUserBundle:User')->find($redacteur);
+            $rapportVisites=$repo->findByRegion($user->getUsrRegion());
+        }
+        if ($secteur==1){
+            $user=$this->getDoctrine()->getRepository('OCUserBundle:User')->find($redacteur);
+            $rapportVisites=$repo->findBySecteur($user->getUsrSecteur());
         }
         return $rapportVisites;
     }

@@ -92,7 +92,8 @@ class RapportVisiteRepository extends EntityRepository
         $query=$this->_em->createQuery(
             'SELECT rap
             FROM MainBundle:RapportVisite rap
-            WHERE rap.rapDate = :dateVisite'
+            WHERE rap.rapDate = :dateVisite
+            ORDER BY rap.rapDate DESC'
         )->setParameters(array(
             'dateVisite'=>$dateVisite
         ));
@@ -107,7 +108,8 @@ class RapportVisiteRepository extends EntityRepository
         'SELECT rap 
               FROM MainBundle:RapportVisite rap 
               WHERE MONTH (rap.rapDate) >= :date AND YEAR (rap.rapDate) = :year
-              AND rap.rapVisiteur = :user'
+              AND rap.rapVisiteur = :user
+              ORDER BY rap.rapDate DESC'
         )->setParameters(array(
             'date'=>$date,
             'user' =>$user,
@@ -116,6 +118,31 @@ class RapportVisiteRepository extends EntityRepository
         return$query->getResult();
 
 
+    }
+
+    public function findByRegion($region){
+        $query=$this->_em->createQuery(
+            'SELECT rap
+            FROM MainBundle:RapportVisite rap
+            JOIN rap.rapVisiteur u
+            WHERE u.usrRegion = :region
+            ORDER BY rap.rapDate DESC'
+        )->setParameters(array(
+            'region'=>$region
+        ));
+        return $query->getResult();
+    }
+    public function findBySecteur($secteur){
+        $query=$this->_em->createQuery(
+            'SELECT rap
+            FROM MainBundle:RapportVisite rap
+            JOIN rap.rapVisiteur u
+            WHERE u.usrSecteur = :secteur
+            ORDER BY rap.rapDate DESC'
+        )->setParameters(array(
+            'region'=>$secteur
+        ));
+        return $query->getResult();
     }
 
 

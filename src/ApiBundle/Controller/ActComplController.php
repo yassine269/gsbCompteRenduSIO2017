@@ -4,6 +4,7 @@ namespace ApiBundle\Controller;
 
 use ApiBundle\Form\ActComplType;
 use ApiBundle\Object\ActComplPost;
+use ApiBundle\Object\ActReaPost;
 use DateTime;
 use DoctrineExtensions\Query\Mysql\Date;
 use FOS\RestBundle\Request\ParamFetcher;
@@ -57,20 +58,23 @@ class ActComplController extends Controller
             $activites=$this->getDoctrine()->getRepository('MainBundle:ActCompl')->findByRealisation($user);
         }
         if ($template=="edit"){
+
+        }
+        if ($template=="validate"){
             $user=$this->getDoctrine()->getRepository('OCUserBundle:User')->find($realisation);
-            $activites=$repo->findByRealisationForValid($user);
+            $activites=$repo->findByRegionForValid($user->getUsrRegion());
         }
         if ($states!="" && $region!=""){
             $region=$this->getDoctrine()->getRepository('OCUserBundle:Region')->find($region);
             $activites=$this->getDoctrine()->getRepository('MainBundle:ActCompl')->findByRegionForValid($region);
         }
-        if ($region!=""){
-            $region=$this->getDoctrine()->getRepository('OCUserBundle:Region')->find($region);
-            $activites=$this->getDoctrine()->getRepository('MainBundle:ActCompl')->findByRegion($region);
+        if ($region==1){
+            $user=$this->getDoctrine()->getRepository('OCUserBundle:User')->find($realisation);
+            $activites=$this->getDoctrine()->getRepository('MainBundle:ActCompl')->findByRegion($user->getUsrRegion());
         }
-        if ($secteur!=""){
-            $secteur=$this->getDoctrine()->getRepository('OCUserBundle:Secteur')->find($secteur);
-            $activites=$this->getDoctrine()->getRepository('MainBundle:ActCompl')->findBySecteur($secteur);
+        if ($secteur==1){
+            $user=$this->getDoctrine()->getRepository('OCUserBundle:User')->find($realisation);
+            $activites=$this->getDoctrine()->getRepository('MainBundle:ActCompl')->findBySecteur($user->getUsrSecteur());
         }
 
         return $activites;
@@ -165,12 +169,9 @@ class ActComplController extends Controller
         $form=$this->createForm(ActComplType::class,$activite);
         $form->submit($request->request->all(),$clearMissing);
         $acActReals=$activite->getAcActReal();
-        $activite->setAcStates("VALIDATION_REQUISE");
         foreach ($acActReals as $acActReal){
             $acActReal->setActReaActCompl($activite);
         }
-        #$date=$activite->getAcDate();
-        #$activite->setAcDate(new \DateTime($date));
         if ($form->isValid()){
             $em=$this->getDoctrine()->getManager();
             $em->persist($activite);
@@ -184,9 +185,14 @@ class ActComplController extends Controller
                 $actPost->addAcPraticien($praticien->getId());
             }
             foreach ($activite->getAcActReal() as $actReal){
-                $actPost->addAcActReal($actReal);
+                $actRealPost=new ActReaPost();
+                $actRealPost->setId($actReal->getId());
+                $actRealPost->setActReaVisiteur($actReal->getActReaVisiteur()->getId());
+                $actRealPost->setActReaActCompl($actReal->getActReaActCompl()->getId());
+                $actRealPost->setActReaBudget($actReal->getActReaBudget());
+                $actPost->addAcActReal($actRealPost);
             }
-            return $activite;
+            return $actPost;
         }
         else return $form;
     }
