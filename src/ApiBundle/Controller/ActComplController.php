@@ -121,9 +121,14 @@ class ActComplController extends Controller
                 $actPost->addAcPraticien($praticien->getId());
             }
             foreach ($activite->getAcActReal() as $actReal){
-                $actPost->addAcActReal($actReal);
+                $actReaPost = new ActReaPost();
+                $actReaPost->setId($actReal->getId());
+                $actReaPost->setActReaVisiteur($actReal->getActReaVisiteur()->getId());
+                $actReaPost->setActReaBudget($actReal->getActReaBudget());
+                $actReaPost->setActReaActCompl($activite->getId());
+                $actPost->addAcActReal($actReaPost);
             }
-            return $activite;
+            return $actPost;
         }
         else return $form;
     }
