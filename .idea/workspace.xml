@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3500015-12c5-4790-bd39-5f58827ea4c9" name="Default" comment="" />
+    <list default="true" id="b3500015-12c5-4790-bd39-5f58827ea4c9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,8 +125,8 @@
           <file leaf-file-name="RapportVisiteController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ApiBundle/Controller/RapportVisiteController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="86" column="28" lean-forward="true" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="28" />
+                <state relative-caret-position="136">
+                  <caret line="93" column="2" lean-forward="false" selection-start-line="93" selection-start-column="2" selection-end-line="93" selection-end-column="2" />
                   <folding>
                     <element signature="e#40#79#0#PHP" expanded="true" />
                     <element signature="e#4410#4650#0#PHP" expanded="false" />
@@ -281,11 +283,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="security.yml" pinned="false" current-in-tab="true">
+          <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/config/security.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="363">
-                  <caret line="191" column="51" lean-forward="true" selection-start-line="191" selection-start-column="51" selection-end-line="191" selection-end-column="51" />
+                <state relative-caret-position="125">
+                  <caret line="177" column="35" lean-forward="false" selection-start-line="177" selection-start-column="35" selection-end-line="177" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
@@ -312,11 +314,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="login.html.twig" pinned="false" current-in-tab="false">
+          <file leaf-file-name="login.html.twig" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+                <state relative-caret-position="405">
+                  <caret line="27" column="51" lean-forward="false" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
                   <folding />
                 </state>
               </provider>
@@ -424,9 +426,6 @@
       <command text="git commit -m &quot;REACTIVATE RPERMISSION SONATA&quot;" />
       <command text="git push origin master" />
       <command text="git add -A" />
-      <command text="git commit -m &quot;REACTIVATE RPERMISSION SONATA&quot;" />
-      <command text="git push origin master" />
-      <command text="git add -A" />
       <command text="git commit -m &quot;FIX STYLE AND LINK ON LOGIN PAGE&quot;" />
       <command text="git push origin master" />
       <command text="git add -A" />
@@ -437,6 +436,9 @@
       <command text="git push origin master" />
       <command text="git add -A" />
       <command text="git commit -m &quot;FIX STYLE AND LINK ON LOGIN PAGE&quot;" />
+      <command text="git add -A" />
+      <command text="git commit -m &quot;FIX STYLE AND LINK ON LOGIN PAGE&quot;" />
+      <command text="git push origin master" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -494,11 +496,11 @@
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/web/css/main.css" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Repository/ActComplRepository.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Controller/ActComplController.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" />
       </list>
     </option>
   </component>
@@ -539,6 +541,94 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FOSUserBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FOSUserBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Security" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -677,18 +767,18 @@
       <workItem from="1494361379364" duration="6000" />
       <workItem from="1494578233423" duration="1778000" />
       <workItem from="1494595948118" duration="8270000" />
-      <workItem from="1494617814887" duration="3379000" />
+      <workItem from="1494617814887" duration="4527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275962000" />
+    <option name="totallyTimeSpent" value="277110000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1612" height="876" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2575188" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2575188" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4530026" sideWeight="0.5225" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1250,31 +1340,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainBundle/Entity/ActRea.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="162" column="21" lean-forward="false" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Controller/RapportVisiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="86" column="28" lean-forward="true" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="28" />
-          <folding>
-            <element signature="e#40#79#0#PHP" expanded="true" />
-            <element signature="e#4410#4650#0#PHP" expanded="false" />
-            <element signature="e#6599#7415#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1317,10 +1387,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Controller/RapportVisiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="93" column="2" lean-forward="false" selection-start-line="93" selection-start-column="2" selection-end-line="93" selection-end-column="2" />
+          <folding>
+            <element signature="e#40#79#0#PHP" expanded="true" />
+            <element signature="e#4410#4650#0#PHP" expanded="false" />
+            <element signature="e#6599#7415#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="191" column="51" lean-forward="true" selection-start-line="191" selection-start-column="51" selection-end-line="191" selection-end-column="51" />
+        <state relative-caret-position="125">
+          <caret line="177" column="35" lean-forward="false" selection-start-line="177" selection-start-column="35" selection-end-line="177" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="51" lean-forward="false" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
           <folding />
         </state>
       </provider>
