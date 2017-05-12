@@ -134,8 +134,8 @@ sonata_block:
 # CONFIG SONATA ADMIN
 sonata_admin:
     show_mosaic_button:   false
-    #security:
-    #    handler: sonata.admin.security.handler.role
+    security:
+        handler: sonata.admin.security.handler.role
     # SET UP SECURITY AND ROLES ACCESS
     # CHANGE BASE TEMPLATE
     templates:

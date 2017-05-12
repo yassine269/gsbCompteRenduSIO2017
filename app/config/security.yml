@@ -180,7 +180,7 @@ security:
         wsse_secured:
             pattern:   ^/(api/(?!publics/))
             stateless: true
-            anonymous: true
+            anonymous: false
             provider: fos_userbundle
             wsse: true
         main:

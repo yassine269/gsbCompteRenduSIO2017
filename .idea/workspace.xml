@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3500015-12c5-4790-bd39-5f58827ea4c9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Controller/ActComplController.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Controller/ActComplController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainBundle/Repository/ActComplRepository.php" afterPath="$PROJECT_DIR$/src/MainBundle/Repository/ActComplRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -260,16 +260,36 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ActComplController.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ActComplController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ApiBundle/Controller/ActComplController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="116">
-                  <caret line="74" column="8" lean-forward="false" selection-start-line="74" selection-start-column="8" selection-end-line="77" selection-end-column="9" />
+                <state relative-caret-position="422">
+                  <caret line="100" column="52" lean-forward="true" selection-start-line="100" selection-start-column="52" selection-end-line="100" selection-end-column="52" />
                   <folding>
                     <element signature="e#3599#3825#0#PHP" expanded="false" />
                     <element signature="e#5624#6512#0#PHP" expanded="false" />
                     <element signature="e#6714#6776#0#PHP" expanded="false" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="418">
+                  <caret line="137" column="4" lean-forward="false" selection-start-line="137" selection-start-column="4" selection-end-line="137" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="security.yml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="431">
+                  <caret line="195" column="0" lean-forward="true" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -355,31 +375,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ActComplPost.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ApiBundle/Object/ActComplPost.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1122">
-                  <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#1250#1375#0#PHP" expanded="false" />
-                    <element signature="e#1382#1499#0#PHP" expanded="false" />
-                    <element signature="e#1506#1585#0#PHP" expanded="false" />
-                    <element signature="e#1714#1822#0#PHP" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ActReaPost.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ApiBundle/Object/ActReaPost.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="680">
-                  <caret line="45" column="37" lean-forward="false" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="37" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-second>
     </splitter>
@@ -422,9 +417,6 @@
     <commandsHistory>
       <command text="git push origin master" />
       <command text="git add -A" />
-      <command text="git commit -m &quot;CREATE API USER : OK reste a faire : API ACTCOMPL et finition PPE&quot;" />
-      <command text="git push origin master" />
-      <command text="git add -A" />
       <command text="git commit -m &quot;REACTIVATE RPERMISSION SONATA&quot;" />
       <command text="git push origin master" />
       <command text="git add -A" />
@@ -438,6 +430,9 @@
       <command text="git push origin master" />
       <command text="git add -A" />
       <command text="git commit -m &quot;REACTIVATE RPERMISSION SONATA&quot;" />
+      <command text="git push origin master" />
+      <command text="git add -A" />
+      <command text="git commit -m &quot;FIX STYLE AND LINK ON LOGIN PAGE&quot;" />
       <command text="git push origin master" />
       <command text="git add -A" />
       <command text="git commit -m &quot;FIX STYLE AND LINK ON LOGIN PAGE&quot;" />
@@ -498,8 +493,6 @@
         <option value="$PROJECT_DIR$/src/MainBundle/Admin/ActComplAdmin.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Controller/RapportVisiteController.php" />
         <option value="$PROJECT_DIR$/src/MainBundle/Repository/RapportVisiteRepository.php" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/MainBundle/Entity/Composant.php" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
@@ -507,6 +500,8 @@
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" />
         <option value="$PROJECT_DIR$/src/MainBundle/Repository/ActComplRepository.php" />
         <option value="$PROJECT_DIR$/src/ApiBundle/Controller/ActComplController.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
       </list>
     </option>
   </component>
@@ -690,6 +685,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gsbCompteRendu" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -825,12 +838,12 @@
       <workItem from="1494361379364" duration="6000" />
       <workItem from="1494578233423" duration="1778000" />
       <workItem from="1494595948118" duration="8270000" />
-      <workItem from="1494617814887" duration="2668000" />
+      <workItem from="1494617814887" duration="3356000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275251000" />
+    <option name="totallyTimeSpent" value="275939000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1612" height="876" extended-state="0" />
@@ -1289,20 +1302,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="67" lean-forward="false" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="137" column="5" lean-forward="false" selection-start-line="137" selection-start-column="5" selection-end-line="137" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OCUserBundle/Admin/UserAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
@@ -1461,13 +1460,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ApiBundle/Controller/ActComplController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="74" column="8" lean-forward="false" selection-start-line="74" selection-start-column="8" selection-end-line="77" selection-end-column="9" />
+        <state relative-caret-position="422">
+          <caret line="100" column="52" lean-forward="true" selection-start-line="100" selection-start-column="52" selection-end-line="100" selection-end-column="52" />
           <folding>
             <element signature="e#3599#3825#0#PHP" expanded="false" />
             <element signature="e#5624#6512#0#PHP" expanded="false" />
             <element signature="e#6714#6776#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="137" column="4" lean-forward="false" selection-start-line="137" selection-start-column="4" selection-end-line="137" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="195" column="0" lean-forward="true" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
