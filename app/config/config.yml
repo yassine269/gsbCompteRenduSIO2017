@@ -209,6 +209,8 @@ sonata_admin:
                       label:    Acceuil
                     - admin.rapportvisite
                     - admin.actcompl
+                    - admin.medicament
+                    - admin.praticien
                     - admin.user
                     - route:    main_statistique_delegue
                       label:    Statistiques
@@ -224,6 +226,8 @@ sonata_admin:
                       label:        Acceuil
                     - admin.rapportvisite
                     - admin.actcompl
+                    - admin.medicament
+                    - admin.praticien
                     - admin.user
                     - route:    main_statistique_responsable
                       label:    Statistiques
