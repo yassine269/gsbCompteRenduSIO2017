@@ -319,7 +319,7 @@
             <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="527">
-                  <caret line="31" column="87" lean-forward="false" selection-start-line="31" selection-start-column="87" selection-end-line="31" selection-end-column="87" />
+                  <caret line="31" column="105" lean-forward="false" selection-start-line="31" selection-start-column="105" selection-end-line="31" selection-end-column="105" />
                   <folding />
                 </state>
               </provider>
@@ -419,9 +419,6 @@
       <command text="git commit -m &quot;REACTIVATE RPERMISSION SONATA&quot;" />
       <command text="git push origin master" />
       <command text="git add -A" />
-      <command text="git commit -m &quot;REACTIVATE RPERMISSION SONATA&quot;" />
-      <command text="git push origin master" />
-      <command text="git add -A" />
       <command text="git commit -m &quot;FIX STYLE AND LINK ON LOGIN PAGE&quot;" />
       <command text="git push origin master" />
       <command text="git add -A" />
@@ -437,6 +434,9 @@
       <command text="git push origin master" />
       <command text="git add -A" />
       <command text="git commit -m &quot;FIX STYLE AND LINK ON LOGIN PAGE&quot;" />
+      <command text="git add -A" />
+      <command text="git commit -m &quot;FIX STYLE AND LINK ON LOGIN PAGE&quot;" />
+      <command text="git push origin master" />
       <command text="git add -A" />
       <command text="git commit -m &quot;FIX STYLE AND LINK ON LOGIN PAGE&quot;" />
       <command text="git push origin master" />
@@ -531,7 +531,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -634,6 +633,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -766,12 +766,13 @@
       <workItem from="1494578233423" duration="1778000" />
       <workItem from="1494595948118" duration="8270000" />
       <workItem from="1494617814887" duration="4684000" />
-      <workItem from="1494624266712" duration="270000" />
+      <workItem from="1494624266712" duration="306000" />
+      <workItem from="1494624631011" duration="17000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277537000" />
+    <option name="totallyTimeSpent" value="277590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1612" height="876" extended-state="0" />
@@ -1358,7 +1359,7 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="31" column="87" lean-forward="false" selection-start-line="31" selection-start-column="87" selection-end-line="31" selection-end-column="87" />
+          <caret line="31" column="105" lean-forward="false" selection-start-line="31" selection-start-column="105" selection-end-line="31" selection-end-column="105" />
           <folding />
         </state>
       </provider>
