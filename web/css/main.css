@@ -9,6 +9,15 @@ body{
     border-radius: 5px;
     font-weight: 600;
 }
+#containerLinks{
+    text-align: left;
+}
+#linkGDrive{
+    color: black;
+}
+#linkApk{
+    color: black;
+}
 #loginContainer{
     width: 50%;
     margin-top: 10%;
