@@ -42,8 +42,7 @@ class ActComplRepository extends \Doctrine\ORM\EntityRepository
                 FROM MainBundle:ActCompl ac
                 JOIN ac.acActReal rea
                 JOIN rea.actReaVisiteur usr
-                WHERE usr.usrRegion = :region
-                AND ac.acStates = :etat
+                WHERE ac.acStates = :etat  AND usr.usrRegion = :region
                       '
         )->setParameters(array(
             'region' => $region,

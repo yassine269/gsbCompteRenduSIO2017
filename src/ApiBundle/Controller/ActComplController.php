@@ -72,9 +72,13 @@ class ActComplController extends Controller
             $user=$this->getDoctrine()->getRepository('OCUserBundle:User')->find($realisation);
             $activites=$this->getDoctrine()->getRepository('MainBundle:ActCompl')->findByRegion($user->getUsrRegion());
         }
-        if ($secteur==1){
+        if ($region==1 && $template=="validate"){
             $user=$this->getDoctrine()->getRepository('OCUserBundle:User')->find($realisation);
-            $activites=$this->getDoctrine()->getRepository('MainBundle:ActCompl')->findBySecteur($user->getUsrSecteur());
+            $activites=$this->getDoctrine()->getRepository('MainBundle:ActCompl')->findByRegionForValid($user->getUsrRegion());
+        }
+        if ($secteur==1) {
+            $user = $this->getDoctrine()->getRepository('OCUserBundle:User')->find($realisation);
+            $activites = $this->getDoctrine()->getRepository('MainBundle:ActCompl')->findBySecteur($user->getUsrSecteur());
         }
 
         return $activites;
