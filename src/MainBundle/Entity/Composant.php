@@ -198,6 +198,6 @@ class Composant
     }
     public function __toString()
     {
-        return $this->getCompLibelle();
+        return (string) $this->getCompLibelle();
     }
 }
